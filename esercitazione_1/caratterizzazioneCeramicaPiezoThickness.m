@@ -8,7 +8,7 @@ evalin('base', 'clear'), close all; clc;
 
 [~, l, rho, c33, h33, ~, beta33, v, f, omega, theta, C0] = ceramicPicker();
 
-% Caratterizzazione modo tickness
+% Calcolo l'impedenza di ingresso della ceramica
 Zi = ( (1./(1i .* omega .* C0)) .* ( 1 - ( ((h33^2)/(c33*beta33)) .* (2./theta) .* tan(theta./2) ) ) );
 
 % Calcolo modulo e fase

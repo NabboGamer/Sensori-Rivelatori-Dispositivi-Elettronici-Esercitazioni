@@ -3,6 +3,6 @@ function [modulo, fase] = calcolaModuloEFase(numeroComplesso)
     
     modulo = mag2db(abs(numeroComplesso)); % dB
 
-    fase = rad2deg (angle(numeroComplesso)); % deg
+    fase = rad2deg(angle(numeroComplesso)); % deg
 
 end

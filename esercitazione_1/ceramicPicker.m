@@ -14,7 +14,7 @@ function [areaFaccia, l, rho, c33, h33, e33, beta33, v, f, omega, theta, C0] = c
     
     theta = (omega .* l) ./ v;
 
-    %Calcolo capacità statica dell'elemento
+    %Calcolo capacità statica della ceramica
     C0 = (areaFaccia/(beta33*l)); % (m*C)/V
 
 end

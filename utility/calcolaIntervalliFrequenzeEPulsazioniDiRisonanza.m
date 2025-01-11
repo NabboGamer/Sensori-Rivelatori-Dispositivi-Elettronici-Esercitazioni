@@ -6,6 +6,6 @@ function [f, omega] = calcolaIntervalliFrequenzeEPulsazioniDiRisonanza(v, l)
     range = fr;
     
     f = (fr - range / 2) : 100 : (fr + range / 2);
-    omega = 2*pi.*f; % rad/sec
+    omega = 2*pi .* f; % rad/sec
     
 end
