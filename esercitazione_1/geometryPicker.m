@@ -10,9 +10,9 @@ function [areaFaccia, l] = geometryPicker()
     
     switch choice
         case 1
-            cprintf('Text', "Inserire la misura desiderata per il lato(m):");
+            cprintf('Text', "Inserire la misura desiderata per il lato(m): ");
             L = input('L=');
-             cprintf('Text', "Inserire la misura desiderata per lo spessore(m):");
+            cprintf('Text', "Inserire la misura desiderata per lo spessore(m): ");
             l = input('l=');
             
             ordineDiGrandezzaL = calcolaOrdineDiGrandezza(L);
@@ -21,16 +21,17 @@ function [areaFaccia, l] = geometryPicker()
             if (ordineDiGrandezzaL >= (ordineDiGrandezzal + 1))
                 areaFaccia = (L*L);
             else
-                cprintf('Errors',"Dimensioni non corrette per il modo tickness, prego reinserire geometria...");
-                [areaFaccia, l] = geometria();
+                cprintf('Errors',"Dimensioni non corrette per il modo tickness, prego reinserire geometria...\n");
+                cprintf('Errors',"\n");
+                [areaFaccia, l] = geometryPicker();
             end
     
         case 2
-            cprintf('Text', "Inserire la misura desiderata per la base(m):");
+            cprintf('Text', "Inserire la misura desiderata per la base(m): ");
             L = input('L=');
-            cprintf('Text', "Inserire la misura desiderata per l'altezza(m):");
+            cprintf('Text', "Inserire la misura desiderata per l'altezza(m): ");
             w = input('w=');
-            cprintf('Text', "Inserire la misura desiderata per lo spessore(m):");
+            cprintf('Text', "Inserire la misura desiderata per lo spessore(m): ");
             l = input('l=');
             
             ordineDiGrandezzaL = calcolaOrdineDiGrandezza(L);
@@ -41,14 +42,15 @@ function [areaFaccia, l] = geometryPicker()
                 ordineDiGrandezzaw >= (ordineDiGrandezzal + 1) && w < L)
                 areaFaccia = L*w;
             else
-                cprintf('Errors',"Dimensioni non corrette per il modo tickness, prego reinserire geometria...");
-                [areaFaccia, l] = geometria();
+                cprintf('Errors',"Dimensioni non corrette per il modo tickness, prego reinserire geometria...\n");
+                cprintf('Errors',"\n");
+                [areaFaccia, l] = geometryPicker();
             end
     
         case 3
-            cprintf('Text', "Inserire la misura desiderata per il raggio(m):");
+            cprintf('Text', "Inserire la misura desiderata per il raggio(m): ");
             R = input('R=');
-            cprintf('Text', "Inserire la misura desiderata per lo spessore(m):");
+            cprintf('Text', "Inserire la misura desiderata per lo spessore(m): ");
             l = input('l=');
             
             ordineDiGrandezzaR = calcolaOrdineDiGrandezza(R);
@@ -57,8 +59,9 @@ function [areaFaccia, l] = geometryPicker()
             if (ordineDiGrandezzaR >= (ordineDiGrandezzal + 1))
                 areaFaccia = pi * (R^2);
             else
-                cprintf('Errors',"Dimensioni non corrette per il modo tickness, prego reinserire geometria...");
-                [areaFaccia, l] = geometria();
+                cprintf('Errors',"Dimensioni non corrette per il modo tickness, prego reinserire geometria...\n");
+                cprintf('Errors',"\n");
+                [areaFaccia, l] = geometryPicker();
             end
     end
 

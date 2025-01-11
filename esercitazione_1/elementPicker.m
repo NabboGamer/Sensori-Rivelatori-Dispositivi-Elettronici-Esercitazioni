@@ -1,7 +1,8 @@
 function [rho, c33, h33, e33, beta33, v] = elementPicker()
     % ELEMENTPICKER permette di acquisire le costanti dielettriche e alcuni parametri relativi ad una specifica ceramica piezoelettrica
     
-    cprintf('Text', "Inserire codice numerico elemento piezoelettrico:");
+    cprintf('Text',"\n");
+    cprintf('Text', "Inserire il codice numerico associato alla ceramica piezoelettrica: ");
     var = input('pz=');
     
         switch var
@@ -79,7 +80,7 @@ function [rho, c33, h33, e33, beta33, v] = elementPicker()
                 v = sqrt(c33/rho); % m^2/sec
     
             otherwise
-                cprintf('Errors', "Codice non trovato, prego reinserire codice...");
+                cprintf('Errors', "Codice inesistente, prego reinserire...\n");
                 [rho, c33, h33, e33, beta33, v] = elementPicker();
         end
         
