@@ -3,9 +3,7 @@ function [f, omega] = calcolaIntervalliFrequenzeEPulsazioniDiRisonanza(v, l)
     
     fr = v/(2*l); % Hz
     
-    range = fr;
-    
-    f = (fr - range / 2) : 100 : (fr + range / 2);
+    f = linspace(fr - (fr / 4), fr + (fr / 4), 1000);
     omega = 2*pi .* f; % rad/sec
     
 end

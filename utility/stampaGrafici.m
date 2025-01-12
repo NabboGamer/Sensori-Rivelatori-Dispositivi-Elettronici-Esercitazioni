@@ -33,10 +33,12 @@ function stampaGrafici(f, modulo, fase, var, color)
    
     if (contains(var,'Zi'))
         % Traccio una linea verticale tratteggiata ('-.) alla frequenza 
-        % corrispondente al 100-esimo elemento di f, indicandola come flow
-        % xlow = xline(f(1,100),'-.','flow = '+ string(f(1,100)) +' [MHZ]','Color','red');
-        % xlow.LabelVerticalAlignment = 'middle';
-        % xlow.LabelHorizontalAlignment = 'center';
+        % corrispondente al 50-esimo elemento di f, indicandola come flow.
+        % flow sarebbe una frequenza bassa rispetto a fr dove la ceramica 
+        % si comporta come un condensatore
+        xlow = xline(f(1,50),'-.','flow = '+ string(f(1,50)) +' [MHZ]','Color','red');
+        xlow.LabelVerticalAlignment = 'middle';
+        xlow.LabelHorizontalAlignment = 'center';
         
         % Traccio una linea verticale al valore di frequenza corrispondente 
         % all'indice index_min, che rappresenta il valore minimo di modulo
