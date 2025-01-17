@@ -5,15 +5,15 @@ function [Zin, FTT, FTR] = calcolaFunzioniDiTrasferimento(B, Z, Zel)
     [moduloZin, faseZin] = calcolaModuloEFase(Zin);
     Zin = {moduloZin, faseZin};
     
-    FTT = ( Z .* B{2} ) ./ ( (B{3} .* (B{1} + Z)) - B{1} .^ 2);
+    FTT = ( Z .* B{2} ) ./ ( (B{3} .* (B{1} + Z)) - B{2} .^ 2);
     [moduloFTT, faseFTT] = calcolaModuloEFase(FTT);
     FTT = {moduloFTT, faseFTT};
     
     % FTT_i = ( (Z .* B{2}) ./ ( (B{3} .* (B{1} + Z)) - B{2} .^ 2)) .* Zin;
-    % [moduloFTT_i, faseFTT_i] = conv_i(FTT_i);
+    % [moduloFTT_i, faseFTT_i] = calcolaModuloEFase(FTT_i);
     % FTT_i = {moduloFTT_i, faseFTT_i};
     
-    FTR = (Zel .* B{2}) ./ ( (B{1} .* (B{3} + Zel)) - (B{1} .^ 2) );
+    FTR = (Zel .* B{2}) ./ ( (B{1} .* (B{3} + Zel)) - (B{2} .^ 2) );
     [moduloFTR, faseFTR] = calcolaModuloEFase(FTR);
     FTR = {moduloFTR, faseFTR};
     

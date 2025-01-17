@@ -10,7 +10,7 @@ evalin('base', 'clear'), close all; clc;
 % Impedenza acustica della ceramica in direzione z
 ZoD = areaFaccia * v * rho;
         
-% Impedenza acustica del carico(PERCHÈ PROPRIO QUESTO VALORE)
+% Impedenza acustica del carico
 Zel = 1E+06; %1MOhm
 
 % Impedenza acustica specifica del mezzo
@@ -23,7 +23,6 @@ Z2 = areaFaccia * z2;
 
 % Matrici A(3x3) e B (2x2)
 A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);
-%TODO: Capire da dove vengono le formule
 B_Z1 = calcolaMatriceB(A, Z2); % side 1
 B_Z2 = calcolaMatriceB(A, Z1); % side 2
 
@@ -51,6 +50,7 @@ figure(5);
 stampaGrafici(f, FTT_Z1{1}, FTT_Z1{2}, var_FTT, 'blue');
 hold on;
 
+% Grafico della funzione di trasferimento se la ceramica viene pilotata in corrente
 % figure(6);
 % Grafico(f,TTF_Z1_i{1},TTF_Z1_i{2}, var_TTF_i, 'blue');
 % hold on;
@@ -81,6 +81,8 @@ if(Z1 == Z2)
     grid on;
 
 else
+    % Se le due impedenze acustiche non sono uguali allora aggiungi al
+    % grafico dell'impedenza di Z1 anche il grafico dell'impedenza di Z2
     figure(4);
     stampaGrafici(f, Zin_Z2{1}, Zin_Z2{2}, var_z, 'orange');
     ax1 = subplot(2,1,1);
@@ -88,6 +90,7 @@ else
     legend(ax1, 'side 1', 'side 2');
     legend(ax2, 'side 1', 'side 2');
 
+    % Stesso discorso per la funzione di trasferimento in trasmissione
     figure(5);
     stampaGrafici(f, FTT_Z2{1}, FTT_Z2{2}, var_FTT, 'orange');
     ax1 = subplot(2,1,1);
