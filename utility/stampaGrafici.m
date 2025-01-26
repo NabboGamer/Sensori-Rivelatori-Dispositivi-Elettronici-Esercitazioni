@@ -1,4 +1,4 @@
-function stampaGrafici(f, modulo, fase, var, color)
+function stampaGrafici(f, modulo, fase, var, color, legendString)
     % STAMAPAGRAFICI permette di stampare i diagrammi di Bode dati il vettore delle frequenze (f), il modulo (modulo) e la fase (fase) del segnale
     
     if (color == "blue")
@@ -6,23 +6,16 @@ function stampaGrafici(f, modulo, fase, var, color)
     elseif (color == "orange")
         color = '#D95319';
     else
-        color = none;
+        color = 'none';
     end
     
     % Converto il vettore delle frequenze in megahertz(MHz) dividendo per 10^6
     f = f ./ 1e+06;
    
-    if (~contains(var, 'Backing'))
-        % Divido la figura corrente in una griglia 2x1 e creo una coppia di
-        % assi nella posizione 1 che restituisco
-        ax1 = subplot(2,1,1);
-    else
-        % Divido la figura corrente in una griglia 1x1 e creo una coppia di
-        % assi nella posizione 1 che restituisco
-        ax1 = subplot(1,1,1);
-    end
-   
-    semilogx(f, modulo, "Color", color);
+    % Divido la figura corrente in una griglia 2x1 e creo una coppia di
+    % assi nella posizione 1 che restituisco
+    ax1 = subplot(2,1,1);
+    semilogx(f, modulo, "Color", color, 'DisplayName', legendString);
     xlabel(ax1,'Frequency [MHz]');
     ylabel(ax1,'Magnitude [dB]');
     grid on;
@@ -30,25 +23,33 @@ function stampaGrafici(f, modulo, fase, var, color)
    
     index_min = (modulo == min(modulo));
     index_max = (modulo == max(modulo));
+
+    % Ottengo i limiti degli assi
+    xLimits = xlim;
+    yLimits = ylim;
+    
+    % Calcolo uno spostamento proporzionale
+    xOffset = (xLimits(2) - xLimits(1)) * 0.01; % Spostamento del 1% rispetto alla larghezza dell'asse X
+    yOffset = (yLimits(2) - yLimits(1)) * 0.01; % Spostamento del 1% rispetto all'altezza dell'asse Y
    
-    if (contains(var,'Zi'))
+    if (contains(var,'Zi: input impedance'))
         % Traccio una linea verticale tratteggiata ('-.) alla frequenza 
         % corrispondente al 50-esimo elemento di f, indicandola come flow.
         % flow sarebbe una frequenza bassa rispetto a fr dove la ceramica 
         % si comporta come un condensatore
-        xlow = xline(f(1,50),'-.','flow = '+ string(f(1,50)) +' [MHZ]','Color','red');
+        xlow = xline(f(1,50),'-.','flow = '+ string(f(1,50)) +' [MHZ]','Color','red', 'DisplayName', 'Flow Line', 'HandleVisibility','off');
         xlow.LabelVerticalAlignment = 'middle';
         xlow.LabelHorizontalAlignment = 'center';
         
         % Traccio una linea verticale al valore di frequenza corrispondente 
         % all'indice index_min, che rappresenta il valore minimo di modulo
-        xa = xline(f(1,index_min),'-.','fa = '+ string(f(1,index_min)) +' [MHZ]','Color','red');
+        xa = xline(f(1,index_min),'-.','fa = '+ string(f(1,index_min)) +' [MHZ]','Color','red', 'DisplayName', 'Fa Line', 'HandleVisibility','off');
         xa.LabelVerticalAlignment = 'middle';
         xa.LabelHorizontalAlignment = 'center';
         
         % Stessa logica, ma applicata all'indice index_max, corrispondente 
         % al massimo valore del modulo.
-        xr = xline(f(1,index_max),'-.','fr = '+ string(f(1,index_max)) +' [MHZ]','Color','red');
+        xr = xline(f(1,index_max),'-.','fr = '+ string(f(1,index_max)) +' [MHZ]','Color','red', 'DisplayName', 'Fr Line', 'HandleVisibility','off');
         xr.LabelVerticalAlignment = 'middle';
         xr.LabelHorizontalAlignment = 'center';
     elseif (contains(var,'Impedance Comparing'))
@@ -58,37 +59,58 @@ function stampaGrafici(f, modulo, fase, var, color)
         plot(f(1,index_max), modulo(index_max), 'black.','HandleVisibility','off');
         % Viene aggiunta un'etichetta vicino al punto massimo, che include: 
         % il modulo massimo in dB e la frequenza corrispondente in MHz.
-        text( f(1,index_max)+0.001, modulo(index_max)+0.01, ...
-             strcat("Module: ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [MHz]") );
-   
-        % Display Min 
-        plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off');
-        text(f(1,index_min)-0.03, modulo(index_min)+ 1, ...
-             strcat("Module: ", string(modulo(index_min)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [MHz]") );
-    else
-        if (~contains(var,'Backing'))
-           plot(f(1,index_max), modulo(index_max), 'black.', 'HandleVisibility','off');
-           text(f(1,index_max)+0.001, modulo(index_max)+ 0.01, ...
-                strcat("Module: ", string(modulo(index_max)), " [dB]"));
+        text(f(1,index_max) + xOffset, modulo(index_max) + yOffset, ...
+             strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [MHz]") );
 
-           xmax = xline(f(1,index_max),'-.',string(f(1,index_max))+' [MHZ]','Color','black', 'HandleVisibility', 'off');
-           xmax.LabelVerticalAlignment = 'bottom';
-           xmax.LabelHorizontalAlignment = 'left';
-        elseif(contains(var,'Comparing'))
-            plot(f(1,index_max), modulo(index_max), 'black.', 'HandleVisibility','off');
-            text( f(1,index_max)+0.001, modulo(index_max)+ 0.01, ...
-                strcat("Module: ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [MHz]") );
-        end
-    end  
+        % Disegno la linea verticale
+        xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
+        xmax.LabelVerticalAlignment = 'bottom';
+        xmax.LabelHorizontalAlignment = 'left';
    
-    if (~contains(var,'Backing'))
-        % Se var non contiene "Backing", viene creato un secondo sotto-grafico per la fase
-        ax2 = subplot(2,1,2);
-        semilogx(f,fase);
-        ylabel(ax2,'Phase [deg]');
-        xlabel(ax2, 'Frequency [MHz]');
-        grid on;
+        % Disegno il minimo 
+        plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off');
+        text(f(1,index_min) + xOffset, modulo(index_min) + yOffset, ...
+             strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [MHz]") );
+
+        % Disegno la linea verticale
+        xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
+        xmin.LabelVerticalAlignment = 'bottom';
+        xmin.LabelHorizontalAlignment = 'left';
+    elseif (contains(var,'Comparing Zin without and with Backing'))
+        % Disegno il massimo
+        plot(f(1,index_max), modulo(index_max), 'black.', 'HandleVisibility','off');
+        text(f(1,index_max) + xOffset, modulo(index_max) + yOffset, ...
+            strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [MHz]"));
+        
+        % Disegno la linea verticale
+        xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
+        xmax.LabelVerticalAlignment = 'bottom';
+        xmax.LabelHorizontalAlignment = 'left';
+
+        % Disegno il minimo  
+        plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off');
+        text(f(1,index_min) + xOffset, modulo(index_min) + yOffset, ...
+             strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [MHz]") );
+
+        % Disegno la linea verticale
+        xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
+        xmin.LabelVerticalAlignment = 'bottom';
+        xmin.LabelHorizontalAlignment = 'left';
     end
+
+    % Aggiungo la legenda dinamicamente
+    legend(ax1, 'Location', 'northeast');
+    
+    % Secondo subplot: fase
+    ax2 = subplot(2,1,2);
+    semilogx(f, fase, "Color", color, 'DisplayName', legendString);
+    ylabel(ax2,'Phase [deg]');
+    xlabel(ax2, 'Frequency [MHz]');
+    grid on;
+    hold on;
+    
+    % Aggiungo la legenda dinamicamente
+    legend(ax2, 'Location', 'northeast');
 
     % Imposto titolo complessivo del grafico
     sgtitle(var)

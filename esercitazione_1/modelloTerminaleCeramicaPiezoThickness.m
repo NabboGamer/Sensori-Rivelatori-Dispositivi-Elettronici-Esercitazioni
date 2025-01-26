@@ -26,12 +26,12 @@ A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);
 B_Z1 = calcolaMatriceB(A, Z2); % side 1
 B_Z2 = calcolaMatriceB(A, Z1); % side 2
 
-% Calcolo impedenza elettrica in ingresso
+% Calcolo l'impedenza elettrica in ingresso
 [Zin_Z2, FTT_Z2, FTR_Z2] = calcolaFunzioniDiTrasferimento(B_Z1, Z1, Zel);
 [Zin_Z1, FTT_Z1, FTR_Z1] = calcolaFunzioniDiTrasferimento(B_Z2, Z2, Zel);
 
 if(Z1 == Z2)
-    var_z = "Zi";
+    var_z = "Zi: input impedance";
     var_FTT = "TTF";
     % var_TTF_i = "TTF_i";
     var_FTR = "RTF";
@@ -42,25 +42,25 @@ else
     var_FTR = "RTF Comparing";
 end
 
-figure(4);
-stampaGrafici(f, Zin_Z1{1}, Zin_Z1{2}, var_z, 'blue');
+figure(1);
+stampaGrafici(f, Zin_Z1{1}, Zin_Z1{2}, var_z, 'blue', "Zin_Z_1");
 hold on;
 
-figure(5);
-stampaGrafici(f, FTT_Z1{1}, FTT_Z1{2}, var_FTT, 'blue');
+figure(2);
+stampaGrafici(f, FTT_Z1{1}, FTT_Z1{2}, var_FTT, 'blue', "TTF_Z_1");
 hold on;
 
 % Grafico della funzione di trasferimento se la ceramica viene pilotata in corrente
-% figure(6);
+% figure(3);
 % Grafico(f,TTF_Z1_i{1},TTF_Z1_i{2}, var_TTF_i, 'blue');
 % hold on;
 
-figure(7);
-stampaGrafici(f, FTR_Z1{1}, FTR_Z1{2}, var_FTR, 'blue');
+figure(4);
+stampaGrafici(f, FTR_Z1{1}, FTR_Z1{2}, var_FTR, 'blue', "RTF_Z_1");
 hold on;
 
 if(Z1 == Z2)
-    figure(8);
+    figure(5);
     subplot(3,1,1);
     semilogx(f ./ 1e+06 , Zin_Z1{1}, 'linewidth', 2);
     title("Zi side1");
@@ -83,36 +83,36 @@ if(Z1 == Z2)
 else
     % Se le due impedenze acustiche non sono uguali allora aggiungi al
     % grafico dell'impedenza di Z1 anche il grafico dell'impedenza di Z2
-    figure(4);
-    stampaGrafici(f, Zin_Z2{1}, Zin_Z2{2}, var_z, 'orange');
-    ax1 = subplot(2,1,1);
-    ax2 = subplot(2,1,2);
-    legend(ax1, 'side 1', 'side 2');
-    legend(ax2, 'side 1', 'side 2');
+    figure(1);
+    stampaGrafici(f, Zin_Z2{1}, Zin_Z2{2}, var_z, 'orange', "Zin_Z_2");
+    % ax1 = subplot(2,1,1);
+    % ax2 = subplot(2,1,2);
+    % legend(ax1, 'side 1', 'side 2');
+    % legend(ax2, 'side 1', 'side 2');
 
     % Stesso discorso per la funzione di trasferimento in trasmissione
-    figure(5);
-    stampaGrafici(f, FTT_Z2{1}, FTT_Z2{2}, var_FTT, 'orange');
-    ax1 = subplot(2,1,1);
-    ax2 = subplot(2,1,2);
-    legend(ax1, 'side 1', 'side 2');
-    legend(ax2, 'side 1', 'side 2');
+    figure(2);
+    stampaGrafici(f, FTT_Z2{1}, FTT_Z2{2}, var_FTT, 'orange', "TTF_Z_2");
+    % ax1 = subplot(2,1,1);
+    % ax2 = subplot(2,1,2);
+    % legend(ax1, 'side 1', 'side 2');
+    % legend(ax2, 'side 1', 'side 2');
 
-%     figure(6);
+%     figure(3);
 %     Grafico(f,TTF_Z2_i{1}, TTF_Z2_i{2}, var_TTF_i, 'orange');
 %     ax1 = subplot(2,1,1); % Primo subplot
 %     ax2 = subplot(2,1,2); % Secondo subplot
 %     legend(ax1, 'side 1', 'side 2');
 %     legend(ax2, 'side 1', 'side 2');
 
-    figure(7);
-    stampaGrafici(f, FTR_Z2{1}, FTR_Z2{2}, var_FTR, 'orange');
-    ax1 = subplot(2,1,1);
-    ax2 = subplot(2,1,2);
-    legend(ax1, 'side 1', 'side 2');
-    legend(ax2, 'side 1', 'side 2');
+    figure(4);
+    stampaGrafici(f, FTR_Z2{1}, FTR_Z2{2}, var_FTR, 'orange', "RTF_Z_2");
+    % ax1 = subplot(2,1,1);
+    % ax2 = subplot(2,1,2);
+    % legend(ax1, 'side 1', 'side 2');
+    % legend(ax2, 'side 1', 'side 2');
 
-    figure(8);
+    figure(5);
     subplot(3,2,1);
     semilogx(f ./ 1e+06, Zin_Z1{1}, 'linewidth', 2);
     title("Zi side1");

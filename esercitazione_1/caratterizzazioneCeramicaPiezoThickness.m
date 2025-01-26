@@ -15,4 +15,4 @@ Zi = ( (1./(1i .* omega .* C0)) .* ( 1 - ( ((h33^2)/(c33*beta33)) .* (2./theta) 
 [moduloZi, faseZi] = calcolaModuloEFase(Zi);
 
 % Stampa diagrammi di Bode
-stampaGrafici(f, moduloZi, faseZi, "Zi: input impedance", "blue");
+stampaGrafici(f, moduloZi, faseZi, "Zi: input impedance", "blue", "Zi");
