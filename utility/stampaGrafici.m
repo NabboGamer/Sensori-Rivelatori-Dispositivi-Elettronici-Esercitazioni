@@ -91,6 +91,14 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
         xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
         xmin.LabelVerticalAlignment = 'bottom';
         xmin.LabelHorizontalAlignment = 'left';
+    elseif (contains(var,'TTF Comparing') || contains(var,'RTF Comparing'))
+        plot(f(1,index_max), modulo(index_max), 'black.','HandleVisibility','off');
+        text(f(1,index_max) + xOffset, modulo(index_max) + yOffset, ...
+             strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]") );
+
+        xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
+        xmax.LabelVerticalAlignment = 'bottom';
+        xmax.LabelHorizontalAlignment = 'left';
     elseif (contains(var,'Comparing Zin without and with Backing'))
         % Disegno il massimo
         plot(f(1,index_max), modulo(index_max), 'black.', 'HandleVisibility','off');
