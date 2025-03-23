@@ -23,130 +23,52 @@ Z2 = areaFaccia * z2;
 
 % Matrici A(3x3) e B (2x2)
 A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);
-B_Z1 = calcolaMatriceB(A, Z2); % side 1
-B_Z2 = calcolaMatriceB(A, Z1); % side 2
+B_side1 = calcolaMatriceB(A, Z2); % la porta(o lato) 1 "vede" il carico Z2, B descrive come la ceramica propaga il segnale verso la porta in cui è applicato Z2
+B_side2 = calcolaMatriceB(A, Z1); % la porta(o lato) 2 "vede" il carico Z1
 
 % Calcolo l'impedenza elettrica in ingresso
-[Zin_Z2, FTT_Z2, FTR_Z2] = calcolaFunzioniDiTrasferimento(B_Z1, Z1, Zel);
-[Zin_Z1, FTT_Z1, FTR_Z1] = calcolaFunzioniDiTrasferimento(B_Z2, Z2, Zel);
+[Zin_side1, FTT_side1, FTR_side1] = calcolaFunzioniDiTrasferimento(B_side1, Z1, Zel);
+[Zin_side2, FTT_side2, FTR_side2] = calcolaFunzioniDiTrasferimento(B_side2, Z2, Zel);
 
 if(Z1 == Z2)
-    var_z = "Zi: input impedance";
+    var_z = "Impedance";
     var_FTT = "TTF";
     % var_TTF_i = "TTF_i";
     var_FTR = "RTF";
 else
-    var_z = "Impedance Comparing";
+    var_z = "Impedance";
     var_FTT = "TTF Comparing";
     % var_TTF_i = "TTF_i Comparing";
     var_FTR = "RTF Comparing";
 end
 
 figure(1);
-stampaGrafici(f, Zin_Z1{1}, Zin_Z1{2}, var_z, 'blue', "Zin_Z_1");
+stampaGrafici(f, Zin_side1{1}, Zin_side1{2}, var_z, 'blue', "Zin");
+% stampaGrafici(f, Zin_side2{1}, Zin_side2{2}, var_z, 'orange', "Z_s_i_d_e_2"); % l'impedenza in ingresso risultante Zin è la stessa quando il sistema è simmetrico
 hold on;
 
 figure(2);
-stampaGrafici(f, FTT_Z1{1}, FTT_Z1{2}, var_FTT, 'blue', "TTF_Z_1");
+stampaGrafici(f, FTT_side1{1}, FTT_side1{2}, var_FTT, 'blue', "TTF_s_i_d_e_1", "TTF");
+stampaGrafici(f, FTT_side2{1}, FTT_side2{2}, var_FTT, 'orange', "TTF_s_i_d_e_2", "TTF");
 hold on;
 
 % Grafico della funzione di trasferimento se la ceramica viene pilotata in corrente
 % figure(3);
 % Grafico(f,TTF_Z1_i{1},TTF_Z1_i{2}, var_TTF_i, 'blue');
+% Grafico(f,TTF_Z2_i{1}, TTF_Z2_i{2}, var_TTF_i, 'orange');
 % hold on;
 
 figure(4);
-stampaGrafici(f, FTR_Z1{1}, FTR_Z1{2}, var_FTR, 'blue', "RTF_Z_1");
+stampaGrafici(f, FTR_side1{1}, FTR_side1{2}, var_FTR, 'blue', "RTF_s_i_d_e_1", "RTF");
+stampaGrafici(f, FTR_side2{1}, FTR_side2{2}, var_FTR, 'orange', "RTF_s_i_d_e_2", "RTF");
 hold on;
 
-if(Z1 == Z2)
-    figure(5);
-    subplot(3,1,1);
-    semilogx(f ./ 1e+06 , Zin_Z1{1}, 'linewidth', 2);
-    title("Zi side1");
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-    subplot(3,1,2);
-    plot(f ./ 1e+06, FTT_Z1{1}, 'linewidth', 2);
-    title("TTF side1"); 
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-    subplot(3,1,3);
-    plot(f ./ 1e+06, FTR_Z1{1}, 'linewidth', 2);
-    title("RTF side1");
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-
-else
-    % Se le due impedenze acustiche non sono uguali allora aggiungi al
-    % grafico dell'impedenza di Z1 anche il grafico dell'impedenza di Z2
-    figure(1);
-    stampaGrafici(f, Zin_Z2{1}, Zin_Z2{2}, var_z, 'orange', "Zin_Z_2");
-    % ax1 = subplot(2,1,1);
-    % ax2 = subplot(2,1,2);
-    % legend(ax1, 'side 1', 'side 2');
-    % legend(ax2, 'side 1', 'side 2');
-
-    % Stesso discorso per la funzione di trasferimento in trasmissione
-    figure(2);
-    stampaGrafici(f, FTT_Z2{1}, FTT_Z2{2}, var_FTT, 'orange', "TTF_Z_2");
-    % ax1 = subplot(2,1,1);
-    % ax2 = subplot(2,1,2);
-    % legend(ax1, 'side 1', 'side 2');
-    % legend(ax2, 'side 1', 'side 2');
-
-%     figure(3);
-%     Grafico(f,TTF_Z2_i{1}, TTF_Z2_i{2}, var_TTF_i, 'orange');
-%     ax1 = subplot(2,1,1); % Primo subplot
-%     ax2 = subplot(2,1,2); % Secondo subplot
-%     legend(ax1, 'side 1', 'side 2');
-%     legend(ax2, 'side 1', 'side 2');
-
-    figure(4);
-    stampaGrafici(f, FTR_Z2{1}, FTR_Z2{2}, var_FTR, 'orange', "RTF_Z_2");
-    % ax1 = subplot(2,1,1);
-    % ax2 = subplot(2,1,2);
-    % legend(ax1, 'side 1', 'side 2');
-    % legend(ax2, 'side 1', 'side 2');
-
-    figure(5);
-    subplot(3,2,1);
-    semilogx(f ./ 1e+06, Zin_Z1{1}, 'linewidth', 2);
-    title("Zi side1");
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-    subplot(3,2,3);
-    semilogx(f ./ 1e+06, FTT_Z1{1}, 'linewidth', 2);
-    title("TTF side1");
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-    subplot(3,2,5);
-    semilogx(f ./ 1e+06, FTR_Z1{1}, 'linewidth', 2);
-    title("RTF side1");
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-    subplot(3,2,2);
-    semilogx(f ./ 1e+06, Zin_Z2{1}, 'linewidth', 2, 'Color', '#D95319');
-    title("Zi side2");
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-    subplot(3,2,4);
-    semilogx(f ./ 1e+06, FTT_Z2{1}, 'linewidth', 2, 'Color', '#D95319');
-    title("TTF side2");
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-    subplot(3,2,6);
-    semilogx(f ./ 1e+06, FTR_Z2{1}, 'linewidth', 2, 'Color', '#D95319');
-    title("RTF side2");
-    ylabel('Magnitude(dB)');
-    xlabel('Frequency [MHz]');
-    grid on;
-end
+% Calcolo Keff^2
+index_min = (Zin_side1{1} == min(Zin_side1{1}));
+index_max = (Zin_side1{1} == max(Zin_side1{1}));
+fmin = f(1,index_min);
+fmax = f(1,index_max);
+Keff = ((fmax^2) - (fmin^2))/(fmax^2);
+cprintf('Comments', "\n");
+cprintf('Comments', "Risultato calcolo fattore di accoppiamento efficace:\n");
+cprintf('Comments', "Keff^2 = " + string(Keff) + "\n");

@@ -1,6 +1,10 @@
-function stampaGrafici(f, modulo, fase, var, color, legendString)
+function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
     % STAMAPAGRAFICI permette di stampare i diagrammi di Bode dati il vettore delle frequenze (f), il modulo (modulo) e la fase (fase) del segnale
     
+    if nargin < 7
+        yAxisString = legendString;
+    end
+
     if (color == "blue")
         color = '#0072BD';
     elseif (color == "orange")
@@ -9,15 +13,26 @@ function stampaGrafici(f, modulo, fase, var, color, legendString)
         color = 'none';
     end
     
-    % Converto il vettore delle frequenze in megahertz(MHz) dividendo per 10^6
-    f = f ./ 1e+06;
+    % Converto il vettore delle frequenze in megahertz(kHz) dividendo per 10^3
+    f = f ./ 1e+03;
+    % Converto il vettore dei moduli in kiloohm(kΩ) dividendo per 10^3
+    if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing'))
+        modulo = modulo ./ 1e+03;
+    end
    
     % Divido la figura corrente in una griglia 2x1 e creo una coppia di
     % assi nella posizione 1 che restituisco
     ax1 = subplot(2,1,1);
-    semilogx(f, modulo, "Color", color, 'DisplayName', legendString);
-    xlabel(ax1,'Frequency [MHz]');
-    ylabel(ax1,'Magnitude [dB]');
+    modifiedLegendString = '|' + legendString + '|';
+    modifiedyAxisString = '|' + yAxisString + '|';
+    if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing'))
+        loglog(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
+        ylabel(ax1, modifiedyAxisString + ' [kΩ]');
+    else
+        semilogx(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
+        ylabel(ax1, modifiedyAxisString + ' [dB]');
+    end
+    xlabel(ax1,'Frequency [kHz]');
     grid on;
     hold on;
    
@@ -32,27 +47,27 @@ function stampaGrafici(f, modulo, fase, var, color, legendString)
     xOffset = (xLimits(2) - xLimits(1)) * 0.01; % Spostamento del 1% rispetto alla larghezza dell'asse X
     yOffset = (yLimits(2) - yLimits(1)) * 0.01; % Spostamento del 1% rispetto all'altezza dell'asse Y
    
-    if (contains(var,'Zi: input impedance'))
+    if (contains(var,'Zin: input impedance'))
         % Traccio una linea verticale tratteggiata ('-.) alla frequenza 
         % corrispondente al 50-esimo elemento di f, indicandola come flow.
         % flow sarebbe una frequenza bassa rispetto a fr dove la ceramica 
         % si comporta come un condensatore
-        xlow = xline(f(1,50),'-.','flow = '+ string(f(1,50)) +' [MHZ]','Color','red', 'DisplayName', 'Flow Line', 'HandleVisibility','off');
+        xlow = xline(f(1,50),'-.','flow = '+ string(round(f(1,50))),'Color','red', 'DisplayName', 'Flow Line', 'HandleVisibility', 'off');
         xlow.LabelVerticalAlignment = 'middle';
         xlow.LabelHorizontalAlignment = 'center';
         
         % Traccio una linea verticale al valore di frequenza corrispondente 
         % all'indice index_min, che rappresenta il valore minimo di modulo
-        xa = xline(f(1,index_min),'-.','fa = '+ string(f(1,index_min)) +' [MHZ]','Color','red', 'DisplayName', 'Fa Line', 'HandleVisibility','off');
+        xa = xline(f(1,index_min),'-.','fa = '+ string(round(f(1,index_min))),'Color','red', 'DisplayName', 'Fa Line', 'HandleVisibility', 'off');
         xa.LabelVerticalAlignment = 'middle';
         xa.LabelHorizontalAlignment = 'center';
         
         % Stessa logica, ma applicata all'indice index_max, corrispondente 
         % al massimo valore del modulo.
-        xr = xline(f(1,index_max),'-.','fr = '+ string(f(1,index_max)) +' [MHZ]','Color','red', 'DisplayName', 'Fr Line', 'HandleVisibility','off');
+        xr = xline(f(1,index_max),'-.','fr = '+ string(round(f(1,index_max))),'Color','red', 'DisplayName', 'Fr Line', 'HandleVisibility', 'off');
         xr.LabelVerticalAlignment = 'middle';
         xr.LabelHorizontalAlignment = 'center';
-    elseif (contains(var,'Impedance Comparing'))
+    elseif (contains(var,'Impedance'))
         % Viene disegnato un punto nero ('black.') alla frequenza e al 
         % modulo corrispondenti al massimo
         % Display Max
@@ -60,7 +75,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString)
         % Viene aggiunta un'etichetta vicino al punto massimo, che include: 
         % il modulo massimo in dB e la frequenza corrispondente in MHz.
         text(f(1,index_max) + xOffset, modulo(index_max) + yOffset, ...
-             strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [MHz]") );
+             strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [kΩ]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]") );
 
         % Disegno la linea verticale
         xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
@@ -70,7 +85,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString)
         % Disegno il minimo 
         plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off');
         text(f(1,index_min) + xOffset, modulo(index_min) + yOffset, ...
-             strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [MHz]") );
+             strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), " [kΩ]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [kHz]") );
 
         % Disegno la linea verticale
         xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
@@ -103,9 +118,11 @@ function stampaGrafici(f, modulo, fase, var, color, legendString)
     
     % Secondo subplot: fase
     ax2 = subplot(2,1,2);
-    semilogx(f, fase, "Color", color, 'DisplayName', legendString);
-    ylabel(ax2,'Phase [deg]');
-    xlabel(ax2, 'Frequency [MHz]');
+    modifiedLegendString = 'Arg(' + legendString + ')';
+    modifiedyAxisString = 'Arg(' + yAxisString + ')';
+    semilogx(f, fase, "Color", color, 'DisplayName', modifiedLegendString);
+    ylabel(ax2, modifiedyAxisString + ' [deg]');
+    xlabel(ax2, 'Frequency [kHz]');
     grid on;
     hold on;
     
