@@ -20,10 +20,10 @@ z2 = specificAcousticImpedancePicker(2);
 Z1 = areaFaccia * z1;
 Z2 = areaFaccia * z2;
  
-% Matrici A(3x3), B(2x2) e G (3x3).
+% Matrici A(3x3), B(2x2) e G(3x3)
 A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);
-B_Z1 = calcolaMatriceB(A, Z2);
-B_Z2 = calcolaMatriceB(A, Z1);
+B_side1 = calcolaMatriceB(A, Z2); % la porta(o lato) 1 "vede" il carico Z2, B descrive come la ceramica propaga il segnale verso la porta in cui è applicato Z2
+B_side2 = calcolaMatriceB(A, Z1); % la porta(o lato) 2 "vede" il carico Z1
 
 % Prelevo il numero di coppie di ceramiche desiderate
 numberOfCeramicPairs = numberOfCeramicPairsPicker();
@@ -33,11 +33,11 @@ numberOfCeramicPairs = numberOfCeramicPairsPicker();
 new_l = l / (2 ^ numberOfCeramicPairs);
 new_C0 = (2 ^ numberOfCeramicPairs) * C0;
 
-%Rifaccio i calcoli per la coppia di ceramiche
-%Matrici A(3x3), B(2x2) e G(3x3)
+% Rifaccio i calcoli per la coppia di ceramiche
+% Matrici A(3x3), B(2x2) e G(3x3)
 A_couple = calcolaMatriceA(ZoD, omega, v, new_l, h33, new_C0);
 
-%Accoppio le ceramiche
+% Accoppio le ceramiche
 G = calcolaMatriceG(A_couple, A_couple);
 G_multiple = G;
 
@@ -48,55 +48,68 @@ if (numberOfCeramicPairs > 1)
     G = G_multiple;
 end
 
-B_couple_Z1 = calcolaMatriceB(G, Z2);
-B_couple_Z2 = calcolaMatriceB(G, Z1);
+B_couple_side1 = calcolaMatriceB(G, Z2);
+B_couple_side2 = calcolaMatriceB(G, Z1);
 
 % Calcolo l'impedenza elettrica in ingresso
-[Zin_Z1, FTT_Z1, FTR_Z1] = calcolaFunzioniDiTrasferimento(B_Z1, Z1, Zel);
-[Zin_Z2, FTT_Z2, FTR_Z2] = calcolaFunzioniDiTrasferimento(B_Z2, Z2, Zel);
+[Zin_side1, FTT_side1, FTR_side1] = calcolaFunzioniDiTrasferimento(B_side1, Z1, Zel);
+[Zin_side2, FTT_side2, FTR_side2] = calcolaFunzioniDiTrasferimento(B_side2, Z2, Zel);
 
-[Zin_couple_Z1, FTT_Z1_couple, FTR_Z1_couple] = calcolaFunzioniDiTrasferimento(B_couple_Z1, Z1, Zel);
-[Zin_couple_Z2, FTT_Z2_couple, FTR_Z2_couple] = calcolaFunzioniDiTrasferimento(B_couple_Z2, Z2, Zel);
+[Zin_couple_side1, FTT_couple_side1, FTR_couple_side1] = calcolaFunzioniDiTrasferimento(B_couple_side1, Z1, Zel);
+[Zin_couple_side2, FTT_couple_side2, FTR_couple_side2] = calcolaFunzioniDiTrasferimento(B_couple_side2, Z2, Zel);
 
 if(Z1 == Z2)
-    var_z = "Zi";
-    var_FTT = "TTF";
-    %var_FTT_i = "TTF_i";
-    var_FTR = "RTF";
+    var_z = "Impedence Comparing";
+    var_FTT = "TTF Comparing";
+    var_FTR = "RTF Comparing";
 else
-    var_z = "Zi side 1";
-    var_FTT = "TTF side 1";
-    %var_FTT_i = "TTF_i side 1";
-    var_FTR = "RTF side 1";
+    var_z = "Impedence Comparing";
+    var_FTT = "TTF side 1 Comparing";
+    var_FTR = "RTF side 1 Comparing";
 end
+
+l_scaled = l * 1e+03;
+new_l_scaled = new_l * 1e+03;
+additionalDescriptions = " of " + string(l_scaled) + " [mm] thick ceramic";
+additionalDescriptionsCouple = " of " + string(numberOfCeramicPairs) + " pair of " + string(new_l_scaled) + " [mm] thick ceramics";
 
 figure(1)
-stampaGraficiCoppia(f, Z1, Z2, Zin_couple_Z1, Zin_Z1, var_z, 1);
+stampaGrafici(f, Zin_side1{1}, Zin_side1{2}, var_z, 'blue', "Zin", "Zin", additionalDescriptions);
+stampaGrafici(f, Zin_couple_side1{1}, Zin_couple_side1{2}, var_z, 'orange', "Zin", "Zin", additionalDescriptionsCouple);
+hold on;
 
 figure(2)
-stampaGraficiCoppia(f, Z1, Z2, FTT_Z1_couple, FTT_Z1, var_FTT, 1);
+stampaGrafici(f, FTT_side1{1}, FTT_side1{2}, var_FTT, 'blue', "TTF", "TTF", additionalDescriptions);
+stampaGrafici(f, FTT_couple_side1{1}, FTT_couple_side1{2}, var_FTT, 'orange', "TTF", "TTF", additionalDescriptionsCouple);
+hold on;
 
-% figure(3)
-% stampaGraficiCoppia(f, Z1, Z2, FTT_Z1_i_couple, FTT_Z1_i, var_FTT_i, 1);
+figure(3)
+stampaGrafici(f, FTR_side1{1}, FTR_side1{2}, var_FTR, 'blue', "RTF", "RTF", additionalDescriptions);
+stampaGrafici(f, FTR_couple_side1{1}, FTR_couple_side1{2}, var_FTR, 'orange', "RTF", "RTF", additionalDescriptionsCouple);
+hold on;
 
-figure(4)
-stampaGraficiCoppia(f, Z1, Z2, FTR_Z1_couple, FTR_Z1, var_FTR, 1);
 
 if(Z1 ~= Z2)
-    var_z = "Zi side 2";
-    var_FTT = "TTF side 2";
-    %var_FTT_i = "TTF_i side 2";
-    var_FTR = "RTF side 2";
-
-    figure(1)
-    stampaGraficiCoppia(f, Z1, Z2, Zin_couple_Z2, Zin_Z2, var_z, 2);
-    
-    figure(2)
-    stampaGraficiCoppia(f, Z1, Z2, FTT_Z2_couple, FTT_Z2, var_FTT, 2);
-    
-%     figure(3)
-%     stampaGraficiCoppia(f, Z1, Z2, FTT_Z2_i_couple, FTT_Z2_i, var_FTT_i, 2);
+    var_FTT = "TTF side 2 Comparing";
+    var_FTR = "RTF side 2 Comparing";
     
     figure(4)
-    stampaGraficiCoppia(f, Z1, Z2, FTR_Z2_couple, FTR_Z2, var_FTR, 2);
+    stampaGrafici(f, FTT_side2{1}, FTT_side2{2}, var_FTT, 'blue', "TTF", "TTF", additionalDescriptions);
+    stampaGrafici(f, FTT_couple_side2{1}, FTT_couple_side2{2}, var_FTT, 'orange', "TTF", "TTF", additionalDescriptionsCouple);
+    hold on;
+    
+    figure(5)
+    stampaGrafici(f, FTR_side2{1}, FTR_side2{2}, var_FTR, 'blue', "RTF", "RTF", additionalDescriptions);
+    stampaGrafici(f, FTR_couple_side2{1}, FTR_couple_side2{2}, var_FTR, 'orange', "RTF", "RTF", additionalDescriptionsCouple);
+    hold on;
 end
+
+% Calcolo Keff^2
+index_min = (Zin_side1{1} == min(Zin_side1{1}));
+index_max = (Zin_side1{1} == max(Zin_side1{1}));
+fmin = f(1,index_min);
+fmax = f(1,index_max);
+Keff = ((fmax^2) - (fmin^2))/(fmax^2);
+cprintf('Comments', "\n");
+cprintf('Comments', "Risultato calcolo fattore di accoppiamento efficace:\n");
+cprintf('Comments', "Keff^2 = " + string(Keff) + "\n");

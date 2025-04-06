@@ -1,8 +1,13 @@
-function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
+function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, additionalDescriptions)
     % STAMAPAGRAFICI permette di stampare i diagrammi di Bode dati il vettore delle frequenze (f), il modulo (modulo) e la fase (fase) del segnale
     
     if nargin < 7
         yAxisString = legendString;
+        additionalDescriptions = "";
+    end
+
+    if nargin < 8
+        additionalDescriptions = "";
     end
 
     if (color == "blue")
@@ -16,16 +21,16 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
     % Converto il vettore delle frequenze in kiloHertz(kHz) dividendo per 10^3
     f = f ./ 1e+03;
     % Converto il vettore dei moduli in kiloOhm(kΩ) dividendo per 10^3
-    if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing'))
+    if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing'))
         modulo = modulo ./ 1e+03;
     end
    
     % Divido la figura corrente in una griglia 2x1 e creo una coppia di
     % assi nella posizione 1 che restituisco
     ax1 = subplot(2,1,1);
-    modifiedLegendString = '|' + legendString + '|';
+    modifiedLegendString = '|' + legendString + '|' + additionalDescriptions;
     modifiedyAxisString = '|' + yAxisString + '|';
-    if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing'))
+    if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing'))
         semilogy(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
         ylabel(ax1, modifiedyAxisString + ' [kΩ]');
     else
@@ -67,7 +72,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
         xr = xline(f(1,index_max),'-.','fr = '+ string(round(f(1,index_max))),'Color','red', 'DisplayName', 'Fr Line', 'HandleVisibility', 'off');
         xr.LabelVerticalAlignment = 'middle';
         xr.LabelHorizontalAlignment = 'center';
-    elseif (contains(var,'Impedance'))
+    elseif (contains(var,'Impedance') || contains(var,'Impedence Comparing'))
         % Viene disegnato un punto nero ('black.') alla frequenza e al 
         % modulo corrispondenti al massimo
         % Display Max
@@ -91,7 +96,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
         xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
         xmin.LabelVerticalAlignment = 'bottom';
         xmin.LabelHorizontalAlignment = 'left';
-    elseif (contains(var,'TTF Comparing') || contains(var,'RTF Comparing'))
+    elseif (contains(var,'TTF Comparing') || contains(var,'RTF Comparing') || contains(var,'TTF side 1 Comparing') || contains(var,'TTF side 2 Comparing') || contains(var,'RTF side 1 Comparing') || contains(var,'RTF side 2 Comparing'))
         plot(f(1,index_max), modulo(index_max), 'black.','HandleVisibility','off');
         text(f(1,index_max) + xOffset, modulo(index_max) + yOffset, ...
              strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]") );
@@ -126,7 +131,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
     
     % Secondo subplot: fase
     ax2 = subplot(2,1,2);
-    modifiedLegendString = 'Arg(' + legendString + ')';
+    modifiedLegendString = 'Arg(' + legendString + ')' + additionalDescriptions;
     modifiedyAxisString = 'Arg(' + yAxisString + ')';
     plot(f, fase, "Color", color, 'DisplayName', modifiedLegendString);
     ylabel(ax2, modifiedyAxisString + ' [deg]');
