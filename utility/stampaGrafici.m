@@ -13,9 +13,9 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
         color = 'none';
     end
     
-    % Converto il vettore delle frequenze in megahertz(kHz) dividendo per 10^3
+    % Converto il vettore delle frequenze in kiloHertz(kHz) dividendo per 10^3
     f = f ./ 1e+03;
-    % Converto il vettore dei moduli in kiloohm(kΩ) dividendo per 10^3
+    % Converto il vettore dei moduli in kiloOhm(kΩ) dividendo per 10^3
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing'))
         modulo = modulo ./ 1e+03;
     end
@@ -26,10 +26,10 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
     modifiedLegendString = '|' + legendString + '|';
     modifiedyAxisString = '|' + yAxisString + '|';
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing'))
-        loglog(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
+        semilogy(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
         ylabel(ax1, modifiedyAxisString + ' [kΩ]');
     else
-        semilogx(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
+        plot(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
         ylabel(ax1, modifiedyAxisString + ' [dB]');
     end
     xlabel(ax1,'Frequency [kHz]');
@@ -128,7 +128,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString)
     ax2 = subplot(2,1,2);
     modifiedLegendString = 'Arg(' + legendString + ')';
     modifiedyAxisString = 'Arg(' + yAxisString + ')';
-    semilogx(f, fase, "Color", color, 'DisplayName', modifiedLegendString);
+    plot(f, fase, "Color", color, 'DisplayName', modifiedLegendString);
     ylabel(ax2, modifiedyAxisString + ' [deg]');
     xlabel(ax2, 'Frequency [kHz]');
     grid on;
