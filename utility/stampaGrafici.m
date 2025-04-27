@@ -53,6 +53,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     yOffset = (yLimits(2) - yLimits(1)) * 0.01; % Spostamento del 1% rispetto all'altezza dell'asse Y
    
     if (contains(var,'Zin: input impedance'))
+        
         % Traccio una linea verticale tratteggiata ('-.) alla frequenza 
         % corrispondente al 50-esimo elemento di f, indicandola come flow.
         % flow sarebbe una frequenza bassa rispetto a fr dove la ceramica 
@@ -72,15 +73,19 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
         xr = xline(f(1,index_max),'-.','fr = '+ string(round(f(1,index_max))),'Color','red', 'DisplayName', 'Fr Line', 'HandleVisibility', 'off');
         xr.LabelVerticalAlignment = 'middle';
         xr.LabelHorizontalAlignment = 'center';
-    elseif (contains(var,'Impedance') || contains(var,'Impedence Comparing'))
+    elseif (contains(var,'Impedance') || contains(var,'Impedence Comparing') || ...
+            contains(var,'Impedence Comparing ARIA-ARIA') || contains(var,'Impedence Comparing ACQUA-ACQUA') ||...
+            contains(var,'Comparing Zin without and with Backing'))
+
         % Viene disegnato un punto nero ('black.') alla frequenza e al 
         % modulo corrispondenti al massimo
         % Display Max
         plot(f(1,index_max), modulo(index_max), 'black.','HandleVisibility','off');
         % Viene aggiunta un'etichetta vicino al punto massimo, che include: 
-        % il modulo massimo in dB e la frequenza corrispondente in MHz.
-        text(f(1,index_max) + xOffset, modulo(index_max) + yOffset, ...
-             strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [kΩ]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]") );
+        % il modulo massimo in kΩ e la frequenza corrispondente in kHz.
+        safeText(ax1, f(1,index_max), modulo(index_max), ...
+                 strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [kΩ]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]"), ...
+                 0.5, 0.0);
 
         % Disegno la linea verticale
         xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
@@ -88,42 +93,30 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
         xmax.LabelHorizontalAlignment = 'left';
    
         % Disegno il minimo 
-        plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off');
-        text(f(1,index_min) + xOffset, modulo(index_min) + yOffset, ...
-             strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), " [kΩ]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [kHz]") );
+        plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off'); 
+        safeText(ax1, f(1,index_min), modulo(index_min), ...
+                 strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), " [kΩ]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [kHz]"), ...
+                 0.5, 0.0);
 
         % Disegno la linea verticale
         xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
         xmin.LabelVerticalAlignment = 'bottom';
         xmin.LabelHorizontalAlignment = 'left';
-    elseif (contains(var,'TTF Comparing') || contains(var,'RTF Comparing') || contains(var,'TTF side 1 Comparing') || contains(var,'TTF side 2 Comparing') || contains(var,'RTF side 1 Comparing') || contains(var,'RTF side 2 Comparing'))
+    elseif (contains(var,'TTF Comparing') || contains(var,'RTF Comparing') || ...
+            contains(var,'TTF Comparing ARIA-ARIA') || contains(var,'RTF Comparing ARIA-ARIA') || ...
+            contains(var,'TTF Comparing ACQUA-ACQUA') || contains(var,'RTF Comparing ACQUA-ACQUA') || ...
+            contains(var,'TTF side 1 Comparing') || contains(var,'TTF side 2 Comparing') || ...
+            contains(var,'RTF side 1 Comparing') || contains(var,'RTF side 2 Comparing') || ...
+            contains(var,'Comparing TTF without and with Backing') || contains(var,'Comparing RTF without and with Backing'))
+
         plot(f(1,index_max), modulo(index_max), 'black.','HandleVisibility','off');
-        text(f(1,index_max) + xOffset, modulo(index_max) + yOffset, ...
-             strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]") );
+        safeText(ax1, f(1,index_max), modulo(index_max), ...
+                 strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]"), ...
+                 0.5, 0.0);
 
         xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
         xmax.LabelVerticalAlignment = 'bottom';
         xmax.LabelHorizontalAlignment = 'left';
-    elseif (contains(var,'Comparing Zin without and with Backing'))
-        % Disegno il massimo
-        plot(f(1,index_max), modulo(index_max), 'black.', 'HandleVisibility','off');
-        text(f(1,index_max) + xOffset, modulo(index_max) + yOffset, ...
-            strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [MHz]"));
-        
-        % Disegno la linea verticale
-        xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
-        xmax.LabelVerticalAlignment = 'bottom';
-        xmax.LabelHorizontalAlignment = 'left';
-
-        % Disegno il minimo  
-        plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off');
-        text(f(1,index_min) + xOffset, modulo(index_min) + yOffset, ...
-             strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [MHz]") );
-
-        % Disegno la linea verticale
-        xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
-        xmin.LabelVerticalAlignment = 'bottom';
-        xmin.LabelHorizontalAlignment = 'left';
     end
 
     % Aggiungo la legenda dinamicamente
