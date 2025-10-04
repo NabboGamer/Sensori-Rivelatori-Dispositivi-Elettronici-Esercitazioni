@@ -1,0 +1,285 @@
+% Questo script implementa la progettazione di un trasduttore 
+% piezoelettrico a larga banda
+
+addpath('../utility/');
+evalin('base', 'clear'), close all; clc;
+
+[areaFaccia, l, rho, ~, h33, ~, beta33, v, f, omega, theta, C0] = ceramicPicker();
+
+% Calcolo l'impedenza acustica specifica della ceramica e del piatto
+% (utilizzando la formula per massimizzare la banda passante)
+z_piezo = rho * v; % N.B.: Usare PZ27 per questa applicazione
+z_load = 1.5e+06;  % Acqua
+z_plate = (2 * (z_load^2) * z_piezo ) ^ (1/3);
+zB = 7e+06; % Il Backing è fatto solitamente di materiali come il tungsteno-epossidico che ha una impedenza acustica specifica di [5,10] MRayl
+z1 = 400;   % Aria
+z2 = z_load;
+
+% Usando come carico a sinistra l'aria e come piezo il PZ27 ottengo una z_plate 
+% circa di 5.3e+06. Osservando la tabella 4 nel paper "A Review of Acoustic 
+% Impedance Matching Techniques for Piezoelectric Sensors and Transducers" 
+% ricavo che il materiale E-Solder 3022 ha l'impedenza molto vicina a
+% quest'ultima (5.92e+06) quindi decido di utilizzarlo per la creazione del
+% piatto. Di conseguenza prelevo dalla tabella la densità di tale materiale.
+rho_plate = 1850; % Kg/m^3
+v_plate = z_plate/rho_plate;
+
+%% Funzione di trasferimento in trasmissione e in ricezione della ceramica con e senza backing
+% Calcolo l'impedenza acustica della ceramica e dei restanti componenti
+ZoD = areaFaccia * z_piezo;
+ZB = areaFaccia*zB;
+Z1 = areaFaccia*z1;
+Z2 = areaFaccia*z2;
+Zel = 1e+06;
+
+% Calcolo la matrice A(3x3)(indipendente rispetto alle impedenze dei materiali 
+% presenti sulle porte) e B(2x2) senza Backing e con l'aggiunta del Backing
+A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);
+B_without_backing = calcolaMatriceB(A, Z1);
+B_with_backing = calcolaMatriceB(A, ZB);
+
+[Zin_without_backing, FTT_without_backing, FTR_without_backing] = calcolaFunzioniDiTrasferimento(B_without_backing, Z2, Zel);
+[Zin_with_backing, FTT_with_backing, FTR_with_backing] = calcolaFunzioniDiTrasferimento(B_with_backing, Z2, Zel);
+
+figure(1);
+stampaGrafici(f, Zin_without_backing{1}, Zin_without_backing{2}, "Comparing Zin without and with Backing", 'blue', "Zin", "Zin", " without backing");
+hold on;
+stampaGrafici(f, Zin_with_backing{1}, Zin_with_backing{2}, "Comparing Zin without and with Backing", 'orange', "Zin", "Zin", " with backing");
+
+figure(2);
+stampaGrafici(f, FTT_without_backing{1}, FTT_without_backing{2}, "Comparing TTF without and with Backing", 'blue', "TTF", "TTF", " without backing");
+hold on;
+stampaGrafici(f, FTT_with_backing{1}, FTT_with_backing{2}, "Comparing TTF without and with Backing", 'orange', "TTF", "TTF", " with backing");
+
+figure(3)
+stampaGrafici(f, FTR_without_backing{1}, FTR_without_backing{2}, "Comparing RTF without and with Backing", 'blue', "RTF", "RTF", " without backing");
+hold on;
+stampaGrafici(f, FTR_with_backing{1}, FTR_with_backing{2}, "Comparing RTF without and with Backing", 'orange', "RTF", "RTF", " with backing");
+
+%% Funzione di trasferimento in trasmissione e in ricezione della ceramica con backing e plate
+ZoP = areaFaccia * z_plate;
+
+% La frequenza ha cui si ha il matching si indica con f0 e come detto nelle
+% slide è la frequenza in cui la FTT è massima
+[~, index] = max(FTT_with_backing{1});
+f0 = f(index);
+
+lambda_plate = v_plate / f0;
+l_plate = lambda_plate / 4;
+k_plate = omega ./ v_plate;
+
+% La matrice M sostituisce la matrice B
+M11 = ZoP ./ ( 1i .* tan(k_plate .* l_plate) );
+M12 = ZoP ./ ( 1i .* sin(k_plate .* l_plate) );
+M21 = M12;
+M22 = M11;
+
+Z = M11 - ( (M12 .^ 2) ./ (Z2 + M11) );
+
+% TODO: Capire se è corretto passarci B secondo me dovrei passarci M
+[Zin_without_backing_with_plate, ~, ~]   = calcolaFunzioniDiTrasferimento(B, Z, Zel);
+[Zin_with_backing_with_plate, ~, ~] = calcolaFunzioniDiTrasferimento(B_B, Z, Zel);
+
+% figure(3)
+% stampaGrafici(f, Zin{1}, Zin{2},'Zin Backing', 'blue');
+% hold on;
+% Grafico(f, Zin_B{1}, Zin_B{2},'Zin Backing', 'orange');
+% legend('without backing', 'with backing');
+% 
+% TTF = ( 1 ./ ( ( ( M11 + ( M11 .^ 2 ./ Z2 ) ) ./ M12 ) - ( M12 ./ Z2 ) ) ) .* ( ( Z .* B{2} ) ./ ( B{3} .* ( B{1} + Z ) - ( B{2} .^ 2 ) ) );
+% [moduloFTT, faseFTT] = calcolaModuloEFase(FTT);
+% 
+% TTF_b = (1./(((M11+(M11.^2./Z2))./M12)-(M12./Z2))).*((Z.*B_b{2})./(B_b{3}.*(B_b{1}+Z)-(B_b{2}.^2)));
+% [TTF_modulo_b, TTF_fase_b] = conv_i(TTF_b);
+% 
+% figure(4)
+% Grafico(f,TTF_modulo, TTF_fase,'TTF Backing', 'blue');
+% hold on;
+% Grafico(f, TTF_modulo_b, TTF_fase_b, 'TTF Backing', 'orange');
+% legend('without backing', 'with backing');
+
+% % Calcola il valore massimo dell'ampiezza
+% A_max = max(TTF_modulo);
+% A_max_b = max(TTF_modulo_b);
+% 
+% % Calcola il livello -3 dB
+% A_3dB = A_max -3;
+% A_6dB = A_max -6;
+% 
+% A_3dB_b = A_max_b -3;
+% A_6dB_b = A_max_b -6;
+% 
+% % Trova le frequenze a cui l'ampiezza è prossima a A_3dB
+% indices_3db = find(TTF_modulo >= A_3dB);
+% indices_6db = find(TTF_modulo >= A_6dB);
+% 
+% indices_3db_b = find(TTF_modulo_b >= A_3dB_b);
+% indices_6db_b = find(TTF_modulo_b >= A_6dB_b);
+% 
+% % Limite inferiore e superiore della banda a -3 dB
+% f_low_3dB = f(indices_3db(1));
+% f_high_3dB = f(indices_3db(end));
+% f_low_6dB = f(indices_6db(1));
+% f_high_6dB = f(indices_6db(end));
+% 
+% f_low_3dB_b = f(indices_3db_b(1));
+% f_high_3dB_b = f(indices_3db_b(end));
+% f_low_6dB_b = f(indices_6db_b(1));
+% f_high_6dB_b = f(indices_6db_b(end));
+% 
+% fc_3dB = (f_low_3dB + f_high_3dB)/2;
+% fc_6dB = (f_low_6dB + f_high_6dB)/2;
+% 
+% fc_3dB_b = (f_low_3dB_b + f_high_3dB_b)/2;
+% fc_6dB_b = (f_low_6dB_b + f_high_6dB_b)/2;
+% 
+% fractional_bandwidth_3dB = ((f_high_3dB - f_low_3dB)/fc_3dB)*100;
+% fractional_bandwidth_6dB = ((f_high_6dB - f_low_6dB)/fc_6dB)*100;
+% 
+% fractional_bandwidth_3dB_b = ((f_high_3dB_b - f_low_3dB_b)/fc_3dB_b)*100;
+% fractional_bandwidth_6dB_b = ((f_high_6dB_b - f_low_6dB_b)/fc_6dB_b)*100;
+% 
+% % Calcola la larghezza di banda
+% fprintf('Fractional bandwidth at -3dB without backing %0.3f%%\n', fractional_bandwidth_3dB);
+% fprintf('Fractional bandwidth at -6dB without backing %0.3f%%\n', fractional_bandwidth_6dB);
+% fprintf('Fractional bandwidth at -3dB with backing %0.3f%%\n', fractional_bandwidth_3dB_b);
+% fprintf('Fractional bandwidth at -6dB with backing %0.3f%%\n', fractional_bandwidth_6dB_b);
+% 
+% plot(f_low_3dB./1e+06,TTF_modulo(indices_3db(1)),'o', 'color', '#4DBEEE', 'HandleVisibility','off');
+% plot(f_high_3dB./1e+06,TTF_modulo(indices_3db(end)),'o', 'color', '#4DBEEE', 'DisplayName','bandwidth at -3dB');
+% plot(f_low_6dB./1e+06,TTF_modulo(indices_6db(1)),'o', 'color', 'blue', 'HandleVisibility','off');
+% plot(f_high_6dB./1e+06,TTF_modulo(indices_6db(end)),'o', 'color', 'blue', 'DisplayName','bandwidth at -6dB');
+% 
+% plot(f_low_3dB_b./1e+06,TTF_modulo_b(indices_3db_b(1)),'o', 'color', '#EDB120', 'HandleVisibility','off');
+% plot(f_high_3dB_b./1e+06,TTF_modulo_b(indices_3db_b(end)),'o', 'color', '#EDB120', 'DisplayName','bandwidth at -3dB');
+% plot(f_low_6dB_b./1e+06,TTF_modulo_b(indices_6db_b(1)),'o', 'color', 'red', 'HandleVisibility','off');
+% plot(f_high_6dB_b./1e+06,TTF_modulo_b(indices_6db_b(end)),'o', 'color', 'red', 'DisplayName','bandwidth at -6dB');
+% 
+% l_plate_values = (l_plate/3):1e-06:(3*l_plate);
+% max_fractional_bandwidth = 0; 
+% best_l_plate = 0; 
+% 
+% for i = 1:length(l_plate_values)
+%     l_plate = l_plate_values(i);
+% 
+%     M11 = (ZoP./(1i.*tan((omega./v_plate).*l_plate)));
+%     M12 = (ZoP./(1i.*sin((omega./v_plate).*l_plate)));
+% 
+%     Z = M11-((M12.^2)./(Z2.*(1+(M11./Z2))));
+% 
+%     TTF_b = (1./(((M11+(M11.^2./Z2))./M12)-(M12./Z2))).*((Z.*B_b{2})./(B_b{3}.*(B_b{1}+Z)-(B_b{2}.^2)));
+%     [TTF_modulo_b, ~] = conv_i(TTF_b);
+% 
+%     % Calcola il valore massimo dell'ampiezza
+%     A_max_b = max(TTF_modulo_b);
+% 
+%     % Calcola il livello -3 dB
+%     A_3dB_b = A_max_b - 3; 
+% 
+%     % Trova le frequenze a cui l'ampiezza è prossima a A_3dB
+%     indices_3db_b = find(TTF_modulo_b >= A_3dB_b);
+% 
+%     % Limite inferiore e superiore della banda a -3 dB
+%     f_low_3dB_b = f(indices_3db_b(1));
+%     f_high_3dB_b = f(indices_3db_b(end));
+% 
+%     fc_3dB_b = (f_low_3dB_b + f_high_3dB_b)/2;
+% 
+%     fractional_bandwidth_3dB_b = ((f_high_3dB_b - f_low_3dB_b)/fc_3dB_b)*100;
+% 
+%     if fractional_bandwidth_3dB_b > max_fractional_bandwidth
+%         %Aggiorna i valori massimi e salva l'indice dell'iterazione
+%         max_fractional_bandwidth = fractional_bandwidth_3dB_b;
+%         best_l_plate = l_plate;
+%         best_iteration = i;
+%     end
+% 
+% end
+% 
+% %Output del risultato ottimale
+% fprintf('La lunghezza ottimale l_plate che massimizza la larghezza di banda frazionaria a -3 dB è: %0.4f\n', best_l_plate);
+% fprintf('La larghezza di banda frazionaria a -3 dB ottimale è: %0.3f%%\n', max_fractional_bandwidth);
+% 
+% l_plate = best_l_plate;
+% 
+% M11 = (ZoP./(1i.*tan((omega./v_plate).*l_plate)));
+% M12 = (ZoP./(1i.*sin((omega./v_plate).*l_plate)));
+% 
+% Z = M11-((M12.^2)./(Z2.*(1+(M11./Z2))));
+% 
+% [Zin_b, ~, ~, ~] = CalculateFunctions(B_b, Z, Zel, 0);
+% [Zin, ~, ~, ~] = CalculateFunctions(B, Z, Zel, 0);
+% 
+% figure(5)
+% Grafico(f, Zin{1}, Zin{2},'Z_i_n Backing with l-correction', 'blue');
+% hold on;
+% Grafico(f, Zin_b{1}, Zin_b{2},'Z_i_n Backing with l-correction', 'orange');
+% legend('without backing', 'with backing');
+% 
+% TTF = (1./(((M11+(M11.^2./Z2))./M12)-(M12./Z2))).*((Z.*B{2})./(B{3}.*(B{1}+Z)-(B{2}.^2)));
+% [TTF_modulo, TTF_fase] = conv_i(TTF);
+% TTF_b = (1./(((M11+(M11.^2./Z2))./M12)-(M12./Z2))).*((Z.*B_b{2})./(B_b{3}.*(B_b{1}+Z)-(B_b{2}.^2)));
+% [TTF_modulo_b, TTF_fase_b] = conv_i(TTF_b);
+% 
+% figure(6)
+% Grafico(f,TTF_modulo, TTF_fase,'TTF Backing with l-correction', 'blue');
+% hold on;
+% Grafico(f, TTF_modulo_b, TTF_fase_b, 'TTF Backing with l-correction', 'orange');
+% legend('without backing', 'with backing');
+% 
+% % Calcola il valore massimo dell'ampiezza
+% A_max = max(TTF_modulo);
+% A_max_b = max(TTF_modulo_b);
+% 
+% % Calcola il livello -3 dB
+% A_3dB = A_max -3;
+% A_6dB = A_max -6;
+% 
+% A_3dB_b = A_max_b -3;
+% A_6dB_b = A_max_b -6;
+% 
+% % Trova le frequenze a cui l'ampiezza è prossima a A_3dB
+% indices_3db = find(TTF_modulo >= A_3dB);
+% indices_6db = find(TTF_modulo >= A_6dB);
+% 
+% indices_3db_b = find(TTF_modulo_b >= A_3dB_b);
+% indices_6db_b = find(TTF_modulo_b >= A_6dB_b);
+% 
+% % Limite inferiore e superiore della banda a -3 dB
+% f_low_3dB = f(indices_3db(1));
+% f_high_3dB = f(indices_3db(end));
+% f_low_6dB = f(indices_6db(1));
+% f_high_6dB = f(indices_6db(end));
+% 
+% f_low_3dB_b = f(indices_3db_b(1));
+% f_high_3dB_b = f(indices_3db_b(end));
+% f_low_6dB_b = f(indices_6db_b(1));
+% f_high_6dB_b = f(indices_6db_b(end));
+% 
+% fc_3dB = (f_low_3dB + f_high_3dB)/2;
+% fc_6dB = (f_low_6dB + f_high_6dB)/2;
+% 
+% fc_3dB_b = (f_low_3dB_b + f_high_3dB_b)/2;
+% fc_6dB_b = (f_low_6dB_b + f_high_6dB_b)/2;
+% 
+% fractional_bandwidth_3dB = ((f_high_3dB - f_low_3dB)/fc_3dB)*100;
+% fractional_bandwidth_6dB = ((f_high_6dB - f_low_6dB)/fc_6dB)*100;
+% 
+% fractional_bandwidth_3dB_b = ((f_high_3dB_b - f_low_3dB_b)/fc_3dB_b)*100;
+% fractional_bandwidth_6dB_b = ((f_high_6dB_b - f_low_6dB_b)/fc_6dB_b)*100;
+% 
+% % Calcola la larghezza di banda
+% fprintf('Fractional bandwidth at -3dB without backing %0.3f%%\n', fractional_bandwidth_3dB);
+% fprintf('Fractional bandwidth at -6dB without backing %0.3f%%\n', fractional_bandwidth_6dB);
+% fprintf('Fractional bandwidth at -3dB with backing %0.3f%%\n', fractional_bandwidth_3dB_b);
+% fprintf('Fractional bandwidth at -6dB with backing %0.3f%%\n', fractional_bandwidth_6dB_b);
+% 
+% plot(f_low_3dB./1e+06,TTF_modulo(indices_3db(1)),'o', 'color', '#4DBEEE', 'HandleVisibility','off');
+% plot(f_high_3dB./1e+06,TTF_modulo(indices_3db(end)),'o', 'color', '#4DBEEE', 'DisplayName','bandwidth at -3dB');
+% plot(f_low_6dB./1e+06,TTF_modulo(indices_6db(1)),'o', 'color', 'blue', 'HandleVisibility','off');
+% plot(f_high_6dB./1e+06,TTF_modulo(indices_6db(end)),'o', 'color', 'blue', 'DisplayName','bandwidth at -6dB');
+% 
+% plot(f_low_3dB_b./1e+06,TTF_modulo_b(indices_3db_b(1)),'o', 'color', '#EDB120', 'HandleVisibility','off');
+% plot(f_high_3dB_b./1e+06,TTF_modulo_b(indices_3db_b(end)),'o', 'color', '#EDB120', 'DisplayName','bandwidth at -3dB');
+% plot(f_low_6dB_b./1e+06,TTF_modulo_b(indices_6db_b(1)),'o', 'color', 'red', 'HandleVisibility','off');
+% plot(f_high_6dB_b./1e+06,TTF_modulo_b(indices_6db_b(end)),'o', 'color', 'red', 'DisplayName','bandwidth at -6dB');
