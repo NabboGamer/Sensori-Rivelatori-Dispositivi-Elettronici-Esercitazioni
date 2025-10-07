@@ -21,7 +21,7 @@ z2 = specificAcousticImpedancePicker(2);
 Z1 = areaFaccia * z1;
 Z2 = areaFaccia * z2;
 
-% Matrici A(3x3) e B (2x2)
+% Matrici A(3x3) e B(2x2)
 A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);
 B_side1 = calcolaMatriceB(A, Z2); % la porta(o lato) 1 "vede" il carico Z2, B descrive come la ceramica propaga il segnale verso la porta in cui è applicato Z2
 B_side2 = calcolaMatriceB(A, Z1); % la porta(o lato) 2 "vede" il carico Z1
