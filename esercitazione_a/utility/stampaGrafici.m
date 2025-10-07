@@ -31,26 +31,20 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     modifiedLegendString = '|' + legendString + '|' + additionalDescriptions;
     modifiedyAxisString = '|' + yAxisString + '|';
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing'))
-        semilogy(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
+        % Quando il modulo è in kΩ (non in dB) il dato non è logaritmico ma può variare su più ordini di grandezza; 
+        % per leggerlo meglio uso una scala logaritmica sull'asse Y
+        loglog(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
         ylabel(ax1, modifiedyAxisString + ' [kΩ]');
     else
-        plot(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
+        semilogx(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
         ylabel(ax1, modifiedyAxisString + ' [dB]');
     end
     xlabel(ax1,'Frequency [kHz]');
     grid on;
     hold on;
-   
-    index_min = (modulo == min(modulo));
-    index_max = (modulo == max(modulo));
-
-    % Ottengo i limiti degli assi
-    xLimits = xlim;
-    yLimits = ylim;
     
-    % Calcolo uno spostamento proporzionale
-    xOffset = (xLimits(2) - xLimits(1)) * 0.01; % Spostamento del 1% rispetto alla larghezza dell'asse X
-    yOffset = (yLimits(2) - yLimits(1)) * 0.01; % Spostamento del 1% rispetto all'altezza dell'asse Y
+    [~, index_min] = min(modulo);
+    [~, index_max] = max(modulo);
    
     if (contains(var,'Zin: input impedance'))
         
@@ -83,9 +77,8 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
         plot(f(1,index_max), modulo(index_max), 'black.','HandleVisibility','off');
         % Viene aggiunta un'etichetta vicino al punto massimo, che include: 
         % il modulo massimo in kΩ e la frequenza corrispondente in kHz.
-        safeText(ax1, f(1,index_max), modulo(index_max), ...
-                 strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [kΩ]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]"), ...
-                 0.5, 0.0);
+        labelString = strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), [newline 'Frequency: '], " ", string(f(1,index_max)));
+        safeText(ax1, f(1,index_max), modulo(index_max), labelString, 0.02, 0.02);
 
         % Disegno la linea verticale
         xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
@@ -93,10 +86,9 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
         xmax.LabelHorizontalAlignment = 'left';
    
         % Disegno il minimo 
-        plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off'); 
-        safeText(ax1, f(1,index_min), modulo(index_min), ...
-                 strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), " [kΩ]", [newline 'Frequency: '], " ", string(f(1,index_min)), " [kHz]"), ...
-                 0.5, 0.0);
+        plot(f(1,index_min), modulo(index_min), 'black.', 'HandleVisibility','off');
+        labelString = strcat("Min", [newline 'Module: '], " ", string(modulo(index_min)), [newline 'Frequency: '], " ", string(f(1,index_min)));
+        safeText(ax1, f(1,index_min), modulo(index_min), labelString, 0.02, -0.02);
 
         % Disegno la linea verticale
         xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
@@ -110,9 +102,8 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
             contains(var,'Comparing TTF without and with Backing') || contains(var,'Comparing RTF without and with Backing'))
 
         plot(f(1,index_max), modulo(index_max), 'black.','HandleVisibility','off');
-        safeText(ax1, f(1,index_max), modulo(index_max), ...
-                 strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), " [dB]", [newline 'Frequency: '], " ", string(f(1,index_max)), " [kHz]"), ...
-                 0.5, 0.0);
+        labelString = strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), [newline 'Frequency: '], " ", string(f(1,index_max)));
+        safeText(ax1, f(1,index_max), modulo(index_max), labelString, 0.02, 0.02);
 
         xmax = xline(f(1,index_max),'-.', '','Color','black', 'HandleVisibility', 'off');
         xmax.LabelVerticalAlignment = 'bottom';
@@ -121,12 +112,13 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
 
     % Aggiungo la legenda dinamicamente
     legend(ax1, 'Location', 'northeast');
+    set(ax1,'XMinorTick','on','YMinorTick','on');
     
     % Secondo subplot: fase
     ax2 = subplot(2,1,2);
     modifiedLegendString = 'Arg(' + legendString + ')' + additionalDescriptions;
     modifiedyAxisString = 'Arg(' + yAxisString + ')';
-    plot(f, fase, "Color", color, 'DisplayName', modifiedLegendString);
+    semilogx(f, fase, "Color", color, 'DisplayName', modifiedLegendString);
     ylabel(ax2, modifiedyAxisString + ' [deg]');
     xlabel(ax2, 'Frequency [kHz]');
     grid on;
@@ -134,6 +126,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     
     % Aggiungo la legenda dinamicamente
     legend(ax2, 'Location', 'northeast');
+    set(ax2,'XMinorTick','on','YMinorTick','on');
 
     % Imposto titolo complessivo del grafico
     sgtitle(var)
