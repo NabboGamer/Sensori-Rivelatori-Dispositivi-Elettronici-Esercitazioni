@@ -28,8 +28,9 @@ B_side2 = calcolaMatriceB(A, Z1); % la porta(o lato) 2 "vede" il carico Z1
 % Prelevo il numero di coppie di ceramiche desiderate
 numberOfCeramicPairs = numberOfCeramicPairsPicker();
 
-% Calcolo la frazione dello spessore e della capacità
-% statica che deve avere ciascuna coppia di ceramiche
+% Calcolo la frazione dello spessore che deve avere ciascuna coppia di ceramiche 
+% questo ovviamente per la sua definizione influenza anche la capacità
+% statica (ricorda ha lo spessore new_l al denominatore)
 new_l = l / (2 ^ numberOfCeramicPairs);
 new_C0 = (2 ^ numberOfCeramicPairs) * C0;
 
@@ -39,8 +40,8 @@ A_couple = calcolaMatriceA(ZoD, omega, v, new_l, h33, new_C0);
 
 % Accoppio le ceramiche
 G = calcolaMatriceG(A_couple, A_couple);
-G_multiple = G;
 
+G_multiple = G;
 if (numberOfCeramicPairs > 1)
     for n = 1 : (numberOfCeramicPairs-1)
         G_multiple = calcolaMatriceG(G_multiple, G_multiple);
