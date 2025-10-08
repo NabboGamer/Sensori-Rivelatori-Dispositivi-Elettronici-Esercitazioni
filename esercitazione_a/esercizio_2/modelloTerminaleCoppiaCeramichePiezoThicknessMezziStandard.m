@@ -44,8 +44,8 @@ A_couple = calcolaMatriceA(ZoD, omega, v, new_l, h33, new_C0);
 
 % Accoppio le ceramiche
 G = calcolaMatriceG(A_couple, A_couple);
-G_multiple = G;
 
+G_multiple = G;
 if (numberOfCeramicPairs > 1)
     for n = 1 : (numberOfCeramicPairs-1)
         G_multiple = calcolaMatriceG(G_multiple, G_multiple);
@@ -112,8 +112,8 @@ A_couple = calcolaMatriceA(ZoD, omega, v, new_l, h33, new_C0);
 
 % Accoppio le ceramiche
 G = calcolaMatriceG(A_couple, A_couple);
-G_multiple = G;
 
+G_multiple = G;
 if (numberOfCeramicPairs > 1)
     for n = 1 : (numberOfCeramicPairs-1)
         G_multiple = calcolaMatriceG(G_multiple, G_multiple);
