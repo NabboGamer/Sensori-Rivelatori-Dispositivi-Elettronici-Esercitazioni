@@ -48,7 +48,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
    
     if (contains(var,'Zin: input impedance'))
         
-        % Traccio una linea verticale tratteggiata ('-.) alla frequenza 
+        % Traccio una linea verticale tratteggiata (-.) alla frequenza 
         % corrispondente al 50-esimo elemento di f, indicandola come flow.
         % flow sarebbe una frequenza bassa rispetto a fr dove la ceramica 
         % si comporta come un condensatore

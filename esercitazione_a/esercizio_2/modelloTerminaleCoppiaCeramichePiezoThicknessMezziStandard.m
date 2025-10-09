@@ -2,7 +2,7 @@
 % nel modo tickness a una coppia di ceramiche piezoelettriche.
 % Rispetto allo script modelloTerminaleCoppiaCeramichePiezoThickness qui
 % non viene permessa la selezione all'utente dei mezzi di contatto con i 
-% due lati della ceramica di modo da fare uin confronto con i mezzi 
+% due lati della ceramica di modo da fare un confronto con i mezzi 
 % standard ovvero ARIA-ARIA e ACQUA-ACQUA.
 
 addpath('../utility/');
@@ -156,11 +156,11 @@ stampaGrafici(f, FTR_couple_side1{1}, FTR_couple_side1{2}, var_FTR, 'orange', "R
 hold on;
 
 % Calcolo Keff^2
-index_min = (Zin_side1{1} == min(Zin_side1{1}));
-index_max = (Zin_side1{1} == max(Zin_side1{1}));
-fmin = f(1,index_min);
-fmax = f(1,index_max);
-Keff = ((fmax^2) - (fmin^2))/(fmax^2);
-cprintf('Comments', "\n");
-cprintf('Comments', "Risultato calcolo fattore di accoppiamento efficace:\n");
-cprintf('Comments', "Keff^2 = " + string(Keff) + "\n");
+% index_min = (Zin_side1{1} == min(Zin_side1{1}));
+% index_max = (Zin_side1{1} == max(Zin_side1{1}));
+% fmin = f(1,index_min);
+% fmax = f(1,index_max);
+% Keff = ((fmax^2) - (fmin^2))/(fmax^2);
+% cprintf('Comments', "\n");
+% cprintf('Comments', "Risultato calcolo fattore di accoppiamento efficace:\n");
+% cprintf('Comments', "Keff^2 = " + string(Keff) + "\n");
