@@ -1,6 +1,7 @@
 function [rho, c33, h33, e33, beta33, v] = elementPicker()
     % ELEMENTPICKER permette di acquisire le costanti dielettriche e alcuni parametri relativi ad una specifica ceramica piezoelettrica
     
+    % I seguenti valori sono stati prelevati dal foglio Excell "Ferroperm MatData".
     cprintf('Text',"\n");
     cprintf('Text', "Inserire il codice numerico associato alla ceramica piezoelettrica: ");
     var = input('pz=');

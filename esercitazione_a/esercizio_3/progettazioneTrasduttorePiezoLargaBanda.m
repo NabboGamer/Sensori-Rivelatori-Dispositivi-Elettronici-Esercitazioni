@@ -4,33 +4,22 @@
 addpath('../utility/');
 evalin('base', 'clear'), close all; clc;
 
-[areaFaccia, l, rho, ~, h33, ~, beta33, v, f, omega, theta, C0] = ceramicPicker();
+[areaFaccia, l, rho, ~, h33, ~, ~, v, f, omega, ~, C0] = ceramicPicker();
 
-% Calcolo l'impedenza acustica specifica della ceramica e del piatto
-% (utilizzando la formula per massimizzare la banda passante)
+% Calcolo l'impedenza acustica specifica della ceramica
+z1 = 400;   % Aria
+zB = 7e+06; % Il Backing è fatto solitamente di materiali come il tungsteno-epossidico che ha una impedenza acustica specifica tra [5,10] MRayl
 z_piezo = rho * v; % N.B.: Usare PZ27 per questa applicazione
 z_load = 1.5e+06;  % Acqua
-z_plate = (2 * (z_load^2) * z_piezo ) ^ (1/3);
-zB = 7e+06; % Il Backing è fatto solitamente di materiali come il tungsteno-epossidico che ha una impedenza acustica specifica di [5,10] MRayl
-z1 = 400;   % Aria
 z2 = z_load;
 
-% Usando come carico a sinistra l'aria e come piezo il PZ27 ottengo una z_plate 
-% circa di 5.3e+06. Osservando la tabella 4 nel paper "A Review of Acoustic 
-% Impedance Matching Techniques for Piezoelectric Sensors and Transducers" 
-% ricavo che il materiale E-Solder 3022 ha l'impedenza molto vicina a
-% quest'ultima (5.92e+06) quindi decido di utilizzarlo per la creazione del
-% piatto. Di conseguenza prelevo dalla tabella la densità di tale materiale.
-rho_plate = 1850; % Kg/m^3
-v_plate = z_plate/rho_plate;
-
 %% Funzione di trasferimento in trasmissione e in ricezione della ceramica con e senza backing
-% Calcolo l'impedenza acustica della ceramica e dei restanti componenti
-ZoD = areaFaccia * z_piezo;
-ZB = areaFaccia*zB;
-Z1 = areaFaccia*z1;
-Z2 = areaFaccia*z2;
+% Calcolo l'impedenza acustica della ceramica
 Zel = 1e+06;
+Z1 = areaFaccia*z1;
+ZB = areaFaccia*zB;
+ZoD = areaFaccia * z_piezo;
+Z2 = areaFaccia*z2;
 
 % Calcolo la matrice A(3x3)(indipendente rispetto alle impedenze dei materiali 
 % presenti sulle porte) e B(2x2) senza Backing e con l'aggiunta del Backing
@@ -56,19 +45,43 @@ stampaGrafici(f, FTR_without_backing{1}, FTR_without_backing{2}, "Comparing RTF 
 hold on;
 stampaGrafici(f, FTR_with_backing{1}, FTR_with_backing{2}, "Comparing RTF without and with Backing", 'orange', "RTF", "RTF", " with backing");
 
-%% Funzione di trasferimento in trasmissione e in ricezione della ceramica con backing e plate
+%% Funzione di trasferimento in trasmissione e in ricezione della ceramica con backing e matching plate
+
+% Calcolo l'impedenza acustica specifica della del piatto
+% (utilizzando la formula per massimizzare la banda passante)
+% 
+% Usando come piezo il PZ27 e come carico a destra l'acqua ottengo una z_plate
+% circa di 5.3e+06. Osservando la tabella 4 nel paper "A Review of Acoustic 
+% Impedance Matching Techniques for Piezoelectric Sensors and Transducers" 
+% ricavo che il materiale E-Solder 3022 ha l'impedenza molto vicina a
+% quest'ultima (5.92e+06) quindi decido di utilizzarlo per la creazione del
+% piatto. Di conseguenza prelevo dalla tabella la densità di tale materiale.
+z_plate = (2 * (z_load^2) * z_piezo ) ^ (1/3);
+rho_plate = 1850; % Kg/m^3
+v_plate = z_plate/rho_plate; % Ricavata invertendo la formula dell'impedenza acustica specifica del materiale
+
+% Calcolo l'impedenza acustica del piatto
 ZoP = areaFaccia * z_plate;
 
-% La frequenza ha cui si ha il matching si indica con f0 e come detto nelle
+% La frequenza a cui si ha il matching si indica con f0 e come detto nelle
 % slide è la frequenza in cui la FTT è massima
 [~, index] = max(FTT_with_backing{1});
 f0 = f(index);
 
+% Quindi calcolo i parametri specifici del piatto
 lambda_plate = v_plate / f0;
 l_plate = lambda_plate / 4;
 k_plate = omega ./ v_plate;
 
-% La matrice M sostituisce la matrice B
+% A (3×3): modello elettromeccanico del solo piezo
+% [F1, F2, V]^T = A[v1, v2, I]^T
+% 
+% B (2×2): si ottiene dalla relazione precedente ricavando v1 dalla prima riga e sostituendolo nelle altre due 
+% [F2, V]^T = B[v2, I]^T
+% 
+% M (2×2): modello puramente meccanico di una piastra/layer interposto tra piezo e carico ZL, si ottiene dalla 
+%          prima relazione cancellando tutti i termini con h33(fattore di accoppiamento elettro-meccanico)
+% [F3, F4]^T = M[v3, v4]^T
 M11 = ZoP ./ ( 1i .* tan(k_plate .* l_plate) );
 M12 = ZoP ./ ( 1i .* sin(k_plate .* l_plate) );
 M21 = M12;
