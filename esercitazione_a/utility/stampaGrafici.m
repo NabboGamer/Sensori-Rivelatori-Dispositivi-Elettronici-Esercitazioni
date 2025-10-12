@@ -1,13 +1,19 @@
-function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, additionalDescriptions)
+function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, additionalDescriptions, legendTitle)
     % STAMAPAGRAFICI permette di stampare i diagrammi di Bode dati il vettore delle frequenze (f), il modulo (modulo) e la fase (fase) del segnale
     
     if nargin < 7
         yAxisString = legendString;
         additionalDescriptions = "";
+        legendTitle = "";
     end
 
     if nargin < 8
         additionalDescriptions = "";
+        legendTitle = "";
+    end
+
+    if nargin < 9
+        legendTitle = "";
     end
 
     if (color == "blue")
@@ -111,7 +117,8 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     end
 
     % Aggiungo la legenda dinamicamente
-    legend(ax1, 'Location', 'northeast');
+    lgd1 = legend(ax1, 'Location', 'northeast');
+    title(lgd1, legendTitle);
     set(ax1,'XMinorTick','on','YMinorTick','on');
     
     % Secondo subplot: fase
@@ -125,7 +132,8 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     hold on;
     
     % Aggiungo la legenda dinamicamente
-    legend(ax2, 'Location', 'northeast');
+    lgd2 = legend(ax2, 'Location', 'northeast');
+    title(lgd2, legendTitle);
     set(ax2,'XMinorTick','on','YMinorTick','on');
 
     % Imposto titolo complessivo del grafico

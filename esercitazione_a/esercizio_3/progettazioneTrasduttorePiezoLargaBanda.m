@@ -73,36 +73,28 @@ lambda_plate = v_plate / f0;
 l_plate = lambda_plate / 4;
 k_plate = omega ./ v_plate;
 
-% A (3×3): modello elettromeccanico del solo piezo
-% [F1, F2, V]^T = A[v1, v2, I]^T
-% 
-% B (2×2): piezo "ridotto" dopo aver fissato il lato sinistro, si ottiene 
-%          dalla relazione precedente ricavando v1 dalla prima riga e 
-%          sostituendolo nelle altre due 
-% [F2, V]^T = B[v2, I]^T
-% 
-% M (2×2): modello puramente meccanico di una piastra/layer interposto tra 
-%          piezo e carico ZL, si ottiene dalla prima relazione cancellando 
-%          tutti i termini con h33(fattore di accoppiamento elettro-meccanico)
-% [F3, F4]^T = M[v3, v4]^T
-M11 = ZoP ./ ( 1i .* tan(k_plate .* l_plate) );
-M12 = ZoP ./ ( 1i .* sin(k_plate .* l_plate) );
-M21 = M12;
-M22 = M11;
+% Calcolo matrice M
+M = calcolaMatriceM(ZoP, k_plate, l_plate);
 
-% ???Dimostrare questa formula???
-Z = M11 - ( (M12 .^ 2) ./ (Z2 + M11) );
+%--------------------------------------------------------------------------------%
+% Le dimostrazioni che portano alle formule successive(Zeq, FTT e FTR) non sono 
+% presenti nè nelle dispense nè nelle slide fornite dal prof.(in quest'ultime vi 
+% sono solo delle intuizioni) quindi le ho sviluppate a mano per intero. Tali
+% dimostrazioni sono presenti nel pdf "Modellazione teorica di un trasduttore 
+% elettromeccanico a larga banda".
 
-% ???TODO: Capire se è corretto passarci B secondo me dovrei passarci M???(NON CREDO PIÙ)
-[Zin_without_backing_with_plate, ~, ~]   = calcolaFunzioniDiTrasferimento(B, Z, Zel);
-[Zin_with_backing_with_plate, ~, ~] = calcolaFunzioniDiTrasferimento(B_B, Z, Zel);
+Zeq = M{1,1} - ( (M{1,2} .^ 2) ./ (Z2 + M{1,1}) );
 
-% figure(3)
-% stampaGrafici(f, Zin{1}, Zin{2},'Zin Backing', 'blue');
-% hold on;
-% Grafico(f, Zin_B{1}, Zin_B{2},'Zin Backing', 'orange');
-% legend('without backing', 'with backing');
-% 
+[Zin_without_backing_with_plate, ~, ~]   = calcolaFunzioniDiTrasferimento(B_without_backing, Zeq, Zel);
+[Zin_with_backing_with_plate, ~, ~] = calcolaFunzioniDiTrasferimento(B_with_backing, Zeq, Zel);
+
+figure(4)
+l_plate_scaled = l_plate * 1e+03;
+legendTitle = strcat("Matching Plate of ", string(l_plate_scaled), " [mm]");
+stampaGrafici(f, Zin_without_backing_with_plate{1}, Zin_without_backing_with_plate{2}, "Comparing Zin without and with Backing adding the matching plate", 'blue', "Zin", "Zin", " without backing with plate", legendTitle);
+hold on;
+stampaGrafici(f, Zin_with_backing_with_plate{1}, Zin_with_backing_with_plate{2}, "Comparing Zin without and with Backing adding the matching plate", 'orange', "Zin", "Zin", " with backing with plate", legendTitle);
+
 % TTF = ( 1 ./ ( ( ( M11 + ( M11 .^ 2 ./ Z2 ) ) ./ M12 ) - ( M12 ./ Z2 ) ) ) .* ( ( Z .* B{2} ) ./ ( B{3} .* ( B{1} + Z ) - ( B{2} .^ 2 ) ) );
 % [moduloFTT, faseFTT] = calcolaModuloEFase(FTT);
 % 
