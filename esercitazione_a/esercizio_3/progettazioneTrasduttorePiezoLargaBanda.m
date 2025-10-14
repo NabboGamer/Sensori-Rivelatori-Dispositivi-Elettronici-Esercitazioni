@@ -4,6 +4,9 @@
 addpath('../utility/');
 evalin('base', 'clear'), close all; clc;
 
+%%% TODO: Forse dovrei estendere il range di frequenze osservate per questo
+% es, siccome in questo caso prendendo il solito intervallo centrato in fr
+% mi perdo alcune parti degli ultimi grafici
 [areaFaccia, l, rho, ~, h33, ~, ~, v, f, omega, ~, C0] = ceramicPicker();
 
 % Calcolo l'impedenza acustica specifica della ceramica
@@ -77,7 +80,7 @@ k_plate = omega ./ v_plate;
 M = calcolaMatriceM(ZoP, k_plate, l_plate);
 
 %--------------------------------------------------------------------------------%
-% Le dimostrazioni che portano alle formule successive(Zeq, FTT e FTR) non sono 
+% Le dimostrazioni che portano alle formule successive(Zeq, FTT) non sono 
 % presenti nè nelle dispense nè nelle slide fornite dal prof.(in quest'ultime vi 
 % sono solo delle intuizioni) quindi le ho sviluppate a mano per intero. Tali
 % dimostrazioni sono presenti nel pdf "Modellazione teorica di un trasduttore 
@@ -85,27 +88,32 @@ M = calcolaMatriceM(ZoP, k_plate, l_plate);
 
 Zeq = M{1,1} - ( (M{1,2} .^ 2) ./ (Z2 + M{1,1}) );
 
-[Zin_without_backing_with_plate, ~, ~]   = calcolaFunzioniDiTrasferimento(B_without_backing, Zeq, Zel);
-[Zin_with_backing_with_plate, ~, ~] = calcolaFunzioniDiTrasferimento(B_with_backing, Zeq, Zel);
+[Zin_without_backing_with_plate, FTT_without_backing_pzt, ~]   = calcolaFunzioniDiTrasferimento(B_without_backing, Zeq, Zel);
+[Zin_with_backing_with_plate, FTT_with_backing_pzt, ~] = calcolaFunzioniDiTrasferimento(B_with_backing, Zeq, Zel);
+% Trasformo in vettori di numeri complessi per effettuare più comodamente il calcolo successivo
+FTT_without_backing_pzt = FTT_without_backing_pzt{1} .* exp(1j*deg2rad(FTT_without_backing_pzt{2}));
+FTT_with_backing_pzt = FTT_with_backing_pzt{1} .* exp(1j*deg2rad(FTT_with_backing_pzt{2}));
 
-figure(4)
+FTT_plate = ( M{1,2} .* Z2 ) ./ ( M{1,1}.*Z2 + M{1,1}.^2 - M{1,2}.^2);
+
+FTT_without_backing_with_plate = FTT_without_backing_pzt .* FTT_plate;
+FTT_with_backing_with_plate = FTT_with_backing_pzt .* FTT_plate;
+
+[moduloFTT_without_backing_with_plate, faseFTT_without_backing_with_plate] = calcolaModuloEFase(FTT_without_backing_with_plate, true, true);
+FTT_without_backing_with_plate = {moduloFTT_without_backing_with_plate, faseFTT_without_backing_with_plate};
+[moduloFTT_with_backing_with_plate, faseFTT_with_backing_with_plate] = calcolaModuloEFase(FTT_with_backing_with_plate, true, true);
+FTT_with_backing_with_plate = {moduloFTT_with_backing_with_plate, faseFTT_with_backing_with_plate};
+
 l_plate_scaled = l_plate * 1e+03;
 legendTitle = strcat("Matching Plate of ", string(l_plate_scaled), " [mm]");
+figure(4)
 stampaGrafici(f, Zin_without_backing_with_plate{1}, Zin_without_backing_with_plate{2}, "Comparing Zin without and with Backing adding the matching plate", 'blue', "Zin", "Zin", " without backing with plate", legendTitle);
 hold on;
 stampaGrafici(f, Zin_with_backing_with_plate{1}, Zin_with_backing_with_plate{2}, "Comparing Zin without and with Backing adding the matching plate", 'orange', "Zin", "Zin", " with backing with plate", legendTitle);
-
-% TTF = ( 1 ./ ( ( ( M11 + ( M11 .^ 2 ./ Z2 ) ) ./ M12 ) - ( M12 ./ Z2 ) ) ) .* ( ( Z .* B{2} ) ./ ( B{3} .* ( B{1} + Z ) - ( B{2} .^ 2 ) ) );
-% [moduloFTT, faseFTT] = calcolaModuloEFase(FTT);
-% 
-% TTF_b = (1./(((M11+(M11.^2./Z2))./M12)-(M12./Z2))).*((Z.*B_b{2})./(B_b{3}.*(B_b{1}+Z)-(B_b{2}.^2)));
-% [TTF_modulo_b, TTF_fase_b] = conv_i(TTF_b);
-% 
-% figure(4)
-% Grafico(f,TTF_modulo, TTF_fase,'TTF Backing', 'blue');
-% hold on;
-% Grafico(f, TTF_modulo_b, TTF_fase_b, 'TTF Backing', 'orange');
-% legend('without backing', 'with backing');
+figure(5)
+stampaGrafici(f, FTT_without_backing_with_plate{1}, FTT_without_backing_with_plate{2}, "Comparing TTF without and with Backing adding the matching plate", 'blue', "TTF", "TTF", " without backing with plate", legendTitle);
+hold on;
+stampaGrafici(f, FTT_with_backing_with_plate{1}, FTT_with_backing_with_plate{2}, "Comparing TTF without and with Backing adding the matching plate", 'orange', "TTF", "TTF", " with backing with plate", legendTitle);
 
 % % Calcola il valore massimo dell'ampiezza
 % A_max = max(TTF_modulo);
