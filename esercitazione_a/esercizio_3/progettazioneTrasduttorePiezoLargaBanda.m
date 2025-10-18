@@ -112,63 +112,70 @@ stampaGrafici(f, FTT_without_backing_with_plate{1}, FTT_without_backing_with_pla
 hold on;
 stampaGrafici(f, FTT_with_backing_with_plate{1}, FTT_with_backing_with_plate{2}, "Comparing TTF without and with Backing adding the matching plate", 'orange', "TTF", "TTF", " with backing with plate", legendTitle);
 
-% % Calcola il valore massimo dell'ampiezza
-% A_max = max(TTF_modulo);
-% A_max_b = max(TTF_modulo_b);
-% 
-% % Calcola il livello -3 dB
-% A_3dB = A_max -3;
-% A_6dB = A_max -6;
-% 
-% A_3dB_b = A_max_b -3;
-% A_6dB_b = A_max_b -6;
-% 
-% % Trova le frequenze a cui l'ampiezza è prossima a A_3dB
-% indices_3db = find(TTF_modulo >= A_3dB);
-% indices_6db = find(TTF_modulo >= A_6dB);
-% 
-% indices_3db_b = find(TTF_modulo_b >= A_3dB_b);
-% indices_6db_b = find(TTF_modulo_b >= A_6dB_b);
-% 
-% % Limite inferiore e superiore della banda a -3 dB
-% f_low_3dB = f(indices_3db(1));
-% f_high_3dB = f(indices_3db(end));
-% f_low_6dB = f(indices_6db(1));
-% f_high_6dB = f(indices_6db(end));
-% 
-% f_low_3dB_b = f(indices_3db_b(1));
-% f_high_3dB_b = f(indices_3db_b(end));
-% f_low_6dB_b = f(indices_6db_b(1));
-% f_high_6dB_b = f(indices_6db_b(end));
-% 
-% fc_3dB = (f_low_3dB + f_high_3dB)/2;
-% fc_6dB = (f_low_6dB + f_high_6dB)/2;
-% 
-% fc_3dB_b = (f_low_3dB_b + f_high_3dB_b)/2;
-% fc_6dB_b = (f_low_6dB_b + f_high_6dB_b)/2;
-% 
-% fractional_bandwidth_3dB = ((f_high_3dB - f_low_3dB)/fc_3dB)*100;
-% fractional_bandwidth_6dB = ((f_high_6dB - f_low_6dB)/fc_6dB)*100;
-% 
-% fractional_bandwidth_3dB_b = ((f_high_3dB_b - f_low_3dB_b)/fc_3dB_b)*100;
-% fractional_bandwidth_6dB_b = ((f_high_6dB_b - f_low_6dB_b)/fc_6dB_b)*100;
-% 
-% % Calcola la larghezza di banda
-% fprintf('Fractional bandwidth at -3dB without backing %0.3f%%\n', fractional_bandwidth_3dB);
-% fprintf('Fractional bandwidth at -6dB without backing %0.3f%%\n', fractional_bandwidth_6dB);
-% fprintf('Fractional bandwidth at -3dB with backing %0.3f%%\n', fractional_bandwidth_3dB_b);
-% fprintf('Fractional bandwidth at -6dB with backing %0.3f%%\n', fractional_bandwidth_6dB_b);
-% 
-% plot(f_low_3dB./1e+06,TTF_modulo(indices_3db(1)),'o', 'color', '#4DBEEE', 'HandleVisibility','off');
-% plot(f_high_3dB./1e+06,TTF_modulo(indices_3db(end)),'o', 'color', '#4DBEEE', 'DisplayName','bandwidth at -3dB');
-% plot(f_low_6dB./1e+06,TTF_modulo(indices_6db(1)),'o', 'color', 'blue', 'HandleVisibility','off');
-% plot(f_high_6dB./1e+06,TTF_modulo(indices_6db(end)),'o', 'color', 'blue', 'DisplayName','bandwidth at -6dB');
-% 
-% plot(f_low_3dB_b./1e+06,TTF_modulo_b(indices_3db_b(1)),'o', 'color', '#EDB120', 'HandleVisibility','off');
-% plot(f_high_3dB_b./1e+06,TTF_modulo_b(indices_3db_b(end)),'o', 'color', '#EDB120', 'DisplayName','bandwidth at -3dB');
-% plot(f_low_6dB_b./1e+06,TTF_modulo_b(indices_6db_b(1)),'o', 'color', 'red', 'HandleVisibility','off');
-% plot(f_high_6dB_b./1e+06,TTF_modulo_b(indices_6db_b(end)),'o', 'color', 'red', 'DisplayName','bandwidth at -6dB');
-% 
+% Calcolo il valore massimo del modulo della FTT
+A_max_without_backing_with_plate = max(moduloFTT_without_backing_with_plate);
+
+A_max_with_backing_with_plate = max(moduloFTT_with_backing_with_plate);
+
+% Calcolo il valore del modulo della FTT a -3dB e a -6dB
+A_3dB_without_backing_with_plate = A_max_without_backing_with_plate - 3;
+A_6dB_without_backing_with_plate = A_max_without_backing_with_plate - 6;
+
+A_3dB_with_backing_with_plate = A_max_with_backing_with_plate - 3;
+A_6dB_with_backing_with_plate = A_max_with_backing_with_plate - 6;
+
+% Trovo gli indici delle frequenze a cui l'ampiezza è maggiore o uguale ad A_3dB e ad A_6dB
+indices_3db_without_backing_with_plate = find(moduloFTT_without_backing_with_plate >= A_3dB_without_backing_with_plate);
+indices_6db_without_backing_with_plate = find(moduloFTT_without_backing_with_plate >= A_6dB_without_backing_with_plate);
+
+indices_3db_with_backing_with_plate = find(moduloFTT_with_backing_with_plate >= A_3dB_with_backing_with_plate);
+indices_6db_with_backing_with_plate = find(moduloFTT_with_backing_with_plate >= A_6dB_with_backing_with_plate);
+
+% Calcolo fl(f low) e fh(f high)(ovvero la frequenza più bassa e più alta alla quale la risposta resta sopra una certa soglia) a -3 dB e a -6dB
+fl_3dB_without_backing_with_plate = f(indices_3db_without_backing_with_plate(1));
+fh_3dB_without_backing_with_plate = f(indices_3db_without_backing_with_plate(end));
+fl_6dB_without_backing_with_plate = f(indices_6db_without_backing_with_plate(1));
+fh_6dB_without_backing_with_plate = f(indices_6db_without_backing_with_plate(end));
+
+fl_3dB_with_backing_with_plate = f(indices_3db_with_backing_with_plate(1));
+fh_3dB_with_backing_with_plate = f(indices_3db_with_backing_with_plate(end));
+fl_6dB_with_backing_with_plate = f(indices_6db_with_backing_with_plate(1));
+fh_6dB_with_backing_with_plate = f(indices_6db_with_backing_with_plate(end));
+
+% Calcolo fc(f central)(ovvero la frequenza "al centro" della banda delimitata da fl e fh) a -3 dB e a -6dB
+fc_3dB_without_backing_with_plate = (fl_3dB_without_backing_with_plate + fh_3dB_without_backing_with_plate)/2;
+fc_6dB_without_backing_with_plate = (fl_6dB_without_backing_with_plate + fh_6dB_without_backing_with_plate)/2;
+
+fc_3dB_with_backing_with_plate = (fl_3dB_with_backing_with_plate + fh_3dB_with_backing_with_plate)/2;
+fc_6dB_with_backing_with_plate = (fl_6dB_with_backing_with_plate + fh_6dB_with_backing_with_plate)/2;
+
+% Calcolo la FBW(Fractional BandWidth)(ovvero quanto è larga la banda rispetto alla sua frequenza centrale espressa in %)
+FBW_3dB_without_backing_with_plate = ( (fh_3dB_without_backing_with_plate - fl_3dB_without_backing_with_plate) / fc_3dB_without_backing_with_plate ) * 100;
+FBW_6dB_without_backing_with_plate = ( (fh_6dB_without_backing_with_plate - fl_6dB_without_backing_with_plate) / fc_6dB_without_backing_with_plate ) * 100;
+
+FBW_3dB_with_backing_with_plate = ( (fh_3dB_with_backing_with_plate - fl_3dB_with_backing_with_plate) / fc_3dB_with_backing_with_plate ) * 100;
+FBW_6dB_with_backing_with_plate = ( (fh_6dB_with_backing_with_plate - fl_6dB_with_backing_with_plate) / fc_6dB_with_backing_with_plate ) * 100;
+
+% Stampo i valori trovati per la FBW
+cprintf('Comments',"\nBanda Frazionaria a -3dB senza backing con plate: FBW=%0.2f%%", string(FBW_3dB_without_backing_with_plate));
+cprintf('Comments',"\nBanda Frazionaria a -6dB senza backing con plate: FBW=%0.2f%%", string(FBW_6dB_without_backing_with_plate));
+cprintf('Comments',"\nBanda Frazionaria a -3dB con backing con plate: FBW=%0.2f%%", string(FBW_3dB_with_backing_with_plate));
+cprintf('Comments',"\nBanda Frazionaria a -6dB con backing con plate: FBW=%0.2f%%", string(FBW_6dB_with_backing_with_plate));
+cprintf('Text',"\n");
+
+fig = gcf;                          % ultimo figure attivo
+axs = findall(fig, 'Type', 'axes'); % tutti gli axes
+ax1 = axs(end);                     % il "primo" subplot creato è l'ultimo della lista
+hold(ax1, 'on');
+plot(ax1,fl_3dB_without_backing_with_plate/1e+03, moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(1)),  'o', 'color', '#ed6b20',  'HandleVisibility', 'off');
+plot(ax1,fh_3dB_without_backing_with_plate/1e+03, moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(end)),'o', 'color', '#ed6b20',  'HandleVisibility', 'off');
+plot(ax1,fl_6dB_without_backing_with_plate/1e+03, moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(1)),  'o', 'color', '#ed20e6',  'HandleVisibility', 'off');
+plot(ax1,fh_6dB_without_backing_with_plate/1e+03, moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(end)),'o', 'color', '#ed20e6',  'HandleVisibility', 'off');
+plot(ax1,fl_3dB_with_backing_with_plate/1e+03, moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(1)),  'o', 'color', '#ed6b20',  'HandleVisibility', 'off');
+plot(ax1,fh_3dB_with_backing_with_plate/1e+03, moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(end)),'o', 'color', '#ed6b20',  'HandleVisibility', 'off');
+plot(ax1,fl_6dB_with_backing_with_plate/1e+03, moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(1)),  'o', 'color', '#ed20e6',  'HandleVisibility', 'off');
+plot(ax1,fh_6dB_with_backing_with_plate/1e+03, moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(end)),'o', 'color', '#ed20e6',  'HandleVisibility', 'off');
+
 % l_plate_values = (l_plate/3):1e-06:(3*l_plate);
 % max_fractional_bandwidth = 0; 
 % best_l_plate = 0; 
