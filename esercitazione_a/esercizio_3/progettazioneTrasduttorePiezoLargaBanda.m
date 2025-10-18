@@ -4,9 +4,6 @@
 addpath('../utility/');
 evalin('base', 'clear'), close all; clc;
 
-%%% TODO: Forse dovrei estendere il range di frequenze osservate per questo
-% es, siccome in questo caso prendendo il solito intervallo centrato in fr
-% mi perdo alcune parti degli ultimi grafici
 [areaFaccia, l, rho, ~, h33, ~, ~, v, f, omega, ~, C0] = ceramicPicker();
 
 % Calcolo l'impedenza acustica specifica della ceramica
