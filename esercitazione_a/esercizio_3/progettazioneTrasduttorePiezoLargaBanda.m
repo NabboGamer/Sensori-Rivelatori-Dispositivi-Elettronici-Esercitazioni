@@ -167,15 +167,32 @@ fig = gcf;                          % ultimo figure attivo
 axs = findall(fig, 'Type', 'axes'); % tutti gli axes
 ax1 = axs(end);                     % il "primo" subplot creato è l'ultimo della lista
 hold(ax1, 'on');
-plot(ax1,fl_3dB_without_backing_with_plate/1e+03, moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(1)),  'o', 'color', '#ed6b20',  'HandleVisibility', 'off');
-plot(ax1,fh_3dB_without_backing_with_plate/1e+03, moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(end)),'o', 'color', '#ed6b20',  'HandleVisibility', 'off');
-plot(ax1,fl_6dB_without_backing_with_plate/1e+03, moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(1)),  'o', 'color', '#ed20e6',  'HandleVisibility', 'off');
-plot(ax1,fh_6dB_without_backing_with_plate/1e+03, moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(end)),'o', 'color', '#ed20e6',  'HandleVisibility', 'off');
-plot(ax1,fl_3dB_with_backing_with_plate/1e+03, moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(1)),  'o', 'color', '#ed6b20',  'HandleVisibility', 'off');
-plot(ax1,fh_3dB_with_backing_with_plate/1e+03, moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(end)),'o', 'color', '#ed6b20',  'HandleVisibility', 'off');
-plot(ax1,fl_6dB_with_backing_with_plate/1e+03, moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(1)),  'o', 'color', '#ed20e6',  'HandleVisibility', 'off');
-plot(ax1,fh_6dB_with_backing_with_plate/1e+03, moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(end)),'o', 'color', '#ed20e6',  'HandleVisibility', 'off');
+color1 = "#ed20e6";
+color2 = "#0ff21a";
 
+xl = fl_3dB_without_backing_with_plate/1e+03;
+yl = moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(1));
+xh = fh_3dB_without_backing_with_plate/1e+03;
+yh = moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(end));
+stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color1)
+xl = fl_6dB_without_backing_with_plate/1e+03;
+yl = moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(1));
+xh = fh_6dB_without_backing_with_plate/1e+03;
+yh = moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(end));
+stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color2);
+
+xl = fl_3dB_with_backing_with_plate/1e+03;
+yl = moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(1));
+xh = fh_3dB_with_backing_with_plate/1e+03;
+yh = moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(end));
+stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color1)
+xl = fl_6dB_with_backing_with_plate/1e+03;
+yl = moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(1));
+xh = fh_6dB_with_backing_with_plate/1e+03;
+yh = moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(end));
+stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color2);
+
+%% TODO: Continuare
 % l_plate_values = (l_plate/3):1e-06:(3*l_plate);
 % max_fractional_bandwidth = 0; 
 % best_l_plate = 0; 
