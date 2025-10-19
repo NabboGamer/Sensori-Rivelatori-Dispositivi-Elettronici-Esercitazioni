@@ -13,7 +13,7 @@ z_piezo = rho * v; % N.B.: Usare PZ27 per questa applicazione
 z_load = 1.5e+06;  % Acqua
 z2 = z_load;
 
-%% Funzione di trasferimento in trasmissione e in ricezione della ceramica con e senza backing
+%% Funzione di trasferimento in trasmissione e in ricezione della ceramica con backing
 % Calcolo l'impedenza acustica della ceramica
 Zel = 1e+06;
 Z1 = areaFaccia*z1;
@@ -30,20 +30,21 @@ B_with_backing = calcolaMatriceB(A, ZB);
 [Zin_without_backing, FTT_without_backing, FTR_without_backing] = calcolaFunzioniDiTrasferimento(B_without_backing, Z2, Zel);
 [Zin_with_backing, FTT_with_backing, FTR_with_backing] = calcolaFunzioniDiTrasferimento(B_with_backing, Z2, Zel);
 
+legendTitle = strcat("Backing made of Tungsten Epoxy (7.0 [MRayl])");
 figure(1);
-stampaGrafici(f, Zin_without_backing{1}, Zin_without_backing{2}, "Comparing Zin without and with Backing", 'blue', "Zin", "Zin", " without backing");
+stampaGrafici(f, Zin_without_backing{1}, Zin_without_backing{2}, "Comparing Zin without and with Backing", 'blue', "Zin", "Zin", " without backing", legendTitle);
 hold on;
-stampaGrafici(f, Zin_with_backing{1}, Zin_with_backing{2}, "Comparing Zin without and with Backing", 'orange', "Zin", "Zin", " with backing");
+stampaGrafici(f, Zin_with_backing{1}, Zin_with_backing{2}, "Comparing Zin without and with Backing", 'orange', "Zin", "Zin", " with backing", legendTitle);
 
 figure(2);
-stampaGrafici(f, FTT_without_backing{1}, FTT_without_backing{2}, "Comparing TTF without and with Backing", 'blue', "TTF", "TTF", " without backing");
+stampaGrafici(f, FTT_without_backing{1}, FTT_without_backing{2}, "Comparing TTF without and with Backing", 'blue', "TTF", "TTF", " without backing", legendTitle);
 hold on;
-stampaGrafici(f, FTT_with_backing{1}, FTT_with_backing{2}, "Comparing TTF without and with Backing", 'orange', "TTF", "TTF", " with backing");
+stampaGrafici(f, FTT_with_backing{1}, FTT_with_backing{2}, "Comparing TTF without and with Backing", 'orange', "TTF", "TTF", " with backing", legendTitle);
 
-figure(3)
-stampaGrafici(f, FTR_without_backing{1}, FTR_without_backing{2}, "Comparing RTF without and with Backing", 'blue', "RTF", "RTF", " without backing");
-hold on;
-stampaGrafici(f, FTR_with_backing{1}, FTR_with_backing{2}, "Comparing RTF without and with Backing", 'orange', "RTF", "RTF", " with backing");
+% figure(3)
+% stampaGrafici(f, FTR_without_backing{1}, FTR_without_backing{2}, "Comparing RTF without and with Backing", 'blue', "RTF", "RTF", " without backing");
+% hold on;
+% stampaGrafici(f, FTR_with_backing{1}, FTR_with_backing{2}, "Comparing RTF without and with Backing", 'orange', "RTF", "RTF", " with backing");
 
 %% Funzione di trasferimento in trasmissione e in ricezione della ceramica con backing e matching plate
 
@@ -102,7 +103,8 @@ FTT_without_backing_with_plate = {moduloFTT_without_backing_with_plate, faseFTT_
 FTT_with_backing_with_plate = {moduloFTT_with_backing_with_plate, faseFTT_with_backing_with_plate};
 
 l_plate_scaled = l_plate * 1e+03;
-legendTitle = strcat("Matching Plate of ", string(l_plate_scaled), " [mm]");
+l_plate_scaled = round(l_plate_scaled, 1);
+legendTitle = strcat("Matching Plate made of E-Solder 3022 (", string(l_plate_scaled), " [mm])");
 figure(4)
 stampaGrafici(f, Zin_without_backing_with_plate{1}, Zin_without_backing_with_plate{2}, "Comparing Zin without and with Backing adding the matching plate", 'blue', "Zin", "Zin", " without backing with plate", legendTitle);
 hold on;
@@ -112,12 +114,35 @@ stampaGrafici(f, FTT_without_backing_with_plate{1}, FTT_without_backing_with_pla
 hold on;
 stampaGrafici(f, FTT_with_backing_with_plate{1}, FTT_with_backing_with_plate{2}, "Comparing TTF without and with Backing adding the matching plate", 'orange', "TTF", "TTF", " with backing with plate", legendTitle);
 
+%% Calcolo indici di banda passante per i 4 casi possibili
+
+% Casi possibili(tabella a doppia entrata):
+% 
+% +---------+-----------+-----------+ 
+% |         | X BACKING | V BACKING |
+% +---------+-----------+-----------+    
+% | X PLATE |   XB-XP   |   VB-XP   |
+% +---------+-----------+-----------+
+% | V PLATE |   XB-VP   |   VB-VP   |
+% +---------+-----------+-----------+
+% 
+
 % Calcolo il valore massimo del modulo della FTT
+A_max_without_backing_without_plate = max(FTT_without_backing{1});
+
+A_max_with_backing_without_plate = max(FTT_with_backing{1});
+
 A_max_without_backing_with_plate = max(moduloFTT_without_backing_with_plate);
 
 A_max_with_backing_with_plate = max(moduloFTT_with_backing_with_plate);
 
 % Calcolo il valore del modulo della FTT a -3dB e a -6dB
+A_3dB_without_backing_without_plate = A_max_without_backing_without_plate - 3;
+A_6dB_without_backing_without_plate = A_max_without_backing_without_plate - 6;
+
+A_3dB_with_backing_without_plate = A_max_with_backing_without_plate - 3;
+A_6dB_with_backing_without_plate = A_max_with_backing_without_plate - 6;
+
 A_3dB_without_backing_with_plate = A_max_without_backing_with_plate - 3;
 A_6dB_without_backing_with_plate = A_max_without_backing_with_plate - 6;
 
@@ -125,6 +150,12 @@ A_3dB_with_backing_with_plate = A_max_with_backing_with_plate - 3;
 A_6dB_with_backing_with_plate = A_max_with_backing_with_plate - 6;
 
 % Trovo gli indici delle frequenze a cui l'ampiezza è maggiore o uguale ad A_3dB e ad A_6dB
+indices_3db_without_backing_without_plate = find(FTT_without_backing{1} >= A_3dB_without_backing_without_plate);
+indices_6db_without_backing_without_plate = find(FTT_without_backing{1} >= A_6dB_without_backing_without_plate);
+
+indices_3db_with_backing_without_plate = find(FTT_with_backing{1} >= A_3dB_with_backing_without_plate);
+indices_6db_with_backing_without_plate = find(FTT_with_backing{1} >= A_6dB_with_backing_without_plate);
+
 indices_3db_without_backing_with_plate = find(moduloFTT_without_backing_with_plate >= A_3dB_without_backing_with_plate);
 indices_6db_without_backing_with_plate = find(moduloFTT_without_backing_with_plate >= A_6dB_without_backing_with_plate);
 
@@ -132,6 +163,16 @@ indices_3db_with_backing_with_plate = find(moduloFTT_with_backing_with_plate >= 
 indices_6db_with_backing_with_plate = find(moduloFTT_with_backing_with_plate >= A_6dB_with_backing_with_plate);
 
 % Calcolo fl(f low) e fh(f high)(ovvero la frequenza più bassa e più alta alla quale la risposta resta sopra una certa soglia) a -3 dB e a -6dB
+fl_3dB_without_backing_without_plate = f(indices_3db_without_backing_without_plate(1));
+fh_3dB_without_backing_without_plate = f(indices_3db_without_backing_without_plate(end));
+fl_6dB_without_backing_without_plate = f(indices_6db_without_backing_without_plate(1));
+fh_6dB_without_backing_without_plate = f(indices_6db_without_backing_without_plate(end));
+
+fl_3dB_with_backing_without_plate = f(indices_3db_with_backing_without_plate(1));
+fh_3dB_with_backing_without_plate = f(indices_3db_with_backing_without_plate(end));
+fl_6dB_with_backing_without_plate = f(indices_6db_with_backing_without_plate(1));
+fh_6dB_with_backing_without_plate = f(indices_6db_with_backing_without_plate(end));
+
 fl_3dB_without_backing_with_plate = f(indices_3db_without_backing_with_plate(1));
 fh_3dB_without_backing_with_plate = f(indices_3db_without_backing_with_plate(end));
 fl_6dB_without_backing_with_plate = f(indices_6db_without_backing_with_plate(1));
@@ -143,6 +184,12 @@ fl_6dB_with_backing_with_plate = f(indices_6db_with_backing_with_plate(1));
 fh_6dB_with_backing_with_plate = f(indices_6db_with_backing_with_plate(end));
 
 % Calcolo fc(f central)(ovvero la frequenza "al centro" della banda delimitata da fl e fh) a -3 dB e a -6dB
+fc_3dB_without_backing_without_plate = (fl_3dB_without_backing_without_plate + fh_3dB_without_backing_without_plate)/2;
+fc_6dB_without_backing_without_plate = (fl_6dB_without_backing_without_plate + fh_6dB_without_backing_without_plate)/2;
+
+fc_3dB_with_backing_without_plate = (fl_3dB_with_backing_without_plate + fh_3dB_with_backing_without_plate) / 2;
+fc_6dB_with_backing_without_plate = (fl_6dB_with_backing_without_plate + fh_6dB_with_backing_without_plate) / 2;
+
 fc_3dB_without_backing_with_plate = (fl_3dB_without_backing_with_plate + fh_3dB_without_backing_with_plate)/2;
 fc_6dB_without_backing_with_plate = (fl_6dB_without_backing_with_plate + fh_6dB_without_backing_with_plate)/2;
 
@@ -150,6 +197,12 @@ fc_3dB_with_backing_with_plate = (fl_3dB_with_backing_with_plate + fh_3dB_with_b
 fc_6dB_with_backing_with_plate = (fl_6dB_with_backing_with_plate + fh_6dB_with_backing_with_plate)/2;
 
 % Calcolo la FBW(Fractional BandWidth)(ovvero quanto è larga la banda rispetto alla sua frequenza centrale espressa in %)
+FBW_3dB_without_backing_without_plate = ( (fh_3dB_without_backing_without_plate - fl_3dB_without_backing_without_plate) / fc_3dB_without_backing_without_plate ) * 100;
+FBW_6dB_without_backing_without_plate = ( (fh_6dB_without_backing_without_plate - fl_6dB_without_backing_without_plate) / fc_6dB_without_backing_without_plate ) * 100;
+
+FBW_3dB_with_backing_without_plate = ( (fh_3dB_with_backing_without_plate - fl_3dB_with_backing_without_plate) / fc_3dB_with_backing_without_plate ) * 100;
+FBW_6dB_with_backing_without_plate = ( (fh_6dB_with_backing_without_plate - fl_6dB_with_backing_without_plate) / fc_6dB_with_backing_without_plate ) * 100;
+
 FBW_3dB_without_backing_with_plate = ( (fh_3dB_without_backing_with_plate - fl_3dB_without_backing_with_plate) / fc_3dB_without_backing_with_plate ) * 100;
 FBW_6dB_without_backing_with_plate = ( (fh_6dB_without_backing_with_plate - fl_6dB_without_backing_with_plate) / fc_6dB_without_backing_with_plate ) * 100;
 
@@ -157,40 +210,51 @@ FBW_3dB_with_backing_with_plate = ( (fh_3dB_with_backing_with_plate - fl_3dB_wit
 FBW_6dB_with_backing_with_plate = ( (fh_6dB_with_backing_with_plate - fl_6dB_with_backing_with_plate) / fc_6dB_with_backing_with_plate ) * 100;
 
 % Stampo i valori trovati per la FBW
+cprintf('Text',"\n");
+cprintf('Comments',"\nBanda Frazionaria a -3dB senza backing senza plate: FBW=%0.2f%%", string(FBW_3dB_without_backing_without_plate));
+cprintf('Comments',"\nBanda Frazionaria a -6dB senza backing senza plate: FBW=%0.2f%%", string(FBW_6dB_without_backing_without_plate));
+cprintf('Text',"\n");
+cprintf('Comments',"\nBanda Frazionaria a -3dB con backing senza plate: FBW=%0.2f%%", string(FBW_3dB_with_backing_without_plate));
+cprintf('Comments',"\nBanda Frazionaria a -6dB con backing senza plate: FBW=%0.2f%%", string(FBW_6dB_with_backing_without_plate));
+cprintf('Text',"\n");
 cprintf('Comments',"\nBanda Frazionaria a -3dB senza backing con plate: FBW=%0.2f%%", string(FBW_3dB_without_backing_with_plate));
 cprintf('Comments',"\nBanda Frazionaria a -6dB senza backing con plate: FBW=%0.2f%%", string(FBW_6dB_without_backing_with_plate));
+cprintf('Text',"\n");
 cprintf('Comments',"\nBanda Frazionaria a -3dB con backing con plate: FBW=%0.2f%%", string(FBW_3dB_with_backing_with_plate));
 cprintf('Comments',"\nBanda Frazionaria a -6dB con backing con plate: FBW=%0.2f%%", string(FBW_6dB_with_backing_with_plate));
 cprintf('Text',"\n");
 
-fig = gcf;                          % ultimo figure attivo
-axs = findall(fig, 'Type', 'axes'); % tutti gli axes
-ax1 = axs(end);                     % il "primo" subplot creato è l'ultimo della lista
-hold(ax1, 'on');
-color1 = "#ed20e6";
-color2 = "#0ff21a";
+% Sezione utile per il disegno sul grafico delle bande passanti.
+% Commentato poichè rendeva il grafico colmo di linee e incomprensibile.
 
-xl = fl_3dB_without_backing_with_plate/1e+03;
-yl = moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(1));
-xh = fh_3dB_without_backing_with_plate/1e+03;
-yh = moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(end));
-stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color1)
-xl = fl_6dB_without_backing_with_plate/1e+03;
-yl = moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(1));
-xh = fh_6dB_without_backing_with_plate/1e+03;
-yh = moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(end));
-stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color2);
-
-xl = fl_3dB_with_backing_with_plate/1e+03;
-yl = moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(1));
-xh = fh_3dB_with_backing_with_plate/1e+03;
-yh = moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(end));
-stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color1)
-xl = fl_6dB_with_backing_with_plate/1e+03;
-yl = moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(1));
-xh = fh_6dB_with_backing_with_plate/1e+03;
-yh = moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(end));
-stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color2);
+% fig = gcf;                          % ultimo figure attivo
+% axs = findall(fig, 'Type', 'axes'); % tutti gli axes
+% ax1 = axs(end);                     % il "primo" subplot creato è l'ultimo della lista
+% hold(ax1, 'on');
+% color1 = "#ed20e6";
+% color2 = "#0ff21a";
+% 
+% xl = fl_3dB_without_backing_with_plate/1e+03;
+% yl = moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(1));
+% xh = fh_3dB_without_backing_with_plate/1e+03;
+% yh = moduloFTT_without_backing_with_plate(indices_3db_without_backing_with_plate(end));
+% stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color1)
+% xl = fl_6dB_without_backing_with_plate/1e+03;
+% yl = moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(1));
+% xh = fh_6dB_without_backing_with_plate/1e+03;
+% yh = moduloFTT_without_backing_with_plate(indices_6db_without_backing_with_plate(end));
+% stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color2);
+% 
+% xl = fl_3dB_with_backing_with_plate/1e+03;
+% yl = moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(1));
+% xh = fh_3dB_with_backing_with_plate/1e+03;
+% yh = moduloFTT_with_backing_with_plate(indices_3db_with_backing_with_plate(end));
+% stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color1)
+% xl = fl_6dB_with_backing_with_plate/1e+03;
+% yl = moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(1));
+% xh = fh_6dB_with_backing_with_plate/1e+03;
+% yh = moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(end));
+% stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color2);
 
 %% TODO: Continuare
 % l_plate_values = (l_plate/3):1e-06:(3*l_plate);
