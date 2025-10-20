@@ -301,9 +301,9 @@ end
  
 % Output del calcolo dello spessore ottimale
 cprintf('Text',"\n");
-cprintf('Comments', "Lo spessore ottimale è: l_plate=%0.4f\n", l_plate_best);
+cprintf('Comments', "Lo spessore ottimale è: l_plate=%0.6f\n", l_plate_best);
 cprintf('Comments', "La Banda Frazionaria a -3dB ottimale è: FBW=%0.2f%%\n", FBW_max);
-cprintf('Comments', "Spessore convertito: %0.4f → %0.4f", l_plate_best_previous, l_plate_best);
+cprintf('Comments', "Spessore convertito: %0.6f → %0.6f", l_plate_best_previous, l_plate_best);
 
 %% Funzione di trasferimento in trasmissione della ceramica con backing e matching plate con spessore ottimizzato
 
