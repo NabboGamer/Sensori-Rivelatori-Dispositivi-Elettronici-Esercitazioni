@@ -257,53 +257,57 @@ cprintf('Text',"\n");
 % yh = moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(end));
 % stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color2);
 
-%%
+%% Ottimizzazione dello spessore della piastra di adattamento l_plate
+% Come dimostrato nel pdf "Procedura di ottimizzazione dello spessore di una piastra di adattamento"
+% è possibile far variare l_plate nell'intervallo [0,λ/2] in modo da
+% ottenere l'l_plate ottimale che massimizza la FBW.
 
-% l_plate_values = (l_plate/3):1e-06:(3*l_plate);
-% max_fractional_bandwidth = 0; 
-% best_l_plate = 0;
-% 
-% for i = 1:length(l_plate_values)
-%     l_plate = l_plate_values(i);
-% 
-%     M11 = (ZoP./(1i.*tan((omega./v_plate).*l_plate)));
-%     M12 = (ZoP./(1i.*sin((omega./v_plate).*l_plate)));
-% 
-%     Z = M11-((M12.^2)./(Z2.*(1+(M11./Z2))));
-% 
-%     TTF_b = (1./(((M11+(M11.^2./Z2))./M12)-(M12./Z2))).*((Z.*B_b{2})./(B_b{3}.*(B_b{1}+Z)-(B_b{2}.^2)));
-%     [TTF_modulo_b, ~] = conv_i(TTF_b);
-% 
-%     % Calcola il valore massimo dell'ampiezza
-%     A_max_b = max(TTF_modulo_b);
-% 
-%     % Calcola il livello -3 dB
-%     A_3dB_b = A_max_b - 3; 
-% 
-%     % Trova le frequenze a cui l'ampiezza è prossima a A_3dB
-%     indices_3db_b = find(TTF_modulo_b >= A_3dB_b);
-% 
-%     % Limite inferiore e superiore della banda a -3 dB
-%     f_low_3dB_b = f(indices_3db_b(1));
-%     f_high_3dB_b = f(indices_3db_b(end));
-% 
-%     fc_3dB_b = (f_low_3dB_b + f_high_3dB_b)/2;
-% 
-%     fractional_bandwidth_3dB_b = ((f_high_3dB_b - f_low_3dB_b)/fc_3dB_b)*100;
-% 
-%     if fractional_bandwidth_3dB_b > max_fractional_bandwidth
-%         %Aggiorna i valori massimi e salva l'indice dell'iterazione
-%         max_fractional_bandwidth = fractional_bandwidth_3dB_b;
-%         best_l_plate = l_plate;
-%         best_iteration = i;
-%     end
-% 
-% end
+% L'unica differenza che si osserva nell'applicazione di quanto dimostrato
+% nel pdf sopra citato, è la seguente. Nella creazione dell'intervallo di variazione
+% risulta necessario aggiungere agli estermi un epsilon per evitare i valori
+% 0 e π per il θ_plate, che annullerebbero seni e tangenti, portando alla
+% creazione nella matrice M di valori infiniti.
+eps = 1e-06; 
+l_plate_values = (0+eps):1e-06:((lambda_plate/2) - eps);
+
+FBW_max = 0; 
+l_plate_best = 0;
+l_plate_best_previous = l_plate; 
+for i = 1 : length(l_plate_values)
+    l_plate = l_plate_values(i);
+
+    M = calcolaMatriceM(ZoP, k_plate, l_plate);
+    Zeq = M{1,1} - ( (M{1,2} .^ 2) ./ (Z2 + M{1,1}) );
+    [Zin_with_backing_with_plate, FTT_with_backing_pzt, ~] = calcolaFunzioniDiTrasferimento(B_with_backing, Zeq, Zel);
+    FTT_with_backing_pzt = FTT_with_backing_pzt{1} .* exp(1j*deg2rad(FTT_with_backing_pzt{2}));
+    FTT_plate = ( M{1,2} .* Z2 ) ./ ( M{1,1}.*Z2 + M{1,1}.^2 - M{1,2}.^2);
+    FTT_with_backing_with_plate = FTT_with_backing_pzt .* FTT_plate;
+    [moduloFTT_with_backing_with_plate, faseFTT_with_backing_with_plate] = calcolaModuloEFase(FTT_with_backing_with_plate, true, true);
+    FTT_with_backing_with_plate = {moduloFTT_with_backing_with_plate, faseFTT_with_backing_with_plate};
+
+    A_max_with_backing_with_plate = max(moduloFTT_with_backing_with_plate);
+    A_3dB_with_backing_with_plate = A_max_with_backing_with_plate - 3;
+    indices_3db_with_backing_with_plate = find(moduloFTT_with_backing_with_plate >= A_3dB_with_backing_with_plate);
+    fl_3dB_with_backing_with_plate = f(indices_3db_with_backing_with_plate(1));
+    fh_3dB_with_backing_with_plate = f(indices_3db_with_backing_with_plate(end));
+    fc_3dB_with_backing_with_plate = (fl_3dB_with_backing_with_plate + fh_3dB_with_backing_with_plate)/2;
+    FBW_3dB_with_backing_with_plate = ( (fh_3dB_with_backing_with_plate - fl_3dB_with_backing_with_plate) / fc_3dB_with_backing_with_plate ) * 100;
+
+    if FBW_3dB_with_backing_with_plate > FBW_max
+        % Aggiorno i valori massimi
+        FBW_max = FBW_3dB_with_backing_with_plate;
+        l_plate_best = l_plate;
+    end
+
+end
  
-% %Output del risultato ottimale
-% fprintf('La lunghezza ottimale l_plate che massimizza la larghezza di banda frazionaria a -3 dB è: %0.4f\n', best_l_plate);
-% fprintf('La larghezza di banda frazionaria a -3 dB ottimale è: %0.3f%%\n', max_fractional_bandwidth);
-% 
+% Output del calcolo dello spessore ottimale
+cprintf('Text',"\n");
+cprintf('Comments', "Lo spessore ottimale è: l_plate=%0.4f\n", l_plate_best);
+cprintf('Comments', "La Banda Frazionaria a -3dB ottimale è: FBW=%0.2f%%\n", FBW_max);
+cprintf('Text',"\n");
+cprintf('Comments', "Spessore convertito: %0.4f → %0.4f\n", l_plate_best_previous, l_plate_best);
+
 % l_plate = best_l_plate;
 % 
 % M11 = (ZoP./(1i.*tan((omega./v_plate).*l_plate)));
