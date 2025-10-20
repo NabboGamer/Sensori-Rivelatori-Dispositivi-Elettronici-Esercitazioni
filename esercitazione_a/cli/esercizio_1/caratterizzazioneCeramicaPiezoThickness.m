@@ -4,6 +4,7 @@
 % supponendo che l'elemento sia meccanicamente isolato ovvero "a vuoto"
 
 addpath('../utility/');
+addpath('../../core/');
 evalin('base', 'clear'), close all; clc;
 
 [~, l, rho, c33, h33, ~, beta33, v, f, omega, theta, C0] = ceramicPicker();

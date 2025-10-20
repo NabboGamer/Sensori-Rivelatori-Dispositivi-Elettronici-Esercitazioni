@@ -2,6 +2,7 @@
 % piezoelettrico a larga banda
 
 addpath('../utility/');
+addpath('../../core/');
 evalin('base', 'clear'), close all; clc;
 
 [areaFaccia, l, rho, ~, h33, ~, ~, v, f, omega, ~, C0] = ceramicPicker();
@@ -256,10 +257,11 @@ cprintf('Text',"\n");
 % yh = moduloFTT_with_backing_with_plate(indices_6db_with_backing_with_plate(end));
 % stampaLargezzaDiBanda(ax1, xl, yl, xh, yh, color2);
 
-%% TODO: Continuare
+%%
+
 % l_plate_values = (l_plate/3):1e-06:(3*l_plate);
 % max_fractional_bandwidth = 0; 
-% best_l_plate = 0; 
+% best_l_plate = 0;
 % 
 % for i = 1:length(l_plate_values)
 %     l_plate = l_plate_values(i);
@@ -297,7 +299,7 @@ cprintf('Text',"\n");
 %     end
 % 
 % end
-% 
+ 
 % %Output del risultato ottimale
 % fprintf('La lunghezza ottimale l_plate che massimizza la larghezza di banda frazionaria a -3 dB è: %0.4f\n', best_l_plate);
 % fprintf('La larghezza di banda frazionaria a -3 dB ottimale è: %0.3f%%\n', max_fractional_bandwidth);
@@ -375,13 +377,3 @@ cprintf('Text',"\n");
 % fprintf('Fractional bandwidth at -6dB without backing %0.3f%%\n', fractional_bandwidth_6dB);
 % fprintf('Fractional bandwidth at -3dB with backing %0.3f%%\n', fractional_bandwidth_3dB_b);
 % fprintf('Fractional bandwidth at -6dB with backing %0.3f%%\n', fractional_bandwidth_6dB_b);
-% 
-% plot(f_low_3dB./1e+06,TTF_modulo(indices_3db(1)),'o', 'color', '#4DBEEE', 'HandleVisibility','off');
-% plot(f_high_3dB./1e+06,TTF_modulo(indices_3db(end)),'o', 'color', '#4DBEEE', 'DisplayName','bandwidth at -3dB');
-% plot(f_low_6dB./1e+06,TTF_modulo(indices_6db(1)),'o', 'color', 'blue', 'HandleVisibility','off');
-% plot(f_high_6dB./1e+06,TTF_modulo(indices_6db(end)),'o', 'color', 'blue', 'DisplayName','bandwidth at -6dB');
-% 
-% plot(f_low_3dB_b./1e+06,TTF_modulo_b(indices_3db_b(1)),'o', 'color', '#EDB120', 'HandleVisibility','off');
-% plot(f_high_3dB_b./1e+06,TTF_modulo_b(indices_3db_b(end)),'o', 'color', '#EDB120', 'DisplayName','bandwidth at -3dB');
-% plot(f_low_6dB_b./1e+06,TTF_modulo_b(indices_6db_b(1)),'o', 'color', 'red', 'HandleVisibility','off');
-% plot(f_high_6dB_b./1e+06,TTF_modulo_b(indices_6db_b(end)),'o', 'color', 'red', 'DisplayName','bandwidth at -6dB');

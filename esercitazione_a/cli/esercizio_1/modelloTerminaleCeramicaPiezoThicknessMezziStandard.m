@@ -6,6 +6,7 @@
 % standard ovvero ARIA-ARIA e ACQUA-ACQUA.
 
 addpath('../utility/');
+addpath('../../core/');
 evalin('base', 'clear'), close all; clc;
 
 [areaFaccia, l, rho, c33, h33, ~, beta33, v, f, omega, theta, C0] = ceramicPicker();
