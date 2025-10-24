@@ -67,7 +67,7 @@ ZoP = areaFaccia * z_plate;
 
 % La frequenza a cui si ha il matching si indica con f0 e come detto nelle
 % slide è la frequenza in cui la FTT è massima
-[~, index] = max(FTT_with_backing{1});
+[~, index] = max(FTT_without_backing{1});
 f0 = f(index);
 
 % Quindi calcolo i parametri specifici del piatto
@@ -89,9 +89,10 @@ Zeq = M{1,1} - ( (M{1,2} .^ 2) ./ (Z2 + M{1,1}) );
 
 [Zin_without_backing_with_plate, FTT_without_backing_pzt, ~]   = calcolaFunzioniDiTrasferimento(B_without_backing, Zeq, Zel);
 [Zin_with_backing_with_plate, FTT_with_backing_pzt, ~] = calcolaFunzioniDiTrasferimento(B_with_backing, Zeq, Zel);
+
 % Trasformo in vettori di numeri complessi per effettuare più comodamente il calcolo successivo
-FTT_without_backing_pzt = FTT_without_backing_pzt{1} .* exp(1j*deg2rad(FTT_without_backing_pzt{2}));
-FTT_with_backing_pzt = FTT_with_backing_pzt{1} .* exp(1j*deg2rad(FTT_with_backing_pzt{2}));
+FTT_without_backing_pzt = db2mag(FTT_without_backing_pzt{1}) .* exp(1j*deg2rad(FTT_without_backing_pzt{2}));
+FTT_with_backing_pzt = db2mag(FTT_with_backing_pzt{1}) .* exp(1j*deg2rad(FTT_with_backing_pzt{2}));
 
 FTT_plate = ( M{1,2} .* Z2 ) ./ ( M{1,1}.*Z2 + M{1,1}.^2 - M{1,2}.^2);
 
@@ -188,8 +189,8 @@ fh_6dB_with_backing_with_plate = f(indices_6db_with_backing_with_plate(end));
 fc_3dB_without_backing_without_plate = (fl_3dB_without_backing_without_plate + fh_3dB_without_backing_without_plate)/2;
 fc_6dB_without_backing_without_plate = (fl_6dB_without_backing_without_plate + fh_6dB_without_backing_without_plate)/2;
 
-fc_3dB_with_backing_without_plate = (fl_3dB_with_backing_without_plate + fh_3dB_with_backing_without_plate) / 2;
-fc_6dB_with_backing_without_plate = (fl_6dB_with_backing_without_plate + fh_6dB_with_backing_without_plate) / 2;
+fc_3dB_with_backing_without_plate = (fl_3dB_with_backing_without_plate + fh_3dB_with_backing_without_plate)/2;
+fc_6dB_with_backing_without_plate = (fl_6dB_with_backing_without_plate + fh_6dB_with_backing_without_plate)/2;
 
 fc_3dB_without_backing_with_plate = (fl_3dB_without_backing_with_plate + fh_3dB_without_backing_with_plate)/2;
 fc_6dB_without_backing_with_plate = (fl_6dB_without_backing_with_plate + fh_6dB_without_backing_with_plate)/2;
@@ -278,7 +279,7 @@ for i = 1 : length(l_plate_values)
     M = calcolaMatriceM(ZoP, k_plate, l_plate);
     Zeq = M{1,1} - ( (M{1,2} .^ 2) ./ (Z2 + M{1,1}) );
     [~, FTT_with_backing_pzt, ~] = calcolaFunzioniDiTrasferimento(B_with_backing, Zeq, Zel);
-    FTT_with_backing_pzt = FTT_with_backing_pzt{1} .* exp(1j*deg2rad(FTT_with_backing_pzt{2}));
+    FTT_with_backing_pzt = db2mag(FTT_with_backing_pzt{1}) .* exp(1j*deg2rad(FTT_with_backing_pzt{2}));
     FTT_plate = ( M{1,2} .* Z2 ) ./ ( M{1,1}.*Z2 + M{1,1}.^2 - M{1,2}.^2);
     FTT_with_backing_with_plate = FTT_with_backing_pzt .* FTT_plate;
     [moduloFTT_with_backing_with_plate, ~] = calcolaModuloEFase(FTT_with_backing_with_plate, true, true);
@@ -312,7 +313,7 @@ l_plate = l_plate_best;
 M = calcolaMatriceM(ZoP, k_plate, l_plate);
 Zeq = M{1,1} - ( (M{1,2} .^ 2) ./ (Z2 + M{1,1}) );
 [Zin_with_backing_with_plate, FTT_with_backing_pzt, ~] = calcolaFunzioniDiTrasferimento(B_with_backing, Zeq, Zel);
-FTT_with_backing_pzt = FTT_with_backing_pzt{1} .* exp(1j*deg2rad(FTT_with_backing_pzt{2}));
+FTT_with_backing_pzt = db2mag(FTT_with_backing_pzt{1}) .* exp(1j*deg2rad(FTT_with_backing_pzt{2}));
 FTT_plate = ( M{1,2} .* Z2 ) ./ ( M{1,1}.*Z2 + M{1,1}.^2 - M{1,2}.^2);
 FTT_with_backing_with_plate = FTT_with_backing_pzt .* FTT_plate;
 [moduloFTT_with_backing_with_plate, faseFTT_with_backing_with_plate] = calcolaModuloEFase(FTT_with_backing_with_plate, true, true);
