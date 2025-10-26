@@ -89,44 +89,47 @@ B = calcolaMatriceB(A, Z);
 % Notare il fatto che passo Z due volte siccome ho una massa di precarico ad ambo i lati
 [Zin, FTT, FTR] = calcolaFunzioniDiTrasferimento(B, Z, Z);
 
+% Nel caso di eccitazione in tensione, il dimensionamento ricavato
+% dall'equazione di Langevin (valida idealmente nel vuoto) non garantisce
+% che il massimo della FTT cada esattamente alla frequenza di lavoro fr.
+% In pratica, il picco della FTT (che coincide con un minimo di Z_in) si
+% trova tipicamente a una frequenza f_a < fr.
+%
+% Obiettivo: spostare f_a verso destra fino a farla coincidere con la
+% frequenza di lavoro fr = 40 kHz.
+%
+% Poiché, per la risonanza di spessore, f ≈ v/(2·l), frequenza e spessore
+% sono inversamente proporzionali: riducendo lo spessore della massa di
+% precarico si aumenta la frequenza di risonanza del sistema complessivo.
+%
+% Strategia: iterare su l (diminuendolo a piccoli passi), ricalcolare Z_in
+% e FTT a ogni passo, e fermarsi quando la frequenza del picco della FTT
+% coincide (entro tolleranza) con fr.
 
-% f_iter = 0;
-% correct_l = L1;
-% while(f_iter < fr)
-% 
-%     correct_l = correct_l - 1e-05;
-% 
-%     M1 = (k.*s.*Y)./(1i.*omega.*tan(k.*correct_l));
-%     M2 = (k.*s.*Y)./(1i.*omega.*sin(k.*correct_l));
-% 
-%     Z_iter = M1 - (M2.^2./(ZL+M1));
-% 
-%     B_iter = Bmatrix(A,Z_iter);
-% 
-%     %Funzione di trasferimento in trasmissione.
-%     [Z_in_iter,TTF_iter, ~, ~] = CalculateFunctions(B_iter, Z_iter, Z_iter, 0);
-% 
-%     index = TTF_iter{1} == max(TTF_iter{1});
-%     f_iter = f(index);
-% end
-% 
-% figure(1);
-% Grafico(f, Z_in{1}, Z_in{2}, "Input Impedance", 'blue');
-% hold on;
-% Grafico(f, Z_in_iter{1}, Z_in_iter{2}, "Input Impedance", 'orange');
-% ax1 = subplot(2,1,1); % Primo subplot
-% ax2 = subplot(2,1,2); % Secondo subplot
-% legend(ax1,'without l-correction', 'with l-correction');
-% legend(ax2,'without l-correction', 'with l-correction');
-% 
-% figure(2)
-% Grafico(f, TTF{1}, TTF{2}, "TTF", 'blue');
-% hold on;
-% Grafico(f, TTF_iter{1}, TTF_iter{2}, "TTF", 'orange');
-% ax1 = subplot(2,1,1); % Primo subplot
-% ax2 = subplot(2,1,2); % Secondo subplot
-% legend(ax1,'without l-correction', 'with l-correction');
-% legend(ax2,'without l-correction', 'with l-correction');
+f_iter = 0;
+l_corrected = L1;
+while(f_iter < fr)
+
+    l_corrected = l_corrected - 1e-06;
+
+    M1_11_iter = (k .* s .* Y) ./ (1i .* omega .* tan(k .* l_corrected));
+    M1_12_iter = (k .* s .* Y) ./ (1i .* omega .* sin(k .* l_corrected));
+    Z_iter = M1_11_iter - ( (M1_12_iter.^2) ./ (Z_L1 + M1_11_iter) );
+    B_iter = calcolaMatriceB(A, Z_iter);
+    [Zin_iter, FTT_iter, ~] = calcolaFunzioniDiTrasferimento(B_iter, Z_iter, Z_iter);
+
+    [~, index] = max(FTT_iter{1});
+    f_iter = f(index);
+end
+
+figure(1);
+stampaGrafici(f, Zin{1}, Zin{2}, "Comparing Zin without and with l correction", 'blue', "Zin", "Zin", " without l correction");
+hold on;
+stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin without and with l correction", 'orange', "Zin", "Zin", " with l-correction");
+figure(2);
+stampaGrafici(f, FTT{1}, FTT{2}, "Comparing TTF without and with l correction", 'blue', "TTF", "TTF", " without l correction");
+hold on;
+stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF without and with l correction", 'orange', "TTF", "TTF", " with l-correction");
 
 % %%
 % % % Implementazione dell'estensione del modello terminale a due ceramiche.
@@ -155,14 +158,14 @@ B = calcolaMatriceB(A, Z);
 % [Z_couple, TTF_couple, ~, ~] = CalculateFunctions(B_couple, Z, Z, 0);
 % 
 % f_iter = 0;
-% correct_l = L1;
+% l_corrected = L1;
 % 
 % while(f_iter < fr)
 % 
-%     correct_l = correct_l - 1e-5;
+%     l_corrected = l_corrected - 1e-5;
 % 
-%     M1 = (k.*s.*Y)./(1i.*omega.*tan(k.*correct_l));
-%     M2 = (k.*s.*Y)./(1i.*omega.*sin(k.*correct_l));
+%     M1 = (k.*s.*Y)./(1i.*omega.*tan(k.*l_corrected));
+%     M2 = (k.*s.*Y)./(1i.*omega.*sin(k.*l_corrected));
 % 
 %     Z_iter = M1 - (M2.^2./(ZL+M1));
 % 
