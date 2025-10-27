@@ -49,22 +49,20 @@ fr = 40e+03;
 f = linspace(fr - (fr / 2.5), fr + (fr / 2.5), 12000);
 omega = 2*pi .* f;
 
-% Parametri relativi al carico
+%% Parametri relativi al carico
 z_L1 = 400; % Aria che approssima il vuoto(siccome eq. Langevin valida solo nel vuoto)
 
-% Parametri relativi alla ceramica
+%% Parametri relativi alla ceramica
 [areaFaccia, l_c, rho_c, ~, h33, ~, ~, v_c, ~, ~, ~, C0] = ceramicPicker();
 z_c = rho_c * v_c; % Usare PZ27
 
-% Parametri relativi alla massa di precarico
+%% Parametri relativi alla massa di precarico
 [rho_l, z_l, v_l] = preloadMassPicker();
-
 % Come spiegato in precedenza è possibile esplicitare l'eq di Langevin
 % rispetto alle masse di precarico
 % N.B.: Per come è definita nelle dispense c è metà dello spessore della
 %       ceramica piezoelettrica
 a = ( v_l / (2*pi*fr) ) * atan( ( z_c/ z_l ) * ( 1 / tan( (2*pi*fr*(l_c/2)) / v_c ) ) );
-
 k = omega/v_l;
 s = areaFaccia;
 Y = (v_l^2) * rho_l;
@@ -72,22 +70,41 @@ Y = (v_l^2) * rho_l;
 % nelle dispense è anche indicato come (z2-z1) dove z2 e z1 sono
 % rispettivamente la posizione finale e iniziale della massa lungo l'asse z
 L1 = a;
-
+% Calcolo gli elementi distinti della matrice M1 che modella la prima(ma 
+% in realtà entrambe essendo uguali) massa di precarico.
+% Non ho utilizzato la apposita funzione per il calcolo della matrice M
+% poichè come è possibile notare essa in questo contesto è stata eplicitata
+% rispetto a parametri differenti anche essendo uguale alla M del plate.
 M1_11 = (k .* s .* Y) ./ (1i .* omega .* tan(k .* L1));
 M1_12 = (k .* s .* Y) ./ (1i .* omega .* sin(k .* L1));
+M1_21 = M1_12;
+M1_22 = M1_11;
+M1 = {M1_11, M1_12;...
+      M1_21, M1_22};
 
-% Calcolo le impende acustiche
+%% Calcolo le impende acustiche
 Z_L1 =  z_L1 * areaFaccia;
-% Notare come questa Z della massa di precarico è sostanzialmente una Zeq
-Z = M1_11 - ( (M1_12.^2) ./ (Z_L1 + M1_11) );
 ZoD = z_c * areaFaccia;
+Zeq = M1{1,1} - ( (M1{1,2}.^2) ./ (Z_L1 + M1{1,1}) );
 
+%% Funzione di trasferimento in trasmissione della ceramica con masse di precarico
 % Calcolo la matrice A(3x3) e B(2x2)
 A = calcolaMatriceA(ZoD, omega, v_c, l_c, h33, C0);
-B = calcolaMatriceB(A, Z);
+B = calcolaMatriceB(A, Zeq);
 
 % Notare il fatto che passo Z due volte siccome ho una massa di precarico ad ambo i lati
-[Zin, FTT, FTR] = calcolaFunzioniDiTrasferimento(B, Z, Z);
+[Zin, FTT_pzt, ~] = calcolaFunzioniDiTrasferimento(B, Zeq, Zeq);
+FTT_pzt = db2mag(FTT_pzt{1}) .* exp(1j*deg2rad(FTT_pzt{2}));
+
+% Come visto per il trasduttore a banda larga, anche qui si ha un elemento
+% puramente meccanico modellato da una rete due porte tramite una matrice M
+% quindi la sua FTT è calcoloabile come segue
+FTT_mass = ( M1{1,2} .* Z_L1 ) ./ ( M1{1,1}.*Z_L1 + M1{1,1}.^2 - M1{1,2}.^2);
+
+FTT = FTT_pzt .* FTT_mass;
+
+[moduloFTT, faseFTT] = calcolaModuloEFase(FTT, true, true);
+FTT = {moduloFTT, faseFTT};
 
 % Nel caso di eccitazione in tensione, il dimensionamento ricavato
 % dall'equazione di Langevin (valida idealmente nel vuoto) non garantisce
@@ -116,7 +133,12 @@ while(f_iter < fr)
     M1_12_iter = (k .* s .* Y) ./ (1i .* omega .* sin(k .* l_corrected));
     Z_iter = M1_11_iter - ( (M1_12_iter.^2) ./ (Z_L1 + M1_11_iter) );
     B_iter = calcolaMatriceB(A, Z_iter);
-    [Zin_iter, FTT_iter, ~] = calcolaFunzioniDiTrasferimento(B_iter, Z_iter, Z_iter);
+    [Zin_iter, FTT_pzt_iter, ~] = calcolaFunzioniDiTrasferimento(B_iter, Z_iter, Z_iter);
+    FTT_pzt_iter = db2mag(FTT_pzt_iter{1}) .* exp(1j*deg2rad(FTT_pzt_iter{2}));
+    FTT_mass_iter = ( M1_12_iter .* Z_L1 ) ./ ( M1_11_iter.*Z_L1 + M1_11_iter.^2 - M1_12_iter.^2);
+    FTT_iter = FTT_pzt_iter .* FTT_mass_iter;
+    [moduloFTT_iter, faseFTT_iter] = calcolaModuloEFase(FTT_iter, true, true);
+    FTT_iter = {moduloFTT_iter, faseFTT_iter};
 
     [~, index] = max(FTT_iter{1});
     f_iter = f(index);
