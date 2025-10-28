@@ -46,7 +46,7 @@ evalin('base', 'clear'), close all; clc;
 % spostamento longitudinale) posta a una frequenza superiore alle grequenze
 % udibili ovvero >20kHz, lo standard è 40kHz.
 fr = 40e+03;
-f = linspace(fr - (fr / 2.5), fr + (fr / 2.5), 12000);
+f = linspace(fr - 1000, fr + 1000, 12000);
 omega = 2*pi .* f;
 
 %% Parametri relativi al carico
@@ -124,13 +124,13 @@ FTT = {moduloFTT, faseFTT};
 % coincide (entro tolleranza) con fr.
 
 f_iter = 0;
-l_corrected = L1;
+a_corrected = L1;
 while(f_iter < fr)
 
-    l_corrected = l_corrected - 1e-06;
+    a_corrected = a_corrected - 1e-06;
 
-    M1_11_iter = (k .* s .* Y) ./ (1i .* omega .* tan(k .* l_corrected));
-    M1_12_iter = (k .* s .* Y) ./ (1i .* omega .* sin(k .* l_corrected));
+    M1_11_iter = (k .* s .* Y) ./ (1i .* omega .* tan(k .* a_corrected));
+    M1_12_iter = (k .* s .* Y) ./ (1i .* omega .* sin(k .* a_corrected));
     Z_iter = M1_11_iter - ( (M1_12_iter.^2) ./ (Z_L1 + M1_11_iter) );
     B_iter = calcolaMatriceB(A, Z_iter);
     [Zin_iter, FTT_pzt_iter, ~] = calcolaFunzioniDiTrasferimento(B_iter, Z_iter, Z_iter);
@@ -145,10 +145,10 @@ while(f_iter < fr)
 end
 
 figure(1);
-stampaGrafici(f, Zin{1}, Zin{2}, "Comparing Zin without and with l correction", 'blue', "Zin", "Zin", " without l correction");
+stampaGrafici(f, Zin{1}, Zin{2}, "Comparing Zin without and with a correction", 'blue', "Zin", "Zin", " without a correction");
 hold on;
-stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin without and with l correction", 'orange', "Zin", "Zin", " with l-correction");
+stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin without and with a correction", 'orange', "Zin", "Zin", " with a correction");
 figure(2);
-stampaGrafici(f, FTT{1}, FTT{2}, "Comparing TTF without and with l correction", 'blue', "TTF", "TTF", " without l correction");
+stampaGrafici(f, FTT{1}, FTT{2}, "Comparing TTF without and with a correction", 'blue', "TTF", "TTF", " without a correction");
 hold on;
-stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF without and with l correction", 'orange', "TTF", "TTF", " with l-correction");
+stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF without and with a correction", 'orange', "TTF", "TTF", " with a correction");

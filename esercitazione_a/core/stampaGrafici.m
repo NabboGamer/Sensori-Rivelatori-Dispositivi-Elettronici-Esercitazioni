@@ -29,7 +29,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     % Converto il vettore dei moduli in kiloOhm(kΩ) dividendo per 10^3
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || ...
             contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing') || ...
-            contains(var,'Comparing Zin without and with l correction'))
+            contains(var,'Comparing Zin without and with a correction'))
         modulo = modulo ./ 1e+03;
     end
    
@@ -40,7 +40,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     modifiedyAxisString = '|' + yAxisString + '|';
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || ...
             contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing') || ...
-            contains(var,'Comparing Zin without and with l correction'))
+            contains(var,'Comparing Zin without and with a correction'))
         % Quando il modulo è in kΩ (non in dB) il dato non è logaritmico ma può variare su più ordini di grandezza; 
         % per leggerlo meglio uso una scala logaritmica sull'asse Y
         loglog(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
@@ -79,7 +79,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
         xr.LabelHorizontalAlignment = 'center';
     elseif (contains(var,'Impedance') || contains(var,'Impedence Comparing') || ...
             contains(var,'Impedence Comparing ARIA-ARIA') || contains(var,'Impedence Comparing ACQUA-ACQUA') ||...
-            contains(var,'Comparing Zin without and with Backing') || contains(var,'Comparing Zin without and with l correction'))
+            contains(var,'Comparing Zin without and with Backing') || contains(var,'Comparing Zin without and with a correction'))
 
         % Viene disegnato un punto nero ('black.') alla frequenza e al 
         % modulo corrispondenti al massimo
@@ -110,7 +110,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
             contains(var,'TTF side 1 Comparing') || contains(var,'TTF side 2 Comparing') || ...
             contains(var,'RTF side 1 Comparing') || contains(var,'RTF side 2 Comparing') || ...
             contains(var,'Comparing TTF without and with Backing') || contains(var,'Comparing RTF without and with Backing') || ...
-            contains(var,'Comparing TTF without and with l correction'))
+            contains(var,'Comparing TTF without and with a correction'))
 
         plot(f(1,index_max), modulo(index_max), 'black.','HandleVisibility','off');
         labelString = strcat("Max", [newline 'Module: '], " ", string(modulo(index_max)), [newline 'Frequency: '], " ", string(f(1,index_max)));
