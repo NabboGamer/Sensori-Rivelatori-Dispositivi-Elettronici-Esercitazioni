@@ -46,7 +46,7 @@ evalin('base', 'clear'), close all; clc;
 % spostamento longitudinale) posta a una frequenza superiore alle grequenze
 % udibili ovvero >20kHz, lo standard è 40kHz.
 fr = 40e+03;
-f = linspace(fr - 1000, fr + 1000, 12000);
+f = linspace(fr - (fr / 10), fr + (fr / 10), 12000);
 omega = 2*pi .* f;
 
 %% Parametri relativi al carico
