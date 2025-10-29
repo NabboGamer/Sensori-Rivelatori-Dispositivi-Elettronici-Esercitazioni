@@ -24,7 +24,7 @@ z_L1 = 400; % Aria che approssima il vuoto(siccome eq. Langevin valida solo nel 
 z_c = rho_c * v_c; % Usare PZ27
 
 %% Parametri relativi alla massa di precarico
-[rho_l, z_l, v_l] = preloadMassPicker();
+[rho_l, z_l, v_l] = purelyMechanicalLayerMaterialPicker('Seleziona il materiale da utilizzare per le masse di precarico');
 % Come spiegato in precedenza è possibile esplicitare l'eq di Langevin
 % rispetto alle masse di precarico
 % N.B.: Per come è definita nelle dispense c è metà dello spessore della
