@@ -31,12 +31,13 @@ addpath('../../core/');
 evalin('base', 'clear'), close all; clc;
 
 fr = 40e+03;
-f = linspace(fr - (fr / 10), fr + (fr / 10), 12000);
+f = linspace(fr - (fr / 2), fr + (fr / 2), 12000);
 omega = 2*pi .* f;
 
 %% Parametri relativi ai carichi(L1 e L2)
 % Si utilizza l'aria come approssimazione del vuoto
 z_L1 = 400;
+z_L2 = z_L1;
 
 %% Parametri relativi alle ceramicche(Ceq)
 % Ricordati che è opportuno utilizzare facce circolari in questo caso
@@ -49,18 +50,20 @@ z_c = rho_c * v_c; % Usare PZ27
 [rho_l, z_l, v_l] = purelyMechanicalLayerMaterialPicker('Seleziona il materiale da utilizzare per le masse di precarico');
 a = ( v_l / (2*pi*fr) ) * atan( ( z_c/ z_l ) * ( 1 / tan( (2*pi*fr*(l_c/2)) / v_c ) ) );
 L1 = a;
+L2 = L1;
 k_l = omega/v_l;
 S_l = areaFaccia;
 Y_l = (v_l^2) * rho_l;
 M1 = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, L1);
+M2 = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, L2);
 
 %% Parametri relativi alle sezioni cilindriche costanti del concentratore a gradino(M3 e M4)
 [rho_t, z_t, v_t] = purelyMechanicalLayerMaterialPicker('Seleziona il materiale da utilizzare per il concentratore:');
 % Ricordando come avevamo definito lambda nella modellazione del trasduttore a larga banda
 lambda_t = v_t/fr;
 % Come da specifica definisco lo spessore delle sezioni cilindriche
-L3=lambda_t/4;
-L4=L3;
+L3 = lambda_t/4;
+L4 = L3;
 k_t = omega/v_t;
 S_t3 = areaFaccia;
 % Si seleziona un target di guadagno Mp alla risonanza.
@@ -70,11 +73,13 @@ S_t3 = areaFaccia;
 % Ricordando che alla risonanza per il concentratore a gradino vale la
 % seguente relazione:
 % Mp=N^2
-Mp=2.0;
-N=sqrt(Mp);
+% Dove Mp è il guadagno del concentratore anche detto fattore di
+% amplificazione della velocità.
+Mp = concentratorGainPicker();
+N = sqrt(Mp);
 % Ricordando la definizione di N:
 % N=R1/R2
-% Allora vale la seguente relazione:
+% Allora vale la seguente relazione(sezioni circolari):
 % N^2=S1/S2
 S_t4 = S_t3/(N^2);
 Y_t = (v_t^2) * rho_t;
@@ -82,74 +87,71 @@ Y_t = (v_t^2) * rho_t;
 M3 = calcolaMatriceMFormulazioneAlternativa(k_t, S_t3, Y_t, omega, L3);
 M4 = calcolaMatriceMFormulazioneAlternativa(k_t, S_t4, Y_t, omega, L4);
 
+%% Calcolo le impende acustiche
+Z_L1 =  z_L1 * S_l;
+Z_L2 =  z_L2 * S_t4;
+ZoD = z_c * areaFaccia;
 
-% %% Calcolo le impende acustiche
-% Z_L1 =  z_L1 * areaFaccia;
-% ZoD = z_c * areaFaccia;
-% Zeq = M1{1,1} - ( (M1{1,2}.^2) ./ (Z_L1 + M1{1,1}) );
-% 
-% %% Funzione di trasferimento in trasmissione della ceramica con masse di precarico
-% % Calcolo la matrice A(3x3) e B(2x2)
-% A = calcolaMatriceA(ZoD, omega, v_c, l_c, h33, C0);
-% B = calcolaMatriceB(A, Zeq);
-% 
-% % Notare il fatto che passo Z due volte siccome ho una massa di precarico ad ambo i lati
-% [Zin, FTT_pzt, ~] = calcolaFunzioniDiTrasferimento(B, Zeq, Zeq);
-% FTT_pzt = db2mag(FTT_pzt{1}) .* exp(1j*deg2rad(FTT_pzt{2}));
-% 
-% % Come visto per il trasduttore a banda larga, anche qui si ha un elemento
-% % puramente meccanico modellato da una rete due porte tramite una matrice M
-% % quindi la sua FTT è calcoloabile come segue
-% FTT_mass = ( M1{1,2} .* Z_L1 ) ./ ( M1{1,1}.*Z_L1 + M1{1,1}.^2 - M1{1,2}.^2);
-% 
-% FTT = FTT_pzt .* FTT_mass;
-% 
-% [moduloFTT, faseFTT] = calcolaModuloEFase(FTT, true, true);
-% FTT = {moduloFTT, faseFTT};
-% 
-% % Nel caso di eccitazione in tensione, il dimensionamento ricavato
-% % dall'equazione di Langevin (valida idealmente nel vuoto) non garantisce
-% % che il massimo della FTT cada esattamente alla frequenza di lavoro fr.
-% % In pratica, il picco della FTT (che coincide con un minimo di Z_in) si
-% % trova tipicamente a una frequenza f_a < fr.
-% %
-% % Obiettivo: spostare f_a verso destra fino a farla coincidere con la
-% % frequenza di lavoro fr = 40 kHz.
-% %
-% % Poiché, per la risonanza di spessore, f ≈ v/(2·l), frequenza e spessore
-% % sono inversamente proporzionali: riducendo lo spessore della massa di
-% % precarico si aumenta la frequenza di risonanza del sistema complessivo.
-% %
-% % Strategia: iterare su l (diminuendolo a piccoli passi), ricalcolare Z_in
-% % e FTT a ogni passo, e fermarsi quando la frequenza del picco della FTT
-% % coincide (entro tolleranza) con fr.
-% 
+Zeq_left = M1{1,1} - (M1{1,2}.^2) ./ (Z_L1   + M1{1,1});
+Zin_M4   = M4{1,1} - (M4{1,2}.^2) ./ (Z_L2   + M4{1,1});
+Zin_M3   = M3{1,1} - (M3{1,2}.^2) ./ (Zin_M4 + M3{1,1});
+Zeq_right= M2{1,1} - (M2{1,2}.^2) ./ (Zin_M3 + M2{1,1});
+
+%%Funzione di trasferimento in trasmissione del sistema completo
+% Calcolo la matrice A(3x3) e B(2x2)
+numberOfCeramicPairs = 1;
+new_l_c = l_c / (2 ^ numberOfCeramicPairs);
+new_C0 = (2 ^ numberOfCeramicPairs) * C0;
+
+A_couple = calcolaMatriceA(ZoD, omega, v_c, new_l_c, h33, new_C0);
+G = calcolaMatriceG(A_couple, A_couple);
+B_couple = calcolaMatriceB(G, Zeq_right);
+
+[Zin, FTT_pzt, ~] = calcolaFunzioniDiTrasferimento(B_couple, Zeq_right, Zeq_left);
+FTT_pzt = db2mag(FTT_pzt{1}) .* exp(1j*deg2rad(FTT_pzt{2}));
+
+FTT_M4 = ( M4{1,2} .* Z_L2      ) ./ ( M4{1,1}.*Z_L2      + M4{1,1}.^2 - M4{1,2}.^2);
+FTT_M3 = ( M3{1,2} .* Zin_M3    ) ./ ( M3{1,1}.*Zin_M4    + M3{1,1}.^2 - M3{1,2}.^2);
+FTT_M2 = ( M2{1,2} .* Zeq_right ) ./ ( M2{1,1}.*Zeq_right + M2{1,1}.^2 - M2{1,2}.^2);
+
+FTT = FTT_pzt .* FTT_M2 .* FTT_M3 .* FTT_M4;
+
+[moduloFTT, faseFTT] = calcolaModuloEFase(FTT, true, true);
+FTT = {moduloFTT, faseFTT};
+
 % f_iter = 0;
 % a_corrected = L1;
 % while(f_iter < fr)
 % 
 %     a_corrected = a_corrected - 1e-06;
 % 
-%     M1_11_iter = (k .* s .* Y) ./ (1i .* omega .* tan(k .* a_corrected));
-%     M1_12_iter = (k .* s .* Y) ./ (1i .* omega .* sin(k .* a_corrected));
-%     Z_iter = M1_11_iter - ( (M1_12_iter.^2) ./ (Z_L1 + M1_11_iter) );
-%     B_iter = calcolaMatriceB(A, Z_iter);
-%     [Zin_iter, FTT_pzt_iter, ~] = calcolaFunzioniDiTrasferimento(B_iter, Z_iter, Z_iter);
+%     M1_iter = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, a_corrected);
+%     M2_iter = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, a_corrected);
+% 
+%     Zeq_left_iter = M1_iter{1,1} - (M1_iter{1,2}.^2) ./ (Z_L1   + M1_iter{1,1});
+%     Zeq_right_iter = M2_iter{1,1} - (M2_iter{1,2}.^2) ./ (Zin_M3 + M2_iter{1,1});
+% 
+%     B_couple_iter = calcolaMatriceB(G, Zeq_right_iter);
+% 
+%     [Zin_iter, FTT_pzt_iter, ~] = calcolaFunzioniDiTrasferimento(B_couple_iter, Zeq_right_iter, Zeq_left_iter);
 %     FTT_pzt_iter = db2mag(FTT_pzt_iter{1}) .* exp(1j*deg2rad(FTT_pzt_iter{2}));
-%     FTT_mass_iter = ( M1_12_iter .* Z_L1 ) ./ ( M1_11_iter.*Z_L1 + M1_11_iter.^2 - M1_12_iter.^2);
-%     FTT_iter = FTT_pzt_iter .* FTT_mass_iter;
+% 
+%     FTT_M2_iter = ( M2_iter{1,2} .* Zeq_right_iter ) ./ ( M2_iter{1,1}.*Zeq_right_iter + M2_iter{1,1}.^2 - M2_iter{1,2}.^2);
+% 
+%     FTT_iter = FTT_pzt_iter .* FTT_M2_iter .* FTT_M3 .* FTT_M4;
+% 
 %     [moduloFTT_iter, faseFTT_iter] = calcolaModuloEFase(FTT_iter, true, true);
 %     FTT_iter = {moduloFTT_iter, faseFTT_iter};
 % 
 %     [~, index] = max(FTT_iter{1});
 %     f_iter = f(index);
 % end
-% 
-% figure(1);
-% stampaGrafici(f, Zin{1}, Zin{2}, "Comparing Zin without and with a correction", 'blue', "Zin", "Zin", " without a correction");
+
+figure(3);
+stampaGrafici(f, Zin{1}, Zin{2}, "Impedance", 'blue', "Zin", "Zin");
 % hold on;
-% stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin without and with a correction", 'orange', "Zin", "Zin", " with a correction");
-% figure(2);
-% stampaGrafici(f, FTT{1}, FTT{2}, "Comparing TTF without and with a correction", 'blue', "TTF", "TTF", " without a correction");
+% stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin without and with a correction with two ceramics", 'orange', "Zin", "Zin", " with a correction");
+figure(4);
+stampaGrafici(f, FTT{1}, FTT{2}, "TTF", 'blue', "TTF", "TTF");
 % hold on;
-% stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF without and with a correction", 'orange', "TTF", "TTF", " with a correction");
+% stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF without and with a correction with two ceramics", 'orange', "TTF", "TTF", " with a correction");
