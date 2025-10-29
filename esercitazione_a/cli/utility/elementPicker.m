@@ -15,70 +15,70 @@ function [rho, c33, h33, e33, beta33, v] = elementPicker()
                 e33 = 23.4;     % C/m^2
                 
                 beta33 = h33/e33;  % Vm/C
-                v = sqrt(c33/rho); % m^2/sec
+                v = sqrt(c33/rho); % m/s
     
             case 23
-                rho = 7.70e+03; % Kg/m^3
-                c33 = 1.54e+11; % N/m^2
-                h33 = 2.01e+09; % V/m
-                e33 = 15.5;     % C/m^2
+                rho = 7.70e+03;
+                c33 = 1.54e+11;
+                h33 = 2.01e+09;
+                e33 = 15.5;
     
-                beta33 = h33/e33;  % Vm/C
-                v = sqrt(c33/rho); % m^2/sec
+                beta33 = h33/e33;
+                v = sqrt(c33/rho);
     
             case 24
-                rho = 7.70e+03; % Kg/m^3
-                c33 = 1.81e+11; % N/m^2
-                h33 = 4.70e+09; % V/m
-                e33 = 9.9;      % C/m^2
+                rho = 7.70e+03;
+                c33 = 1.81e+11;
+                h33 = 4.70e+09;
+                e33 = 9.9;
     
-                beta33 = h33/e33;  % Vm/C
-                v = sqrt(c33/rho); % m^2/sec
+                beta33 = h33/e33;
+                v = sqrt(c33/rho);
     
             case 26
-                rho = 7.70e+03; % Kg/m^3
-                c33 = 1.58e+11; % N/m^2
-                h33 = 2.37e+09; % V/m
-                e33 = 14.7;     % C/m^2
+                rho = 7.70e+03;
+                c33 = 1.58e+11;
+                h33 = 2.37e+09;
+                e33 = 14.7;
     
-                beta33 = h33/e33;  % Vm/C
-                v = sqrt(c33/rho); % m^2/sec
+                beta33 = h33/e33;
+                v = sqrt(c33/rho);
     
             case 27
-                rho = 7.70e+03; % Kg/m^3
-                c33 = 1.44e+11; % N/m^2
-                h33 = 1.98e+09; % V/m
-                e33 = 16.0;     % C/m^2
+                rho = 7.70e+03;
+                c33 = 1.44e+11;
+                h33 = 1.98e+09;
+                e33 = 16.0;
     
-                beta33 = h33/e33;  % Vm/C
-                v = sqrt(c33/rho); % m^2/sec
+                beta33 = h33/e33;
+                v = sqrt(c33/rho);
     
             case 28
-                rho = 7.70e+03; % Kg/m^3
-                c33 = 1.52e+11; % N/m^2
-                h33 = 2.76e+09; % V/m
-                e33 = 12.4;     % C/m^2
+                rho = 7.70e+03;
+                c33 = 1.52e+11;
+                h33 = 2.76e+09;
+                e33 = 12.4;
     
-                beta33 = h33/e33;  % Vm/C
-                v = sqrt(c33/rho); % m^2/sec
+                beta33 = h33/e33;
+                v = sqrt(c33/rho);
     
             case 29
-                rho = 7.46e+03; % Kg/m^3
-                c33 = 1.51e+11; % N/m^2
-                h33 = 1.96e+09; % V/m
-                e33 = 21.2;     % C/m^2
+                rho = 7.46e+03;
+                c33 = 1.51e+11;
+                h33 = 1.96e+09;
+                e33 = 21.2;
     
-                beta33 = h33/e33;  % Vm/C
-                v = sqrt(c33/rho); % m^2/sec
+                beta33 = h33/e33;
+                v = sqrt(c33/rho);
     
             case 34
-                rho = 7.55e+03; % Kg/m^3
-                c33 = 1.67e+11; % N/m^2
-                h33 = 4.28e+09; % V/m
-                e33 = 6.5;      % C/m^2
+                rho = 7.55e+03;
+                c33 = 1.67e+11;
+                h33 = 4.28e+09;
+                e33 = 6.5;
     
-                beta33 = h33/e33;  % Vm/C
-                v = sqrt(c33/rho); % m^2/sec
+                beta33 = h33/e33;
+                v = sqrt(c33/rho);
     
             otherwise
                 cprintf('Errors', "Codice inesistente, prego reinserire...\n");
