@@ -39,10 +39,36 @@ evalin('base', 'clear'), close all; clc;
 % L'intervallo è stato costruito per includere queste 3 armoniche con un pò
 % di frequenze aggiuntive sugli estremi. Inoltre è stato costruito in modo
 % che nell'intervallo vi sia esattamente la frequenza 40kHz.
-fr = 40e3;  a = 1e4;  b = 2.1*fr;
-N_des = 12000;
+fr = 40e3;  a = 1.2e4;  b = 2.1*fr;
+% Costruisco un asse di frequenze uniforme [a, b] che CONTENGA esattamente fr.
+% Per un asse uniforme generato da linspace(a,b,N) i campioni sono:
+% 
+%   f_i = a + (i-1)*Δf,   con Δf = (b-a)/(N-1)  e  i=1..N.
+% 
+% Vogliamo che esista un indice intero i* tale che f_{i*} = fr.
+% Risolvendo rispetto a i*:
+% 
+%   fr = a + (i*-1)*Δf  ⇒  i* = 1 + (fr-a)/Δf = 1 + (fr-a)*(N-1)/(b-a).
+% 
+% Definiamo: 
+% 
+%   r := (fr-a)/(b-a)  ⇒  i* = 1 + r*(N-1).
+% 
+% Affinché i* sia un intero (cioè fr cada esattamente su un campione)
+% è necessario che r*(N-1) sia intero. Se r è razionale r = p/q (in forma
+% ridotta), basta imporre che (N-1) sia multiplo di q:
+% 
+%   N-1 = k*q  ⇒  i* = 1 + p*k  (intero)  ⇒  f(i*) = fr.
+% 
+% Esempio: a=10 kHz, b=80 kHz, fr=40 kHz ⇒ r = 3/7. Se scelgo N tale che
+% (N-1) sia multiplo di 7 (es. N=11999 ⇒ N-1=11998=7*1714), allora
+% i* = 1 + 3*1714 = 5143 e il campione 5143 vale esattamente fr.
+% 'rat' serve a ottenere p/q che approssima r gestendo gli errori di
+% floating-point, così possiamo scegliere N con (N-1) multiplo di q.
+N_des = 12000;                          % Numero desiderato di campioni
 [p,q] = rat((fr - a)/(b - a), 1e-12);   % -> p=3, q=7
-N = q*round((N_des-1)/q) + 1;           % -> 11999 (per stare vicino a 12000)
+k = round((N_des-1)/q);                 % Invertendo la relazione prec.
+N = q*k + 1;                            % -> 11999 (vicino a 12000)
 f = linspace(a, b, N);
 
 omega = 2*pi .* f;
@@ -132,6 +158,7 @@ FTT = FTT_pzt .* FTT_M2 .* FTT_M3 .* FTT_M4;
 [moduloFTT, faseFTT] = calcolaModuloEFase(FTT, true, true);
 FTT = {moduloFTT, faseFTT};
 
+%TODO: rISOLVERE Problema ottimizzazione, perchè non sta spostando nulla???
 f_iter = 0;
 a_corrected = L1;
 while(f_iter < fr)
