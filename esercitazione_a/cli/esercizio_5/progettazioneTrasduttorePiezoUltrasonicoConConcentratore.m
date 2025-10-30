@@ -197,10 +197,7 @@ while(f_iter < fr)
 end
 
 figure(1);
-stampaGrafici(f, Zin{1}, Zin{2}, "Comparing Zin including the speed concentrator without and with a correction", 'blue', "Zin", "Zin", " without a correction");
-hold on;
-stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin including the speed concentrator without and with a correction", 'orange', "Zin", "Zin", " with a correction");
+stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Zin of the Langevin Ultrasonic Trasducer with the velocity Concentrator", 'blue', "Zin", "Zin");
+
 figure(2);
-stampaGrafici(f, FTT{1}, FTT{2}, "Comparing TTF including the speed concentrator without and with a correction", 'blue', "TTF", "TTF", " without a correction");
-hold on;
-stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF including the speed concentrator without and with a correction", 'orange', "TTF", "TTF", " with a correction");
+stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "TTF of the Langevin Ultrasonic Trasducer with the velocity Concentrator", 'blue', "TTF", "TTF");
