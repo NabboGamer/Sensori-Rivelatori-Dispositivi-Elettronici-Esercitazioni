@@ -158,7 +158,7 @@ FTT = FTT_pzt .* FTT_M2 .* FTT_M3 .* FTT_M4;
 [moduloFTT, faseFTT] = calcolaModuloEFase(FTT, true, true);
 FTT = {moduloFTT, faseFTT};
 
-%TODO: rISOLVERE Problema ottimizzazione, perchè non sta spostando nulla???
+
 f_iter = 0;
 a_corrected = L1;
 while(f_iter < fr)
@@ -183,8 +183,17 @@ while(f_iter < fr)
     [moduloFTT_iter, faseFTT_iter] = calcolaModuloEFase(FTT_iter, true, true);
     FTT_iter = {moduloFTT_iter, faseFTT_iter};
 
-    [~, index] = max(FTT_iter{1});
-    f_iter = f(index);
+    % Siccome l'attuale intervallo di frequenze utilizzato è tale da
+    % mostrare le prime 3 armoniche del segnale ovviamente FTT avrà diversi
+    % massimi locali e in generale a 40kHz non corrisponde al massimo
+    % globale. Quindi non posso più ragionare con la sola funzione max che
+    % restituisce il massimo globale ma ho invece utilizzato la funzione 
+    % findpeaks appartenente al "Signal Processing Toolbox" che restituisce
+    % tutti i massimi locali. In questo modo essendo interessati alla
+    % seconda armonica ho potuto prelevare il secondo "picco"(o massimo locale)
+    % per poi procedere come al solito.
+    [~, indexes] = findpeaks(FTT_iter{1});
+    f_iter = f(indexes(2));
 end
 
 figure(1);
