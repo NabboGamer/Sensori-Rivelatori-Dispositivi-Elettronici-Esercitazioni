@@ -119,7 +119,7 @@ FTT = {moduloFTT, faseFTT};
 % sono inversamente proporzionali: riducendo lo spessore della massa di
 % precarico si aumenta la frequenza di risonanza del sistema complessivo.
 %
-% Strategia: iterare su l (diminuendolo a piccoli passi), ricalcolare Z_in
+% Strategia: iterare su l (diminuendolo a piccoli passi), ricalcolare Zin
 % e FTT a ogni passo, e fermarsi quando la frequenza del picco della FTT
 % coincide (entro tolleranza) con fr.
 
