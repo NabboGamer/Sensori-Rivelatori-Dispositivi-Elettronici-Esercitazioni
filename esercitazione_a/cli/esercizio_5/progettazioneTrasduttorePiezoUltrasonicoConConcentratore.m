@@ -31,7 +31,7 @@ addpath('../../core/');
 evalin('base', 'clear'), close all; clc;
 
 fr = 40e+03;
-f = linspace(fr - (fr / 2), fr + (fr / 2), 12000);
+f = linspace(1e+04, 2.0*fr, 12000);
 omega = 2*pi .* f;
 
 %% Parametri relativi ai carichi(L1 e L2)
@@ -88,9 +88,9 @@ M3 = calcolaMatriceMFormulazioneAlternativa(k_t, S_t3, Y_t, omega, L3);
 M4 = calcolaMatriceMFormulazioneAlternativa(k_t, S_t4, Y_t, omega, L4);
 
 %% Calcolo le impende acustiche
-Z_L1 =  z_L1 * S_l;
-Z_L2 =  z_L2 * S_t4;
-ZoD = z_c * areaFaccia;
+Z_L1 = z_L1 * S_l;
+Z_L2 = z_L2 * S_t4;
+ZoD  = z_c  * areaFaccia;
 
 Zeq_left = M1{1,1} - (M1{1,2}.^2) ./ (Z_L1   + M1{1,1});
 Zin_M4   = M4{1,1} - (M4{1,2}.^2) ./ (Z_L2   + M4{1,1});
@@ -110,48 +110,48 @@ B_couple = calcolaMatriceB(G, Zeq_right);
 [Zin, FTT_pzt, ~] = calcolaFunzioniDiTrasferimento(B_couple, Zeq_right, Zeq_left);
 FTT_pzt = db2mag(FTT_pzt{1}) .* exp(1j*deg2rad(FTT_pzt{2}));
 
-FTT_M4 = ( M4{1,2} .* Z_L2      ) ./ ( M4{1,1}.*Z_L2      + M4{1,1}.^2 - M4{1,2}.^2);
-FTT_M3 = ( M3{1,2} .* Zin_M3    ) ./ ( M3{1,1}.*Zin_M4    + M3{1,1}.^2 - M3{1,2}.^2);
-FTT_M2 = ( M2{1,2} .* Zeq_right ) ./ ( M2{1,1}.*Zeq_right + M2{1,1}.^2 - M2{1,2}.^2);
+FTT_M4 = ( M4{1,2} .* Z_L2   ) ./ ( M4{1,1}.*Z_L2   + M4{1,1}.^2 - M4{1,2}.^2);
+FTT_M3 = ( M3{1,2} .* Zin_M4 ) ./ ( M3{1,1}.*Zin_M4 + M3{1,1}.^2 - M3{1,2}.^2);
+FTT_M2 = ( M2{1,2} .* Zin_M3 ) ./ ( M2{1,1}.*Zin_M3 + M2{1,1}.^2 - M2{1,2}.^2);
 
 FTT = FTT_pzt .* FTT_M2 .* FTT_M3 .* FTT_M4;
 
 [moduloFTT, faseFTT] = calcolaModuloEFase(FTT, true, true);
 FTT = {moduloFTT, faseFTT};
 
-% f_iter = 0;
-% a_corrected = L1;
-% while(f_iter < fr)
-% 
-%     a_corrected = a_corrected - 1e-06;
-% 
-%     M1_iter = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, a_corrected);
-%     M2_iter = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, a_corrected);
-% 
-%     Zeq_left_iter = M1_iter{1,1} - (M1_iter{1,2}.^2) ./ (Z_L1   + M1_iter{1,1});
-%     Zeq_right_iter = M2_iter{1,1} - (M2_iter{1,2}.^2) ./ (Zin_M3 + M2_iter{1,1});
-% 
-%     B_couple_iter = calcolaMatriceB(G, Zeq_right_iter);
-% 
-%     [Zin_iter, FTT_pzt_iter, ~] = calcolaFunzioniDiTrasferimento(B_couple_iter, Zeq_right_iter, Zeq_left_iter);
-%     FTT_pzt_iter = db2mag(FTT_pzt_iter{1}) .* exp(1j*deg2rad(FTT_pzt_iter{2}));
-% 
-%     FTT_M2_iter = ( M2_iter{1,2} .* Zeq_right_iter ) ./ ( M2_iter{1,1}.*Zeq_right_iter + M2_iter{1,1}.^2 - M2_iter{1,2}.^2);
-% 
-%     FTT_iter = FTT_pzt_iter .* FTT_M2_iter .* FTT_M3 .* FTT_M4;
-% 
-%     [moduloFTT_iter, faseFTT_iter] = calcolaModuloEFase(FTT_iter, true, true);
-%     FTT_iter = {moduloFTT_iter, faseFTT_iter};
-% 
-%     [~, index] = max(FTT_iter{1});
-%     f_iter = f(index);
-% end
+f_iter = 0;
+a_corrected = L1;
+while(f_iter < fr)
+
+    a_corrected = a_corrected - 1e-06;
+
+    M1_iter = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, a_corrected);
+    M2_iter = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, a_corrected);
+
+    Zeq_left_iter = M1_iter{1,1} - (M1_iter{1,2}.^2) ./ (Z_L1   + M1_iter{1,1});
+    Zeq_right_iter = M2_iter{1,1} - (M2_iter{1,2}.^2) ./ (Zin_M3 + M2_iter{1,1});
+
+    B_couple_iter = calcolaMatriceB(G, Zeq_right_iter);
+
+    [Zin_iter, FTT_pzt_iter, ~] = calcolaFunzioniDiTrasferimento(B_couple_iter, Zeq_right_iter, Zeq_left_iter);
+    FTT_pzt_iter = db2mag(FTT_pzt_iter{1}) .* exp(1j*deg2rad(FTT_pzt_iter{2}));
+
+    FTT_M2_iter = ( M2_iter{1,2} .* Zin_M3 ) ./ ( M2_iter{1,1}.*Zin_M3 + M2_iter{1,1}.^2 - M2_iter{1,2}.^2);
+
+    FTT_iter = FTT_pzt_iter .* FTT_M2_iter .* FTT_M3 .* FTT_M4;
+
+    [moduloFTT_iter, faseFTT_iter] = calcolaModuloEFase(FTT_iter, true, true);
+    FTT_iter = {moduloFTT_iter, faseFTT_iter};
+
+    [~, index] = max(FTT_iter{1});
+    f_iter = f(index);
+end
 
 figure(3);
-stampaGrafici(f, Zin{1}, Zin{2}, "Impedance", 'blue', "Zin", "Zin");
-% hold on;
-% stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin without and with a correction with two ceramics", 'orange', "Zin", "Zin", " with a correction");
+stampaGrafici(f, Zin{1}, Zin{2}, "Comparing Zin without and with a correction", 'blue', "Zin", "Zin", " without a correction");
+hold on;
+stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin without and with a correction", 'orange', "Zin", "Zin", " with a correction");
 figure(4);
-stampaGrafici(f, FTT{1}, FTT{2}, "TTF", 'blue', "TTF", "TTF");
-% hold on;
-% stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF without and with a correction with two ceramics", 'orange', "TTF", "TTF", " with a correction");
+stampaGrafici(f, FTT{1}, FTT{2}, "Comparing TTF without and with a correction", 'blue', "TTF", "TTF", " without a correction");
+hold on;
+stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF without and with a correction", 'orange', "TTF", "TTF", " with a correction");
