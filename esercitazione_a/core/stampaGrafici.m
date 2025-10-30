@@ -30,7 +30,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || ...
             contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing') || ...
             contains(var,'Comparing Zin without and with a correction') || ...
-            contains(var,'Comparing Zin including the speed concentrator without and with a correction'))
+            contains(var,'Zin of the Langevin Ultrasonic Trasducer with the velocity Concentrator'))
         modulo = modulo ./ 1e+03;
     end
    
@@ -42,7 +42,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || ...
             contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing') || ...
             contains(var,'Comparing Zin without and with a correction') || ...
-            contains(var,'Comparing Zin including the speed concentrator without and with a correction'))
+            contains(var,'Zin of the Langevin Ultrasonic Trasducer with the velocity Concentrator'))
         % Quando il modulo è in kΩ (non in dB) il dato non è logaritmico ma può variare su più ordini di grandezza; 
         % per leggerlo meglio uso una scala logaritmica sull'asse Y
         loglog(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
@@ -106,8 +106,8 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
         xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
         xmin.LabelVerticalAlignment = 'bottom';
         xmin.LabelHorizontalAlignment = 'left';
-    elseif (contains(var,'Comparing Zin including the speed concentrator without and with a correction') || ...
-            contains(var,'Comparing TTF including the speed concentrator without and with a correction'))
+    elseif (contains(var,'Zin of the Langevin Ultrasonic Trasducer with the velocity Concentrator') || ...
+            contains(var,'TTF of the Langevin Ultrasonic Trasducer with the velocity Concentrator'))
 
         % N.B.: Qui sto lavorando in kHz quindi il e+03 scompare
         target = 40;
