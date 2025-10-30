@@ -29,7 +29,8 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     % Converto il vettore dei moduli in kiloOhm(kΩ) dividendo per 10^3
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || ...
             contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing') || ...
-            contains(var,'Comparing Zin without and with a correction'))
+            contains(var,'Comparing Zin without and with a correction') || ...
+            contains(var,'Comparing Zin including the speed concentrator without and with a correction'))
         modulo = modulo ./ 1e+03;
     end
    
@@ -40,7 +41,8 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     modifiedyAxisString = '|' + yAxisString + '|';
     if (contains(var,'Zin: input impedance') || contains(var,'Impedance') || ...
             contains(var,'Comparing Zin without and with Backing') || contains(var,'Impedence Comparing') || ...
-            contains(var,'Comparing Zin without and with a correction'))
+            contains(var,'Comparing Zin without and with a correction') || ...
+            contains(var,'Comparing Zin including the speed concentrator without and with a correction'))
         % Quando il modulo è in kΩ (non in dB) il dato non è logaritmico ma può variare su più ordini di grandezza; 
         % per leggerlo meglio uso una scala logaritmica sull'asse Y
         loglog(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
@@ -104,6 +106,25 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
         xmin = xline(f(1,index_min),'-.', '','Color','black', 'HandleVisibility', 'off');
         xmin.LabelVerticalAlignment = 'bottom';
         xmin.LabelHorizontalAlignment = 'left';
+    elseif (contains(var,'Comparing Zin including the speed concentrator without and with a correction') || ...
+            contains(var,'Comparing TTF including the speed concentrator without and with a correction'))
+
+        % N.B.: Qui sto lavorando in kHz quindi il e+03 scompare
+        target = 40;
+
+        [~, idx] = min(abs(f - target));
+        x0 = f(idx);
+        y0 = modulo(idx);
+        
+        xline(ax1, x0, '-.','Color','k', 'HandleVisibility','off');
+        
+        hold(ax1,'on');
+        m = plot(ax1, x0, y0, 'o', 'MarkerFaceColor','w', 'MarkerEdgeColor','k', 'HandleVisibility','off');
+        uistack(m,'top');  % porta il marker in primo piano
+        
+        labelString = sprintf('Module: %.3f\nFrequency: %.3f kHz', y0, x0);
+        safeText(ax1, x0, y0, labelString, 0.02, 0.02);
+
     elseif (contains(var,'TTF') || contains(var,'TTF Comparing') || contains(var,'RTF Comparing') || ...
             contains(var,'TTF Comparing ARIA-ARIA') || contains(var,'RTF Comparing ARIA-ARIA') || ...
             contains(var,'TTF Comparing ACQUA-ACQUA') || contains(var,'RTF Comparing ACQUA-ACQUA') || ...
