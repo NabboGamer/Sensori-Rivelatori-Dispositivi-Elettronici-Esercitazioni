@@ -30,8 +30,21 @@ addpath('../utility/');
 addpath('../../core/');
 evalin('base', 'clear'), close all; clc;
 
-fr = 40e+03;
-f = linspace(1e+04, 2.0*fr, 12000);
+% Come scritto nella dispense ci si aspetta che la frequenza di lavoro fω
+% richiesta dalle specifiche di progetto corrisponde alla seconda armonica.
+% Quindi osservando che:
+% - 1ª armonica (fondamentale): 20 kHz
+% - 2ª armonica: 40 kHz (= fr)
+% - 3ª armonica: 60 kHz
+% L'intervallo è stato costruito per includere queste 3 armoniche con un pò
+% di frequenze aggiuntive sugli estremi. Inoltre è stato costruito in modo
+% che nell'intervallo vi sia esattamente la frequenza 40kHz.
+fr = 40e3;  a = 1e4;  b = 2.1*fr;
+N_des = 12000;
+[p,q] = rat((fr - a)/(b - a), 1e-12);   % -> p=3, q=7
+N = q*round((N_des-1)/q) + 1;           % -> 11999 (per stare vicino a 12000)
+f = linspace(a, b, N);
+
 omega = 2*pi .* f;
 
 %% Parametri relativi ai carichi(L1 e L2)
@@ -147,11 +160,11 @@ while(f_iter < fr)
     f_iter = f(index);
 end
 
-figure(3);
-stampaGrafici(f, Zin{1}, Zin{2}, "Comparing Zin without and with a correction", 'blue', "Zin", "Zin", " without a correction");
+figure(1);
+stampaGrafici(f, Zin{1}, Zin{2}, "Comparing Zin including the speed concentrator without and with a correction", 'blue', "Zin", "Zin", " without a correction");
 hold on;
-stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin without and with a correction", 'orange', "Zin", "Zin", " with a correction");
-figure(4);
-stampaGrafici(f, FTT{1}, FTT{2}, "Comparing TTF without and with a correction", 'blue', "TTF", "TTF", " without a correction");
+stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Comparing Zin including the speed concentrator without and with a correction", 'orange', "Zin", "Zin", " with a correction");
+figure(2);
+stampaGrafici(f, FTT{1}, FTT{2}, "Comparing TTF including the speed concentrator without and with a correction", 'blue', "TTF", "TTF", " without a correction");
 hold on;
-stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF without and with a correction", 'orange', "TTF", "TTF", " with a correction");
+stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "Comparing TTF including the speed concentrator without and with a correction", 'orange', "TTF", "TTF", " with a correction");
