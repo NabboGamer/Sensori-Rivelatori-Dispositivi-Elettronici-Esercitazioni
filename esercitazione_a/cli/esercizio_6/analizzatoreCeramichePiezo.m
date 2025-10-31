@@ -8,6 +8,12 @@ evalin('base', 'clear'), close all; clc;
 
 csv = csvPicker();
 
-if isnumeric(csv) && isscalar(csv) && isreal(csv) && ~isnan(csv) && csv == -1
+if isnumeric(csv) && isscalar(csv) && csv == -1
     return;
 end
+
+f = csv.f';
+Zin = {csv.moduloZin', csv.faseZin'};
+
+figure(1);
+stampaGrafici(f, Zin{1}, Zin{2}, "Zin: input impedance", 'blue', "Zin", "Zin");
