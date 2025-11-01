@@ -9,7 +9,7 @@ function csv = csvPicker()
     defaultPath = fullfile(currentPath, '..', '..', 'res');
     defaultPath = char(java.io.File(defaultPath).getCanonicalPath());
     [fileName, filePath] = uigetfile(desiredFormats, ...
-                                     'Select a CSV file to load', ...
+                                     'Seleziona un file CSV da caricare', ...
                                      defaultPath);
     
     % Controllo se l'utente ha premuto "Annulla" o ha chiuso la finestra
@@ -39,13 +39,12 @@ function csv = csvPicker()
         return;
     end
         
-    cprintf('Text', 'CSV selezionato correttamente! \n');
     cprintf('Text', '\n');
+    cprintf('Text', 'CSV selezionato correttamente! \n');
     
     completeFilePath = fullfile(filePath, fileName);
 
     cprintf('Text', 'Prego attendere mentre il CSV viene caricato in memoria... \n');
-    cprintf('Text', '\n');
     
     oldWarnState = warning('query', 'all');
     warning('off', 'all');

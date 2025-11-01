@@ -9,10 +9,10 @@ function [rho, c33, h33, e33, beta33, v] = elementPicker()
         switch var
     
             case 21
-                rho = 7.78e+03; % Kg/m^3
-                c33 = 1.11e+11; % N/m^2
-                h33 = 1.34e+09; % V/m
-                e33 = 23.4;     % C/m^2
+                rho = 7.78e+03;    % Kg/m^3
+                c33 = 1.11e+11;    % N/m^2
+                h33 = 1.34e+09;    % V/m
+                e33 = 23.4;        % C/m^2
                 
                 beta33 = h33/e33;  % Vm/C
                 v = sqrt(c33/rho); % m/s
