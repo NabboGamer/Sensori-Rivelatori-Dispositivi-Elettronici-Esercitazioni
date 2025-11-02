@@ -25,5 +25,5 @@ function strutturaProprietaPzt = caricaStrutturaProprietaPzt()
     strutturaProprietaPzt{7,2} = [7460,  1.5100e+11, 9.2453e+07];
 
     strutturaProprietaPzt{8,1} = "Pz34";
-    strutturaProprietaPzt{8,2} = [7550,  1.6700e+11, 4.7031e+03];
+    strutturaProprietaPzt{8,2} = [7550,  1.6700e+11, 6.5846e+08];
 end 
