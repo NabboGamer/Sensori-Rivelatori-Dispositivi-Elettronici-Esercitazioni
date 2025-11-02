@@ -37,22 +37,56 @@ stampaGrafici(f, Zin{1}, Zin{2}, "Zin: input impedance", 'blue', "Zin", "Zin");
 rho = m / (areaFaccia * l);
 
 % Calcolo c33;
-[~, index_max] = max(Zin{1});
-fr = f(1,index_max);
+[~, index_min] = min(Zin{1});
+fr = f(1,index_min);
 c33 = 4 * (fr^2) * (l^2) * rho;
 
 % Calcolo beta33
 beta33 = areaFaccia/(C0 * l);
 
+proprietaMisurate = [rho, c33, beta33];
+
 %% Stima della tipologia più probabile di ceramica partendo dai parametri calcolati al passo precedente
 strutturaProprietaPzt = caricaStrutturaProprietaPzt();
 
-% TODO: Per ogni riga della struttura precedente inserire una terza colonna
-% che tiene conto dello score totale. Ogni punto score viene assegnato
-% confrontando la singola proprietà calcolata(ad esempio rho) con tutte 
-% quelle degli elementi della struttura e viene assegnato alla pzt avente
-% la stessa proprietà in valore più vicino. Infine viene ordinata la
-% struttura in base a quella colonna in ordine decresecnte(la pzt con lo
-% score più alto sopra) e vengono stampati le prime 3 righe(solo colonna 1 
-% nome e colonna 3 score totale)
+% Colonna 3: punteggio discreto "per proprietà" (nearest neighbor per proprietà)
+[strutturaProprietaPzt{:,3}] = deal(0);    % inizializza score a 0
+r = size(strutturaProprietaPzt,1);
 
+for i = 1:3
+    indiceMigliore = 0;
+    differenzaMigliore = inf;
+    for j = 1:r
+        proprietaIterazione = strutturaProprietaPzt{j,2}(i);
+        differenzaProprieta = abs(proprietaMisurate(i) - proprietaIterazione);
+        if differenzaProprieta < differenzaMigliore
+            differenzaMigliore = differenzaProprieta;
+            indiceMigliore = j;
+        end
+    end
+    strutturaProprietaPzt{indiceMigliore,3} = strutturaProprietaPzt{indiceMigliore,3} + 1;
+end
+
+% Colonna 4: errore relativo medio sulle 3 proprietà (ranking "continuo")
+M = vertcat(strutturaProprietaPzt{:,2});                  % Nx3
+errRel = abs((M - proprietaMisurate)./proprietaMisurate); % Nx3
+errTot = mean(errRel,2);                                  % Nx1
+for j = 1:r
+    strutturaProprietaPzt{j,4} = errTot(j);
+end
+
+% Ordina: prima per punteggio discreto (desc), poi per errore totale (asc)
+strutturaProprietaPzt = sortrows(strutturaProprietaPzt, [3 4], {'descend','ascend'});
+
+% Mostra le prime 3: nome, score, errore medio
+topN = min(3, r);
+idx   = 1:topN;
+nomi  = vertcat(strutturaProprietaPzt{idx,1});      % string array
+score = cell2mat(strutturaProprietaPzt(idx,3));     % Nx1 double
+err   = cell2mat(strutturaProprietaPzt(idx,4));     % Nx1 double
+
+T = table(nomi, score, err, 'VariableNames', {'Materiale','Score','Errore Medio Relativo'});
+T.Properties.RowNames = cellstr(T.Materiale);
+T.Materiale = [];
+cprintf('Text', "\n");
+disp(T)
