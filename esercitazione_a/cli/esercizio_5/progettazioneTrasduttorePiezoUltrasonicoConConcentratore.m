@@ -39,7 +39,7 @@ evalin('base', 'clear'), close all; clc;
 % L'intervallo è stato costruito per includere queste 3 armoniche con un pò
 % di frequenze aggiuntive sugli estremi. Inoltre è stato costruito in modo
 % che nell'intervallo vi sia esattamente la frequenza 40kHz.
-fr = 40e3;  a = 1.2e4;  b = 2.1*fr;
+fr = 40e3;  a = 1.5e4;  b = 1.8*fr;
 % Costruisco un asse di frequenze uniforme [a, b] che CONTENGA esattamente fr.
 % Per un asse uniforme generato da linspace(a,b,N) i campioni sono:
 % 
@@ -131,10 +131,8 @@ Z_L1 = z_L1 * S_l;
 Z_L2 = z_L2 * S_t4;
 ZoD  = z_c  * areaFaccia;
 
-Zeq_left = M1{1,1} - (M1{1,2}.^2) ./ (Z_L1   + M1{1,1});
-Zin_M4   = M4{1,1} - (M4{1,2}.^2) ./ (Z_L2   + M4{1,1});
-Zin_M3   = M3{1,1} - (M3{1,2}.^2) ./ (Zin_M4 + M3{1,1});
-Zeq_right= M2{1,1} - (M2{1,2}.^2) ./ (Zin_M3 + M2{1,1});
+Zin_M4    = M4{1,1} - (M4{1,2}.^2) ./ (Z_L2   + M4{1,1});
+Zin_M3    = M3{1,1} - (M3{1,2}.^2) ./ (Zin_M4 + M3{1,1});
 
 %%Funzione di trasferimento in trasmissione del sistema completo
 % Calcolo la matrice A(3x3) e B(2x2)
@@ -144,21 +142,14 @@ new_C0 = (2 ^ numberOfCeramicPairs) * C0;
 
 A_couple = calcolaMatriceA(ZoD, omega, v_c, new_l_c, h33, new_C0);
 G = calcolaMatriceG(A_couple, A_couple);
-B_couple = calcolaMatriceB(G, Zeq_right);
-
-[Zin, FTT_pzt, ~] = calcolaFunzioniDiTrasferimento(B_couple, Zeq_right, Zeq_left);
-FTT_pzt = db2mag(FTT_pzt{1}) .* exp(1j*deg2rad(FTT_pzt{2}));
 
 FTT_M4 = ( M4{1,2} .* Z_L2   ) ./ ( M4{1,1}.*Z_L2   + M4{1,1}.^2 - M4{1,2}.^2);
 FTT_M3 = ( M3{1,2} .* Zin_M4 ) ./ ( M3{1,1}.*Zin_M4 + M3{1,1}.^2 - M3{1,2}.^2);
-FTT_M2 = ( M2{1,2} .* Zin_M3 ) ./ ( M2{1,1}.*Zin_M3 + M2{1,1}.^2 - M2{1,2}.^2);
 
-FTT = FTT_pzt .* FTT_M2 .* FTT_M3 .* FTT_M4;
-
-[moduloFTT, faseFTT] = calcolaModuloEFase(FTT, true, true);
-FTT = {moduloFTT, faseFTT};
-
-
+% Ottimizzo lo spessore delle masse di precarico del trasduttore Langevin
+% prima di attaccarci il concentratore. 
+% In questo contesto quindi i conti vengono fatti come se il concentratore 
+% non esiste e di conseguenza il Langevin vede come carico solo z_L2*S_l.
 f_iter = 0;
 a_corrected = L1;
 while(f_iter < fr)
@@ -169,35 +160,41 @@ while(f_iter < fr)
     M2_iter = calcolaMatriceMFormulazioneAlternativa(k_l, S_l, Y_l, omega, a_corrected);
 
     Zeq_left_iter = M1_iter{1,1} - (M1_iter{1,2}.^2) ./ (Z_L1   + M1_iter{1,1});
-    Zeq_right_iter = M2_iter{1,1} - (M2_iter{1,2}.^2) ./ (Zin_M3 + M2_iter{1,1});
+    Zeq_right_iter = M2_iter{1,1} - (M2_iter{1,2}.^2) ./ ((z_L2*S_l) + M2_iter{1,1});
 
-    B_couple_iter = calcolaMatriceB(G, Zeq_right_iter);
+    B_couple_iter = calcolaMatriceB(G, Zeq_left_iter);
 
     [Zin_iter, FTT_pzt_iter, ~] = calcolaFunzioniDiTrasferimento(B_couple_iter, Zeq_right_iter, Zeq_left_iter);
     FTT_pzt_iter = db2mag(FTT_pzt_iter{1}) .* exp(1j*deg2rad(FTT_pzt_iter{2}));
 
-    FTT_M2_iter = ( M2_iter{1,2} .* Zin_M3 ) ./ ( M2_iter{1,1}.*Zin_M3 + M2_iter{1,1}.^2 - M2_iter{1,2}.^2);
+    FTT_M2_iter = ( M2_iter{1,2} .* (z_L2*S_l) ) ./ ( M2_iter{1,1}.*(z_L2*S_l) + M2_iter{1,1}.^2 - M2_iter{1,2}.^2);
 
-    FTT_iter = FTT_pzt_iter .* FTT_M2_iter .* FTT_M3 .* FTT_M4;
+    FTT_iter = FTT_pzt_iter .* FTT_M2_iter;
 
     [moduloFTT_iter, faseFTT_iter] = calcolaModuloEFase(FTT_iter, true, true);
     FTT_iter = {moduloFTT_iter, faseFTT_iter};
 
-    % Siccome l'attuale intervallo di frequenze utilizzato è tale da
-    % mostrare le prime 3 armoniche del segnale ovviamente FTT avrà diversi
-    % massimi locali e in generale a 40kHz non corrisponde al massimo
-    % globale. Quindi non posso più ragionare con la sola funzione max che
-    % restituisce il massimo globale ma ho invece utilizzato la funzione 
-    % findpeaks appartenente al "Signal Processing Toolbox" che restituisce
-    % tutti i massimi locali. In questo modo essendo interessati alla
-    % seconda armonica ho potuto prelevare il secondo "picco"(o massimo locale)
-    % per poi procedere come al solito.
-    [~, indexes] = findpeaks(FTT_iter{1});
-    f_iter = f(indexes(2));
+    [~, index] = max(FTT_iter{1});
+    f_iter = f(index);
 end
 
+% Attacco il concentratore
+Zeq_right = M2_iter{1,1} - (M2_iter{1,2}.^2) ./ (Zin_M3 + M2_iter{1,1});
+
+B_couple = calcolaMatriceB(G, Zeq_left_iter);
+
+[Zin, FTT_pzt, ~] = calcolaFunzioniDiTrasferimento(B_couple, Zeq_right, Zeq_left_iter);
+FTT_pzt = db2mag(FTT_pzt{1}) .* exp(1j*deg2rad(FTT_pzt{2}));
+
+FTT_M2 = ( M2_iter{1,2} .* Zin_M3 ) ./ ( M2_iter{1,1}.*Zin_M3 + M2_iter{1,1}.^2 - M2_iter{1,2}.^2);
+
+FTT = FTT_pzt .* FTT_M2 .* FTT_M3 .* FTT_M4;
+
+[moduloFTT, faseFTT] = calcolaModuloEFase(FTT, true, true);
+FTT = {moduloFTT, faseFTT};
+
 figure(1);
-stampaGrafici(f, Zin_iter{1}, Zin_iter{2}, "Zin of the Langevin Ultrasonic Trasducer with the velocity Concentrator", 'blue', "Zin", "Zin");
+stampaGrafici(f, Zin{1}, Zin{2}, "Zin of the Langevin Ultrasonic Trasducer with the velocity Concentrator", 'blue', "Zin", "Zin");
 
 figure(2);
-stampaGrafici(f, FTT_iter{1}, FTT_iter{2}, "TTF of the Langevin Ultrasonic Trasducer with the velocity Concentrator", 'blue', "TTF", "TTF");
+stampaGrafici(f, FTT{1}, FTT{2}, "TTF of the Langevin Ultrasonic Trasducer with the velocity Concentrator", 'blue', "TTF", "TTF");
