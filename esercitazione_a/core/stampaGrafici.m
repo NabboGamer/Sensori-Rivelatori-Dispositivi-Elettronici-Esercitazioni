@@ -45,10 +45,10 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
             contains(var,'Zin of the Langevin Ultrasonic Trasducer with the velocity Concentrator'))
         % Quando il modulo è in kΩ (non in dB) il dato non è logaritmico ma può variare su più ordini di grandezza; 
         % per leggerlo meglio uso una scala logaritmica sull'asse Y
-        loglog(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
+        semilogy(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
         ylabel(ax1, modifiedyAxisString + ' [kΩ]');
     else
-        semilogx(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
+        plot(f, modulo, "Color", color, 'DisplayName', modifiedLegendString);
         ylabel(ax1, modifiedyAxisString + ' [dB]');
     end
     xlabel(ax1,'Frequency [kHz]');
@@ -151,7 +151,7 @@ function stampaGrafici(f, modulo, fase, var, color, legendString, yAxisString, a
     ax2 = subplot(2,1,2);
     modifiedLegendString = 'Arg(' + legendString + ')' + additionalDescriptions;
     modifiedyAxisString = 'Arg(' + yAxisString + ')';
-    semilogx(f, fase, "Color", color, 'DisplayName', modifiedLegendString);
+    plot(f, fase, "Color", color, 'DisplayName', modifiedLegendString);
     ylabel(ax2, modifiedyAxisString + ' [deg]');
     xlabel(ax2, 'Frequency [kHz]');
     grid on;
