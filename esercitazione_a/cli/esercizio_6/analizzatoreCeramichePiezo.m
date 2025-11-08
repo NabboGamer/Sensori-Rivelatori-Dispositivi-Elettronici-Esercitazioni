@@ -14,8 +14,9 @@ evalin('base', 'clear'), close all; clc;
 % Acquisizione della massa dell'elemento
 m = realQuantityPicker("Inserire la misura desiderata per la massa(Kg): ", "m");
 
-% Acquisizione della capacità statica dell'elemento
-C0 = realQuantityPicker("Inserire la misura desiderata per la capacità statica(F): ", "C0");
+% Acquisizione modulo dell'impedenza di ingresso a flow
+flow = realQuantityPicker("Inserire la misura desiderata per la bassa frequenza: ", "flow");
+Zi_flow = realQuantityPicker("Inserire la misura desiderata per l'impedenza di ingresso a bassa frequenza: ", "Zi_flow");
 
 % Acquisizione della Zin dell'elemento tramite CSV esportato dall'analizzatore di impedenza
 csv = csvPicker();
@@ -33,59 +34,58 @@ stampaGrafici(f, Zin{1}, Zin{2}, "Zin: input impedance", 'blue', "Zin", "Zin");
 % Tutte le formule presenti in questa sezione sono state discusse e ricavate
 % nel pdf "Procedura di deduzione della tipologia di una ceramica piezoelettrica"
 
+% Calcoli propedeutici per i prossimi parametri
+V = areaFaccia * l;
+
+[~, index_min] = min(Zin{1});
+[~, index_max] = max(Zin{1});
+fmin = f(1,index_min);
+fmax = f(1,index_max);
+Keff2 = ((fmax^2) - (fmin^2))/(fmax^2);
+
+omegalow = 2 * pi * flow;
+C0 = ( 1 / (omegalow * Zi_flow) ) * (1 - ( (pi^2)/8 * Keff2) );
+beta33 = areaFaccia/(C0 * l);
+thetas = (fmin * pi)/fmax;
+
+
 % Calcolo rho(presupponendo volume cilindrico)
-rho = m / (areaFaccia * l);
+rho = m / V;
 
 % Calcolo c33;
-[~, index_min] = min(Zin{1});
-fr = f(1,index_min);
-c33 = 4 * (fr^2) * (l^2) * rho;
+c33 = 4 * (fmax^2) * (l^2) * rho;
 
-% Calcolo beta33
-beta33 = areaFaccia/(C0 * l);
+% Calcolo h33
+h33 = sqrt( (c33 * beta33 * (thetas/2)) / (tan(thetas/2)) );
 
-proprietaMisurate = [rho, c33, beta33];
+% Calcolo e33
+e33 = h33 / beta33;
+
+proprietaMisurate = [rho, c33, h33, e33];
 
 %% Stima della tipologia più probabile di ceramica partendo dai parametri calcolati al passo precedente
-strutturaProprietaPzt = caricaStrutturaProprietaPzt();
-r = size(strutturaProprietaPzt,1);
-
-% % Colonna 3: nearest neighbor per proprietà (ranking "discreto")
-% [strutturaProprietaPzt{:,3}] = deal(0);    % inizializza score a 0
+% strutturaProprietaPzt = caricaStrutturaProprietaPzt();
+% r = size(strutturaProprietaPzt,1);
 % 
-% for i = 1:3
-%     indiceMigliore = 0;
-%     differenzaMigliore = inf;
-%     for j = 1:r
-%         proprietaIterazione = strutturaProprietaPzt{j,2}(i);
-%         differenzaProprieta = abs(proprietaMisurate(i) - proprietaIterazione);
-%         if differenzaProprieta < differenzaMigliore
-%             differenzaMigliore = differenzaProprieta;
-%             indiceMigliore = j;
-%         end
-%     end
-%     strutturaProprietaPzt{indiceMigliore,3} = strutturaProprietaPzt{indiceMigliore,3} + 1;
+% % Colonna 4: errore relativo medio sulle 3 proprietà (ranking "continuo")
+% M = vertcat(strutturaProprietaPzt{:,2});                  % Nx3
+% errRel = abs((M - proprietaMisurate)./proprietaMisurate); % Nx3
+% errTot = mean(errRel,2);                                  % Nx1
+% for i = 1:r
+%     strutturaProprietaPzt{i,4} = errTot(i);
 % end
-
-% Colonna 4: errore relativo medio sulle 3 proprietà (ranking "continuo")
-M = vertcat(strutturaProprietaPzt{:,2});                  % Nx3
-errRel = abs((M - proprietaMisurate)./proprietaMisurate); % Nx3
-errTot = mean(errRel,2);                                  % Nx1
-for i = 1:r
-    strutturaProprietaPzt{i,4} = errTot(i);
-end
-
-% Ordino le righe rispetto al loro risultato
-strutturaProprietaPzt = sortrows(strutturaProprietaPzt, [4], {'ascend'});
-
-% Mostra le prime 3: nome, errore medio
-topN = min(3, r);
-idx   = 1:topN;
-nomi  = vertcat(strutturaProprietaPzt{idx,1});      % string array
-% score = cell2mat(strutturaProprietaPzt(idx,3));     % Nx1 double
-err   = cell2mat(strutturaProprietaPzt(idx,4));     % Nx1 double
-
-T = table(nomi, err, 'VariableNames', {'Materiali più probabili', 'Errore Relativo Medio'});
-T.("Materiali più probabili") = categorical(T.("Materiali più probabili"));
-disp(newline)
-disp(T)
+% 
+% % Ordino le righe rispetto al loro risultato
+% strutturaProprietaPzt = sortrows(strutturaProprietaPzt, [4], {'ascend'});
+% 
+% % Mostra le prime 3: nome, errore medio
+% topN = min(3, r);
+% idx   = 1:topN;
+% nomi  = vertcat(strutturaProprietaPzt{idx,1});      % string array
+% % score = cell2mat(strutturaProprietaPzt(idx,3));     % Nx1 double
+% err   = cell2mat(strutturaProprietaPzt(idx,4));     % Nx1 double
+% 
+% T = table(nomi, err, 'VariableNames', {'Materiali più probabili', 'Errore Relativo Medio'});
+% T.("Materiali più probabili") = categorical(T.("Materiali più probabili"));
+% disp(newline)
+% disp(T)
