@@ -63,29 +63,37 @@ e33 = h33 / beta33;
 
 proprietaMisurate = [rho, c33, h33, e33];
 
-%% Stima della tipologia più probabile di ceramica partendo dai parametri calcolati al passo precedente
-% strutturaProprietaPzt = caricaStrutturaProprietaPzt();
-% r = size(strutturaProprietaPzt,1);
-% 
-% % Colonna 4: errore relativo medio sulle 3 proprietà (ranking "continuo")
-% M = vertcat(strutturaProprietaPzt{:,2});                  % Nx3
-% errRel = abs((M - proprietaMisurate)./proprietaMisurate); % Nx3
-% errTot = mean(errRel,2);                                  % Nx1
-% for i = 1:r
-%     strutturaProprietaPzt{i,4} = errTot(i);
-% end
-% 
-% % Ordino le righe rispetto al loro risultato
-% strutturaProprietaPzt = sortrows(strutturaProprietaPzt, [4], {'ascend'});
-% 
-% % Mostra le prime 3: nome, errore medio
-% topN = min(3, r);
-% idx   = 1:topN;
-% nomi  = vertcat(strutturaProprietaPzt{idx,1});      % string array
-% % score = cell2mat(strutturaProprietaPzt(idx,3));     % Nx1 double
-% err   = cell2mat(strutturaProprietaPzt(idx,4));     % Nx1 double
-% 
-% T = table(nomi, err, 'VariableNames', {'Materiali più probabili', 'Errore Relativo Medio'});
-% T.("Materiali più probabili") = categorical(T.("Materiali più probabili"));
-% disp(newline)
-% disp(T)
+%% Stima della tipologia più probabile di ceramica partendo dai parametri calcolati
+strutturaProprietaPzt = caricaStrutturaProprietaPzt();
+r = size(strutturaProprietaPzt, 1);
+
+% M: matrice Nx4 da letteratura [rho, c33, h33, e33]
+% p: vettore 1x4 misurato [rho, c33, h33, e33]
+M = vertcat(strutturaProprietaPzt{:,2});
+p = proprietaMisurate;
+
+% Distanza euclidea standardizzata (z-score senza centratura esplicita)
+tol = 1e-12;
+sigma = std(M, 0, 1);                     % deviazione standard colonna-per-colonna
+mask  = sigma > tol;                      % tieni solo feature informative (σ non ~0)
+
+% Scarti standardizzati per le sole colonne informative
+Delta = (M(:, mask) - p(mask)) ./ sigma(mask);   % NxK, K = numero di feature tenute
+distanzaEuclidea = vecnorm(Delta, 2, 2);         % Nx1 distanza L2 per riga
+
+% Assegna la metrica (colonna 3) senza loop
+strutturaProprietaPzt(:, 3) = num2cell(distanzaEuclidea);
+
+% Ordino per distanza crescente (più vicino = più probabile)
+strutturaProprietaPzt = sortrows(strutturaProprietaPzt, 3, 'ascend');
+
+% Mostra le prime 3: nome, distanza
+topN = min(4, r);
+idx  = 1:topN;
+nomi = vertcat(strutturaProprietaPzt{idx, 1});   % string array
+dist = cell2mat(strutturaProprietaPzt(idx, 3));  % Nx1 double
+
+T = table(nomi, dist, 'VariableNames', {'Materiali più probabili', 'Distanza Euclidea Standardizzata'});
+T.("Materiali più probabili") = categorical(T.("Materiali più probabili"));
+disp(newline)
+disp(T)
