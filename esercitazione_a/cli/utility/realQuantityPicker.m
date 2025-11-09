@@ -1,7 +1,6 @@
 function realQuantity = realQuantityPicker(msg, stringQuantity)
     %REALQUANTITYPICKER permette di acquisire una generica quantità reale
-
-    cprintf('Text',"\n");
+    
     cprintf('Text', "%s", msg);
     
     string = sprintf("%s=", stringQuantity);

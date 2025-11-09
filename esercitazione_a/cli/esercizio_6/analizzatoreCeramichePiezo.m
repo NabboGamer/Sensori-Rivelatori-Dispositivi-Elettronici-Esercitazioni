@@ -12,9 +12,11 @@ evalin('base', 'clear'), close all; clc;
 [areaFaccia, l] = geometryPicker();
 
 % Acquisizione della massa dell'elemento
+cprintf('Text',"\n");
 m = realQuantityPicker("Inserire la misura desiderata per la massa(Kg): ", "m");
 
 % Acquisizione modulo dell'impedenza di ingresso a flow
+cprintf('Text',"\n");
 flow = realQuantityPicker("Inserire la misura desiderata per la bassa frequenza: ", "flow");
 Zi_flow = realQuantityPicker("Inserire la misura desiderata per l'impedenza di ingresso a bassa frequenza: ", "Zi_flow");
 
@@ -26,8 +28,25 @@ end
 f = csv.f';
 Zin = {csv.moduloZin', csv.faseZin'};
 evalin( 'base', 'clear("csv")' );
+
+%% Estrazione parametri circuito equivalente e stampa grafico teorico impedenza di ingresso
+cprintf('Text',"\n");
+C0 = realQuantityPicker("Inserire i parametri del Circuito Equivalente della ceramica a vuoto: ", "C0");
+R1 = realQuantityPicker("Inserire i parametri del Circuito Equivalente della ceramica a vuoto: ", "R1");
+L1 = realQuantityPicker("Inserire i parametri del Circuito Equivalente della ceramica a vuoto: ", "L1");
+C1 = realQuantityPicker("Inserire i parametri del Circuito Equivalente della ceramica a vuoto: ", "C1");
+
+w  = 2*pi*f(:);
+Zs = R1 + (1i*w.*L1) + (1./(1i*w.*C1));
+Zin_ceq = (Zs) ./ (1 + 1i*w.*C0.*Zs);
+
+[moduloZin_ceq, faseZin_ceq] = calcolaModuloEFase(Zin_ceq, false, true);
+Zin_ceq = {moduloZin_ceq, faseZin_ceq};
+
 figure(1);
-stampaGrafici(f, Zin{1}, Zin{2}, "Zin: input impedance", 'blue', "Zin", "Zin");
+stampaGrafici(f, Zin{1}, Zin{2}, "Impedence Comparing", 'blue', "Zin", "Zin");
+hold on;
+stampaGrafici(f, Zin_ceq{1}, Zin_ceq{2}, "Impedence Comparing", 'orange', "Zin_c_e_q", "Zin");
 
 %% Calcolo parametri caratteristici della ceramica a partire dai valori prelevati al passo precedente
 
