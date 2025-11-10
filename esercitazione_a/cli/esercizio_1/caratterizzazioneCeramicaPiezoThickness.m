@@ -1,6 +1,6 @@
 % Questo script implementa la caratterizzazione dell'elemento 
 % piezoelettrico(nel nostro caso una ceramica piezoelettrica) nel modo 
-% tickness(siccome lo spessore è nettamente inferiore alle altre dimensioni),
+% thickness(siccome lo spessore è nettamente inferiore alle altre dimensioni),
 % supponendo che l'elemento sia meccanicamente isolato ovvero "a vuoto"
 
 addpath('../utility/');
