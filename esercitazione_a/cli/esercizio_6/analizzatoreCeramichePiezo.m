@@ -63,10 +63,15 @@ fmax = f(1,index_max);
 Keff2 = ((fmax^2) - (fmin^2))/(fmax^2);
 
 omegalow = 2 * pi * flow;
-C0 = ( 1 / (omegalow * Zi_flow) ) * (1 - ( (pi^2)/8 * Keff2) );
-beta33 = areaFaccia/(C0 * l);
 thetas = (fmin * pi)/fmax;
 
+% Approssimazione suggerita dal prof per C0
+% C0 = ( 1 / (omegalow * Zi_flow) );
+% Approssimazione ricavata da me per C0
+% C0 = ( 1 / (omegalow * Zi_flow) ) * (1 - ( (pi^2)/8 * Keff2) );
+% Formula esatta di C0 ottenuta risolvendo il sistema lineare
+C0 = ( 1 / (omegalow * Zi_flow) ) * ( (tan(thetas/2)-(thetas/2)) / (tan(thetas/2)) );
+beta33 = areaFaccia/(C0 * l);
 
 % Calcolo rho(presupponendo volume cilindrico)
 rho = m / V;
