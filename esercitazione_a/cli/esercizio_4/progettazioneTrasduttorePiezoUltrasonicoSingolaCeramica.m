@@ -43,7 +43,7 @@ evalin('base', 'clear'), close all; clc;
 
 % Essendo un trasduttore ultrasonico deve lavorare ovvero deve avere la
 % frequenza di risonanza(ovvero la frequenza in cui vi è il massimo
-% spostamento longitudinale) posta a una frequenza superiore alle grequenze
+% spostamento longitudinale) posta a una frequenza superiore alle frequenze
 % udibili ovvero >20kHz, lo standard è 40kHz.
 fr = 40e+03;
 f = linspace(fr - (fr / 10), fr + (fr / 10), 12000);
@@ -110,9 +110,9 @@ FTT = {moduloFTT, faseFTT};
 % dall'equazione di Langevin (valida idealmente nel vuoto) non garantisce
 % che il massimo della FTT cada esattamente alla frequenza di lavoro fr.
 % In pratica, il picco della FTT (che coincide con un minimo di Z_in) si
-% trova tipicamente a una frequenza f_a < fr.
+% trova tipicamente a una frequenza fa < fr.
 %
-% Obiettivo: spostare f_a verso destra fino a farla coincidere con la
+% Obiettivo: spostare fa verso destra fino a farla coincidere con la
 % frequenza di lavoro fr = 40 kHz.
 %
 % Poiché, per la risonanza di spessore, f ≈ v/(2·l), frequenza e spessore
