@@ -1,0 +1,732 @@
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       23:11:37
+
+ *** WARNING ***                         CP =       1.484   TIME= 23:11:38
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1481 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1481 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1482 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1482 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1483 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1483 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1484 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1484 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1485 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1485 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1486 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1486 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1487 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1487 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1488 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.484   TIME= 23:11:38
+ Element 1488 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.500   TIME= 23:11:38
+ Element 1489 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.500   TIME= 23:11:38
+ Element 1489 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.500   TIME= 23:11:38
+ Element 1490 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.500   TIME= 23:11:38
+ Element 1490 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1491 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1491 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1492 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1492 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1493 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1493 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1494 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1494 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1495 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1495 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1496 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1496 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1497 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1497 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1498 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1498 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1499 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1499 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1500 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1500 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1501 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1501 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1502 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1502 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1503 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1503 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1504 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1504 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1505 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1505 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1506 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1506 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1507 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1507 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1508 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1508 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1509 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1509 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1510 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1510 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1511 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1511 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1512 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1512 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1513 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1513 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1514 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1514 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1515 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1515 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1516 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1516 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1517 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1517 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1518 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1518 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1519 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1519 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1520 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1520 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1521 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1521 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1522 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1522 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1523 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1523 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1524 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1524 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1525 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1525 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1526 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1526 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1527 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1527 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1528 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1528 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1529 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1529 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1530 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1530 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1531 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1531 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1532 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1532 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1533 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1533 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1534 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1534 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1535 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1535 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1536 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1536 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1537 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1537 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1538 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1538 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1539 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1539 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1540 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1540 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1541 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1541 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1542 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1542 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1543 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1543 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1544 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1544 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1545 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1545 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1546 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1546 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1547 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1547 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1548 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1548 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1549 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1549 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1550 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1550 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1551 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1551 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1552 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1552 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1553 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1553 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1554 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1554 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1555 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1555 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1556 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1556 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1557 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1557 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1558 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1558 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1559 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1559 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1560 (PLANE223) is a 2-D or axysymmetric element with its       
+ element coordinate system rotated out of the global XY plane, which is  
+ not permitted.                                                          
+
+ *** ERROR ***                           CP =       1.531   TIME= 23:11:38
+ Element 1560 (PLANE223) does not support a nonzero value of THYZ and/or 
+ THXZ from element coordinate system 13.                                 
+
+ *** ERROR ***                           CP =       1.625   TIME= 23:11:38
+ The model data was checked and there were errors found.                 
+  Please check output or errors file ( C:\Users\stolf\dev\Esercitazioni  
+ Sensori, Rivelatori e Dispositivi                                       
+ Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D\file0.e 
+ err ) for messages.                                                     

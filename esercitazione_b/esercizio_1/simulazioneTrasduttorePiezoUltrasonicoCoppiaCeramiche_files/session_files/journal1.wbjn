@@ -121,3 +121,90 @@ Save(Overwrite=True)
 system2.DisplayText = "Material Data"
 Save(Overwrite=True)
 Save(Overwrite=True)
+template3 = GetTemplate(TemplateName="Mechanical Model")
+system5 = template3.CreateSystem(
+    Position="Below",
+    RelativeTo=system4)
+engineeringDataComponent1 = system5.GetComponent(Name="Engineering Data")
+engineeringDataComponent2 = system2.GetComponent(Name="Engineering Data")
+engineeringDataComponent1.ReplaceWithShare(
+    TargetSystem=system5,
+    ComponentToShare=engineeringDataComponent2,
+    SourceSystem=system2)
+geometryComponent1 = system5.GetComponent(Name="Geometry")
+geometryComponent2 = system4.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system5,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system4)
+system2.DisplayText = "Materials Data"
+modelComponent1 = system5.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system5.GetContainer(ComponentName="Model")
+model1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Extensions.LoadExtension(
+    Id="0cd64874-101b-4182-aef8-530cf9982bb6",
+    Version="2020.1",
+    Format="Binary")
+Save(Overwrite=True)
+model1.Exit()
+template4 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+system6 = template4.CreateSystem(
+    Position="Right",
+    RelativeTo=system5)
+engineeringDataComponent3 = system6.GetComponent(Name="Engineering Data")
+engineeringDataComponent3.ReplaceWithShare(
+    TargetSystem=system6,
+    ComponentToShare=engineeringDataComponent1,
+    SourceSystem=system5)
+geometryComponent3 = system6.GetComponent(Name="Geometry")
+geometryComponent3.ReplaceWithShare(
+    TargetSystem=system6,
+    ComponentToShare=geometryComponent1,
+    SourceSystem=system5)
+Save(Overwrite=True)
+model1.Edit()
+model1.Exit()
+Refresh()
+template5 = GetTemplate(
+    TemplateName="Harmonic Response",
+    Solver="ANSYS")
+system7 = template5.CreateSystem(
+    Position="Below",
+    RelativeTo=system6)
+modelComponent2 = system7.GetComponent(Name="Model")
+modelComponent1.TransferData(TargetComponent=modelComponent2)
+geometryComponent3.DeleteShare(System=system6)
+engineeringDataComponent3.DeleteShare(System=system6)
+system6.Delete()
+system8 = template4.CreateSystem(
+    Position="Above",
+    RelativeTo=system7)
+modelComponent3 = system8.GetComponent(Name="Model")
+modelComponent1.TransferData(TargetComponent=modelComponent3)
+Save(Overwrite=True)
+modelComponent3.Refresh()
+modelComponent3.Refresh()
+Refresh()
+model1.Edit()
+modelComponent1.Update(AllDependencies=True)
+modelComponent1.Update(AllDependencies=True)
+modelComponent3.Update(AllDependencies=True)
+setup1 = system8.GetContainer(ComponentName="Setup")
+setup1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+model2 = system8.GetContainer(ComponentName="Model")
+model2.Exit()
+Save(Overwrite=True)
