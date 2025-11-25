@@ -228,14 +228,6 @@
             </Unit>
           </Units>
         </ParameterDetails>
-        <ParameterDetails id="pa6">
-          <Name>Temperature</Name>
-          <Units name="Temperature">
-            <Unit>
-              <Name>C</Name>
-            </Unit>
-          </Units>
-        </ParameterDetails>
         <ParameterDetails id="pa11">
           <Name>D[*,1]</Name>
           <Units name="Stress">
@@ -281,6 +273,14 @@
           <Units name="Stress">
             <Unit>
               <Name>Pa</Name>
+            </Unit>
+          </Units>
+        </ParameterDetails>
+        <ParameterDetails id="pa6">
+          <Name>Temperature</Name>
+          <Units name="Temperature">
+            <Unit>
+              <Name>C</Name>
             </Unit>
           </Units>
         </ParameterDetails>
@@ -331,13 +331,13 @@
     <Materials>
       <Material>
         <Name>PZ26</Name>
-        <DataTransferID>2a9be9e2-e736-445f-aa9d-d875e53fb9a1</DataTransferID>
+        <DataTransferID>43abddbe-b147-4b9c-b2ed-1439da090432</DataTransferID>
         <PreviousTransferIDs>
         </PreviousTransferIDs>
       </Material>
       <Material>
         <Name>Titanio</Name>
-        <DataTransferID>25240173-54f9-4d6e-8149-7462390b9c04</DataTransferID>
+        <DataTransferID>5f634804-9a0b-43bd-b52e-f9bcc6d91ea1</DataTransferID>
         <PreviousTransferIDs>
         </PreviousTransferIDs>
       </Material>

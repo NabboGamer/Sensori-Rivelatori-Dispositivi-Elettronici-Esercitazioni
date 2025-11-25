@@ -106,13 +106,13 @@
   DISTRIBUTED MEMORY PARALLEL REQUESTED
        4 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
     TOTAL OF     4 CORES REQUESTED
-  INPUT FILE NAME              = C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D\dummy.dat
-  OUTPUT FILE NAME             = C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D\solve.out
+  INPUT FILE NAME              = C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7\dummy.dat
+  OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7\solve.out
   START-UP FILE MODE           = NOREAD
   STOP FILE MODE               = NOREAD
 
  RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  23:11:38  NOV 23, 2025 CP=      0.125
+ CURRENT JOBNAME=file0  22:45:54  NOV 25, 2025 CP=      0.062
 
 
  PARAMETER _DS_PROGRESS =     999.0000000    
@@ -121,11 +121,11 @@
 
 
 
- *** NOTE ***                            CP =       0.500   TIME= 23:11:38
+ *** NOTE ***                            CP =       0.359   TIME= 22:45:54
  The /CONFIG,NOELDB command is not valid in a distributed memory         
  parallel solution.  Command is ignored.                                 
 
- *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  23.1938889    
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.7650000    
 
  TITLE= 
  simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche--Modal (C3)             
@@ -142,17 +142,17 @@
  SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D\
+ PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7\
 
  SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_SOLVERFILES_DIR(1) = C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche_files\dp0\SYS-3\MECH\
+ PARAMETER _WB_SOLVERFILES_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche_files\dp0\SYS-3\MECH\
 
  SET PARAMETER DIMENSIONS ON  _WB_USERFILES_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_USERFILES_DIR(1) = C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche_files\user_files\
+ PARAMETER _WB_USERFILES_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche_files\user_files\
  --- Data in consistent MKS units. See Solving Units in the help system for more
 
  MKS UNITS SPECIFIED FOR INTERNAL    
@@ -179,7 +179,7 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   23:11:38  NOV 23, 2025 CP=      0.516
+ 01055371  VERSION=WINDOWS x64   22:45:54  NOV 25, 2025 CP=      0.391
 
  simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche--Modal (C3)             
 
@@ -188,13 +188,12 @@
           ***** MAPDL ANALYSIS DEFINITION (PREP7) *****
  *********** Send User Defined Coordinate System(s) ***********
  *********** Nodes for the whole assembly ***********
- *********** Elements for Body 1 'M2(Mechanical Model)' ***********
- *********** Elements for Body 2 'C2(Mechanical Model)' ***********
+ *********** Elements for Body 1 'M1(Mechanical Model)' ***********
+ *********** Elements for Body 2 'M2(Mechanical Model)' ***********
  *********** Elements for Body 3 'C1(Mechanical Model)' ***********
- *********** Elements for Body 4 'M1(Mechanical Model)' ***********
+ *********** Elements for Body 4 'C2(Mechanical Model)' ***********
  *********** Set Reference Temperature ***********
  *********** Send Materials ***********
- *********** Send Sheet Properties ***********
  *********** Create Contact "Contact Region(Mechanical Model)" ***********
              Real Constant Set For Above Contact Is 6 & 5
  *********** Create Contact "Contact Region 2(Mechanical Model)" ***********
@@ -203,18 +202,18 @@
              Real Constant Set For Above Contact Is 10 & 9
 
 
- ***** ROUTINE COMPLETED *****  CP =         0.938
+ ***** ROUTINE COMPLETED *****  CP =         0.766
 
 
- --- Number of total nodes = 9588
- --- Number of contact elements = 240
+ --- Number of total nodes = 18584
+ --- Number of contact elements = 204
  --- Number of spring elements = 0
  --- Number of bearing elements = 0
- --- Number of solid elements = 3040
+ --- Number of solid elements = 3762
  --- Number of condensed parts = 0
- --- Number of total elements = 3280
+ --- Number of total elements = 3966
 
- *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  23.1938889    
+ *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.7650000    
 
  *****  MAPDL SOLUTION ROUTINE  *****
 
@@ -222,7 +221,7 @@
  PERFORM A MODAL ANALYSIS
   THIS WILL BE A NEW ANALYSIS
 
- PARAMETER _THICKRATIO =     0.000000000    
+ PARAMETER _THICKRATIO =     1.000000000    
 
  THERMAL STRAINS ARE NOT INCLUDED IN THE LOAD VECTOR.
 
@@ -258,13 +257,13 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.031
+ ***** ROUTINE COMPLETED *****  CP =         0.828
 
 
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   23:11:38  NOV 23, 2025 CP=      1.047
+ 01055371  VERSION=WINDOWS x64   22:45:54  NOV 25, 2025 CP=      0.828
 
  simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche--Modal (C3)             
 
@@ -276,13 +275,13 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        254 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+     1339 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       185 TO        185 STEP          1
 
-          0  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+          0  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
  *GET  INUM185   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
 
@@ -295,18 +294,72 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        254 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+     1339 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       186 TO        186 STEP          1
 
-          0  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+        178  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
- *GET  INUM186   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+ *GET  INUM186   FROM  ELEM  ITEM=COUN           VALUE=  178.000000    
 
- *IF  iNum186  ( =   0.00000     )  GT  
+ *IF  iNum186  ( =   178.000     )  GT  
       0  ( =   0.00000     )  THEN    
+
+ PARAMETER _ICURRENTELEM =     0.000000000    
+
+ *DO LOOP ON PARAMETER= AR30 FROM  1.0000     TO  178.00     BY  1.0000    
+
+ PARAMETER _ICURRENTELEM =     3457.000000    
+
+ MODIFY ELEMENT      3457 (IF SELECTED) TO HAVE  ESYS =     12
+     ELEM    MAT   TYP   REL   SEC   ESYS         NODES
+    3457   3   3      3      3   12   16532 16530 16641 16644 16531 16529 16642 16646
+                                      16749 17601 17537 16730 17294 17602 17539 16680
+                                      17295 17291 17532 17538
+
+ *GET  _ICURRENTETYP  FROM  ELEM      3457  ITEM=ATTR TYPE      VALUE=  3.00000000    
+
+ ELEMENT TYPE          3 IS SOLID226     3-D 20-NODE STRU-ELECT SOLID
+  KEYOPT( 1- 6)=     1001      0      0        0      0      0
+  KEYOPT( 7-12)=        0      0      0        0      0      0
+  KEYOPT(13-18)=        0      0      0        0      0      0
+
+ CURRENT NODAL DOF SET IS  UX    UY    UZ    VOLT
+  THREE-DIMENSIONAL MODEL
+
+ *GET  _ICURRENTMAT  FROM  ELEM      3457  ITEM=ATTR MAT       VALUE=  3.00000000    
+
+ DELETE PROPERTY  RSVX  FROM MATERIAL          3 TO          3 BY          1
+
+ DELETE PROPERTY  RSVY  FROM MATERIAL          3 TO          3 BY          1
+
+ DELETE PROPERTY  RSVZ  FROM MATERIAL          3 TO          3 BY          1
+
+ DEFINE DATA TABLE  PIEZ  FOR MATERIAL     3
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  3 -2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  6 -2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  9  14.700      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC= 14  9.8600      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC= 16  9.8600      0.0000      0.0000    
+
+ DEFINE DATA TABLE  DPER  FOR MATERIAL     3
+
+ DATA FOR  DPER  TABLE FOR MATERIAL   3
+ LOC=  1  828.30      828.30      699.67      0.0000      0.0000      0.0000    
+
+ *ENDDO  INDEX= AR30                            
 
  *ENDIF
 
@@ -314,13 +367,13 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        254 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+     1339 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       187 TO        187 STEP          1
 
-          0  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+          0  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
  *GET  INUM187   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
 
@@ -333,13 +386,13 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        254 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+     1339 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       182 TO        182 STEP          1
 
-          0  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+          0  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
  *GET  INUM182   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
 
@@ -352,82 +405,25 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        254 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+     1339 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       183 TO        183 STEP          1
 
-         40  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+          0  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
- *GET  INUM183   FROM  ELEM  ITEM=COUN           VALUE=  40.0000000    
+ *GET  INUM183   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
 
- *IF  iNum183  ( =   40.0000     )  GT  
+ *IF  iNum183  ( =   0.00000     )  GT  
       0  ( =   0.00000     )  THEN    
-
- PARAMETER _ICURRENTELEM =     0.000000000    
-
- *DO LOOP ON PARAMETER= AR30 FROM  1.0000     TO  40.000     BY  1.0000    
-
- PARAMETER _ICURRENTELEM =     1521.000000    
-
- MODIFY ELEMENT      1521 (IF SELECTED) TO HAVE  ESYS =     13
-     ELEM    MAT   TYP   REL   SEC   ESYS         NODES
-    1521   3   3      3      3   13    4823  4824  4825  4826  4911  4912  4913  4914
-
-
- *GET  _ICURRENTETYP  FROM  ELEM      1521  ITEM=ATTR TYPE      VALUE=  3.00000000    
-
- *GET  _PLANEBEHAVIOR  FROM  ETYP      3  ITEM=ATTR KOP3  VALUE=  1.00000000    
-
- *IF  _planebehavior  ( =   1.00000     )  EQ  
-      3  ( =   3.00000     )  THEN    
-
- *ENDIF
-
- ELEMENT TYPE          3 IS PLANE223     AXI 8-NODE STRU-ELECT SOLID 
-  KEYOPT( 1- 6)=     1001      0      1        0      0      0
-  KEYOPT( 7-12)=        0      0      0        0      0      0
-  KEYOPT(13-18)=        0      0      0        0      0      0
-
- CURRENT NODAL DOF SET IS  UX    UY    VOLT
-  AXISYMMETRIC MODEL
-
- *GET  _ICURRENTMAT  FROM  ELEM      1521  ITEM=ATTR MAT       VALUE=  3.00000000    
-
- DELETE PROPERTY  RSVX  FROM MATERIAL          3 TO          3 BY          1
-
- DELETE PROPERTY  RSVY  FROM MATERIAL          3 TO          3 BY          1
-
- DELETE PROPERTY  RSVZ  FROM MATERIAL          3 TO          3 BY          1
-
- DEFINE DATA TABLE  PIEZ  FOR MATERIAL     3
-
- DATA FOR  PIEZ  TABLE FOR MATERIAL   3
- LOC=  2 -2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
-
- DATA FOR  PIEZ  TABLE FOR MATERIAL   3
- LOC=  5  14.700      0.0000      0.0000      0.0000      0.0000      0.0000    
-
- DATA FOR  PIEZ  TABLE FOR MATERIAL   3
- LOC=  8 -2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
-
- DATA FOR  PIEZ  TABLE FOR MATERIAL   3
- LOC= 10  9.8600      0.0000      0.0000      0.0000      0.0000      0.0000    
-
- DEFINE DATA TABLE  DPER  FOR MATERIAL     3
-
- DATA FOR  DPER  TABLE FOR MATERIAL   3
- LOC=  1  828.30      699.67      828.30      0.0000      0.0000      0.0000    
-
- *ENDDO  INDEX= AR30                            
 
  *ENDIF
 
  EM UNITS = USER  EPZERO= 0.88540E-11
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.203
+ ***** ROUTINE COMPLETED *****  CP =         1.078
 
 
 
@@ -445,13 +441,13 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.203
+ ***** ROUTINE COMPLETED *****  CP =         1.078
 
 
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   23:11:38  NOV 23, 2025 CP=      1.203
+ 01055371  VERSION=WINDOWS x64   22:45:54  NOV 25, 2025 CP=      1.078
 
  simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche--Modal (C3)             
 
@@ -463,13 +459,13 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        192 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+      979 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       185 TO        185 STEP          1
 
-          0  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+          0  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
  *GET  INUM185   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
 
@@ -482,18 +478,72 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        192 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+      979 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       186 TO        186 STEP          1
 
-          0  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+        128  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
- *GET  INUM186   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+ *GET  INUM186   FROM  ELEM  ITEM=COUN           VALUE=  128.000000    
 
- *IF  iNum186  ( =   0.00000     )  GT  
+ *IF  iNum186  ( =   128.000     )  GT  
       0  ( =   0.00000     )  THEN    
+
+ PARAMETER _ICURRENTELEM =     0.000000000    
+
+ *DO LOOP ON PARAMETER= AR30 FROM  1.0000     TO  128.00     BY  1.0000    
+
+ PARAMETER _ICURRENTELEM =     3635.000000    
+
+ MODIFY ELEMENT      3635 (IF SELECTED) TO HAVE  ESYS =     12
+     ELEM    MAT   TYP   REL   SEC   ESYS         NODES
+    3635   4   4      4      4   12   17894 17895 17786 17787 17608 17609 17643 17642
+                                      18566 18583 18340 18584 17964 18012 18014 18017
+                                      18570 18569 18383 18381
+
+ *GET  _ICURRENTETYP  FROM  ELEM      3635  ITEM=ATTR TYPE      VALUE=  4.00000000    
+
+ ELEMENT TYPE          4 IS SOLID226     3-D 20-NODE STRU-ELECT SOLID
+  KEYOPT( 1- 6)=     1001      0      0        0      0      0
+  KEYOPT( 7-12)=        0      0      0        0      0      0
+  KEYOPT(13-18)=        0      0      0        0      0      0
+
+ CURRENT NODAL DOF SET IS  UX    UY    UZ    VOLT
+  THREE-DIMENSIONAL MODEL
+
+ *GET  _ICURRENTMAT  FROM  ELEM      3635  ITEM=ATTR MAT       VALUE=  4.00000000    
+
+ DELETE PROPERTY  RSVX  FROM MATERIAL          4 TO          4 BY          1
+
+ DELETE PROPERTY  RSVY  FROM MATERIAL          4 TO          4 BY          1
+
+ DELETE PROPERTY  RSVZ  FROM MATERIAL          4 TO          4 BY          1
+
+ DEFINE DATA TABLE  PIEZ  FOR MATERIAL     4
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC=  3  2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC=  6  2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC=  9 -14.700      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC= 14 -9.8600      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC= 16 -9.8600      0.0000      0.0000    
+
+ DEFINE DATA TABLE  DPER  FOR MATERIAL     4
+
+ DATA FOR  DPER  TABLE FOR MATERIAL   4
+ LOC=  1  828.30      828.30      699.67      0.0000      0.0000      0.0000    
+
+ *ENDDO  INDEX= AR30                            
 
  *ENDIF
 
@@ -501,13 +551,13 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        192 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+      979 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       187 TO        187 STEP          1
 
-          0  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+          0  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
  *GET  INUM187   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
 
@@ -520,13 +570,13 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        192 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+      979 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       182 TO        182 STEP          1
 
-          0  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+          0  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
  *GET  INUM182   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
 
@@ -539,75 +589,18 @@
 
  SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
 
-        120 ELEMENTS (OF       3280  DEFINED) SELECTED FROM
-      165 SELECTED NODES BY  ESLN COMMAND.
+        192 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
+      979 SELECTED NODES BY  ESLN COMMAND.
 
  RESELECT     FOR ITEM=ENAM COMPONENT=    
   IN RANGE       183 TO        183 STEP          1
 
-         40  ELEMENTS (OF       3280  DEFINED) SELECTED BY  ESEL  COMMAND.
+          0  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
 
- *GET  INUM183   FROM  ELEM  ITEM=COUN           VALUE=  40.0000000    
+ *GET  INUM183   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
 
- *IF  iNum183  ( =   40.0000     )  GT  
+ *IF  iNum183  ( =   0.00000     )  GT  
       0  ( =   0.00000     )  THEN    
-
- PARAMETER _ICURRENTELEM =     0.000000000    
-
- *DO LOOP ON PARAMETER= AR30 FROM  1.0000     TO  40.000     BY  1.0000    
-
- PARAMETER _ICURRENTELEM =     1481.000000    
-
- MODIFY ELEMENT      1481 (IF SELECTED) TO HAVE  ESYS =     13
-     ELEM    MAT   TYP   REL   SEC   ESYS         NODES
-    1481   2   2      2      2   13    4659  4660  4661  4662  4747  4748  4749  4750
-
-
- *GET  _ICURRENTETYP  FROM  ELEM      1481  ITEM=ATTR TYPE      VALUE=  2.00000000    
-
- *GET  _PLANEBEHAVIOR  FROM  ETYP      2  ITEM=ATTR KOP3  VALUE=  1.00000000    
-
- *IF  _planebehavior  ( =   1.00000     )  EQ  
-      3  ( =   3.00000     )  THEN    
-
- *ENDIF
-
- ELEMENT TYPE          2 IS PLANE223     AXI 8-NODE STRU-ELECT SOLID 
-  KEYOPT( 1- 6)=     1001      0      1        0      0      0
-  KEYOPT( 7-12)=        0      0      0        0      0      0
-  KEYOPT(13-18)=        0      0      0        0      0      0
-
- CURRENT NODAL DOF SET IS  UX    UY    VOLT
-  AXISYMMETRIC MODEL
-
- *GET  _ICURRENTMAT  FROM  ELEM      1481  ITEM=ATTR MAT       VALUE=  2.00000000    
-
- DELETE PROPERTY  RSVX  FROM MATERIAL          2 TO          2 BY          1
-
- DELETE PROPERTY  RSVY  FROM MATERIAL          2 TO          2 BY          1
-
- DELETE PROPERTY  RSVZ  FROM MATERIAL          2 TO          2 BY          1
-
- DEFINE DATA TABLE  PIEZ  FOR MATERIAL     2
-
- DATA FOR  PIEZ  TABLE FOR MATERIAL   2
- LOC=  2  2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
-
- DATA FOR  PIEZ  TABLE FOR MATERIAL   2
- LOC=  5 -14.700      0.0000      0.0000      0.0000      0.0000      0.0000    
-
- DATA FOR  PIEZ  TABLE FOR MATERIAL   2
- LOC=  8  2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
-
- DATA FOR  PIEZ  TABLE FOR MATERIAL   2
- LOC= 10 -9.8600      0.0000      0.0000      0.0000      0.0000      0.0000    
-
- DEFINE DATA TABLE  DPER  FOR MATERIAL     2
-
- DATA FOR  DPER  TABLE FOR MATERIAL   2
- LOC=  1  828.30      699.67      828.30      0.0000      0.0000      0.0000    
-
- *ENDDO  INDEX= AR30                            
 
  *ENDIF
 
@@ -632,760 +625,420 @@
 
  *ENDIF
 
- *** NOTE ***                            CP =       1.391   TIME= 23:11:38
+ *** NOTE ***                            CP =       1.391   TIME= 22:45:54
  The automatic domain decomposition logic has selected the MESH domain   
  decomposition method with 4 processes per solution.                     
 
  *****  MAPDL SOLVE    COMMAND  *****
 
- *** WARNING ***                         CP =       1.484   TIME= 23:11:38
+ *** WARNING ***                         CP =       1.641   TIME= 22:45:55
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1481 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1481 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1482 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1482 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1483 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1483 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1484 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1484 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1485 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1485 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1486 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1486 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1487 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1487 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1488 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.484   TIME= 23:11:38
- Element 1488 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.500   TIME= 23:11:38
- Element 1489 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.500   TIME= 23:11:38
- Element 1489 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.500   TIME= 23:11:38
- Element 1490 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.500   TIME= 23:11:38
- Element 1490 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1491 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1491 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1492 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1492 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1493 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1493 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1494 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1494 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1495 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1495 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1496 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1496 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1497 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1497 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1498 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1498 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1499 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1499 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1500 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1500 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1501 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1501 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1502 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1502 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1503 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1503 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1504 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1504 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1505 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1505 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1506 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1506 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1507 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1507 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1508 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1508 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1509 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1509 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1510 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1510 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1511 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1511 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1512 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1512 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1513 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1513 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1514 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1514 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1515 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1515 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1516 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1516 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1517 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1517 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1518 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1518 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1519 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1519 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1520 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1520 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1521 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1521 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1522 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1522 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1523 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1523 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1524 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1524 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1525 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1525 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1526 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1526 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1527 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1527 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1528 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1528 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1529 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1529 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1530 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1530 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1531 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1531 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1532 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1532 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1533 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1533 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1534 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1534 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1535 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1535 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1536 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1536 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1537 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1537 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1538 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1538 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1539 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1539 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1540 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1540 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1541 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1541 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1542 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1542 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1543 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1543 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1544 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1544 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1545 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1545 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1546 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1546 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1547 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1547 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1548 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1548 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1549 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1549 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1550 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1550 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1551 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1551 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1552 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1552 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1553 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1553 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1554 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1554 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1555 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1555 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1556 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1556 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1557 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1557 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1558 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1558 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1559 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1559 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1560 (PLANE223) is a 2-D or axysymmetric element with its       
- element coordinate system rotated out of the global XY plane, which is  
- not permitted.                                                          
-
- *** ERROR ***                           CP =       1.531   TIME= 23:11:38
- Element 1560 (PLANE223) does not support a nonzero value of THYZ and/or 
- THXZ from element coordinate system 13.                                 
-
- *** NOTE ***                            CP =       1.594   TIME= 23:11:38
- Axisymmetric elements are present.  The nodal loads input with the F    
- commands and the reaction forces are on a full circle basis.  This      
- differs from the pre-MAPDL 5.0 interpretation.                          
-
- *** ERROR ***                           CP =       1.625   TIME= 23:11:38
- The model data was checked and there were errors found.                 
-  Please check output or errors file ( C:\Users\stolf\dev\Esercitazioni  
- Sensori, Rivelatori e Dispositivi                                       
- Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D\file0.e 
- err ) for messages.                                                     
-
-
- NUMBER OF WARNING MESSAGES ENCOUNTERED=          1
- NUMBER OF ERROR   MESSAGES ENCOUNTERED=        161
-
-
-
- ***** PROBLEM TERMINATED BY INDICATED ERROR(S) OR BY END OF INPUT DATA *****
+ *** NOTE ***                            CP =       1.703   TIME= 22:45:55
+ The model data was checked and warning messages were found.             
+  Please review output or errors file (                                  
+ C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronic 
+ i\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7\file0.err ) for   
+ these warning messages.                                                 
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+      --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
+
+ ELEMENT TYPE         1 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED FOR A COUPLED FIELD ANALYSIS.
+
+ ELEMENT TYPE         2 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED FOR A COUPLED FIELD ANALYSIS.
+
+
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   22:45:55  NOV 25, 2025 CP=      1.703
+
+ simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche--Modal (C3)             
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   VOLT
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .MODAL                
+      EXTRACTION METHOD. . . . . . . . . . . . . .BLOCK LANCZOS
+   OFFSET TEMPERATURE FROM ABSOLUTE ZERO . . . . .  273.15    
+   THERMAL EXPANSION . . . . . . . . . . . . . . .OFF
+   NUMBER OF MODES TO EXTRACT. . . . . . . . . . .   100
+   MODAL EXTRACTION RANGE. . . . . . . . . . . . .  36000.     TO   44000.    
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+   NUMBER OF MODES TO EXPAND . . . . . . . . . . .ALL
+   ELEMENT RESULTS CALCULATION . . . . . . . . . .OFF
+
+ *** NOTE ***                            CP =       1.703   TIME= 22:45:55
+ The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
+ SOLID226 will be piezoelectric.                                         
+
+ *** NOTE ***                            CP =       1.703   TIME= 22:45:55
+ The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
+ SOLID226 will be piezoelectric.                                         
+
+ *** WARNING ***                         CP =       1.703   TIME= 22:45:55
+ No constraints have been defined using the D command.                   
+
+ *** NOTE ***                            CP =       1.703   TIME= 22:45:55
+ The step data was checked and warning messages were found.              
+  Please review output or errors file (                                  
+ C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronic 
+ i\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7\file0.err ) for   
+ these warning messages.                                                 
+
+ *** NOTE ***                            CP =       1.703   TIME= 22:45:55
+ The conditions for direct assembly have been met.  No .emat or .erot    
+ files will be produced.                                                 
+
+ *** WARNING ***                         CP =       1.766   TIME= 22:45:55
+ Contact element 6115 is missing DOF VOLT (and possibly others) of       
+ underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ but checking for this is discontinued.                                  
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Deformable-deformable contact pair identified by real constant set 5    
+ and contact element type 5 has been set up.                             
+ MPC anywhere inside pinball may be built
+ 3D line-surf contact pair is defined
+ Crossed line-to-line contact is also included
+ Contact traction based contact model
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Program provided average target radius       0.24751E-04
+ *WARNING*: The contact radius R2 has not been defined.                  
+ Average contact surface length               0.19603E-02
+ Average contact pair depth                   0.29790E-04
+ Average target surface length                0.16514E-02
+ Default pinball region factor PINB           0.25000    
+ The resulting pinball region                 0.61989E-04
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Max.  Initial penetration 4.771496085E-05 was detected between contact  
+ element 5984 and target element 6016.                                   
+ You may move entire target surface by : x= 3.364623775E-05, y=          
+ 3.383264953E-05, z= 0,to reduce initial penetration.                    
+ *WARNING*: The geometric gap/penetration may be too large.  Increase    
+ pinball radius if it is a true geometric gap/penetration.  Decrease     
+ pinball if it is a false one.                                           
+ *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
+ separation option may cause an accuracy issue.  Switch to MPC           
+ algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
+ contact nodes towards the target surface.                               
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Deformable-deformable contact pair identified by real constant set 7    
+ and contact element type 7 has been set up.                             
+ MPC anywhere inside pinball may be built
+ 3D line-surf contact pair is defined
+ Crossed line-to-line contact is also included
+ Contact traction based contact model
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Program provided average target radius       0.26911E-04
+ *WARNING*: The contact radius R2 has not been defined.                  
+ Average contact surface length               0.19603E-02
+ Average contact pair depth                   0.29766E-04
+ Average target surface length                0.19603E-02
+ Default pinball region factor PINB           0.25000    
+ The resulting pinball region                 0.64119E-04
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Max.  Initial penetration 3.074601091E-05 was detected between contact  
+ element 6081 and target element 6104.                                   
+ You may move entire target surface by : x= 2.837440682E-05, y=          
+ -1.184103984E-05, z= 0,to reduce initial penetration.                   
+ *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
+ separation option may cause an accuracy issue.  Switch to MPC           
+ algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
+ contact nodes towards the target surface.                               
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Deformable-deformable contact pair identified by real constant set 9    
+ and contact element type 9 has been set up.                             
+ MPC anywhere inside pinball may be built
+ 3D line-surf contact pair is defined
+ Crossed line-to-line contact is also included
+ Contact traction based contact model
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Program provided average target radius       0.26911E-04
+ *WARNING*: The contact radius R2 has not been defined.                  
+ Average contact surface length               0.16514E-02
+ Average contact pair depth                   0.24751E-04
+ Average target surface length                0.19603E-02
+ Default pinball region factor PINB           0.25000    
+ The resulting pinball region                 0.57850E-04
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       1.828   TIME= 22:45:55
+ Max.  Initial penetration 3.218395721E-05 was detected between contact  
+ element 6118 and target element 6180.                                   
+ You may move entire target surface by : x= 2.450053507E-05, y=          
+ 2.086937668E-05, z= 0,to reduce initial penetration.                    
+ *WARNING*: The geometric gap/penetration may be too large.  Increase    
+ pinball radius if it is a true geometric gap/penetration.  Decrease     
+ pinball if it is a false one.                                           
+ *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
+ separation option may cause an accuracy issue.  Switch to MPC           
+ algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
+ contact nodes towards the target surface.                               
+ ****************************************
+  
+  
+  
+
+  
+  
+     D I S T R I B U T E D   D O M A I N   D E C O M P O S E R
+  
+  ...Number of elements: 3966
+  ...Number of nodes:    18584
+  ...Decompose to 4 CPU domains
+  ...Element load balance ratio =     1.013
+
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   THERMAL STRAINS INCLUDED IN THE LOAD VECTOR . .    NO
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS
+      ITEM     FREQUENCY   COMPONENT
+       ALL       NONE               
+      NSOL        ALL               
+      FGRA        ALL               
+
+
+
+                         ***********  PRECISE MASS SUMMARY  ***********
+
+   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+               Translational mass               |   Coupled translational/rotational mass
+        0.10828        0.0000        0.0000     |     0.0000       0.40878E-02  -0.11822E-08
+         0.0000       0.10828        0.0000     |   -0.40878E-02    0.0000       0.27750E-08
+         0.0000        0.0000       0.10828     |    0.11822E-08  -0.27750E-08    0.0000    
+     ------------------------------------------ | ------------------------------------------
+                                                |         Rotational mass (inertia)
+                                                |    0.20750E-03   0.10595E-10  -0.10353E-09
+                                                |    0.10595E-10   0.20750E-03  -0.44078E-10
+                                                |   -0.10353E-09  -0.44078E-10   0.54142E-05
+
+   TOTAL MASS = 0.10828    
+     The mass principal axes coincide with the global Cartesian axes
+
+   CENTER OF MASS (X,Y,Z)=   0.25627E-07   0.10917E-07   0.37751E-01
+
+   TOTAL INERTIA ABOUT CENTER OF MASS
+        0.53184E-04   0.10595E-10   0.12247E-11
+        0.10595E-10   0.53184E-04   0.54930E-12
+        0.12247E-11   0.54930E-12   0.54142E-05
+     The inertia principal axes coincide with the global Cartesian axes
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1  0.517934E-01
+     2  0.516526E-01
+     3  0.241872E-02
+     4  0.241902E-02
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 592780856 at element 3617.                                    
+ Minimum = 95447978.9 at element 3683.                                   
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1      1728  SOLID186      0.531   0.000307
+        2      1728  SOLID186      0.594   0.000344
+        3       178  SOLID226      0.094   0.000527
+        4       128  SOLID226      0.047   0.000366
+        5        32  CONTA177      0.000   0.000000
+        6        38  TARGE170      0.000   0.000000
+        7        32  CONTA177      0.000   0.000000
+        8        32  TARGE170      0.000   0.000000
+        9        38  CONTA177      0.000   0.000000
+       10        32  TARGE170      0.000   0.000000
+ Time at end of element matrix formulation CP = 3.15625.                 
+
+  BLOCK LANCZOS CALCULATION OF UP TO   100 EIGENVECTORS.
+  NUMBER OF EQUATIONS              =        57458
+  MAXIMUM WAVEFRONT                =          321
+  MAXIMUM MODES STORED             =          100
+  MINIMUM EIGENVALUE               =  0.36000E+05
+  MAXIMUM EIGENVALUE               =  0.44000E+05
+
+
+
+  Memory allocated on only this MPI rank (rank     0)
+  -------------------------------------------------------------------
+  Equation solver memory allocated                     =   138.359 MB
+  Equation solver memory required for in-core mode     =   131.814 MB
+  Equation solver memory required for out-of-core mode =    36.435 MB
+  Total (solver and non-solver) memory allocated       =   685.188 MB
+
+
+  Total memory summed across all MPI ranks on this machines
+  -------------------------------------------------------------------
+  Equation solver memory allocated                     =   528.161 MB
+  Equation solver memory required for in-core mode     =   503.174 MB
+  Equation solver memory required for out-of-core mode =   142.380 MB
+  Total (solver and non-solver) memory allocated       =  1899.418 MB
+
+ *** NOTE ***                            CP =       4.016   TIME= 22:45:56
+ The Distributed Sparse Matrix Solver used by the Block Lanczos          
+ eigensolver is currently running in the in-core memory mode.  This      
+ memory mode uses the most amount of memory in order to avoid using the  
+ hard drive as much as possible, which most often results in the         
+ fastest solution time.  This mode is recommended if enough physical     
+ memory is present to accommodate all of the solver data.                
+
+  Process memory required for in-core LANCZOS Workspace             =     79.181229 MB
+  Process memory required for out-of-core LANCZOS Workspace         =     2.313187 MB
+
+  Total   memory required for in-core LANCZOS Workspace             =     330.359314 MB
+  Total   memory required for out-of-core LANCZOS Workspace         =     9.472656 MB
+
+  Lanczos Memory Mode : INCORE
+
+
+  >> Shift # 1 :  |                                  : 0 Eigenvalues Converged
+
+
+ *** WARNING ***                         CP =       5.688   TIME= 22:45:58
+ Fewer modes than the requested number of modes ( 100 ) were computed.   
+ The range specified (FREQB= 36000, FREQE= 44000) contains only 0        
+ modes.                                                                  
+
+ *** NOTE ***                            CP =       5.750   TIME= 22:45:58
+ There are no modes in the specified range.                              
+
+ *** NOTE ***                            CP =       5.750   TIME= 22:45:58
+ There are no modes in the specified range.                              
+
+
+ *** MAPDL BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+        1.062 MB WRITTEN ON ELEMENT SAVED DATA FILE: file0.esav
+       18.875 MB WRITTEN ON ASSEMBLED MATRIX FILE: file0.full
+        0.125 MB WRITTEN ON MODAL MATRIX FILE: file0.mode
+        1.000 MB WRITTEN ON RESULTS FILE: file0.rst
+ *************** Write FE CONNECTORS *********
+
+ WRITE OUT CONSTRAINT EQUATIONS TO FILE= file.ce                                                                                                                                                                                                                                                             
+
+ *GET  _NMODALSOLPROC  FROM  ACTI  ITEM=NUMC       VALUE=  4.00000000    
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         5.844
+
+
+
+ PRINTOUT RESUMED BY /GOP
+
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.7661111    
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   22:45:58  NOV 25, 2025 CP=      5.844
+
+ simulazioneTrasduttorePiezoUltrasonicoCoppiaCeramiche--Modal (C3)             
+
+
+
+          ***** MAPDL RESULTS INTERPRETATION (POST1) *****
+
+ *** NOTE ***                            CP =       5.844   TIME= 22:45:58
+ Reading results into the database (SET command) will update the current 
+ displacement and force boundary conditions in the database with the     
+ values from the results file for that load set.  Note that any          
+ subsequent solutions will use these values unless action is taken to    
+ either SAVE the current values or not overwrite them (/EXIT,NOSAVE).    
+
+ PRINTOUT RESUMED BY /GOP
+
+ Set Encoding of XML File to:ISO-8859-1
+
+ Set Output of XML File to:
+     PARM,     ,     ,     ,     ,     ,     ,     ,     ,     ,     ,     ,
+         ,     ,     ,     ,     ,     ,     ,
+
+ DATABASE WRITTEN ON FILE  parm.xml                                                                                                                                                                                                                                                            
+
+ EXIT THE MAPDL POST1 DATABASE PROCESSOR
+
+
+ ***** ROUTINE COMPLETED *****  CP =         5.906
+
+
+
+ PRINTOUT RESUMED BY /GOP
+
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.7661111    
+
+ PARAMETER _PREPTIME =     0.000000000    
+
+ PARAMETER _SOLVTIME =     4.000000000    
+
+ PARAMETER _POSTTIME =     0.000000000    
+
+ PARAMETER _TOTALTIM =     4.000000000    
+
+ *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  1.01342975    
+
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE= 0.523532000E-01
+
+ *GET  _SSMODE   FROM  ACTI  ITEM=SOLU SSMM  VALUE=  2.00000000    
+
+ *GET  _NDOFS    FROM  ACTI  ITEM=SOLU NDOF  VALUE=  57458.0000    
+
+ /FCLEAN COMMAND REMOVING ALL LOCAL FILES
+ --- Total number of nodes = 18584
+ --- Total number of elements = 3966
+ --- Element load balance ratio = 1.01342975
+ --- Time to combine distributed files = 5.23532E-02
+ --- Sparse memory mode = 2
+ --- Number of DOF = 57458
+
+ EXIT MAPDL WITHOUT SAVING DATABASE
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          4
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
 
 +--------------------- M A P D L   S T A T I S T I C S ------------------------+
 
 Release: 2025 R2            Build: 25.2       Update: UP20250519   Platform: WINDOWS x64 
-Date Run: 11/23/2025   Time: 23:11     Process ID: 7036
+Date Run: 11/25/2025   Time: 22:46     Process ID: 11136
 Operating System: Windows 11  (Build: 26100)
 
 Processor Model: Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
@@ -1411,34 +1064,36 @@ Input File: dummy.dat
 
   Core                Machine Name   Working Directory
  -----------------------------------------------------
-     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D
-     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D
-     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D
-     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici\esercitazione_b\esercizio_1\_ProjectScratch\Scr3B0D
+     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7
+     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7
+     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7
+     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensoriRivelatoriEDispositiviElettronici\esercitazione_b\esercizio_1\_ProjectScratch\ScrC3D7
  
-Latency time from master to core     1 =    5.371 microseconds
-Latency time from master to core     2 =    5.420 microseconds
-Latency time from master to core     3 =    8.968 microseconds
+Latency time from master to core     1 =    7.827 microseconds
+Latency time from master to core     2 =    7.723 microseconds
+Latency time from master to core     3 =    5.915 microseconds
  
-Communication speed from master to core     1 =  3635.24 MB/sec
-Communication speed from master to core     2 =  4443.83 MB/sec
-Communication speed from master to core     3 =  5335.36 MB/sec
+Communication speed from master to core     1 =  5624.97 MB/sec
+Communication speed from master to core     2 =  5871.34 MB/sec
+Communication speed from master to core     3 =  7231.25 MB/sec
 
-Total CPU time for main thread                    :        2.2 seconds
-Total CPU time summed for all threads             :        3.4 seconds
+Total CPU time for main thread                    :        4.3 seconds
+Total CPU time summed for all threads             :        6.6 seconds
 
-Elapsed time spent obtaining a license            :        0.6 seconds
+Elapsed time spent obtaining a license            :        0.5 seconds
 Elapsed time spent pre-processing model (/PREP7)  :        0.2 seconds
-Elapsed time spent solution - preprocessing       :        0.0 seconds
-Elapsed time spent computing solution             :        0.0 seconds
-Elapsed time spent solution - postprocessing      :        0.0 seconds
+Elapsed time spent solution - preprocessing       :        0.1 seconds
+Elapsed time spent computing solution             :        3.1 seconds
+Elapsed time spent solution - postprocessing      :        0.1 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
  
+Eigensolver used                                  :            Block Lanczos
+Equation solver computational rate                :       68.6 Gflops
 
-Sum of disk space used on all processes           :        0.0 MB
+Sum of disk space used on all processes           :       88.8 MB
 
-Sum of memory used on all processes               :       30.0 MB
-Sum of memory allocated on all processes          :     2880.0 MB
+Sum of memory used on all processes               :      920.0 MB
+Sum of memory allocated on all processes          :     3267.0 MB
 Physical memory available                         :         32 GB
 Total amount of I/O written to disk               :        0.0 GB
 Total amount of I/O read from disk                :        0.0 GB
@@ -1457,13 +1112,13 @@ Total amount of I/O read from disk                :        0.0 GB
  |-----------------------------------------------------------------------------|
  |                                                                             |
  |  Database Requested(-db)     1024 MB     Scratch Memory Requested   1024 MB |
- |  Max Database Used(Master)      5 MB     Max Scratch Used(Master)      7 MB |
- |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)     5 MB |
- |  Sum Database Used(All)         8 MB     Sum Scratch Used(All)        22 MB |
+ |  Max Database Used(Master)      9 MB     Max Scratch Used(Master)    231 MB |
+ |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)   238 MB |
+ |  Sum Database Used(All)        12 MB     Sum Scratch Used(All)       908 MB |
  |                                                                             |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |        CP Time      (sec) =          3.359       Time  =  23:11:55          |
- |        Elapsed Time (sec) =         19.000       Date  =  11/23/2025        |
+ |        CP Time      (sec) =          6.578       Time  =  22:46:08          |
+ |        Elapsed Time (sec) =         20.000       Date  =  11/25/2025        |
  |                                                                             |
  *-----------------------------------------------------------------------------*

@@ -318,13 +318,15 @@
     <Materials>
       <Material>
         <Name>PZ26</Name>
-        <DataTransferID>e92f7660-5918-48ac-82ae-65ed69d34c2f</DataTransferID>
-        <PreviousTransferIDs>2a9be9e2-e736-445f-aa9d-d875e53fb9a1,,</PreviousTransferIDs>
+        <DataTransferID>43abddbe-b147-4b9c-b2ed-1439da090432</DataTransferID>
+        <PreviousTransferIDs>
+        </PreviousTransferIDs>
       </Material>
       <Material>
         <Name>Titanio</Name>
-        <DataTransferID>c2bb1000-412a-43d3-96d2-400625f124cc</DataTransferID>
-        <PreviousTransferIDs>25240173-54f9-4d6e-8149-7462390b9c04,,</PreviousTransferIDs>
+        <DataTransferID>5f634804-9a0b-43bd-b52e-f9bcc6d91ea1</DataTransferID>
+        <PreviousTransferIDs>
+        </PreviousTransferIDs>
       </Material>
     </Materials>
   </ANSYSWBTransferData>
