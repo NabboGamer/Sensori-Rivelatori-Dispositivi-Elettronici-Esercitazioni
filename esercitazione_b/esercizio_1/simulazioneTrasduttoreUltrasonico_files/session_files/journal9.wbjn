@@ -1,0 +1,12 @@
+# encoding: utf-8
+# 2025 R2
+SetScriptVersion(Version="25.2.170")
+ClearMessages()
+system1 = GetSystem(Name="SYS 1")
+solutionComponent1 = system1.GetComponent(Name="Solution")
+solutionComponent1.Clean()
+solutionComponent1.UpdateUpstreamComponents()
+Refresh()
+Update()
+Save(Overwrite=True)
+Open(FilePath="C:/Users/stolf/OneDrive/Desktop/Università/6 ANNO/Secondo Semestre/Sensori, Rivelatori e Dispositivi Elettronici/Extra/esercitazioni_ivan/Esercitazione 2/Langevin_ansys.wbpj")

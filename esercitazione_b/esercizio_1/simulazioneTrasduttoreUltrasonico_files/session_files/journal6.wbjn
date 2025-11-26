@@ -1,0 +1,25 @@
+# encoding: utf-8
+# 2025 R2
+SetScriptVersion(Version="25.2.170")
+fileReference1 = GetFileReference(Name="F3")
+SetFileDeletable(
+    File=fileReference1,
+    IsDeletable=True)
+fileReference1.Unregister(
+    DeleteFileIfNonShared="False",
+    BackUp=False)
+SetFileDeletable(
+    File=fileReference1,
+    IsDeletable=True)
+fileReference1.Unregister(
+    DeleteFileIfNonShared="False",
+    BackUp=False)
+fileReference2 = GetFileReference(Name="F21")
+fileReference2.Repair(FilePath="C:/Users/stolf/dev/EsercitazioniSensori/esercitazione_b/utility/ansys_material_library.xml")
+Refresh()
+Update()
+system1 = GetSystem(Name="SYS 1")
+solution1 = system1.GetContainer(ComponentName="Solution")
+solution1.Edit()
+Update()
+Save(Overwrite=True)
