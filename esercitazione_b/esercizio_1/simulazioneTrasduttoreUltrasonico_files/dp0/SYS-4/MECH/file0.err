@@ -1,0 +1,66 @@
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       21:40:11
+
+ *** WARNING ***                         CP =       1.344   TIME= 21:40:13
+ The data for *GET entity NODE item CPS and NODE= 17606 is not defined.  
+                                                                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***                         CP =       1.344   TIME= 21:40:13
+ The data for *GET entity NODE item CPS and NODE= 17607 is not defined.  
+                                                                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***                         CP =       1.344   TIME= 21:40:13
+ The data for *GET entity NODE item CPS and NODE= 16271 is not defined.  
+                                                                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***                         CP =       1.344   TIME= 21:40:13
+ The data for *GET entity NODE item CPS and NODE= 16267 is not defined.  
+                                                                         
+  The *GET command is ignored.                                           
+
+ *** WARNING ***                         CP =       2.391   TIME= 21:40:13
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       2.578   TIME= 21:40:13
+ Contact element 6115 is missing DOF VOLT (and possibly others) of       
+ underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ but checking for this is discontinued.                                  
+
+ *** WARNING ***                         CP =       2.578   TIME= 21:40:13
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       2.578   TIME= 21:40:13
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       2.578   TIME= 21:40:13
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       3.078   TIME= 21:40:13
+ Contact element 6115 is missing DOF VOLT (and possibly others) of       
+ underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ but checking for this is discontinued.                                  
+
+ *** WARNING ***                         CP =       3.078   TIME= 21:40:13
+ Contact element 6115 is missing DOF VOLT (and possibly others) of       
+ underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ but checking for this is discontinued.                                  
+
+ *** WARNING ***                         CP =       3.078   TIME= 21:40:13
+ Contact element 6115 is missing DOF VOLT (and possibly others) of       
+ underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ but checking for this is discontinued.                                  
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       21:50:04
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       22:44:21
+
+ *** WARNING ***                         CP =       0.625   TIME= 22:44:22
+ No data points are saved during this storage step.                      
+
+ *** WARNING ***                         CP =       1.000   TIME= 22:44:22
+ No data points are saved during this storage step.                      
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       22:47:40

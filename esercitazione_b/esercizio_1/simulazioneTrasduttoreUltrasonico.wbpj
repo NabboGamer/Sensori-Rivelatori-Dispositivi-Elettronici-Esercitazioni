@@ -2,10 +2,10 @@
 <Storage>
   <Project Version="25.2.1.0">
     <base-designpoint-name valType="String">0</base-designpoint-name>
-    <timestamp-max valType="Int64">8289</timestamp-max>
+    <timestamp-max valType="Int64">10734</timestamp-max>
     <framework-build-version valType="String">25.2.170.0</framework-build-version>
     <external-version-string valType="String">2025 R2</external-version-string>
-    <last-saved-utc valType="String">11/26/2025 15:12:07</last-saved-utc>
+    <last-saved-utc valType="String">11/26/2025 21:52:24</last-saved-utc>
     <managed-categories valType="String">[report, misc, progress]</managed-categories>
     <expression-scope-container valType="String">Parameters</expression-scope-container>
     <project-type valType="String">WB2</project-type>
@@ -35,7 +35,6 @@
 "97ca134c-c374-4883-836e-878f4ae2bbf1": "/Schematic/ComponentTemplate:GeometryCellTemplate",
 "358dc841-afa8-4f16-8048-55bdb9d043b8": "/FileContainer/FileReference:F7",
 "6797331e-3d6c-4a65-a0b2-2addcf64530b": "/FileContainer/FileReference:F9",
-"ad463386-2b96-42e8-ab08-4ef8a2e03020": "/FileContainer/FileReference:F23",
 "49520cc0-fec0-42d2-9ef9-10f9f5b3da35": "/FileTypesContainer/FileType:MechanicalFileType",
 "eebef184-2ce1-4088-8217-7e4af9874672": "/Schematic/System:SYS",
 "02ed6f8b-c9c1-4916-90c6-7c353fa6f71f": "/Schematic/Component:Engineering Data",
@@ -61,7 +60,15 @@
 "4dfab0fc-8304-4d0c-b370-566c6c37c69f": "/FileContainer/FileReference:F15",
 "823b1d7d-bb74-47e7-92d1-4c1e1e03c5b8": "/Schematic/System:Geom",
 "9df3f399-2a6c-415c-80ba-bc1227f53765": "/FileContainer/FileReference:F21",
-"6efa165b-db88-4f53-953a-28656cd5babb": "/FileContainer/FileReference:F22"
+"6efa165b-db88-4f53-953a-28656cd5babb": "/FileContainer/FileReference:F22",
+"f86840c4-adbc-462f-bd07-e8b100bf35aa": "/FileContainer/FileReference:F27",
+"6e2138fd-7bc9-4288-bc9f-ceccead185ae": "/Schematic/System:SYS 2",
+"3e725962-179b-4dea-85b2-9259c779b14c": "/Schematic/Component:Model 2",
+"4283b6a2-29a2-4a5d-9858-eeaf57cf4d74": "/Schematic/Component:Setup 1",
+"8e5fc174-08d5-4d54-aa33-6dc7d60a4e4a": "/Schematic/Component:Solution 1",
+"ac26c61d-8371-42d1-bb66-18d9f7da09fb": "/Schematic/Component:Results 1",
+"dc214c28-9499-439f-a980-e402f8695560": "/FileContainer/FileReference:F28",
+"f8e3b368-c6ec-40f5-9d32-2964c0a2d23c": "/FileContainer/FileReference:F29"
 }</ReferenceList>
       </ProjectReferenceList>
       <DesignPointReferenceListCollection>
@@ -125,7 +132,20 @@
 "5fd0aa03-98d4-458c-b5d5-ed7fe10cdca0": "/Engineering Data 1/MaterialVariable:Bulk Modulus",
 "675740d2-71bb-48b1-a963-47243c3718e0": "/Engineering Data 1/MaterialVariable:Shear Modulus",
 "5891cdbc-41cf-4a4e-a5b7-f86e165d584b": "/Engineering Data 1/MaterialVariable:Temperature 2",
-"2ed99c32-bbf7-447e-a764-22acca234628": "/Engineering Data 1/MaterialVariable:Interpolation Options 2"
+"2ed99c32-bbf7-447e-a764-22acca234628": "/Engineering Data 1/MaterialVariable:Interpolation Options 2",
+"7fd469d9-d9fd-4403-b00c-0e07b110b3aa": "/Solution/SimulationSolutionDataInternal:SolutionDataInternal for Structural|Modal|ANSYS",
+"4eb22d34-741f-4895-a975-dfc4ecb0b253": "/Results 1/SimulationResultsStlZip:SimulationResultsStlZip",
+"f1aed3a1-b4d8-405f-b45d-6e6cf73e899a": "/Results 1/TopologyOptimizationResultsCDB:TopologyOptimizationResultsCDB",
+"77e299b3-79a2-4678-9832-f27831455f88": "/Model 2/MechanicalModel:MechanicalModel",
+"d188168f-fe1b-4f97-96eb-ab5bf430a1f8": "/Setup 1/SimulationSetup:SetupObject for Structural|Harmonic|ANSYS",
+"5b8bfe13-3425-4056-8ff4-a5d558fbfa9f": "/Solution 1/SimulationSolution:SolutionObject for Structural|Harmonic|ANSYS",
+"2d3428a4-8594-4c6e-9a00-18a62c15b280": "/Results 1/SimulationResults:ResultsObject for Structural|Harmonic|ANSYS",
+"0601dd17-aa13-4bf7-9bee-6927a6545c7d": "/Model 2/SimulationEngineeringData:SimulationEngineeringDataObject",
+"27c31d6e-611b-4dc0-bbbd-ea055fd8e286": "/Model 2/SimulationModelGeneratedMesh:SimulationModelGeneratedMesh",
+"10e5c2f0-1ac8-4e4f-86af-09c8fc33b6fe": "/Model 2/SimulationModelGeneratedPMDB:SimulationModelGeneratedPMDB",
+"fd617f98-3960-401d-8ad0-4cd0a8fbff7d": "/Model 2/SimulationGeneratedSolidMesh:SimulationGeneratedSolidMesh",
+"8fcaa67e-bc72-4ab0-a1c6-522c0a762c7e": "/Model 2/SimulationModelGeometryAttachType:SimulationModelGeometryAttachType",
+"28a3cb2d-a924-4126-9bbd-73e468837f47": "/Model 2/UnconsumedModelAssemblyChanges:UnconsumedModelAssemblyChanges"
 }</ReferenceList>
         </DesignPointReferenceList>
       </DesignPointReferenceListCollection>
@@ -159,7 +179,7 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 8017, "Input": 2342, "Output": 2342}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 10603, "Input": 2342, "Output": 2342}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
       <Object Name="/FileContainer/FileReference:F1" Version="1.0">
@@ -170,7 +190,7 @@
       <Object Name="/FileContainer/FileReference:F2" Version="1.0">
         <class-type valType="String">FileReference</class-type>
         <object-name valType="String">F2</object-name>
-        <member-data valType="String">{"DisplayText": "act.dat", "FileType": $$7f45f4cf-18a7-4700-93cd-92a29f225c69, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\act.dat", "ReferenceCount": 70}</member-data>
+        <member-data valType="String">{"DisplayText": "act.dat", "FileType": $$7f45f4cf-18a7-4700-93cd-92a29f225c69, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\act.dat", "ReferenceCount": 91}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F15" Version="1.0">
         <class-type valType="String">FileReference</class-type>
@@ -195,11 +215,11 @@
       <Object Name="/FileContainer/FileReference:F9" Version="1.0">
         <class-type valType="String">FileReference</class-type>
         <object-name valType="String">F9</object-name>
-        <member-data valType="String">{"DisplayText": "SYS.mechdb", "FileType": $$49520cc0-fec0-42d2-9ef9-10f9f5b3da35, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\global\MECH\SYS.mechdb", "ReferenceCount": 2}</member-data>
+        <member-data valType="String">{"DisplayText": "SYS.mechdb", "FileType": $$49520cc0-fec0-42d2-9ef9-10f9f5b3da35, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\global\MECH\SYS.mechdb", "ReferenceCount": 3}</member-data>
       </Object>
-      <Object Name="/FileContainer/FileReference:F23" Version="1.0">
+      <Object Name="/FileContainer/FileReference:F28" Version="1.0">
         <class-type valType="String">FileReference</class-type>
-        <object-name valType="String">F23</object-name>
+        <object-name valType="String">F28</object-name>
         <member-data valType="String">{"DisplayText": "SYS.engd", "FileType": $$24737275-8825-4c83-a08b-8a6448b80876, "DependentFiles": [], "ContainerAssociations": ["Model 1"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\SYS-3\MECH\Model\SYS.engd", "ReferenceCount": 1}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F13" Version="1.0">
@@ -222,30 +242,106 @@
         <object-name valType="String">F21</object-name>
         <member-data valType="String">{"DisplayText": "ansys_material_library.xml", "FileType": $$24737275-8825-4c83-a08b-8a6448b80876, "DependentFiles": [], "ContainerAssociations": ["Engineering Data 1"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\utility\ansys_material_library.xml", "ReferenceCount": 2}</member-data>
       </Object>
+      <Object Name="/FileContainer/FileReference:F24" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F24</object-name>
+        <member-data valType="String">{"DisplayText": "SYS-4.pmdb", "FileType": $$c96ddd3c-57c0-45b2-8ff5-5f74d2acb3cd, "DependentFiles": [], "ContainerAssociations": ["Model 2"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\global\MECH\SYS-4\AssembledModel\SYS-4.pmdb", "ReferenceCount": 1}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F29" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F29</object-name>
+        <member-data valType="String">{"DisplayText": "SYS.engd", "FileType": $$24737275-8825-4c83-a08b-8a6448b80876, "DependentFiles": [], "ContainerAssociations": ["Model 2"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\SYS-4\MECH\Model\SYS.engd", "ReferenceCount": 1}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F27" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F27</object-name>
+        <member-data valType="String">{"DisplayText": "SYS-4.mechdb", "FileType": $$49520cc0-fec0-42d2-9ef9-10f9f5b3da35, "DependentFiles": [], "ContainerAssociations": ["Model 2"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\global\MECH\SYS-4.mechdb", "ReferenceCount": 1}</member-data>
+      </Object>
+      <Object Name="/FileContainer/FileReference:F25" Version="1.0">
+        <class-type valType="String">FileReference</class-type>
+        <object-name valType="String">F25</object-name>
+        <member-data valType="String">{"DisplayText": "SYS-4.acmo", "FileType": $$1cb1aad6-a1c5-4ec7-8b53-393ae22d6196, "DependentFiles": [], "ContainerAssociations": ["Model 2"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\global\MECH\SYS-4\AssembledModel\SYS-4.acmo", "ReferenceCount": 1}</member-data>
+      </Object>
     </Container>
     <Container Name="Messages" Version="1.0">
       <container-type valType="String">Project:Messages</container-type>
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 8159, "Input": 2343, "Output": 2343}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 10629, "Input": 2343, "Output": 2343}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
       <Object Name="/Messages/StoredMessage:Message 2" Version="1.0">
         <class-type valType="String">StoredMessage</class-type>
         <object-name valType="String">Message 2</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Error", "MessageCategory": "None", "Summary": "Update failed for the Solution component in Modal.  Error updating cell Solution in system Modal.", "Details": None, "Association": "", "DateTimeStamp": 11/25/2025 23:45:19, "Visibility": "Error", "MessageSourceContainer": None, "MessageSourceEntity": $$07084b9c-4615-4517-b0bc-bc5c0f021fe9, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Information", "MessageCategory": "None", "Summary": "The Setup component in Harmonic Response requires user input before it can be updated. For instructions on how to address the cell in its current state, click the blue triangle in the lower right corner of the cell in the Project Schematic.", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 17:48:54, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
       </Object>
       <Object Name="/Messages/StoredMessage:Message 1" Version="1.0">
         <class-type valType="String">StoredMessage</class-type>
         <object-name valType="String">Message 1</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Error", "MessageCategory": "None", "Summary": "Update of the Solution component in Modal failed: Error updating cell Solution in system Modal.", "Details": """Ansys.Core.Commands.UserReadableFailureException: Error updating cell Solution in system Modal.
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Information", "MessageCategory": "None", "Summary": "The Model component in Harmonic Response requires user input before it can be updated. For instructions on how to address the cell in its current state, click the blue triangle in the lower right corner of the cell in the Project Schematic.", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 17:42:13, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
+      </Object>
+      <Object Name="/Messages/StoredMessage:Message" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Information", "MessageCategory": "None", "Summary": "To transfer materials from the component Solution in system Modal to the downstream component Model in system Harmonic Response, make sure that the Engineering Data cells are linked", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 17:41:01, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
+      </Object>
+      <Object Name="/Messages/StoredMessage:Message 3" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message 3</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
+C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\global\MECH\SYS-3\AssembledModel\SYS-3.pmdb""", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 20:24:12, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
+      </Object>
+      <Object Name="/Messages/StoredMessage:Message 4" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message 4</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": "Unable to clean addins in Mechanical. Either the application crashed or Workbench lost communication with it (No connection could be made because the target machine actively refused it 127.0.0.1:56654).", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 20:24:33, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
+      </Object>
+      <Object Name="/Messages/StoredMessage:Message 5" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message 5</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Error", "MessageCategory": "None", "Summary": "Update of the Model component in Harmonic Response failed: Conversion Failed. Either the application crashed or Workbench lost communication with it.", "Details": """System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:56654
+
+Server stack trace: 
+   at System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
+   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(AddressFamily family)
+   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
+   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders&amp; responseHeaders, Stream&amp; responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+   at Ans.Simulation.RemoteItf.ISimulationHelper.Convert(MeshFileOptions meshFileOptions, ConversionOptions options)
+   at Ansys.Addins.Infrastructure.Remoting.RemotingApiHelper.FatalApiMethodInvalidOperationException[TReturn](String message, RemotingApiMethod`1 callback)
+--- Ansys.Addins.Infrastructure.Exceptions.AddinUserException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
+   at Ansys.Addins.Infrastructure.Remoting.RemotingApiHelper.FatalApiMethodInvalidOperationException[TReturn](String message, RemotingApiMethod`1 callback)
+   at Ansys.Simulation.Core.Commands.AddinModelAssembler.Convert(IFullContext context, MeshFileOptions meshFileOptions, IMeshToGeometryOptionsProvider meshToGeometryOptionsProvider)
+--- Ans.ModelConverter.RemoteLib.Exceptions.ModelTransferFailedException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
+   at Ansys.Simulation.Core.Commands.AddinModelAssembler.Convert(IFullContext context, MeshFileOptions meshFileOptions, IMeshToGeometryOptionsProvider meshToGeometryOptionsProvider)
+   at Ans.ModelConverter.RemoteLib.AddinWorkflow.AssemblyBase.Assemble(IFullContext context)
+   at Ansys.Simulation.Core.Commands.AddinModelAssembler.Assemble(IFullContext context)
+   at Ansys.Simulation.Core.Commands.RefreshModel.ProcessAssemblyFiles(IFullContext context, Dictionary`2 modelConversionFilesMap, Dictionary`2 modelAssemblyFilesMap)
+   at Ansys.Simulation.Core.Commands.RefreshModel.ExecuteCommand(IFullContext context)
+--- Ans.ModelConverter.RemoteLib.Exceptions.ModelTransferFailedException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
+   at Ansys.Simulation.Core.Commands.RefreshModel.ExecuteCommand(IFullContext context)
    at Ansys.Addins.Infrastructure.CommandUtilities.CommandHelper.Execute(IFullContext context)
    at Ansys.Core.Commands.Concurrency.CommandWorkUnit.executeInContext(CommandContext subContext, IExecutionEngineCallback tracer)
    at Ansys.Core.Commands.Concurrency.BaseWorkUnit.doExecute(IExecutionEngineCallback executionEngine, CommandContext subContext)
    at Ansys.Core.Commands.Concurrency.BaseWorkUnit.Execute(IExecutionEngineCallback executionEngine, Boolean dontCatchExceptions)
---- Ansys.Core.Commands.CommandFailedException: Error updating cell Solution in system Modal.
-CommandName: Mechanical.UpdateSolution(Container=\"Solution\", RemainingDownstreamContainers=[\"Results\"], UpdateOptions=Set(DpUpdateType=None, HeldLicenseId=None, LicenseStatsId=\"7e2e326375724ef583f805805fba1d70\", DesignPointUpdateQueue=None, MaxNumberOfCores=0))
+--- Ansys.Core.Commands.CommandFailedException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
+CommandName: Mechanical.RefreshModel(Container=\"Model 2\", UpdateOptions=Set(DpUpdateType=None, HeldLicenseId=None, LicenseStatsId=\"6927152dc096414e8557a1a34f242e6f\", DesignPointUpdateQueue=None, MaxNumberOfCores=0))
+   at Ansys.Core.Commands.CommandAsyncResult.RethrowFailureException(Exception e)
+   at Ansys.Core.Commands.CommandAsyncResult.Wait(Int32 milliSecondsTimeout, Boolean exitContext)
+   at Ansys.Simulation.Core.Commands.RefreshModel.InvokeAndWait(IProtectedContext context, DataContainerReference Container, ReadOnlyCollection`1 UpstreamContainersToRefresh, Boolean IsBatchMode, Boolean IsUpdateFromCADOnly, ReadOnlyCollection`1 RemainingContainers, UpdateOptions UpdateOptions)
+   at Ansys.Simulation.Core.Commands.UpdateModel.ExecuteCommand(IFullContext context)
+   at Ansys.Addins.Infrastructure.CommandUtilities.CommandHelper.Execute(IFullContext context)
+   at Ansys.Core.Commands.Concurrency.CommandWorkUnit.executeInContext(CommandContext subContext, IExecutionEngineCallback tracer)
+   at Ansys.Core.Commands.Concurrency.BaseWorkUnit.doExecute(IExecutionEngineCallback executionEngine, CommandContext subContext)
+   at Ansys.Core.Commands.Concurrency.BaseWorkUnit.Execute(IExecutionEngineCallback executionEngine, Boolean dontCatchExceptions)
+--- Ansys.Core.Commands.CommandFailedException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
+CommandName: Mechanical.UpdateModel(Container=\"Model 2\", RemainingDownstreamContainers=[\"Setup 1\", \"Solution 1\", \"Results 1\"], UpdateOptions=Set(DpUpdateType=None, HeldLicenseId=None, LicenseStatsId=\"6927152dc096414e8557a1a34f242e6f\", DesignPointUpdateQueue=None, MaxNumberOfCores=0))
    at Ansys.Core.Commands.CommandAsyncResult.RethrowFailureException(Exception e)
    at Ansys.Core.Commands.CommandAsyncResult.WaitForSuspendOrComplete(Int32 milliSecondsTimeout, Boolean exitContext)
    at Ansys.ProjectSchematic.Data.ComponentTemplateEntity.Update(IFullContext context, IProgressMonitor progressMonitor, Int32 milliSecondsTimeout, DataContainerReference container, String dataGroup, UpdateOptions updateOptions, IEnumerable`1 downstream, IEnumerable`1 allRemaining)
@@ -253,12 +349,18 @@ CommandName: Mechanical.UpdateSolution(Container=\"Solution\", RemainingDownstre
    at Ansys.ProjectSchematic.Update.ComponentUpdatePlugin.updateComponent(IContextForUpdatePlugin callbacks, UpdateTask task, String trackToken, IProgressMonitor progressMonitor, Int32 milliSecondsTimeout, TaskHolder remainingTasksInThisDp, List`1 dependentTasks)
    at Ansys.ProjectSchematic.Update.ComponentUpdatePlugin.&lt;&gt;c__DisplayClass0_0.&lt;UpdateComponent&gt;b__0()
    at Ansys.ProjectSchematic.Update.ExecuteWithErrorBehaviour.Execute(IContextForUpdatePlugin callbacks, UpdateErrorBehavior behavior, Action op, UpdateTask forTask, Action opUponError)
-""", "Association": "", "DateTimeStamp": 11/25/2025 23:45:18, "Visibility": "Error", "MessageSourceContainer": None, "MessageSourceEntity": $$07084b9c-4615-4517-b0bc-bc5c0f021fe9, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
+""", "Association": "", "DateTimeStamp": 11/26/2025 20:24:33, "Visibility": "Error", "MessageSourceContainer": None, "MessageSourceEntity": $$3e725962-179b-4dea-85b2-9259c779b14c, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
       </Object>
-      <Object Name="/Messages/StoredMessage:Message" Version="1.0">
+      <Object Name="/Messages/StoredMessage:Message 6" Version="1.0">
         <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Error", "MessageCategory": "None", "Summary": "Result file is incomplete or corrupt. It cannot be read.", "Details": None, "Association": "", "DateTimeStamp": 11/25/2025 23:45:17, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
+        <object-name valType="String">Message 6</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Error", "MessageCategory": "None", "Summary": "Update failed for the Model component in Harmonic Response.  Conversion Failed. Either the application crashed or Workbench lost communication with it.", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 20:24:35, "Visibility": "Error", "MessageSourceContainer": None, "MessageSourceEntity": $$3e725962-179b-4dea-85b2-9259c779b14c, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
+      </Object>
+      <Object Name="/Messages/StoredMessage:Message 7" Version="1.0">
+        <class-type valType="String">StoredMessage</class-type>
+        <object-name valType="String">Message 7</object-name>
+        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
+C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\global\MECH\SYS-4\AssembledModel\SYS-4.pmdb""", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 20:30:14, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
       </Object>
     </Container>
     <Container Name="Parameters" Version="1.0">
@@ -268,13 +370,13 @@ CommandName: Mechanical.UpdateSolution(Container=\"Solution\", RemainingDownstre
       <maxUpdateOrder valType="Double">1</maxUpdateOrder>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 8286, "Input": 8287, "Output": 2346}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 10729, "Input": 10730, "Output": 2346}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Parameters/DesignPoint:0" Version="1.0">
         <class-type valType="String">DesignPoint</class-type>
         <object-name valType="String">0</object-name>
-        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": [], "ValidRetainedData": [], "ErrorsOnLastUpdate": {"$$07084b9c-4615-4517-b0bc-bc5c0f021fe9": "Update of the Solution component in Modal failed: Error updating cell Solution in system Modal."}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Solution in SYS 1"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": True, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
+        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": [], "ValidRetainedData": [], "ErrorsOnLastUpdate": {"$$3e725962-179b-4dea-85b2-9259c779b14c": "Update of the Model component in Harmonic Response failed: Conversion Failed. Either the application crashed or Workbench lost communication with it."}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Model 1 in SYS 1, Setup in SYS 1, Solution in SYS 1, Results in SYS 1, Model 2 in SYS 2"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": True, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
         <properties-setByUserFlag-data valType="String">["IsDataModelValid"]</properties-setByUserFlag-data>
       </Object>
       <Object Name="/Parameters/DesignPointReportSetting:Design Points Report Setting" Version="1.0">
@@ -290,7 +392,7 @@ CommandName: Mechanical.UpdateSolution(Container=\"Solution\", RemainingDownstre
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 8152, "Input": 8183, "Output": 2349}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 10598, "Input": 10577, "Output": 2349}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Schematic/System:Geom" Version="1.0">
@@ -307,12 +409,17 @@ CommandName: Mechanical.UpdateSolution(Container=\"Solution\", RemainingDownstre
       <Object Name="/Schematic/System:SYS" Version="1.0">
         <class-type valType="String">System</class-type>
         <object-name valType="String">SYS</object-name>
-        <member-data valType="String">{"DisplayText": "Mechanical Model", "Components": [$$02ed6f8b-c9c1-4916-90c6-7c353fa6f71f, $$2eb43675-ef5d-4a0c-a1fd-7c634b2ee0ce, $$9dc7d088-3dab-49cb-93c6-56b3ddcb028a], "ComponentGroups": [], "SystemVisible": True, "RequiredComponents": [$$9dc7d088-3dab-49cb-93c6-56b3ddcb028a], "ExcludedComponentTemplates": [], "Attributes": {"PhysicsType": "Any", "AnalysisType": "Mechanical", "SolverType": "Any", "SolverTypeDisplayString": "Any", "PhysicsTypeDisplayString": "Any", "AnalysisTypeDisplayString": "Mechanical", "SystemName": "Mechanical Model", "IsCreated": "True", "VOLATILE:SystemName": "SYS"}, "SystemType": "Mechanical Model", "HeaderText": "Mechanical Model", "SystemTypeAbbreviation": "SYS", "UniqueSystemDirectoryName": "SYS", "Physics": [], "AnalysisType": None, "SystemHelpId": None, "AdditionalSystemHelpId": None, "IsParametric": False, "CreatedFromTemplate": $$0aee39b8-9035-4418-b5dc-7f60cfcccc80, "Notes": None, "LayoutChildren": [$$b03b6947-c58e-49ea-846c-ee5f816ff997], "LayoutIndex": 4}</member-data>
+        <member-data valType="String">{"DisplayText": "Mechanical Model", "Components": [$$02ed6f8b-c9c1-4916-90c6-7c353fa6f71f, $$2eb43675-ef5d-4a0c-a1fd-7c634b2ee0ce, $$9dc7d088-3dab-49cb-93c6-56b3ddcb028a], "ComponentGroups": [], "SystemVisible": True, "RequiredComponents": [$$9dc7d088-3dab-49cb-93c6-56b3ddcb028a], "ExcludedComponentTemplates": [], "Attributes": {"PhysicsType": "Any", "AnalysisType": "Mechanical", "SolverType": "Any", "SolverTypeDisplayString": "Any", "PhysicsTypeDisplayString": "Any", "AnalysisTypeDisplayString": "Mechanical", "SystemName": "Mechanical Model", "IsCreated": "True", "VOLATILE:SystemName": "SYS"}, "SystemType": "Mechanical Model", "HeaderText": "Mechanical Model", "SystemTypeAbbreviation": "SYS", "UniqueSystemDirectoryName": "SYS", "Physics": [], "AnalysisType": None, "SystemHelpId": None, "AdditionalSystemHelpId": None, "IsParametric": False, "CreatedFromTemplate": $$0aee39b8-9035-4418-b5dc-7f60cfcccc80, "Notes": None, "LayoutChildren": [$$b03b6947-c58e-49ea-846c-ee5f816ff997, $$6e2138fd-7bc9-4288-bc9f-ceccead185ae], "LayoutIndex": 4}</member-data>
       </Object>
       <Object Name="/Schematic/System:SYS 1" Version="1.0">
         <class-type valType="String">System</class-type>
         <object-name valType="String">SYS 1</object-name>
         <member-data valType="String">{"DisplayText": "Modal", "Components": [$$c84de474-d9a7-4cf0-b9bd-4f7bedb7d006, $$82094cf4-8a7a-4b69-87f5-039b5d0eb879, $$07084b9c-4615-4517-b0bc-bc5c0f021fe9, $$47f8c436-062c-48db-868a-b0d246e77e7b], "ComponentGroups": [], "SystemVisible": True, "RequiredComponents": [$$c84de474-d9a7-4cf0-b9bd-4f7bedb7d006, $$82094cf4-8a7a-4b69-87f5-039b5d0eb879], "ExcludedComponentTemplates": [], "Attributes": {"PhysicsType": "Structural", "AnalysisType": "Modal", "SolverType": "ANSYS", "SolverTypeDisplayString": "Mechanical APDL", "PhysicsTypeDisplayString": "Structural", "AnalysisTypeDisplayString": "Modal", "SystemName": "Modal (ANSYS)", "IsCreated": "True", "AlreadyInSystem": "Yes", "VOLATILE:SystemName": "SYS 1"}, "SystemType": "Modal (ANSYS)", "HeaderText": "Modal", "SystemTypeAbbreviation": "SYS", "UniqueSystemDirectoryName": "SYS-3", "Physics": [], "AnalysisType": None, "SystemHelpId": "wb2sb_modalAN", "AdditionalSystemHelpId": None, "IsParametric": False, "CreatedFromTemplate": $$cb438b03-a609-4d6f-b10b-2e27ac67455d, "Notes": None, "LayoutChildren": [], "LayoutIndex": 0}</member-data>
+      </Object>
+      <Object Name="/Schematic/System:SYS 2" Version="1.0">
+        <class-type valType="String">System</class-type>
+        <object-name valType="String">SYS 2</object-name>
+        <member-data valType="String">{"DisplayText": "Harmonic Response", "Components": [$$3e725962-179b-4dea-85b2-9259c779b14c, $$4283b6a2-29a2-4a5d-9858-eeaf57cf4d74, $$8e5fc174-08d5-4d54-aa33-6dc7d60a4e4a, $$ac26c61d-8371-42d1-bb66-18d9f7da09fb], "ComponentGroups": [], "SystemVisible": True, "RequiredComponents": [$$3e725962-179b-4dea-85b2-9259c779b14c, $$4283b6a2-29a2-4a5d-9858-eeaf57cf4d74], "ExcludedComponentTemplates": [], "Attributes": {"PhysicsType": "Structural", "AnalysisType": "Harmonic", "SolverType": "ANSYS", "SolverTypeDisplayString": "Mechanical APDL", "PhysicsTypeDisplayString": "Structural", "AnalysisTypeDisplayString": "Harmonic Response", "SystemName": "Harmonic Response (ANSYS)", "IsCreated": "True", "AlreadyInSystem": "Yes", "VOLATILE:SystemName": "SYS 2"}, "SystemType": "Harmonic Response (ANSYS)", "HeaderText": "Harmonic Response", "SystemTypeAbbreviation": "SYS", "UniqueSystemDirectoryName": "SYS-4", "Physics": [], "AnalysisType": None, "SystemHelpId": "wb2sb_harmrespAN", "AdditionalSystemHelpId": None, "IsParametric": False, "CreatedFromTemplate": $$8304086d-f6ed-4f56-b46f-2a6007e66709, "Notes": None, "LayoutChildren": [], "LayoutIndex": 0}</member-data>
       </Object>
       <Object Name="/Schematic/SchematicSettings:Schematic Settings" Version="1.0">
         <class-type valType="String">SchematicSettings</class-type>
@@ -397,7 +504,7 @@ CommandName: Mechanical.UpdateSolution(Container=\"Solution\", RemainingDownstre
       <Object Name="/Schematic/Component:Model" Version="1.0">
         <class-type valType="String">Component</class-type>
         <object-name valType="String">Model</object-name>
-        <member-data valType="String">{"DisplayText": "Model", "ImageName": "model2", "ComponentStateOnLastFailure": "Modified", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Model", "_overwrittenUpdatable": None, "Template": $$73a70f29-b9a5-4bc0-a026-3969cbf40628, "InSystem": $$eebef184-2ce1-4088-8217-7e4af9874672, "MasterSources": {"Sources": [[{"DataType": "EngineeringData", "Component": $$02ed6f8b-c9c1-4916-90c6-7c353fa6f71f, "Transfer": None}], [{"DataType": "Geometry", "Component": $$2eb43675-ef5d-4a0c-a1fd-7c634b2ee0ce, "Transfer": None}]]}, "Notes": None, "UsedLicenses": {}, "ActiveTransferComponents": [], "Solver": "", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+        <member-data valType="String">{"DisplayText": "Model", "ImageName": "model2", "ComponentStateOnLastFailure": "Modified", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Model", "_overwrittenUpdatable": None, "Template": $$73a70f29-b9a5-4bc0-a026-3969cbf40628, "InSystem": $$eebef184-2ce1-4088-8217-7e4af9874672, "MasterSources": {"Sources": [[{"DataType": "EngineeringData", "Component": $$02ed6f8b-c9c1-4916-90c6-7c353fa6f71f, "Transfer": None}], [{"DataType": "Geometry", "Component": $$2eb43675-ef5d-4a0c-a1fd-7c634b2ee0ce, "Transfer": None}]]}, "Notes": None, "UsedLicenses": {"ansys": 1}, "ActiveTransferComponents": [], "Solver": "", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
       </Object>
       <Object Name="/Schematic/Component:Model 1" Version="1.0">
         <class-type valType="String">Component</class-type>
@@ -407,7 +514,7 @@ CommandName: Mechanical.UpdateSolution(Container=\"Solution\", RemainingDownstre
       <Object Name="/Schematic/Component:Setup" Version="1.0">
         <class-type valType="String">Component</class-type>
         <object-name valType="String">Setup</object-name>
-        <member-data valType="String">{"DisplayText": "Setup", "ImageName": "setup", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Setup", "_overwrittenUpdatable": None, "Template": $$484bd017-2ec6-4835-abe0-eee303107771, "InSystem": $$b03b6947-c58e-49ea-846c-ee5f816ff997, "MasterSources": {"Sources": [[{"DataType": "MechanicalModel", "Component": $$c84de474-d9a7-4cf0-b9bd-4f7bedb7d006, "Transfer": None}], [{"DataType": "MechanicalMesh", "Component": $$c84de474-d9a7-4cf0-b9bd-4f7bedb7d006, "Transfer": None}]]}, "Notes": None, "UsedLicenses": {"ansys": 1}, "ActiveTransferComponents": [], "Solver": "ANSYS", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+        <member-data valType="String">{"DisplayText": "Setup", "ImageName": "setup", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Setup", "_overwrittenUpdatable": None, "Template": $$484bd017-2ec6-4835-abe0-eee303107771, "InSystem": $$b03b6947-c58e-49ea-846c-ee5f816ff997, "MasterSources": {"Sources": [[{"DataType": "MechanicalModel", "Component": $$c84de474-d9a7-4cf0-b9bd-4f7bedb7d006, "Transfer": None}], [{"DataType": "MechanicalMesh", "Component": $$c84de474-d9a7-4cf0-b9bd-4f7bedb7d006, "Transfer": None}]]}, "Notes": None, "UsedLicenses": {}, "ActiveTransferComponents": [], "Solver": "ANSYS", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
       </Object>
       <Object Name="/Schematic/Component:Solution" Version="1.0">
         <class-type valType="String">Component</class-type>
@@ -417,7 +524,27 @@ CommandName: Mechanical.UpdateSolution(Container=\"Solution\", RemainingDownstre
       <Object Name="/Schematic/Component:Results" Version="1.0">
         <class-type valType="String">Component</class-type>
         <object-name valType="String">Results</object-name>
-        <member-data valType="String">{"DisplayText": "Results", "ImageName": "results", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Results", "_overwrittenUpdatable": None, "Template": $$4352988a-e8d3-43a7-a005-67f30f5f4a73, "InSystem": $$b03b6947-c58e-49ea-846c-ee5f816ff997, "MasterSources": {"Sources": [[{"DataType": "SimulationSolution", "Component": $$07084b9c-4615-4517-b0bc-bc5c0f021fe9, "Transfer": None}]]}, "Notes": None, "UsedLicenses": None, "ActiveTransferComponents": [], "Solver": "ANSYS", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+        <member-data valType="String">{"DisplayText": "Results", "ImageName": "results", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Results", "_overwrittenUpdatable": None, "Template": $$4352988a-e8d3-43a7-a005-67f30f5f4a73, "InSystem": $$b03b6947-c58e-49ea-846c-ee5f816ff997, "MasterSources": {"Sources": [[{"DataType": "SimulationSolution", "Component": $$07084b9c-4615-4517-b0bc-bc5c0f021fe9, "Transfer": None}]]}, "Notes": None, "UsedLicenses": {}, "ActiveTransferComponents": [], "Solver": "ANSYS", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Solution 1" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Solution 1</object-name>
+        <member-data valType="String">{"DisplayText": "Solution", "ImageName": "Mechanical_Solution", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Solution 1", "_overwrittenUpdatable": None, "Template": $$296c60ac-a0fc-429f-a533-450326b0f5a6, "InSystem": $$6e2138fd-7bc9-4288-bc9f-ceccead185ae, "MasterSources": {"Sources": [[{"DataType": "SimulationSetup", "Component": $$4283b6a2-29a2-4a5d-9858-eeaf57cf4d74, "Transfer": None}]]}, "Notes": None, "UsedLicenses": None, "ActiveTransferComponents": [], "Solver": "ANSYS", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Setup 1" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Setup 1</object-name>
+        <member-data valType="String">{"DisplayText": "Setup", "ImageName": "setup", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Setup 1", "_overwrittenUpdatable": None, "Template": $$be3b4abc-be14-42cc-abd1-5c4fcc504030, "InSystem": $$6e2138fd-7bc9-4288-bc9f-ceccead185ae, "MasterSources": {"Sources": [[{"DataType": "MechanicalModel", "Component": $$3e725962-179b-4dea-85b2-9259c779b14c, "Transfer": None}], [{"DataType": "MechanicalMesh", "Component": $$3e725962-179b-4dea-85b2-9259c779b14c, "Transfer": None}]]}, "Notes": None, "UsedLicenses": None, "ActiveTransferComponents": [], "Solver": "ANSYS", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Results 1" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Results 1</object-name>
+        <member-data valType="String">{"DisplayText": "Results", "ImageName": "results", "ComponentStateOnLastFailure": "UpToDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Results 1", "_overwrittenUpdatable": None, "Template": $$b32064a8-ef26-459b-9322-a20cfb55ebb4, "InSystem": $$6e2138fd-7bc9-4288-bc9f-ceccead185ae, "MasterSources": {"Sources": [[{"DataType": "SimulationSolution", "Component": $$8e5fc174-08d5-4d54-aa33-6dc7d60a4e4a, "Transfer": None}]]}, "Notes": None, "UsedLicenses": None, "ActiveTransferComponents": [], "Solver": "ANSYS", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
+      </Object>
+      <Object Name="/Schematic/Component:Model 2" Version="1.0">
+        <class-type valType="String">Component</class-type>
+        <object-name valType="String">Model 2</object-name>
+        <member-data valType="String">{"DisplayText": "Model", "ImageName": "model2", "ComponentStateOnLastFailure": "OutOfDate", "AlwaysBePartOfDpUpdate": False, "FullyUpToDateOnDps": None, "CoupledClients": [], "SubComponents": [], "DataSharedFrom": None, "DataSharing": "None", "DataContainer": "Model 2", "_overwrittenUpdatable": None, "Template": $$73a70f29-b9a5-4bc0-a026-3969cbf40628, "InSystem": $$6e2138fd-7bc9-4288-bc9f-ceccead185ae, "MasterSources": {"Sources": [[{"DataType": "SimulationEngineeringData", "Component": $$9dc7d088-3dab-49cb-93c6-56b3ddcb028a, "Transfer": None}], [{"DataType": "SimulationModelGeneratedMesh", "Component": $$9dc7d088-3dab-49cb-93c6-56b3ddcb028a, "Transfer": None}]]}, "Notes": None, "UsedLicenses": {"ansys": 1}, "ActiveTransferComponents": [], "Solver": "", "IsFailedState": False, "UpdateConditionParameter": None}</member-data>
       </Object>
     </Container>
     <Container Name="ReportDataContainer" Version="1.0">
