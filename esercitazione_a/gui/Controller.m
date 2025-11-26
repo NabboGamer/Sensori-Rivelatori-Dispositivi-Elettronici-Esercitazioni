@@ -1,0 +1,145 @@
+classdef Controller < Component
+    %CONTROLLER Fornisce un controllo interattivo per generare nuovi dati.
+
+    % Copyright 2021-2025 The MathWorks, Inc.
+
+    properties ( GetAccess = ?Testable, SetAccess = private )
+        Button(:, 1) matlab.ui.control.Button {mustBeScalarOrEmpty}
+        DropDownMenu(:, 1) matlab.ui.control.DropDown {mustBeScalarOrEmpty}
+        Image(:, 1)
+        TabController(:, 1)
+        Grid(:, 1) matlab.ui.container.GridLayout {mustBeScalarOrEmpty}
+    end
+
+    properties
+        App(:, 1) App {mustBeScalarOrEmpty}
+    end
+
+    methods
+
+        function obj = Controller( namedArgs )
+            % CONTROLLER Costruttore del Controller.
+
+            arguments ( Input )
+                namedArgs.?Controller
+            end % arguments ( Input )
+
+            % Chiama il costruttore della superclasse.
+            obj@Component()
+
+            % Imposta le proprietà specificate dall'utente.
+            set( obj, namedArgs )
+
+        end % constructor
+
+        function set.App( obj, app )
+            obj.App = app;
+            obj.TabController = obj.App.TabController;
+            obj.Image = uiimage(obj.Grid);
+            obj.Image.Layout.Row = 2;
+            obj.Image.Layout.Column = 1;
+
+            obj.TabController.Parent = obj.Grid;
+            obj.TabController.Layout.Row = 3;
+            obj.TabController.Layout.Column = 1;
+
+            obj.Button = uibutton( ...
+                "Parent", obj.Grid, ...
+                "Text", "Simula", ...
+                "ButtonPushedFcn", @obj.onButtonPushed);
+            obj.Button.Layout.Row = 4;
+            obj.Button.Layout.Column = 1;
+
+            % Popola il menu a discesa dalla configurazione
+            config = obj.App.Modello.Config;
+            if ~isempty(config) && iscell(config)
+                simTypes = strings(0);
+                for i = 1:length(config)
+                    item = config{i};
+                    if isfield(item, 'simType')
+                        simTypes(end+1) = string(item.simType);
+                    end
+                end
+
+                if ~isempty(simTypes)
+                    obj.DropDownMenu.Items = simTypes;
+                    obj.DropDownMenu.Value = simTypes(1);
+                    obj.applySimulationConfig(simTypes(1));
+                end
+            end
+        end
+
+        function onButtonPushed( obj, ~, ~ )
+            modello = obj.App.Modello;
+            modello.simulate();
+        end % onButtonPushed
+
+    end % methods
+
+    methods ( Access = protected )
+
+        function setup( obj )
+            %SETUP Inizializza il controller.
+            % Crea la griglia e il pulsante.
+            obj.Grid = uigridlayout( ...
+                "Parent", obj, ...
+                "RowHeight", {"0.05x", "0.5x", "0.5x", "0.05x"}, ...
+                "ColumnWidth", "1x", ...
+                "Padding", 0);
+
+            tipologiaSimulazionePanel = uigridlayout( ...
+                "Parent", obj.Grid, ...
+                "RowHeight", "1x", ...
+                "ColumnWidth", {"0.5x", "0.5x"}, ...
+                "Padding", 0);
+            tipologiaSimulazionePanel.Layout.Row = 1;
+            tipologiaSimulazionePanel.Layout.Column = 1;
+
+            uilabel(tipologiaSimulazionePanel, "Text", "Tipologia Simulazione");
+            obj.DropDownMenu = uidropdown(tipologiaSimulazionePanel, "ValueChangedFcn", @obj.onSimulationChanged);
+
+
+        end % setup
+
+        function update( ~ )
+        end % update
+
+    end % methods ( Access = protected )
+
+    methods ( Access = private )
+
+        function onSimulationChanged( obj, ~, ~ )
+            selected = obj.DropDownMenu.Value;
+            obj.applySimulationConfig(selected);
+        end
+
+        function applySimulationConfig(obj, simType)
+            config = obj.App.Modello.Config;
+            imageName = "";
+            defaults = [];
+
+            for i = 1:length(config)
+                if strcmp(config{i}.simType, simType)
+                    if isfield(config{i}, 'image')
+                        imageName = config{i}.image;
+                    end
+                    if isfield(config{i}, 'defaults')
+                        defaults = config{i}.defaults;
+                    end
+                    break;
+                end
+            end
+
+            if imageName ~= ""
+                imagePath = fullfile(fileparts(mfilename('fullpath')), 'assets', imageName);
+                obj.Image.ImageSource = imagePath;
+            end
+
+            if ~isempty(defaults)
+                obj.TabController.applySettings(defaults);
+            end
+        end
+
+    end % methods ( Access = private )
+
+end % classdef

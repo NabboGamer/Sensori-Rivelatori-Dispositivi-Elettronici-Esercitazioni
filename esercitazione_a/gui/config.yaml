@@ -1,0 +1,33 @@
+- simType: Caratterizzazione Ceramica (Thickness)
+  image: singleCeramics.png
+  defaults:
+    - kind: CeramicsTab
+      values:
+        MenuForma: Quadrato
+        CampoParametro1: 0.01
+        CampoSpessore: 0.001
+        MenuPz: 'Pz26'
+      disabled:
+        - MenuZ1
+        - MenuZ2
+    - kind: FrequencyTab
+      values:
+        Start: 100
+        Stop: 10000
+        UnitaEstremi: 'KHz'
+    - kind: PlotTab
+      values:
+        MenuGrafico1: 'FTT'
+        MenuGrafico2: 'FTR'
+        MostraSecondo: true
+  pipeline:
+    - "Zi = ( (1./(1i .* omega .* C0)) .* ( 1 - ( ((h33^2)/(c33*beta33)) .* (2./theta) .* tan(theta./2) ) ) );"
+    - "[moduloZi, faseZi] = calcolaModuloEFase(Zi, true, false);"
+    - "index_min = (moduloZi == min(moduloZi));"
+    - "index_max = (moduloZi == max(moduloZi));"
+    - "fmin = f(1,index_min);"
+    - "fmax = f(1,index_max);"
+    - "Keff = ((fmax^2) - (fmin^2))/(fmax^2);"
+  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
+
+  
