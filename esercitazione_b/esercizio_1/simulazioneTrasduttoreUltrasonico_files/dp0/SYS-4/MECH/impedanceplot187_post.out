@@ -107,7 +107,7 @@
   OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\ImpedancePlot187_Post.out
 
  RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  22:47:41  NOV 26, 2025 CP=      0.094
+ CURRENT JOBNAME=file0  13:41:08  NOV 27, 2025 CP=      0.109
 
 
  RUN SETUP PROCEDURE FROM FILE= C:\Program Files\ANSYS Inc\ANSYS Student\v252\ANSYS\apdl\start.ans
@@ -132,18 +132,18 @@
          6 REAL CONSTS DEFINED   MAX REAL CONST NUMBER =           10
          0 SECTIONS DEFINED      MAX SECTION NUMBER =               0
          1 COORD SYS DEFINED     MAX COORD SYS NUMBER =            12
-         4 COUPLING EQNS DEFINED MAX COUPLING EQN NUMBER =          4
+         3 COUPLING EQNS DEFINED MAX COUPLING EQN NUMBER =          3
  
  ACTIVE COORDINATE SYSTEM             =          0  (CARTESIAN)
- NUMBER OF DEFINED NODAL CONSTRAINTS  =          4
+ NUMBER OF DEFINED NODAL CONSTRAINTS  =          3
  NUMBER OF DEFINED NODAL LOADS        =          0
- NUMBER OF DEFINED COMPONENTS         =          7
+ NUMBER OF DEFINED COMPONENTS         =          6
  NUMBER OF DEFINED ELEM SURFACE LOADS =          0
  NUMBER OF DEFINED ELEM BODY LOADS    =          0
  NUMBER OF DEFINED NODE BODY FORCES   =          0
  CURRENT LOAD CASE =      0 OF      0
  LOAD SET   =       1
- SUBSTEP    =     200
+ SUBSTEP    =     100
  TIME/FREQ  =    0.0000    
 
  INITIAL JOBNAME = file
@@ -152,7 +152,7 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   22:47:41  NOV 26, 2025 CP=      0.438
+ 01055371  VERSION=WINDOWS x64   13:41:08  NOV 27, 2025 CP=      0.484
 
  simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
 
@@ -167,14 +167,14 @@
 
  VARIABLE191 IS ITEM= NCMI  COMP=       NAME= NCMI     FROM LOAD SET SUMMARY 
 
- STORAGE COMPLETE FOR    200 DATA POINTS 
+ STORAGE COMPLETE FOR    100 DATA POINTS 
 
          SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
  VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
 
- 191 SOLU     0 NCMI      NCMI       1.000      0.4010E+005  200.0      0.6000E+005
+ 191 SOLU     0 NCMI      NCMI       1.000      0.5202E+005  100.0      0.5400E+005
 
- VARIABLE 191 IS A FILL FROM    1 TO  200 BY    1
+ VARIABLE 191 IS A FILL FROM    1 TO  100 BY    1
   STARTING WITH  1.000000      AND INCREMENTING BY  1.000000    
 
  VARIABLE 191  IS THE REAL PART OF
@@ -185,16 +185,16 @@
 
  SELECT      COMPONENT IMPEDANCE PLOT187                                                                                                                                                                                                                                               
 
- PARAMETER NODEID =     16267.00000    
+ PARAMETER NODEID =     16271.00000    
 
- VARIABLE  2 IS REACTION FORCE   16267 CHRG  CHRG    
+ VARIABLE  2 IS REACTION FORCE   16271 CHRG  CHRG    
 
- STORAGE COMPLETE FOR    200 DATA POINTS 
+ STORAGE COMPLETE FOR    100 DATA POINTS 
 
          SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
  VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
 
-   2 RFOR 16267 CHRG      CHRG     -0.3090E-006 0.5330E+005 0.2446E-007 0.5320E+005
+   2 RFOR 16271 CHRG      CHRG     -0.4061E-006 0.5370E+005 0.5293E-006 0.5372E+005
 
  COMPLEX LOAD FACTORS  CFACT1=  0.0000      6.2832    
                        CFACT2= -1.0000      0.0000    
@@ -206,14 +206,14 @@
    TIMES (  0.0000    ,  0.0000    )  TIMES VARIABLE   0
  RESULT VARIABLE NAME = CURRENT 
 
- VARIABLE  4  IS AT NODE   16267  ITEM= VOLT COMP=       NAME= VOLT    
+ VARIABLE  4  IS AT NODE   16271  ITEM= VOLT COMP=       NAME= VOLT    
 
- STORAGE COMPLETE FOR    200 DATA POINTS 
+ STORAGE COMPLETE FOR    100 DATA POINTS 
 
          SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
  VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
 
-   4 NSOL 16267 VOLT      VOLT       0.000      0.4010E+005  0.000      0.4010E+005
+   4 NSOL 16271 VOLT      VOLT       5.000      0.5202E+005  5.000      0.5202E+005
 
  VARIABLE   5
            IS (  1.0000    ,  0.0000    )  TIMES VARIABLE   4
@@ -231,7 +231,7 @@
  /OUTPUT FILE= ImpedancePlot187.txt
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.188
+ ***** ROUTINE COMPLETED *****  CP =         0.922
 
 
 
@@ -244,7 +244,7 @@
 +--------------------- M A P D L   S T A T I S T I C S ------------------------+
 
 Release: 2025 R2            Build: 25.2       Update: UP20250519   Platform: WINDOWS x64 
-Date Run: 11/26/2025   Time: 22:47     Process ID: 25556
+Date Run: 11/27/2025   Time: 13:41     Process ID: 18620
 Operating System: Windows 11  (Build: 26100)
 
 Processor Model: Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
@@ -275,13 +275,13 @@ Input File: ImpedancePlot187_Post.inp
      2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH
      3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH
  
-Latency time from master to core     1 =    6.105 microseconds
-Latency time from master to core     2 =    5.087 microseconds
-Latency time from master to core     3 =    9.240 microseconds
+Latency time from master to core     1 =    5.737 microseconds
+Latency time from master to core     2 =    6.302 microseconds
+Latency time from master to core     3 =    5.984 microseconds
  
-Communication speed from master to core     1 =  5146.18 MB/sec
-Communication speed from master to core     2 =  5612.85 MB/sec
-Communication speed from master to core     3 =  7301.87 MB/sec
+Communication speed from master to core     1 =  6268.02 MB/sec
+Communication speed from master to core     2 =  6432.99 MB/sec
+Communication speed from master to core     3 =  5545.85 MB/sec
 
 Total CPU time for main thread                    :        0.9 seconds
 Total CPU time summed for all threads             :        1.3 seconds
@@ -292,16 +292,16 @@ Elapsed time spent solution - preprocessing       :        0.0 seconds
 Elapsed time spent computing solution             :        0.0 seconds
 Elapsed time spent solution - postprocessing      :        0.0 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
-Elapsed time spent post-processing model (/POST26):        0.2 seconds
+Elapsed time spent post-processing model (/POST26):        0.1 seconds
  
 
 Sum of disk space used on all processes           :        0.0 MB
 
-Sum of memory used on all processes               :       38.0 MB
+Sum of memory used on all processes               :       37.0 MB
 Sum of memory allocated on all processes          :     2880.0 MB
 Physical memory available                         :         32 GB
 Total amount of I/O written to disk               :        0.0 GB
-Total amount of I/O read from disk                :        0.2 GB
+Total amount of I/O read from disk                :        0.1 GB
 
 +------------------ E N D   M A P D L   S T A T I S T I C S -------------------+
 
@@ -317,13 +317,13 @@ Total amount of I/O read from disk                :        0.2 GB
  |-----------------------------------------------------------------------------|
  |                                                                             |
  |  Database Requested(-db)     1024 MB     Scratch Memory Requested   1024 MB |
- |  Max Database Used(Master)      9 MB     Max Scratch Used(Master)     11 MB |
+ |  Max Database Used(Master)      9 MB     Max Scratch Used(Master)     10 MB |
  |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)     5 MB |
- |  Sum Database Used(All)        12 MB     Sum Scratch Used(All)        26 MB |
+ |  Sum Database Used(All)        12 MB     Sum Scratch Used(All)        25 MB |
  |                                                                             |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |        CP Time      (sec) =          1.344       Time  =  22:47:52          |
- |        Elapsed Time (sec) =         17.000       Date  =  11/26/2025        |
+ |        CP Time      (sec) =          1.266       Time  =  13:41:18          |
+ |        Elapsed Time (sec) =         16.000       Date  =  11/27/2025        |
  |                                                                             |
  *-----------------------------------------------------------------------------*

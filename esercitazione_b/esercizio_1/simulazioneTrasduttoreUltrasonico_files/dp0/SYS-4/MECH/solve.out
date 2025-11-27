@@ -106,13 +106,13 @@
   DISTRIBUTED MEMORY PARALLEL REQUESTED
        4 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
     TOTAL OF     4 CORES REQUESTED
-  INPUT FILE NAME              = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr81C8\dummy.dat
-  OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr81C8\solve.out
+  INPUT FILE NAME              = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr9CC2\dummy.dat
+  OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr9CC2\solve.out
   START-UP FILE MODE           = NOREAD
   STOP FILE MODE               = NOREAD
 
  RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  21:40:12  NOV 26, 2025 CP=      0.094
+ CURRENT JOBNAME=file0  13:35:51  NOV 27, 2025 CP=      0.062
 
 
  PARAMETER _DS_PROGRESS =     999.0000000    
@@ -121,11 +121,11 @@
 
 
 
- *** NOTE ***                            CP =       0.422   TIME= 21:40:12
+ *** NOTE ***                            CP =       0.375   TIME= 13:35:52
  The /CONFIG,NOELDB command is not valid in a distributed memory         
  parallel solution.  Command is ignored.                                 
 
- *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  21.6700000    
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  13.5977778    
 
  TITLE= 
  simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
@@ -142,7 +142,7 @@
  SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr81C8\
+ PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr9CC2\
 
  SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
@@ -179,7 +179,7 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   21:40:12  NOV 26, 2025 CP=      0.438
+ 01055371  VERSION=WINDOWS x64   13:35:52  NOV 27, 2025 CP=      0.406
 
  simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
 
@@ -201,9 +201,10 @@
  *********** Create Contact "Contact Region 3(Mechanical Model)" ***********
              Real Constant Set For Above Contact Is 10 & 9
  *********** Send Named Selection as Node Component ***********
+ *********** Send Named Selection as Node Component ***********
 
 
- ***** ROUTINE COMPLETED *****  CP =         0.812
+ ***** ROUTINE COMPLETED *****  CP =         0.953
 
 
  --- Number of total nodes = 18584
@@ -214,7 +215,7 @@
  --- Number of condensed parts = 0
  --- Number of total elements = 3966
 
- *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  21.6702778    
+ *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  13.5977778    
 
  *****  MAPDL SOLUTION ROUTINE  *****
 
@@ -229,9 +230,9 @@
 
  STEP BOUNDARY CONDITION KEY= 1
 
- HARMONIC FREQUENCY RANGE - END=  60000.      BEGIN=  40000.    
+ HARMONIC FREQUENCY RANGE - END=  54000.      BEGIN=  52000.    
 
- USE   200 SUBSTEP(S) THIS LOAD STEP FOR ALL  DEGREES OF FREEDOM
+ USE   100 SUBSTEP(S) THIS LOAD STEP FOR ALL  DEGREES OF FREEDOM
 
  ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
 
@@ -273,13 +274,13 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =         0.812
+ ***** ROUTINE COMPLETED *****  CP =         0.953
 
 
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   21:40:13  NOV 26, 2025 CP=      0.812
+ 01055371  VERSION=WINDOWS x64   13:35:52  NOV 27, 2025 CP=      0.953
 
  simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
 
@@ -439,7 +440,7 @@
  EM UNITS = USER  EPZERO= 0.88540E-11
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.125
+ ***** ROUTINE COMPLETED *****  CP =         1.266
 
 
 
@@ -457,13 +458,13 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.125
+ ***** ROUTINE COMPLETED *****  CP =         1.266
 
 
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   21:40:13  NOV 26, 2025 CP=      1.125
+ 01055371  VERSION=WINDOWS x64   13:35:52  NOV 27, 2025 CP=      1.266
 
  simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
 
@@ -623,7 +624,7 @@
  EM UNITS = USER  EPZERO= 0.88540E-11
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.344
+ ***** ROUTINE COMPLETED *****  CP =         1.547
 
 
 
@@ -644,7 +645,7 @@
 
  PARAMETER _ISCP =     0.000000000    
 
- *** WARNING ***                         CP =       1.344   TIME= 21:40:13
+ *** WARNING ***                         CP =       1.578   TIME= 13:35:52
  The data for *GET entity NODE item CPS and NODE= 17606 is not defined.  
                                                                          
   The *GET command is ignored.                                           
@@ -662,45 +663,16 @@
 
  SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
   
- ***********  C2-V1107 ***********
-  
- CMBLOCK read of NODE component VOLTAGE107                                                                                                                                                                                                                                                        completed
-
- SELECT      COMPONENT VOLTAGE107                                                                                                                                                                                                                                                      
-
- *GET  _NUMMIN   FROM  NODE  ITEM=NUM  MIN   VALUE=  17607.0000     
-
- PARAMETER _ISCP =     0.000000000    
-
- *** WARNING ***                         CP =       1.344   TIME= 21:40:13
- The data for *GET entity NODE item CPS and NODE= 17607 is not defined.  
-                                                                         
-  The *GET command is ignored.                                           
-
- *IF  _isCP  ( =   0.00000     )  EQ  
-      0  ( =   0.00000     )  THEN    
-
- COUPLED SET =          2  DIRECTION= VOLT  TOTAL NODES=      417
- MAXIMUM COUPLED SET NUMBER =          2
-
- *ENDIF
-
- SPECIFIED CONSTRAINT VOLT FOR SELECTED NODES        17607 TO       17607 BY           1
- REAL=  1.00000000       IMAG=  0.00000000    
-
- SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
-  
  ***********  C1-V1127 ***********
   
- CMBLOCK read of NODE component VOLTAGE127                                                                                                                                                                                                                                                        completed
 
- SELECT      COMPONENT VOLTAGE127                                                                                                                                                                                                                                                      
+ SELECT      COMPONENT PZT_CONNECTION                                                                                                                                                                                                                                                  
 
  *GET  _NUMMIN   FROM  NODE  ITEM=NUM  MIN   VALUE=  16271.0000     
 
  PARAMETER _ISCP =     0.000000000    
 
- *** WARNING ***                         CP =       1.344   TIME= 21:40:13
+ *** WARNING ***                         CP =       1.578   TIME= 13:35:52
  The data for *GET entity NODE item CPS and NODE= 16271 is not defined.  
                                                                          
   The *GET command is ignored.                                           
@@ -708,13 +680,13 @@
  *IF  _isCP  ( =   0.00000     )  EQ  
       0  ( =   0.00000     )  THEN    
 
- COUPLED SET =          3  DIRECTION= VOLT  TOTAL NODES=      571
- MAXIMUM COUPLED SET NUMBER =          3
+ COUPLED SET =          2  DIRECTION= VOLT  TOTAL NODES=      571
+ MAXIMUM COUPLED SET NUMBER =          2
 
  *ENDIF
 
  SPECIFIED CONSTRAINT VOLT FOR SELECTED NODES        16271 TO       16271 BY           1
- REAL=  1.00000000       IMAG=  0.00000000    
+ REAL=  5.00000000       IMAG=  0.00000000    
 
  SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
   
@@ -728,7 +700,7 @@
 
  PARAMETER _ISCP =     0.000000000    
 
- *** WARNING ***                         CP =       1.344   TIME= 21:40:13
+ *** WARNING ***                         CP =       1.578   TIME= 13:35:52
  The data for *GET entity NODE item CPS and NODE= 16267 is not defined.  
                                                                          
   The *GET command is ignored.                                           
@@ -736,8 +708,8 @@
  *IF  _isCP  ( =   0.00000     )  EQ  
       0  ( =   0.00000     )  THEN    
 
- COUPLED SET =          4  DIRECTION= VOLT  TOTAL NODES=      571
- MAXIMUM COUPLED SET NUMBER =          4
+ COUPLED SET =          3  DIRECTION= VOLT  TOTAL NODES=      571
+ MAXIMUM COUPLED SET NUMBER =          3
 
  *ENDIF
 
@@ -753,7 +725,7 @@
 
  *ENDIF
 
- *** NOTE ***                            CP =       1.469   TIME= 21:40:13
+ *** NOTE ***                            CP =       1.641   TIME= 13:35:52
  The automatic domain decomposition logic has selected the FREQ domain   
  decomposition method with 1 processes per frequency solution.           
 
@@ -763,19 +735,19 @@
 
    D I S T R I B U T E D   D O M A I N   D E C O M P O S E R
 
- ...Number of frequency solutions:  200
+ ...Number of frequency solutions:  100
  ...Decompose to 4 frequency domains (with 1 processes per domain)
 
 
- *** WARNING ***                         CP =       2.391   TIME= 21:40:13
+ *** WARNING ***                         CP =       2.500   TIME= 13:35:52
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** NOTE ***                            CP =       2.453   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.562   TIME= 13:35:52
  The model data was checked and warning messages were found.             
   Please review output or errors file (                                  
  C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_Pr 
- rojectScratch\Scr81C8\file0.err ) for these warning messages.           
+ rojectScratch\Scr9CC2\file0.err ) for these warning messages.           
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
       --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
@@ -788,7 +760,7 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   21:40:13  NOV 26, 2025 CP=      2.453
+ 01055371  VERSION=WINDOWS x64   13:35:52  NOV 27, 2025 CP=      2.562
 
  simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
 
@@ -805,24 +777,24 @@
    COMPLEX DISPLACEMENT PRINT OPTION . . . . . . .REAL AND IMAGINARY       
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
 
- *** NOTE ***                            CP =       2.453   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.562   TIME= 13:35:52
  The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
  SOLID226 will be piezoelectric.                                         
 
- *** NOTE ***                            CP =       2.453   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.562   TIME= 13:35:52
  The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
  SOLID226 will be piezoelectric.                                         
 
- *** NOTE ***                            CP =       2.453   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.562   TIME= 13:35:52
  The conditions for direct assembly have been met.  No .emat or .erot    
  files will be produced.                                                 
 
- *** WARNING ***                         CP =       2.578   TIME= 21:40:13
+ *** WARNING ***                         CP =       2.625   TIME= 13:35:52
  Contact element 6115 is missing DOF VOLT (and possibly others) of       
  underlying base element 3631.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** NOTE ***                            CP =       2.578   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Deformable-deformable contact pair identified by real constant set 5    
  and contact element type 5 has been set up.                             
  MPC anywhere inside pinball may be built
@@ -831,7 +803,7 @@
  Contact traction based contact model
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       2.578   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Program provided average target radius       0.24751E-04
@@ -845,7 +817,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       2.578   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Max.  Initial penetration 4.771496085E-05 was detected between contact  
  element 5984 and target element 6016.                                   
  You may move entire target surface by : x= 3.364623775E-05, y=          
@@ -860,19 +832,19 @@
  ****************************************
   
 
- *** WARNING ***                         CP =       2.578   TIME= 21:40:13
+ *** WARNING ***                         CP =       2.688   TIME= 13:35:52
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       2.578   TIME= 21:40:13
+ *** WARNING ***                         CP =       2.688   TIME= 13:35:52
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       2.578   TIME= 21:40:13
+ *** WARNING ***                         CP =       2.688   TIME= 13:35:52
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** NOTE ***                            CP =       2.594   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Deformable-deformable contact pair identified by real constant set 7    
  and contact element type 7 has been set up.                             
  MPC anywhere inside pinball may be built
@@ -881,7 +853,7 @@
  Contact traction based contact model
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       2.609   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Program provided average target radius       0.26911E-04
@@ -895,7 +867,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       2.609   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Max.  Initial penetration 3.074601091E-05 was detected between contact  
  element 6081 and target element 6104.                                   
  You may move entire target surface by : x= 2.837440682E-05, y=          
@@ -907,7 +879,12 @@
  ****************************************
   
 
- *** NOTE ***                            CP =       2.641   TIME= 21:40:13
+ *** WARNING ***                         CP =       2.688   TIME= 13:35:52
+ Contact element 6115 is missing DOF VOLT (and possibly others) of       
+ underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ but checking for this is discontinued.                                  
+
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Deformable-deformable contact pair identified by real constant set 9    
  and contact element type 9 has been set up.                             
  MPC anywhere inside pinball may be built
@@ -916,7 +893,7 @@
  Contact traction based contact model
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       2.641   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Program provided average target radius       0.26911E-04
@@ -930,7 +907,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       2.641   TIME= 21:40:13
+ *** NOTE ***                            CP =       2.688   TIME= 13:35:52
  Max.  Initial penetration 3.218395721E-05 was detected between contact  
  element 6118 and target element 6180.                                   
  You may move entire target surface by : x= 2.450053507E-05, y=          
@@ -950,8 +927,8 @@
                       L O A D   S T E P   O P T I O N S
 
    LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
-   FREQUENCY RANGE . . . . . . . . . . . . . . . .  40000.     TO   60000.    
-   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .   200
+   FREQUENCY RANGE . . . . . . . . . . . . . . . .  52000.     TO   54000.    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .   100
    STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .   YES
    PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
    DATABASE OUTPUT CONTROLS
@@ -969,12 +946,12 @@
       FGRA        ALL               
 
 
- *** WARNING ***                         CP =       3.078   TIME= 21:40:13
+ *** WARNING ***                         CP =       3.000   TIME= 13:35:52
  Contact element 6115 is missing DOF VOLT (and possibly others) of       
  underlying base element 3631.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Deformable-deformable contact pair identified by real constant set 5    
  and contact element type 5 has been set up.                             
  MPC anywhere inside pinball may be built
@@ -983,7 +960,7 @@
  Contact traction based contact model
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Program provided average target radius       0.24751E-04
@@ -997,7 +974,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Max.  Initial penetration 4.771496085E-05 was detected between contact  
  element 5984 and target element 6016.                                   
  You may move entire target surface by : x= 3.364623775E-05, y=          
@@ -1012,17 +989,12 @@
  ****************************************
   
 
- *** WARNING ***                         CP =       3.078   TIME= 21:40:13
+ *** WARNING ***                         CP =       3.000   TIME= 13:35:52
  Contact element 6115 is missing DOF VOLT (and possibly others) of       
  underlying base element 3631.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       3.078   TIME= 21:40:13
- Contact element 6115 is missing DOF VOLT (and possibly others) of       
- underlying base element 3631.  Similar mismatches may exist elsewhere,  
- but checking for this is discontinued.                                  
-
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Deformable-deformable contact pair identified by real constant set 7    
  and contact element type 7 has been set up.                             
  MPC anywhere inside pinball may be built
@@ -1031,7 +1003,7 @@
  Contact traction based contact model
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Program provided average target radius       0.26911E-04
@@ -1045,7 +1017,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Max.  Initial penetration 3.074601091E-05 was detected between contact  
  element 6081 and target element 6104.                                   
  You may move entire target surface by : x= 2.837440682E-05, y=          
@@ -1057,7 +1029,7 @@
  ****************************************
   
 
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Deformable-deformable contact pair identified by real constant set 9    
  and contact element type 9 has been set up.                             
  MPC anywhere inside pinball may be built
@@ -1066,7 +1038,7 @@
  Contact traction based contact model
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Program provided average target radius       0.26911E-04
@@ -1080,7 +1052,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       3.078   TIME= 21:40:13
+ *** NOTE ***                            CP =       3.000   TIME= 13:35:52
  Max.  Initial penetration 3.218395721E-05 was detected between contact  
  element 6118 and target element 6180.                                   
  You may move entire target surface by : x= 2.450053507E-05, y=          
@@ -1136,267 +1108,167 @@
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.562   0.000326
-        2      1728  SOLID186      0.547   0.000316
+        1      1728  SOLID186      0.609   0.000353
+        2      1728  SOLID186      0.594   0.000344
         3       178  SOLID226      0.156   0.000878
-        4       128  SOLID226      0.094   0.000732
+        4       128  SOLID226      0.078   0.000610
         5        32  CONTA177      0.000   0.000000
         6        38  TARGE170      0.000   0.000000
         7        32  CONTA177      0.000   0.000000
         8        32  TARGE170      0.000   0.000000
         9        38  CONTA177      0.000   0.000000
        10        32  TARGE170      0.000   0.000000
- Time at end of element matrix formulation CP = 5.015625.                
+ Time at end of element matrix formulation CP = 4.9375.                  
 
  SPARSE MATRIX DIRECT SOLVER.
-  Number of equations =       55482,    Maximum wavefront =    316
+  Number of equations =       55899,    Maximum wavefront =    316
 
- *** NOTE ***                            CP =       6.234   TIME= 21:40:16
+ *** NOTE ***                            CP =       5.969   TIME= 13:35:55
  The initial memory allocation (-m) has been exceeded.                   
   Supplemental memory allocations are being used.                        
 
 
   Memory allocated on this process
   -------------------------------------------------------------------
-  Equation solver memory allocated                     =  1027.858 MB
-  Equation solver memory required for in-core mode     =   983.836 MB
-  Equation solver memory required for out-of-core mode =   291.039 MB
-  Total (solver and non-solver) memory allocated       =  1921.081 MB
+  Equation solver memory allocated                     =  1026.940 MB
+  Equation solver memory required for in-core mode     =   983.027 MB
+  Equation solver memory required for out-of-core mode =   294.752 MB
+  Total (solver and non-solver) memory allocated       =  1919.561 MB
 
- *** NOTE ***                            CP =       6.234   TIME= 21:40:16
+ *** NOTE ***                            CP =       5.969   TIME= 13:35:55
  The Sparse Matrix Solver is currently running in the in-core memory     
  mode.  This memory mode uses the most amount of memory in order to      
  avoid using the hard drive as much as possible, which most often        
  results in the fastest solution time.  This mode is recommended if      
  enough physical memory is present to accommodate all of the solver      
  data.                                                                   
- Sparse solver maximum pivot= 3.47881394E+09 at node 9546 UY.            
- Sparse solver minimum pivot= 2257873.89 at node 18272 UZ.               
- Sparse solver minimum pivot in absolute value= 2257873.89 at node 18272 
- UZ.                                                                     
+ Sparse solver maximum pivot= 1.129842725E+11 at node 17944 UY.          
+ Sparse solver minimum pivot= 75873.949 at node 17840 UY.                
+ Sparse solver minimum pivot in absolute value= 75873.949 at node 17840  
+ UY.                                                                     
 
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.375   0.000217
-        2      1728  SOLID186      0.312   0.000181
-        3       178  SOLID226      0.156   0.000878
-        4       128  SOLID226      0.109   0.000854
+        1      1728  SOLID186      0.391   0.000226
+        2      1728  SOLID186      0.359   0.000208
+        3       178  SOLID226      0.125   0.000702
+        4       128  SOLID226      0.078   0.000610
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.031   0.000018
-        2      1728  SOLID186      0.062   0.000036
-        3       178  SOLID226      0.016   0.000088
-        4       128  SOLID226      0.000   0.000000
- *** LOAD STEP     1   SUBSTEP     1  COMPLETED.  FREQUENCY=   40100.0    
- *** LOAD STEP     1   SUBSTEP     2  COMPLETED.  FREQUENCY=   40200.0    
- *** LOAD STEP     1   SUBSTEP     3  COMPLETED.  FREQUENCY=   40300.0    
- *** LOAD STEP     1   SUBSTEP     4  COMPLETED.  FREQUENCY=   40400.0    
- *** LOAD STEP     1   SUBSTEP     5  COMPLETED.  FREQUENCY=   40500.0    
- *** LOAD STEP     1   SUBSTEP     6  COMPLETED.  FREQUENCY=   40600.0    
- *** LOAD STEP     1   SUBSTEP     7  COMPLETED.  FREQUENCY=   40700.0    
- *** LOAD STEP     1   SUBSTEP     8  COMPLETED.  FREQUENCY=   40800.0    
- *** LOAD STEP     1   SUBSTEP     9  COMPLETED.  FREQUENCY=   40900.0    
- *** LOAD STEP     1   SUBSTEP    10  COMPLETED.  FREQUENCY=   41000.0    
- *** LOAD STEP     1   SUBSTEP    11  COMPLETED.  FREQUENCY=   41100.0    
- *** LOAD STEP     1   SUBSTEP    12  COMPLETED.  FREQUENCY=   41200.0    
- *** LOAD STEP     1   SUBSTEP    13  COMPLETED.  FREQUENCY=   41300.0    
- *** LOAD STEP     1   SUBSTEP    14  COMPLETED.  FREQUENCY=   41400.0    
- *** LOAD STEP     1   SUBSTEP    15  COMPLETED.  FREQUENCY=   41500.0    
- *** LOAD STEP     1   SUBSTEP    16  COMPLETED.  FREQUENCY=   41600.0    
- *** LOAD STEP     1   SUBSTEP    17  COMPLETED.  FREQUENCY=   41700.0    
- *** LOAD STEP     1   SUBSTEP    18  COMPLETED.  FREQUENCY=   41800.0    
- *** LOAD STEP     1   SUBSTEP    19  COMPLETED.  FREQUENCY=   41900.0    
- *** LOAD STEP     1   SUBSTEP    20  COMPLETED.  FREQUENCY=   42000.0    
- *** LOAD STEP     1   SUBSTEP    21  COMPLETED.  FREQUENCY=   42100.0    
- *** LOAD STEP     1   SUBSTEP    22  COMPLETED.  FREQUENCY=   42200.0    
- *** LOAD STEP     1   SUBSTEP    23  COMPLETED.  FREQUENCY=   42300.0    
- *** LOAD STEP     1   SUBSTEP    24  COMPLETED.  FREQUENCY=   42400.0    
- *** LOAD STEP     1   SUBSTEP    25  COMPLETED.  FREQUENCY=   42500.0    
- *** LOAD STEP     1   SUBSTEP    26  COMPLETED.  FREQUENCY=   42600.0    
- *** LOAD STEP     1   SUBSTEP    27  COMPLETED.  FREQUENCY=   42700.0    
- *** LOAD STEP     1   SUBSTEP    28  COMPLETED.  FREQUENCY=   42800.0    
- *** LOAD STEP     1   SUBSTEP    29  COMPLETED.  FREQUENCY=   42900.0    
- *** LOAD STEP     1   SUBSTEP    30  COMPLETED.  FREQUENCY=   43000.0    
- *** LOAD STEP     1   SUBSTEP    31  COMPLETED.  FREQUENCY=   43100.0    
- *** LOAD STEP     1   SUBSTEP    32  COMPLETED.  FREQUENCY=   43200.0    
- *** LOAD STEP     1   SUBSTEP    33  COMPLETED.  FREQUENCY=   43300.0    
- *** LOAD STEP     1   SUBSTEP    34  COMPLETED.  FREQUENCY=   43400.0    
- *** LOAD STEP     1   SUBSTEP    35  COMPLETED.  FREQUENCY=   43500.0    
- *** LOAD STEP     1   SUBSTEP    36  COMPLETED.  FREQUENCY=   43600.0    
- *** LOAD STEP     1   SUBSTEP    37  COMPLETED.  FREQUENCY=   43700.0    
- *** LOAD STEP     1   SUBSTEP    38  COMPLETED.  FREQUENCY=   43800.0    
- *** LOAD STEP     1   SUBSTEP    39  COMPLETED.  FREQUENCY=   43900.0    
- *** LOAD STEP     1   SUBSTEP    40  COMPLETED.  FREQUENCY=   44000.0    
- *** LOAD STEP     1   SUBSTEP    41  COMPLETED.  FREQUENCY=   44100.0    
- *** LOAD STEP     1   SUBSTEP    42  COMPLETED.  FREQUENCY=   44200.0    
- *** LOAD STEP     1   SUBSTEP    43  COMPLETED.  FREQUENCY=   44300.0    
- *** LOAD STEP     1   SUBSTEP    44  COMPLETED.  FREQUENCY=   44400.0    
- *** LOAD STEP     1   SUBSTEP    45  COMPLETED.  FREQUENCY=   44500.0    
- *** LOAD STEP     1   SUBSTEP    46  COMPLETED.  FREQUENCY=   44600.0    
- *** LOAD STEP     1   SUBSTEP    47  COMPLETED.  FREQUENCY=   44700.0    
- *** LOAD STEP     1   SUBSTEP    48  COMPLETED.  FREQUENCY=   44800.0    
- *** LOAD STEP     1   SUBSTEP    49  COMPLETED.  FREQUENCY=   44900.0    
- *** LOAD STEP     1   SUBSTEP    50  COMPLETED.  FREQUENCY=   45000.0    
- *** LOAD STEP     1   SUBSTEP    51  COMPLETED.  FREQUENCY=   45100.0    
- *** LOAD STEP     1   SUBSTEP    52  COMPLETED.  FREQUENCY=   45200.0    
- *** LOAD STEP     1   SUBSTEP    53  COMPLETED.  FREQUENCY=   45300.0    
- *** LOAD STEP     1   SUBSTEP    54  COMPLETED.  FREQUENCY=   45400.0    
- *** LOAD STEP     1   SUBSTEP    55  COMPLETED.  FREQUENCY=   45500.0    
- *** LOAD STEP     1   SUBSTEP    56  COMPLETED.  FREQUENCY=   45600.0    
- *** LOAD STEP     1   SUBSTEP    57  COMPLETED.  FREQUENCY=   45700.0    
- *** LOAD STEP     1   SUBSTEP    58  COMPLETED.  FREQUENCY=   45800.0    
- *** LOAD STEP     1   SUBSTEP    59  COMPLETED.  FREQUENCY=   45900.0    
- *** LOAD STEP     1   SUBSTEP    60  COMPLETED.  FREQUENCY=   46000.0    
- *** LOAD STEP     1   SUBSTEP    61  COMPLETED.  FREQUENCY=   46100.0    
- *** LOAD STEP     1   SUBSTEP    62  COMPLETED.  FREQUENCY=   46200.0    
- *** LOAD STEP     1   SUBSTEP    63  COMPLETED.  FREQUENCY=   46300.0    
- *** LOAD STEP     1   SUBSTEP    64  COMPLETED.  FREQUENCY=   46400.0    
- *** LOAD STEP     1   SUBSTEP    65  COMPLETED.  FREQUENCY=   46500.0    
- *** LOAD STEP     1   SUBSTEP    66  COMPLETED.  FREQUENCY=   46600.0    
- *** LOAD STEP     1   SUBSTEP    67  COMPLETED.  FREQUENCY=   46700.0    
- *** LOAD STEP     1   SUBSTEP    68  COMPLETED.  FREQUENCY=   46800.0    
- *** LOAD STEP     1   SUBSTEP    69  COMPLETED.  FREQUENCY=   46900.0    
- *** LOAD STEP     1   SUBSTEP    70  COMPLETED.  FREQUENCY=   47000.0    
- *** LOAD STEP     1   SUBSTEP    71  COMPLETED.  FREQUENCY=   47100.0    
- *** LOAD STEP     1   SUBSTEP    72  COMPLETED.  FREQUENCY=   47200.0    
- *** LOAD STEP     1   SUBSTEP    73  COMPLETED.  FREQUENCY=   47300.0    
- *** LOAD STEP     1   SUBSTEP    74  COMPLETED.  FREQUENCY=   47400.0    
- *** LOAD STEP     1   SUBSTEP    75  COMPLETED.  FREQUENCY=   47500.0    
- *** LOAD STEP     1   SUBSTEP    76  COMPLETED.  FREQUENCY=   47600.0    
- *** LOAD STEP     1   SUBSTEP    77  COMPLETED.  FREQUENCY=   47700.0    
- *** LOAD STEP     1   SUBSTEP    78  COMPLETED.  FREQUENCY=   47800.0    
- *** LOAD STEP     1   SUBSTEP    79  COMPLETED.  FREQUENCY=   47900.0    
- *** LOAD STEP     1   SUBSTEP    80  COMPLETED.  FREQUENCY=   48000.0    
- *** LOAD STEP     1   SUBSTEP    81  COMPLETED.  FREQUENCY=   48100.0    
- *** LOAD STEP     1   SUBSTEP    82  COMPLETED.  FREQUENCY=   48200.0    
- *** LOAD STEP     1   SUBSTEP    83  COMPLETED.  FREQUENCY=   48300.0    
- *** LOAD STEP     1   SUBSTEP    84  COMPLETED.  FREQUENCY=   48400.0    
- *** LOAD STEP     1   SUBSTEP    85  COMPLETED.  FREQUENCY=   48500.0    
- *** LOAD STEP     1   SUBSTEP    86  COMPLETED.  FREQUENCY=   48600.0    
- *** LOAD STEP     1   SUBSTEP    87  COMPLETED.  FREQUENCY=   48700.0    
- *** LOAD STEP     1   SUBSTEP    88  COMPLETED.  FREQUENCY=   48800.0    
- *** LOAD STEP     1   SUBSTEP    89  COMPLETED.  FREQUENCY=   48900.0    
- *** LOAD STEP     1   SUBSTEP    90  COMPLETED.  FREQUENCY=   49000.0    
- *** LOAD STEP     1   SUBSTEP    91  COMPLETED.  FREQUENCY=   49100.0    
- *** LOAD STEP     1   SUBSTEP    92  COMPLETED.  FREQUENCY=   49200.0    
- *** LOAD STEP     1   SUBSTEP    93  COMPLETED.  FREQUENCY=   49300.0    
- *** LOAD STEP     1   SUBSTEP    94  COMPLETED.  FREQUENCY=   49400.0    
- *** LOAD STEP     1   SUBSTEP    95  COMPLETED.  FREQUENCY=   49500.0    
- *** LOAD STEP     1   SUBSTEP    96  COMPLETED.  FREQUENCY=   49600.0    
- *** LOAD STEP     1   SUBSTEP    97  COMPLETED.  FREQUENCY=   49700.0    
- *** LOAD STEP     1   SUBSTEP    98  COMPLETED.  FREQUENCY=   49800.0    
- *** LOAD STEP     1   SUBSTEP    99  COMPLETED.  FREQUENCY=   49900.0    
- *** LOAD STEP     1   SUBSTEP   100  COMPLETED.  FREQUENCY=   50000.0    
- *** LOAD STEP     1   SUBSTEP   101  COMPLETED.  FREQUENCY=   50100.0    
- *** LOAD STEP     1   SUBSTEP   102  COMPLETED.  FREQUENCY=   50200.0    
- *** LOAD STEP     1   SUBSTEP   103  COMPLETED.  FREQUENCY=   50300.0    
- *** LOAD STEP     1   SUBSTEP   104  COMPLETED.  FREQUENCY=   50400.0    
- *** LOAD STEP     1   SUBSTEP   105  COMPLETED.  FREQUENCY=   50500.0    
- *** LOAD STEP     1   SUBSTEP   106  COMPLETED.  FREQUENCY=   50600.0    
- *** LOAD STEP     1   SUBSTEP   107  COMPLETED.  FREQUENCY=   50700.0    
- *** LOAD STEP     1   SUBSTEP   108  COMPLETED.  FREQUENCY=   50800.0    
- *** LOAD STEP     1   SUBSTEP   109  COMPLETED.  FREQUENCY=   50900.0    
- *** LOAD STEP     1   SUBSTEP   110  COMPLETED.  FREQUENCY=   51000.0    
- *** LOAD STEP     1   SUBSTEP   111  COMPLETED.  FREQUENCY=   51100.0    
- *** LOAD STEP     1   SUBSTEP   112  COMPLETED.  FREQUENCY=   51200.0    
- *** LOAD STEP     1   SUBSTEP   113  COMPLETED.  FREQUENCY=   51300.0    
- *** LOAD STEP     1   SUBSTEP   114  COMPLETED.  FREQUENCY=   51400.0    
- *** LOAD STEP     1   SUBSTEP   115  COMPLETED.  FREQUENCY=   51500.0    
- *** LOAD STEP     1   SUBSTEP   116  COMPLETED.  FREQUENCY=   51600.0    
- *** LOAD STEP     1   SUBSTEP   117  COMPLETED.  FREQUENCY=   51700.0    
- *** LOAD STEP     1   SUBSTEP   118  COMPLETED.  FREQUENCY=   51800.0    
- *** LOAD STEP     1   SUBSTEP   119  COMPLETED.  FREQUENCY=   51900.0    
- *** LOAD STEP     1   SUBSTEP   120  COMPLETED.  FREQUENCY=   52000.0    
- *** LOAD STEP     1   SUBSTEP   121  COMPLETED.  FREQUENCY=   52100.0    
- *** LOAD STEP     1   SUBSTEP   122  COMPLETED.  FREQUENCY=   52200.0    
- *** LOAD STEP     1   SUBSTEP   123  COMPLETED.  FREQUENCY=   52300.0    
- *** LOAD STEP     1   SUBSTEP   124  COMPLETED.  FREQUENCY=   52400.0    
- *** LOAD STEP     1   SUBSTEP   125  COMPLETED.  FREQUENCY=   52500.0    
- *** LOAD STEP     1   SUBSTEP   126  COMPLETED.  FREQUENCY=   52600.0    
- *** LOAD STEP     1   SUBSTEP   127  COMPLETED.  FREQUENCY=   52700.0    
- *** LOAD STEP     1   SUBSTEP   128  COMPLETED.  FREQUENCY=   52800.0    
- *** LOAD STEP     1   SUBSTEP   129  COMPLETED.  FREQUENCY=   52900.0    
- *** LOAD STEP     1   SUBSTEP   130  COMPLETED.  FREQUENCY=   53000.0    
- *** LOAD STEP     1   SUBSTEP   131  COMPLETED.  FREQUENCY=   53100.0    
- *** LOAD STEP     1   SUBSTEP   132  COMPLETED.  FREQUENCY=   53200.0    
- *** LOAD STEP     1   SUBSTEP   133  COMPLETED.  FREQUENCY=   53300.0    
- *** LOAD STEP     1   SUBSTEP   134  COMPLETED.  FREQUENCY=   53400.0    
- *** LOAD STEP     1   SUBSTEP   135  COMPLETED.  FREQUENCY=   53500.0    
- *** LOAD STEP     1   SUBSTEP   136  COMPLETED.  FREQUENCY=   53600.0    
- *** LOAD STEP     1   SUBSTEP   137  COMPLETED.  FREQUENCY=   53700.0    
- *** LOAD STEP     1   SUBSTEP   138  COMPLETED.  FREQUENCY=   53800.0    
- *** LOAD STEP     1   SUBSTEP   139  COMPLETED.  FREQUENCY=   53900.0    
- *** LOAD STEP     1   SUBSTEP   140  COMPLETED.  FREQUENCY=   54000.0    
- *** LOAD STEP     1   SUBSTEP   141  COMPLETED.  FREQUENCY=   54100.0    
- *** LOAD STEP     1   SUBSTEP   142  COMPLETED.  FREQUENCY=   54200.0    
- *** LOAD STEP     1   SUBSTEP   143  COMPLETED.  FREQUENCY=   54300.0    
- *** LOAD STEP     1   SUBSTEP   144  COMPLETED.  FREQUENCY=   54400.0    
- *** LOAD STEP     1   SUBSTEP   145  COMPLETED.  FREQUENCY=   54500.0    
- *** LOAD STEP     1   SUBSTEP   146  COMPLETED.  FREQUENCY=   54600.0    
- *** LOAD STEP     1   SUBSTEP   147  COMPLETED.  FREQUENCY=   54700.0    
- *** LOAD STEP     1   SUBSTEP   148  COMPLETED.  FREQUENCY=   54800.0    
- *** LOAD STEP     1   SUBSTEP   149  COMPLETED.  FREQUENCY=   54900.0    
- *** LOAD STEP     1   SUBSTEP   150  COMPLETED.  FREQUENCY=   55000.0    
- *** LOAD STEP     1   SUBSTEP   151  COMPLETED.  FREQUENCY=   55100.0    
- *** LOAD STEP     1   SUBSTEP   152  COMPLETED.  FREQUENCY=   55200.0    
- *** LOAD STEP     1   SUBSTEP   153  COMPLETED.  FREQUENCY=   55300.0    
- *** LOAD STEP     1   SUBSTEP   154  COMPLETED.  FREQUENCY=   55400.0    
- *** LOAD STEP     1   SUBSTEP   155  COMPLETED.  FREQUENCY=   55500.0    
- *** LOAD STEP     1   SUBSTEP   156  COMPLETED.  FREQUENCY=   55600.0    
- *** LOAD STEP     1   SUBSTEP   157  COMPLETED.  FREQUENCY=   55700.0    
- *** LOAD STEP     1   SUBSTEP   158  COMPLETED.  FREQUENCY=   55800.0    
- *** LOAD STEP     1   SUBSTEP   159  COMPLETED.  FREQUENCY=   55900.0    
- *** LOAD STEP     1   SUBSTEP   160  COMPLETED.  FREQUENCY=   56000.0    
- *** LOAD STEP     1   SUBSTEP   161  COMPLETED.  FREQUENCY=   56100.0    
- *** LOAD STEP     1   SUBSTEP   162  COMPLETED.  FREQUENCY=   56200.0    
- *** LOAD STEP     1   SUBSTEP   163  COMPLETED.  FREQUENCY=   56300.0    
- *** LOAD STEP     1   SUBSTEP   164  COMPLETED.  FREQUENCY=   56400.0    
- *** LOAD STEP     1   SUBSTEP   165  COMPLETED.  FREQUENCY=   56500.0    
- *** LOAD STEP     1   SUBSTEP   166  COMPLETED.  FREQUENCY=   56600.0    
- *** LOAD STEP     1   SUBSTEP   167  COMPLETED.  FREQUENCY=   56700.0    
- *** LOAD STEP     1   SUBSTEP   168  COMPLETED.  FREQUENCY=   56800.0    
- *** LOAD STEP     1   SUBSTEP   169  COMPLETED.  FREQUENCY=   56900.0    
- *** LOAD STEP     1   SUBSTEP   170  COMPLETED.  FREQUENCY=   57000.0    
- *** LOAD STEP     1   SUBSTEP   171  COMPLETED.  FREQUENCY=   57100.0    
- *** LOAD STEP     1   SUBSTEP   172  COMPLETED.  FREQUENCY=   57200.0    
- *** LOAD STEP     1   SUBSTEP   173  COMPLETED.  FREQUENCY=   57300.0    
- *** LOAD STEP     1   SUBSTEP   174  COMPLETED.  FREQUENCY=   57400.0    
- *** LOAD STEP     1   SUBSTEP   175  COMPLETED.  FREQUENCY=   57500.0    
- *** LOAD STEP     1   SUBSTEP   176  COMPLETED.  FREQUENCY=   57600.0    
- *** LOAD STEP     1   SUBSTEP   177  COMPLETED.  FREQUENCY=   57700.0    
- *** LOAD STEP     1   SUBSTEP   178  COMPLETED.  FREQUENCY=   57800.0    
- *** LOAD STEP     1   SUBSTEP   179  COMPLETED.  FREQUENCY=   57900.0    
- *** LOAD STEP     1   SUBSTEP   180  COMPLETED.  FREQUENCY=   58000.0    
- *** LOAD STEP     1   SUBSTEP   181  COMPLETED.  FREQUENCY=   58100.0    
- *** LOAD STEP     1   SUBSTEP   182  COMPLETED.  FREQUENCY=   58200.0    
- *** LOAD STEP     1   SUBSTEP   183  COMPLETED.  FREQUENCY=   58300.0    
- *** LOAD STEP     1   SUBSTEP   184  COMPLETED.  FREQUENCY=   58400.0    
- *** LOAD STEP     1   SUBSTEP   185  COMPLETED.  FREQUENCY=   58500.0    
- *** LOAD STEP     1   SUBSTEP   186  COMPLETED.  FREQUENCY=   58600.0    
- *** LOAD STEP     1   SUBSTEP   187  COMPLETED.  FREQUENCY=   58700.0    
- *** LOAD STEP     1   SUBSTEP   188  COMPLETED.  FREQUENCY=   58800.0    
- *** LOAD STEP     1   SUBSTEP   189  COMPLETED.  FREQUENCY=   58900.0    
- *** LOAD STEP     1   SUBSTEP   190  COMPLETED.  FREQUENCY=   59000.0    
- *** LOAD STEP     1   SUBSTEP   191  COMPLETED.  FREQUENCY=   59100.0    
- *** LOAD STEP     1   SUBSTEP   192  COMPLETED.  FREQUENCY=   59200.0    
- *** LOAD STEP     1   SUBSTEP   193  COMPLETED.  FREQUENCY=   59300.0    
- *** LOAD STEP     1   SUBSTEP   194  COMPLETED.  FREQUENCY=   59400.0    
- *** LOAD STEP     1   SUBSTEP   195  COMPLETED.  FREQUENCY=   59500.0    
- *** LOAD STEP     1   SUBSTEP   196  COMPLETED.  FREQUENCY=   59600.0    
- *** LOAD STEP     1   SUBSTEP   197  COMPLETED.  FREQUENCY=   59700.0    
- *** LOAD STEP     1   SUBSTEP   198  COMPLETED.  FREQUENCY=   59800.0    
- *** LOAD STEP     1   SUBSTEP   199  COMPLETED.  FREQUENCY=   59900.0    
- *** LOAD STEP     1   SUBSTEP   200  COMPLETED.  FREQUENCY=   60000.0    
+        1      1728  SOLID186      0.016   0.000009
+        2      1728  SOLID186      0.016   0.000009
+        3       178  SOLID226      0.000   0.000000
+        4       128  SOLID226      0.016   0.000122
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.  FREQUENCY=   52020.0    
+ *** LOAD STEP     1   SUBSTEP     2  COMPLETED.  FREQUENCY=   52040.0    
+ *** LOAD STEP     1   SUBSTEP     3  COMPLETED.  FREQUENCY=   52060.0    
+ *** LOAD STEP     1   SUBSTEP     4  COMPLETED.  FREQUENCY=   52080.0    
+ *** LOAD STEP     1   SUBSTEP     5  COMPLETED.  FREQUENCY=   52100.0    
+ *** LOAD STEP     1   SUBSTEP     6  COMPLETED.  FREQUENCY=   52120.0    
+ *** LOAD STEP     1   SUBSTEP     7  COMPLETED.  FREQUENCY=   52140.0    
+ *** LOAD STEP     1   SUBSTEP     8  COMPLETED.  FREQUENCY=   52160.0    
+ *** LOAD STEP     1   SUBSTEP     9  COMPLETED.  FREQUENCY=   52180.0    
+ *** LOAD STEP     1   SUBSTEP    10  COMPLETED.  FREQUENCY=   52200.0    
+ *** LOAD STEP     1   SUBSTEP    11  COMPLETED.  FREQUENCY=   52220.0    
+ *** LOAD STEP     1   SUBSTEP    12  COMPLETED.  FREQUENCY=   52240.0    
+ *** LOAD STEP     1   SUBSTEP    13  COMPLETED.  FREQUENCY=   52260.0    
+ *** LOAD STEP     1   SUBSTEP    14  COMPLETED.  FREQUENCY=   52280.0    
+ *** LOAD STEP     1   SUBSTEP    15  COMPLETED.  FREQUENCY=   52300.0    
+ *** LOAD STEP     1   SUBSTEP    16  COMPLETED.  FREQUENCY=   52320.0    
+ *** LOAD STEP     1   SUBSTEP    17  COMPLETED.  FREQUENCY=   52340.0    
+ *** LOAD STEP     1   SUBSTEP    18  COMPLETED.  FREQUENCY=   52360.0    
+ *** LOAD STEP     1   SUBSTEP    19  COMPLETED.  FREQUENCY=   52380.0    
+ *** LOAD STEP     1   SUBSTEP    20  COMPLETED.  FREQUENCY=   52400.0    
+ *** LOAD STEP     1   SUBSTEP    21  COMPLETED.  FREQUENCY=   52420.0    
+ *** LOAD STEP     1   SUBSTEP    22  COMPLETED.  FREQUENCY=   52440.0    
+ *** LOAD STEP     1   SUBSTEP    23  COMPLETED.  FREQUENCY=   52460.0    
+ *** LOAD STEP     1   SUBSTEP    24  COMPLETED.  FREQUENCY=   52480.0    
+ *** LOAD STEP     1   SUBSTEP    25  COMPLETED.  FREQUENCY=   52500.0    
+ *** LOAD STEP     1   SUBSTEP    26  COMPLETED.  FREQUENCY=   52520.0    
+ *** LOAD STEP     1   SUBSTEP    27  COMPLETED.  FREQUENCY=   52540.0    
+ *** LOAD STEP     1   SUBSTEP    28  COMPLETED.  FREQUENCY=   52560.0    
+ *** LOAD STEP     1   SUBSTEP    29  COMPLETED.  FREQUENCY=   52580.0    
+ *** LOAD STEP     1   SUBSTEP    30  COMPLETED.  FREQUENCY=   52600.0    
+ *** LOAD STEP     1   SUBSTEP    31  COMPLETED.  FREQUENCY=   52620.0    
+ *** LOAD STEP     1   SUBSTEP    32  COMPLETED.  FREQUENCY=   52640.0    
+ *** LOAD STEP     1   SUBSTEP    33  COMPLETED.  FREQUENCY=   52660.0    
+ *** LOAD STEP     1   SUBSTEP    34  COMPLETED.  FREQUENCY=   52680.0    
+ *** LOAD STEP     1   SUBSTEP    35  COMPLETED.  FREQUENCY=   52700.0    
+ *** LOAD STEP     1   SUBSTEP    36  COMPLETED.  FREQUENCY=   52720.0    
+ *** LOAD STEP     1   SUBSTEP    37  COMPLETED.  FREQUENCY=   52740.0    
+ *** LOAD STEP     1   SUBSTEP    38  COMPLETED.  FREQUENCY=   52760.0    
+ *** LOAD STEP     1   SUBSTEP    39  COMPLETED.  FREQUENCY=   52780.0    
+ *** LOAD STEP     1   SUBSTEP    40  COMPLETED.  FREQUENCY=   52800.0    
+ *** LOAD STEP     1   SUBSTEP    41  COMPLETED.  FREQUENCY=   52820.0    
+ *** LOAD STEP     1   SUBSTEP    42  COMPLETED.  FREQUENCY=   52840.0    
+ *** LOAD STEP     1   SUBSTEP    43  COMPLETED.  FREQUENCY=   52860.0    
+ *** LOAD STEP     1   SUBSTEP    44  COMPLETED.  FREQUENCY=   52880.0    
+ *** LOAD STEP     1   SUBSTEP    45  COMPLETED.  FREQUENCY=   52900.0    
+ *** LOAD STEP     1   SUBSTEP    46  COMPLETED.  FREQUENCY=   52920.0    
+ *** LOAD STEP     1   SUBSTEP    47  COMPLETED.  FREQUENCY=   52940.0    
+ *** LOAD STEP     1   SUBSTEP    48  COMPLETED.  FREQUENCY=   52960.0    
+ *** LOAD STEP     1   SUBSTEP    49  COMPLETED.  FREQUENCY=   52980.0    
+ *** LOAD STEP     1   SUBSTEP    50  COMPLETED.  FREQUENCY=   53000.0    
+ *** LOAD STEP     1   SUBSTEP    51  COMPLETED.  FREQUENCY=   53020.0    
+ *** LOAD STEP     1   SUBSTEP    52  COMPLETED.  FREQUENCY=   53040.0    
+ *** LOAD STEP     1   SUBSTEP    53  COMPLETED.  FREQUENCY=   53060.0    
+ *** LOAD STEP     1   SUBSTEP    54  COMPLETED.  FREQUENCY=   53080.0    
+ *** LOAD STEP     1   SUBSTEP    55  COMPLETED.  FREQUENCY=   53100.0    
+ *** LOAD STEP     1   SUBSTEP    56  COMPLETED.  FREQUENCY=   53120.0    
+ *** LOAD STEP     1   SUBSTEP    57  COMPLETED.  FREQUENCY=   53140.0    
+ *** LOAD STEP     1   SUBSTEP    58  COMPLETED.  FREQUENCY=   53160.0    
+ *** LOAD STEP     1   SUBSTEP    59  COMPLETED.  FREQUENCY=   53180.0    
+ *** LOAD STEP     1   SUBSTEP    60  COMPLETED.  FREQUENCY=   53200.0    
+ *** LOAD STEP     1   SUBSTEP    61  COMPLETED.  FREQUENCY=   53220.0    
+ *** LOAD STEP     1   SUBSTEP    62  COMPLETED.  FREQUENCY=   53240.0    
+ *** LOAD STEP     1   SUBSTEP    63  COMPLETED.  FREQUENCY=   53260.0    
+ *** LOAD STEP     1   SUBSTEP    64  COMPLETED.  FREQUENCY=   53280.0    
+ *** LOAD STEP     1   SUBSTEP    65  COMPLETED.  FREQUENCY=   53300.0    
+ *** LOAD STEP     1   SUBSTEP    66  COMPLETED.  FREQUENCY=   53320.0    
+ *** LOAD STEP     1   SUBSTEP    67  COMPLETED.  FREQUENCY=   53340.0    
+ *** LOAD STEP     1   SUBSTEP    68  COMPLETED.  FREQUENCY=   53360.0    
+ *** LOAD STEP     1   SUBSTEP    69  COMPLETED.  FREQUENCY=   53380.0    
+ *** LOAD STEP     1   SUBSTEP    70  COMPLETED.  FREQUENCY=   53400.0    
+ *** LOAD STEP     1   SUBSTEP    71  COMPLETED.  FREQUENCY=   53420.0    
+ *** LOAD STEP     1   SUBSTEP    72  COMPLETED.  FREQUENCY=   53440.0    
+ *** LOAD STEP     1   SUBSTEP    73  COMPLETED.  FREQUENCY=   53460.0    
+ *** LOAD STEP     1   SUBSTEP    74  COMPLETED.  FREQUENCY=   53480.0    
+ *** LOAD STEP     1   SUBSTEP    75  COMPLETED.  FREQUENCY=   53500.0    
+ *** LOAD STEP     1   SUBSTEP    76  COMPLETED.  FREQUENCY=   53520.0    
+ *** LOAD STEP     1   SUBSTEP    77  COMPLETED.  FREQUENCY=   53540.0    
+ *** LOAD STEP     1   SUBSTEP    78  COMPLETED.  FREQUENCY=   53560.0    
+ *** LOAD STEP     1   SUBSTEP    79  COMPLETED.  FREQUENCY=   53580.0    
+ *** LOAD STEP     1   SUBSTEP    80  COMPLETED.  FREQUENCY=   53600.0    
+ *** LOAD STEP     1   SUBSTEP    81  COMPLETED.  FREQUENCY=   53620.0    
+ *** LOAD STEP     1   SUBSTEP    82  COMPLETED.  FREQUENCY=   53640.0    
+ *** LOAD STEP     1   SUBSTEP    83  COMPLETED.  FREQUENCY=   53660.0    
+ *** LOAD STEP     1   SUBSTEP    84  COMPLETED.  FREQUENCY=   53680.0    
+ *** LOAD STEP     1   SUBSTEP    85  COMPLETED.  FREQUENCY=   53700.0    
+ *** LOAD STEP     1   SUBSTEP    86  COMPLETED.  FREQUENCY=   53720.0    
+ *** LOAD STEP     1   SUBSTEP    87  COMPLETED.  FREQUENCY=   53740.0    
+ *** LOAD STEP     1   SUBSTEP    88  COMPLETED.  FREQUENCY=   53760.0    
+ *** LOAD STEP     1   SUBSTEP    89  COMPLETED.  FREQUENCY=   53780.0    
+ *** LOAD STEP     1   SUBSTEP    90  COMPLETED.  FREQUENCY=   53800.0    
+ *** LOAD STEP     1   SUBSTEP    91  COMPLETED.  FREQUENCY=   53820.0    
+ *** LOAD STEP     1   SUBSTEP    92  COMPLETED.  FREQUENCY=   53840.0    
+ *** LOAD STEP     1   SUBSTEP    93  COMPLETED.  FREQUENCY=   53860.0    
+ *** LOAD STEP     1   SUBSTEP    94  COMPLETED.  FREQUENCY=   53880.0    
+ *** LOAD STEP     1   SUBSTEP    95  COMPLETED.  FREQUENCY=   53900.0    
+ *** LOAD STEP     1   SUBSTEP    96  COMPLETED.  FREQUENCY=   53920.0    
+ *** LOAD STEP     1   SUBSTEP    97  COMPLETED.  FREQUENCY=   53940.0    
+ *** LOAD STEP     1   SUBSTEP    98  COMPLETED.  FREQUENCY=   53960.0    
+ *** LOAD STEP     1   SUBSTEP    99  COMPLETED.  FREQUENCY=   53980.0    
+ *** LOAD STEP     1   SUBSTEP   100  COMPLETED.  FREQUENCY=   54000.0    
 
 
  *** MAPDL BINARY FILE STATISTICS
   BUFFER SIZE USED= 16384
         4.562 MB WRITTEN ON ELEMENT SAVED DATA FILE: file0.esav
-       71.938 MB WRITTEN ON ASSEMBLED MATRIX FILE: file0.full
-      245.750 MB WRITTEN ON RESULTS FILE: file0.rst
+       72.688 MB WRITTEN ON ASSEMBLED MATRIX FILE: file0.full
+      123.938 MB WRITTEN ON RESULTS FILE: file0.rst
  *************** Write FE CONNECTORS *********
 
  WRITE OUT CONSTRAINT EQUATIONS TO FILE= file.ce                                                                                                                                                                                                                                                             
@@ -1407,17 +1279,17 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =       570.531
+ ***** ROUTINE COMPLETED *****  CP =       295.828
 
 
 
  PRINTOUT RESUMED BY /GOP
 
- *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  21.8291667    
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  13.6797222    
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   21:49:45  NOV 26, 2025 CP=    570.547
+ 01055371  VERSION=WINDOWS x64   13:40:47  NOV 27, 2025 CP=    295.844
 
  simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
 
@@ -1425,12 +1297,35 @@
 
           ***** MAPDL RESULTS INTERPRETATION (POST1) *****
 
- *** NOTE ***                            CP =     570.547   TIME= 21:49:45
+ *** NOTE ***                            CP =     295.844   TIME= 13:40:47
  Reading results into the database (SET command) will update the current 
  displacement and force boundary conditions in the database with the     
  values from the results file for that load set.  Note that any          
  subsequent solutions will use these values unless action is taken to    
  either SAVE the current values or not overwrite them (/EXIT,NOSAVE).    
+
+ EXIT THE MAPDL POST1 DATABASE PROCESSOR
+
+
+ ***** ROUTINE COMPLETED *****  CP =       295.844
+
+
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   13:40:47  NOV 27, 2025 CP=    295.844
+
+ simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
+
+
+
+
+          ***** TIME-HISTORY POSTPROCESSOR (POST26) *****
+
+ ALL POST26 SPECIFICATIONS ARE RESET TO INITIAL DEFAULTS
+
+ *** WARNING ***                         CP =     295.906   TIME= 13:40:47
+ No data points are saved during this storage step.                      
 
  Set Encoding of XML File to:ISO-8859-1
 
@@ -1440,40 +1335,38 @@
 
  DATABASE WRITTEN ON FILE  parm.xml                                                                                                                                                                                                                                                            
 
- EXIT THE MAPDL POST1 DATABASE PROCESSOR
 
-
- ***** ROUTINE COMPLETED *****  CP =       570.547
+ ***** ROUTINE COMPLETED *****  CP =       295.906
 
 
 
  PRINTOUT RESUMED BY /GOP
 
- *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  21.8291667    
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  13.6797222    
 
- PARAMETER _PREPTIME =     1.000000000    
+ PARAMETER _PREPTIME =     0.000000000    
 
- PARAMETER _SOLVTIME =     572.0000000    
+ PARAMETER _SOLVTIME =     295.0000000    
 
  PARAMETER _POSTTIME =     0.000000000    
 
- PARAMETER _TOTALTIM =     573.0000000    
+ PARAMETER _TOTALTIM =     295.0000000    
 
  *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  0.00000000    
 
- *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE=  1.72810230    
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE= 0.781554500    
 
  *GET  _SSMODE   FROM  ACTI  ITEM=SOLU SSMM  VALUE=  2.00000000    
 
- *GET  _NDOFS    FROM  ACTI  ITEM=SOLU NDOF  VALUE=  55482.0000    
+ *GET  _NDOFS    FROM  ACTI  ITEM=SOLU NDOF  VALUE=  55899.0000    
 
  /FCLEAN COMMAND REMOVING ALL LOCAL FILES
  --- Total number of nodes = 18584
  --- Total number of elements = 3966
  --- Element load balance ratio = 0
- --- Time to combine distributed files = 1.7281023
+ --- Time to combine distributed files = 0.7815545
  --- Sparse memory mode = 2
- --- Number of DOF = 55482
+ --- Number of DOF = 55899
 
  EXIT MAPDL WITHOUT SAVING DATABASE
 
@@ -1481,7 +1374,7 @@
  NUMBER OF WARNING MESSAGES ENCOUNTERED=         12
  NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
 
- *** NOTE ***                            CP =     570.703   TIME= 21:49:55
+ *** NOTE ***                            CP =     296.656   TIME= 13:40:58
  The solution for the current simulation was performed using 1 cores.    
  The parallel performance of this simulation on this hardware indicates  
  that this simulation would benefit from using additional CPU cores.     
@@ -1491,7 +1384,7 @@
 +--------------------- M A P D L   S T A T I S T I C S ------------------------+
 
 Release: 2025 R2            Build: 25.2       Update: UP20250519   Platform: WINDOWS x64 
-Date Run: 11/26/2025   Time: 21:49     Process ID: 8076
+Date Run: 11/27/2025   Time: 13:40     Process ID: 4672
 Operating System: Windows 11  (Build: 26100)
 
 Processor Model: Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
@@ -1517,39 +1410,40 @@ Input File: dummy.dat
 
   Core                Machine Name   Working Directory
  -----------------------------------------------------
-     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr81C8
-     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr81C8
-     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr81C8
-     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr81C8
+     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr9CC2
+     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr9CC2
+     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr9CC2
+     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr9CC2
  
-Latency time from master to core     1 =    6.265 microseconds
-Latency time from master to core     2 =    6.833 microseconds
-Latency time from master to core     3 =    7.593 microseconds
+Latency time from master to core     1 =    5.937 microseconds
+Latency time from master to core     2 =    6.070 microseconds
+Latency time from master to core     3 =    4.929 microseconds
  
-Communication speed from master to core     1 =  4623.32 MB/sec
-Communication speed from master to core     2 =  4733.90 MB/sec
-Communication speed from master to core     3 =  4320.96 MB/sec
+Communication speed from master to core     1 =  6895.96 MB/sec
+Communication speed from master to core     2 =  7274.51 MB/sec
+Communication speed from master to core     3 =  8266.68 MB/sec
 
-Total CPU time for main thread                    :      568.5 seconds
-Total CPU time summed for all threads             :      570.7 seconds
+Total CPU time for main thread                    :      293.9 seconds
+Total CPU time summed for all threads             :      296.7 seconds
 
-Elapsed time spent obtaining a license            :        0.6 seconds
-Elapsed time spent pre-processing model (/PREP7)  :        0.2 seconds
+Elapsed time spent obtaining a license            :        0.5 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.3 seconds
 Elapsed time spent solution - preprocessing       :        0.3 seconds
-Elapsed time spent computing solution             :      569.6 seconds
-Elapsed time spent solution - postprocessing      :        1.7 seconds
+Elapsed time spent computing solution             :      293.3 seconds
+Elapsed time spent solution - postprocessing      :        0.8 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+Elapsed time spent post-processing model (/POST26):        0.0 seconds
  
 Equation solver used                              :            Sparse (symmetric)
-Equation solver computational rate                :        7.2 Gflops
+Equation solver computational rate                :        6.9 Gflops
 
-Sum of disk space used on all processes           :     2037.2 MB
+Sum of disk space used on all processes           :     1187.6 MB
 
-Sum of memory used on all processes               :     4573.0 MB
-Sum of memory allocated on all processes          :     7536.0 MB
+Sum of memory used on all processes               :     4572.0 MB
+Sum of memory allocated on all processes          :     7528.0 MB
 Physical memory available                         :         32 GB
-Total amount of I/O written to disk               :        2.2 GB
-Total amount of I/O read from disk                :        0.6 GB
+Total amount of I/O written to disk               :        1.1 GB
+Total amount of I/O read from disk                :        0.3 GB
 
 +------------------ E N D   M A P D L   S T A T I S T I C S -------------------+
 
@@ -1565,13 +1459,13 @@ Total amount of I/O read from disk                :        0.6 GB
  |-----------------------------------------------------------------------------|
  |                                                                             |
  |  Database Requested(-db)     1024 MB     Scratch Memory Requested   1024 MB |
- |  Max Database Used(Master)      9 MB     Max Scratch Used(Master)   1135 MB |
+ |  Max Database Used(Master)      9 MB     Max Scratch Used(Master)   1134 MB |
  |  Max Database Used(Workers)     9 MB     Max Scratch Used(Workers)  1134 MB |
- |  Sum Database Used(All)        36 MB     Sum Scratch Used(All)      4537 MB |
+ |  Sum Database Used(All)        36 MB     Sum Scratch Used(All)      4536 MB |
  |                                                                             |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |        CP Time      (sec) =        570.703       Time  =  21:49:55          |
- |        Elapsed Time (sec) =        589.000       Date  =  11/26/2025        |
+ |        CP Time      (sec) =        296.656       Time  =  13:40:58          |
+ |        Elapsed Time (sec) =        312.000       Date  =  11/27/2025        |
  |                                                                             |
  *-----------------------------------------------------------------------------*

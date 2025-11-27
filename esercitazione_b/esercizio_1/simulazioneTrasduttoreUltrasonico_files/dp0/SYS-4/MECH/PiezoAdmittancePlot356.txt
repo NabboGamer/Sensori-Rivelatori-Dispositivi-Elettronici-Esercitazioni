@@ -1,0 +1,18 @@
+
+ *GET  ACTIVEUNITS  FROM  ACTI  ITEM=UNIT       VALUE=  5.00000000    
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   12:54:53  NOV 27, 2025 CP=      1.609
+
+ simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
+
+
+
+          ***** MAPDL POST26 VARIABLE LISTING *****
+
+
+    FREQ                 6 REAL                      7 IMAG    
+                      ADMI_REA                    ADMI_IMA
+                      L                           G       
+                    REAL       IMAGINARY        REAL       IMAGINARY    
