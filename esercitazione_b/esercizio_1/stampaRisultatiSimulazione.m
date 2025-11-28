@@ -4,13 +4,13 @@
 evalin('base', 'clear'); close all; clc;
 
 %% Impedenza d'ingresso
-opts = detectImportOptions('./out/impedance.txt', ...
+opts = detectImportOptions('./out/test_impedance.txt', ...
                            'FileType','text', ...
                            'NumHeaderLines', 18, ...
                            'Delimiter', ' ', ...
                            'ConsecutiveDelimitersRule','join');
 
-T = readtable('./out/impedance.txt', opts);
+T = readtable('./out/test_impedance.txt', opts);
 % Rimuove Var1 poichè ad essa viene assegnato lo spazio iniziale
 T(:,1) = []; 
 
@@ -19,7 +19,8 @@ ReZin = T{:,4}';     % Parte reale
 ImZin = T{:,5}';     % Parte immaginaria
 Zin   = ReZin + 1i*ImZin;
 
-[moduloZin, faseZin] = calcolaModuloEFase(Zin, false, true);
+moduloZin = abs(Zin);
+faseZin   = rad2deg(angle(Zin));
 
 
 %------------------------------------------------------------------------STAMPA------------------------------------------------------------------------%
@@ -29,7 +30,7 @@ modifiedLegendString = "|Zin|";
 modifiedyAxisString = "|Zin|";
 f = f ./ 1e+03;
 moduloZin = moduloZin ./ 1e+03;
-semilogy(f, moduloZin, "Color", '#0072BD', 'DisplayName', modifiedLegendString);
+semilogy(f, moduloZin, "Color", '#0072BD', 'DisplayName', modifiedLegendString, 'LineWidth', 1.5);
 ylabel(ax1, modifiedyAxisString + ' [kΩ]');
 xlabel(ax1,'Frequency [kHz]');
 grid on;
@@ -53,7 +54,7 @@ set(ax1,'XMinorTick','on','YMinorTick','on');
 ax2 = subplot(2,1,2);
 modifiedLegendString = "Arg(Zin)";
 modifiedyAxisString = "Arg(Zin)";
-plot(f, faseZin, "Color", '#0072BD', 'DisplayName', modifiedLegendString);
+plot(f, faseZin, "Color", '#0072BD', 'DisplayName', modifiedLegendString, 'LineWidth', 1.5);
 ylabel(ax2, modifiedyAxisString + " [deg]");
 xlabel(ax2, 'Frequency [kHz]');
 grid on;
@@ -65,13 +66,13 @@ sgtitle("Impedance")
 
 
 %% Spostamento
-opts = detectImportOptions('./out/displacement.txt', ...
+opts = detectImportOptions('./out/test_displacement.txt', ...
                            'FileType','text', ...
                            'NumHeaderLines', 1, ...
                            'Delimiter', '\t', ...
                            'ConsecutiveDelimitersRule','join');
 
-R = readtable('./out/displacement.txt', opts);
+R = readtable('./out/test_displacement.txt', opts);
 
 f     = R{:,1}';     % Frequenza [Hz]
 magS  = R{:,2}';     % Ampiezza
@@ -84,7 +85,7 @@ ax3 = subplot(2,1,1);
 modifiedLegendString = "s";
 modifiedyAxisString = "s";
 f = f ./ 1e+03;
-semilogy(f, magS, "Color", '#0072BD', 'DisplayName', modifiedLegendString);
+semilogy(f, magS, "Color", '#0072BD', 'DisplayName', modifiedLegendString, 'LineWidth', 1.5);
 ylabel(ax3, modifiedyAxisString + ' [m/V]');
 xlabel(ax3,'Frequency [kHz]');
 grid on;
@@ -102,7 +103,7 @@ set(ax3,'XMinorTick','on','YMinorTick','on');
 ax4 = subplot(2,1,2);
 modifiedLegendString = "Arg(s)";
 modifiedyAxisString = "Arg(s)";
-plot(f, phS, "Color", '#0072BD', 'DisplayName', modifiedLegendString);
+plot(f, phS, "Color", '#0072BD', 'DisplayName', modifiedLegendString, 'LineWidth', 1.5);
 ylabel(ax4, modifiedyAxisString + " [deg]");
 xlabel(ax4, 'Frequency [kHz]');
 grid on;
