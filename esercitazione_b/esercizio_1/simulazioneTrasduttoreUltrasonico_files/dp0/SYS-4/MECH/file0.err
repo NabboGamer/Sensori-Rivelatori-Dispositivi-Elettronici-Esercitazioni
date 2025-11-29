@@ -1,72 +1,53 @@
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       13:35:51
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       20:16:20
 
- *** WARNING ***                         CP =       1.578   TIME= 13:35:52
- The data for *GET entity NODE item CPS and NODE= 17606 is not defined.  
+ *** WARNING ***                         CP =       1.531   TIME= 20:16:22
+ The data for *GET entity NODE item CPS and NODE= 30493 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       1.578   TIME= 13:35:52
- The data for *GET entity NODE item CPS and NODE= 16271 is not defined.  
+ *** WARNING ***                         CP =       1.531   TIME= 20:16:22
+ The data for *GET entity NODE item CPS and NODE= 29409 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       1.578   TIME= 13:35:52
- The data for *GET entity NODE item CPS and NODE= 16267 is not defined.  
+ *** WARNING ***                         CP =       1.594   TIME= 20:16:22
+ The data for *GET entity NODE item CPS and NODE= 29405 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       2.500   TIME= 13:35:52
+ *** WARNING ***                         CP =       2.797   TIME= 20:16:22
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       2.625   TIME= 13:35:52
- Contact element 6115 is missing DOF VOLT (and possibly others) of       
- underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ *** WARNING ***                         CP =       3.422   TIME= 20:16:22
+ Contact element 10208 is missing DOF VOLT (and possibly others) of      
+ underlying base element 6519.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       2.688   TIME= 13:35:52
+ *** WARNING ***                         CP =       4.328   TIME= 20:16:23
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       2.688   TIME= 13:35:52
+ *** WARNING ***                         CP =       4.328   TIME= 20:16:23
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       2.688   TIME= 13:35:52
+ *** WARNING ***                         CP =       4.328   TIME= 20:16:23
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       2.688   TIME= 13:35:52
- Contact element 6115 is missing DOF VOLT (and possibly others) of       
- underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ Contact element 10208 is missing DOF VOLT (and possibly others) of      
+ underlying base element 6519.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       3.000   TIME= 13:35:52
- Contact element 6115 is missing DOF VOLT (and possibly others) of       
- underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ Contact element 10208 is missing DOF VOLT (and possibly others) of      
+ underlying base element 6519.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       3.000   TIME= 13:35:52
- Contact element 6115 is missing DOF VOLT (and possibly others) of       
- underlying base element 3631.  Similar mismatches may exist elsewhere,  
+ *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ Contact element 10208 is missing DOF VOLT (and possibly others) of      
+ underlying base element 6519.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
-
- *** WARNING ***                         CP =     295.906   TIME= 13:40:47
- No data points are saved during this storage step.                      
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       13:41:07
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       13:51:40
-
- *** ERROR ***                           CP =       0.453   TIME= 13:51:41
- The geometry is not available.  Issue the RESUME command to restore the 
- database.                                                               
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       13:56:36
-
- *** ERROR ***                           CP =       0.500   TIME= 13:56:37
- The geometry is not available.  Issue the RESUME command to restore the 
- database.                                                               
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       13:58:52
-
- *** ERROR ***                           CP =       0.484   TIME= 13:58:53
- The geometry is not available.  Issue the RESUME command to restore the 
- database.                                                               
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       14:05:59
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       20:30:20

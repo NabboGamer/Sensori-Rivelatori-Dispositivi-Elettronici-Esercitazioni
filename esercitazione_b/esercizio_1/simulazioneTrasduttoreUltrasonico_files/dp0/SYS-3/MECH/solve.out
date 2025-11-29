@@ -106,13 +106,13 @@
   DISTRIBUTED MEMORY PARALLEL REQUESTED
        4 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
     TOTAL OF     4 CORES REQUESTED
-  INPUT FILE NAME              = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr317B\dummy.dat
-  OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr317B\solve.out
+  INPUT FILE NAME              = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr4407\dummy.dat
+  OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr4407\solve.out
   START-UP FILE MODE           = NOREAD
   STOP FILE MODE               = NOREAD
 
  RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  20:23:45  NOV 26, 2025 CP=      0.078
+ CURRENT JOBNAME=file0  20:00:32  NOV 29, 2025 CP=      0.125
 
 
  PARAMETER _DS_PROGRESS =     999.0000000    
@@ -121,11 +121,11 @@
 
 
 
- *** NOTE ***                            CP =       0.359   TIME= 20:23:45
+ *** NOTE ***                            CP =       0.438   TIME= 20:00:32
  The /CONFIG,NOELDB command is not valid in a distributed memory         
  parallel solution.  Command is ignored.                                 
 
- *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.3958333    
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.0088889    
 
  TITLE= 
  simulazioneTrasduttoreUltrasonico--Modal (C3)                                 
@@ -142,7 +142,7 @@
  SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr317B\
+ PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr4407\
 
  SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
@@ -179,7 +179,7 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   20:23:45  NOV 26, 2025 CP=      0.391
+ 01055371  VERSION=WINDOWS x64   20:00:32  NOV 29, 2025 CP=      0.469
 
  simulazioneTrasduttoreUltrasonico--Modal (C3)                                 
 
@@ -194,27 +194,27 @@
  *********** Elements for Body 4 'C2(Mechanical Model)' ***********
  *********** Set Reference Temperature ***********
  *********** Send Materials ***********
- *********** Create Contact "Contact Region(Mechanical Model)" ***********
+ *********** Create Contact "Bonded - M1 To C1(Mechanical Model)" ***********
              Real Constant Set For Above Contact Is 6 & 5
- *********** Create Contact "Contact Region 2(Mechanical Model)" ***********
+ *********** Create Contact "Bonded - C2 To M2(Mechanical Model)" ***********
              Real Constant Set For Above Contact Is 8 & 7
- *********** Create Contact "Contact Region 3(Mechanical Model)" ***********
+ *********** Create Contact "Bonded - C1 To C2(Mechanical Model)" ***********
              Real Constant Set For Above Contact Is 10 & 9
  *********** Send Named Selection as Node Component ***********
 
 
- ***** ROUTINE COMPLETED *****  CP =         0.766
+ ***** ROUTINE COMPLETED *****  CP =         0.938
 
 
- --- Number of total nodes = 18584
- --- Number of contact elements = 204
+ --- Number of total nodes = 31908
+ --- Number of contact elements = 1896
  --- Number of spring elements = 0
  --- Number of bearing elements = 0
- --- Number of solid elements = 3762
+ --- Number of solid elements = 6709
  --- Number of condensed parts = 0
- --- Number of total elements = 3966
+ --- Number of total elements = 8605
 
- *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.3958333    
+ *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.0088889    
 
  *****  MAPDL SOLUTION ROUTINE  *****
 
@@ -229,7 +229,7 @@
 
  USE SYM. BLOCK LANCZOS MODE EXTRACTION METHOD
   EXTRACT AS MANY MODES AS THERE ARE MDOF
-  EXTRACT FREQUENCIES IN THE RANGE   15000.     TO   72000.    
+  EXTRACT FREQUENCIES IN THE RANGE   36000.     TO   44000.    
   NORMALIZE THE MODE SHAPES TO THE MASS MATRIX
 
  ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
@@ -239,6 +239,9 @@
    FOR ALL APPLICABLE ENTITIES
 
  WRITE NSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE VENG ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
    FOR ALL APPLICABLE ENTITIES
 
  WRITE STRS ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
@@ -253,36 +256,11 @@
  WRITE RSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
    FOR ALL APPLICABLE ENTITIES
 
- SELECT       FOR ITEM=D    COMPONENT=U     BETWEEN  0.0000     AND   0.0000    
-   KABS=  0.  TOLERANCE= 0.100000E-05
+ WRITE NLOA ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
 
-          0  NODES (OF      18584  DEFINED) SELECTED BY  NSEL  COMMAND.
-
- ALSO SELECT  FOR ITEM=D    COMPONENT=ROT   BETWEEN  0.0000     AND   0.0000    
-   KABS=  0.  TOLERANCE= 0.100000E-05
-
-          0  NODES (OF      18584  DEFINED) SELECTED BY  NSEL  COMMAND.
-
- SELECT      ALL ELEMENTS HAVING ANY NODE IN NODAL SET.
-
-          0 ELEMENTS (OF       3966  DEFINED) SELECTED FROM
-        0 SELECTED NODES BY  ESLN COMMAND.
-
- DEFINITION OF COMPONENT = _CONSTRAINEDNODES  ENTITY=ELEM
-
- ALL SELECT   FOR ITEM=NODE COMPONENT=    
-  IN RANGE         1 TO      18584 STEP          1
-
-      18584  NODES (OF      18584  DEFINED) SELECTED BY NSEL  COMMAND.
-
- ALL SELECT   FOR ITEM=ELEM COMPONENT=    
-  IN RANGE         1 TO       6184 STEP          1
-
-       3966  ELEMENTS (OF       3966  DEFINED) SELECTED BY  ESEL  COMMAND.
-
- *** WARNING ***                         CP =       0.766   TIME= 20:23:45
- Component _CONSTRAINEDNODES does not contain any entities.  The OUTRES  
- command is ignored.                                                     
+ WRITE CONT ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
 
 
  EXPAND ALL EXTRACTED MODES
@@ -294,6 +272,374 @@
  DO NOT COMBINE ELEMENT MATRIX FILES (.emat) AFTER DISTRIBUTED PARALLEL SOLUTION
 
  DO NOT COMBINE ASSEMBLED MATRIX FILES (.full) AFTER DISTRIBUTED PARALLEL SOLUTION
+  
+ ***********  Piezoelectric Properties C11 ***********
+  
+ CMBLOCK read of NODE component PIEZOELECTRIC BODY1                                                                                                                                                                                                                                               completed
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.969
+
+
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   20:00:32  NOV 29, 2025 CP=      0.969
+
+ simulazioneTrasduttoreUltrasonico--Modal (C3)                                 
+
+
+
+          ***** MAPDL ANALYSIS DEFINITION (PREP7) *****
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY1                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        700 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1088 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       185 TO        185 STEP          1
+
+          0  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM185   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum185  ( =   0.00000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY1                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        700 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1088 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       186 TO        186 STEP          1
+
+        140  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM186   FROM  ELEM  ITEM=COUN           VALUE=  140.000000    
+
+ *IF  iNum186  ( =   140.000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ PARAMETER _ICURRENTELEM =     0.000000000    
+
+ *DO LOOP ON PARAMETER= AR30 FROM  1.0000     TO  140.00     BY  1.0000    
+
+ PARAMETER _ICURRENTELEM =     6381.000000    
+
+ MODIFY ELEMENT      6381 (IF SELECTED) TO HAVE  ESYS =     12
+     ELEM    MAT   TYP   REL   SEC   ESYS         NODES
+    6381   3   3      3      3   12   29616 29450 29689 29618 29615 29448 29690 29617
+                                      29773 30488 30462 29832 30233 30489 30463 30239
+                                      30234 29914 30385 30240
+
+ *GET  _ICURRENTETYP  FROM  ELEM      6381  ITEM=ATTR TYPE      VALUE=  3.00000000    
+
+ ELEMENT TYPE          3 IS SOLID226     3-D 20-NODE STRU-ELECT SOLID
+  KEYOPT( 1- 6)=     1001      0      0        0      0      0
+  KEYOPT( 7-12)=        0      0      0        0      0      0
+  KEYOPT(13-18)=        0      0      0        0      0      0
+
+ CURRENT NODAL DOF SET IS  UX    UY    UZ    VOLT
+  THREE-DIMENSIONAL MODEL
+
+ *GET  _ICURRENTMAT  FROM  ELEM      6381  ITEM=ATTR MAT       VALUE=  3.00000000    
+
+ DELETE PROPERTY  RSVX  FROM MATERIAL          3 TO          3 BY          1
+
+ DELETE PROPERTY  RSVY  FROM MATERIAL          3 TO          3 BY          1
+
+ DELETE PROPERTY  RSVZ  FROM MATERIAL          3 TO          3 BY          1
+
+ DEFINE DATA TABLE  PIEZ  FOR MATERIAL     3
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  3 -2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  6 -2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC=  9  14.700      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC= 14  9.8600      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   3
+ LOC= 16  9.8600      0.0000      0.0000    
+
+ DEFINE DATA TABLE  DPER  FOR MATERIAL     3
+
+ DATA FOR  DPER  TABLE FOR MATERIAL   3
+ LOC=  1  828.30      828.30      699.67      0.0000      0.0000      0.0000    
+
+ *ENDDO  INDEX= AR30                            
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY1                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        700 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1088 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       187 TO        187 STEP          1
+
+          0  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM187   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum187  ( =   0.00000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY1                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        700 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1088 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       182 TO        182 STEP          1
+
+          0  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM182   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum182  ( =   0.00000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY1                                                                                                                                                                                                                                             
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        700 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1088 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       183 TO        183 STEP          1
+
+          0  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM183   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum183  ( =   0.00000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ EM UNITS = USER  EPZERO= 0.88540E-11
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.219
+
+
+
+ *****  MAPDL SOLUTION ROUTINE  *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ WRITE FGRA ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
+  
+ ***********  Piezoelectric Properties C267 ***********
+  
+ CMBLOCK read of NODE component PIEZOELECTRIC BODY67                                                                                                                                                                                                                                              completed
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.219
+
+
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   20:00:32  NOV 29, 2025 CP=      1.219
+
+ simulazioneTrasduttoreUltrasonico--Modal (C3)                                 
+
+
+
+          ***** MAPDL ANALYSIS DEFINITION (PREP7) *****
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY67                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        945 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1416 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       185 TO        185 STEP          1
+
+          0  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM185   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum185  ( =   0.00000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY67                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        945 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1416 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       186 TO        186 STEP          1
+
+        189  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM186   FROM  ELEM  ITEM=COUN           VALUE=  189.000000    
+
+ *IF  iNum186  ( =   189.000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ PARAMETER _ICURRENTELEM =     0.000000000    
+
+ *DO LOOP ON PARAMETER= AR30 FROM  1.0000     TO  189.00     BY  1.0000    
+
+ PARAMETER _ICURRENTELEM =     6521.000000    
+
+ MODIFY ELEMENT      6521 (IF SELECTED) TO HAVE  ESYS =     12
+     ELEM    MAT   TYP   REL   SEC   ESYS         NODES
+    6521   4   4      4      4   12   30907 30908 30733 30734 30533 30534 30554 30553
+                                      31888 31907 31501 31908 31041 31087 31089 31092
+                                      31892 31891 31549 31547
+
+ *GET  _ICURRENTETYP  FROM  ELEM      6521  ITEM=ATTR TYPE      VALUE=  4.00000000    
+
+ ELEMENT TYPE          4 IS SOLID226     3-D 20-NODE STRU-ELECT SOLID
+  KEYOPT( 1- 6)=     1001      0      0        0      0      0
+  KEYOPT( 7-12)=        0      0      0        0      0      0
+  KEYOPT(13-18)=        0      0      0        0      0      0
+
+ CURRENT NODAL DOF SET IS  UX    UY    UZ    VOLT
+  THREE-DIMENSIONAL MODEL
+
+ *GET  _ICURRENTMAT  FROM  ELEM      6521  ITEM=ATTR MAT       VALUE=  4.00000000    
+
+ DELETE PROPERTY  RSVX  FROM MATERIAL          4 TO          4 BY          1
+
+ DELETE PROPERTY  RSVY  FROM MATERIAL          4 TO          4 BY          1
+
+ DELETE PROPERTY  RSVZ  FROM MATERIAL          4 TO          4 BY          1
+
+ DEFINE DATA TABLE  PIEZ  FOR MATERIAL     4
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC=  3  2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC=  6  2.8000      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC=  9 -14.700      0.0000      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC= 14 -9.8600      0.0000      0.0000      0.0000      0.0000    
+
+ DATA FOR  PIEZ  TABLE FOR MATERIAL   4
+ LOC= 16 -9.8600      0.0000      0.0000    
+
+ DEFINE DATA TABLE  DPER  FOR MATERIAL     4
+
+ DATA FOR  DPER  TABLE FOR MATERIAL   4
+ LOC=  1  828.30      828.30      699.67      0.0000      0.0000      0.0000    
+
+ *ENDDO  INDEX= AR30                            
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY67                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        945 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1416 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       187 TO        187 STEP          1
+
+          0  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM187   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum187  ( =   0.00000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY67                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        945 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1416 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       182 TO        182 STEP          1
+
+          0  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM182   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum182  ( =   0.00000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ SELECT      COMPONENT PIEZOELECTRIC BODY67                                                                                                                                                                                                                                            
+
+ SELECT      ONLY ELEMENTS COMPLETELY CONTAINED WITHIN NODE SET.
+
+        945 ELEMENTS (OF       8605  DEFINED) SELECTED FROM
+     1416 SELECTED NODES BY  ESLN COMMAND.
+
+ RESELECT     FOR ITEM=ENAM COMPONENT=    
+  IN RANGE       183 TO        183 STEP          1
+
+          0  ELEMENTS (OF       8605  DEFINED) SELECTED BY  ESEL  COMMAND.
+
+ *GET  INUM183   FROM  ELEM  ITEM=COUN           VALUE=  0.00000000    
+
+ *IF  iNum183  ( =   0.00000     )  GT  
+      0  ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ EM UNITS = USER  EPZERO= 0.88540E-11
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.469
+
+
+
+ *****  MAPDL SOLUTION ROUTINE  *****
+
+ SELECT ALL ENTITIES OF TYPE= ALL  AND BELOW
+
+ WRITE FGRA ITEMS TO THE DATABASE WITH A FREQUENCY OF ALL 
+   FOR ALL APPLICABLE ENTITIES
 
  *GET  ANSINTER_  FROM  ACTI  ITEM=INT        VALUE=  0.00000000    
 
@@ -302,42 +648,34 @@
 
  *ENDIF
 
- *** NOTE ***                            CP =       0.891   TIME= 20:23:45
+ *** NOTE ***                            CP =       1.594   TIME= 20:00:33
  The automatic domain decomposition logic has selected the MESH domain   
  decomposition method with 4 processes per solution.                     
 
  *****  MAPDL SOLVE    COMMAND  *****
 
- *** WARNING ***                         CP =       1.094   TIME= 20:23:45
+ *** WARNING ***                         CP =       1.906   TIME= 20:00:33
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** NOTE ***                            CP =       1.141   TIME= 20:23:45
+ *** NOTE ***                            CP =       1.969   TIME= 20:00:33
  The model data was checked and warning messages were found.             
   Please review output or errors file (                                  
  C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_Pr 
- rojectScratch\Scr317B\file0.err ) for these warning messages.           
+ rojectScratch\Scr4407\file0.err ) for these warning messages.           
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
       --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
 
- ELEMENT TYPE         1 IS SOLID186. KEYOPT(2)=0 IS SUGGESTED AND HAS BEEN RESET.
-  KEYOPT(1-12)=    0    0    0    0    0    0    0    0    0    0    0    0
+ ELEMENT TYPE         1 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED FOR A COUPLED FIELD ANALYSIS.
 
- ELEMENT TYPE         2 IS SOLID186. KEYOPT(2)=0 IS SUGGESTED AND HAS BEEN RESET.
-  KEYOPT(1-12)=    0    0    0    0    0    0    0    0    0    0    0    0
-
- ELEMENT TYPE         3 IS SOLID186. KEYOPT(2)=0 IS SUGGESTED AND HAS BEEN RESET.
-  KEYOPT(1-12)=    0    0    0    0    0    0    0    0    0    0    0    0
-
- ELEMENT TYPE         4 IS SOLID186. KEYOPT(2)=0 IS SUGGESTED AND HAS BEEN RESET.
-  KEYOPT(1-12)=    0    0    0    0    0    0    0    0    0    0    0    0
+ ELEMENT TYPE         2 IS SOLID186. KEYOPT(2) IS ALREADY SET AS SUGGESTED FOR A COUPLED FIELD ANALYSIS.
 
 
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   20:23:45  NOV 26, 2025 CP=      1.141
+ 01055371  VERSION=WINDOWS x64   20:00:33  NOV 29, 2025 CP=      1.969
 
  simulazioneTrasduttoreUltrasonico--Modal (C3)                                 
 
@@ -346,138 +684,222 @@
                        S O L U T I O N   O P T I O N S
 
    PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
-   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ   VOLT
    ANALYSIS TYPE . . . . . . . . . . . . . . . . .MODAL                
       EXTRACTION METHOD. . . . . . . . . . . . . .BLOCK LANCZOS
    OFFSET TEMPERATURE FROM ABSOLUTE ZERO . . . . .  273.15    
    THERMAL EXPANSION . . . . . . . . . . . . . . .OFF
    NUMBER OF MODES TO EXTRACT. . . . . . . . . . .    -1
-   MODAL EXTRACTION RANGE. . . . . . . . . . . . .  15000.     TO   72000.    
+   MODAL EXTRACTION RANGE. . . . . . . . . . . . .  36000.     TO   44000.    
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
    NUMBER OF MODES TO EXPAND . . . . . . . . . . .ALL
    ELEMENT RESULTS CALCULATION . . . . . . . . . .ON 
 
- *** WARNING ***                         CP =       1.141   TIME= 20:23:45
+ *** NOTE ***                            CP =       1.969   TIME= 20:00:33
+ The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
+ SOLID226 will be piezoelectric.                                         
+
+ *** NOTE ***                            CP =       1.969   TIME= 20:00:33
+ The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
+ SOLID226 will be piezoelectric.                                         
+
+ *** WARNING ***                         CP =       1.969   TIME= 20:00:33
  No constraints have been defined using the D command.                   
 
- *** NOTE ***                            CP =       1.141   TIME= 20:23:45
+ *** NOTE ***                            CP =       1.969   TIME= 20:00:33
  The step data was checked and warning messages were found.              
   Please review output or errors file (                                  
  C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_Pr 
- rojectScratch\Scr317B\file0.err ) for these warning messages.           
+ rojectScratch\Scr4407\file0.err ) for these warning messages.           
 
- *** NOTE ***                            CP =       1.141   TIME= 20:23:45
+ *** NOTE ***                            CP =       1.969   TIME= 20:00:33
  The conditions for direct assembly have been met.  No .emat or .erot    
  files will be produced.                                                 
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
- Deformable-deformable contact pair identified by real constant set 5    
- and contact element type 5 has been set up.                             
- MPC anywhere inside pinball may be built
- 3D line-surf contact pair is defined
- Crossed line-to-line contact is also included
- Contact traction based contact model
+ *** WARNING ***                         CP =       2.406   TIME= 20:00:33
+ Contact element 10208 is missing DOF VOLT (and possibly others) of      
+ underlying base element 6519.  Similar mismatches may exist elsewhere,  
+ but checking for this is discontinued.                                  
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 5 and contact element type 5 has been set up.  The         
+ companion pair has real constant set ID 6.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
- Program provided average target radius       0.24751E-04
- *WARNING*: The contact radius R2 has not been defined.                  
- Average contact surface length               0.19603E-02
- Average contact pair depth                   0.29790E-04
- Average target surface length                0.16514E-02
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ Average contact surface length               0.15061E-02
+ Average contact pair depth                   0.16727E-02
+ Average target surface length                0.14897E-02
  Default pinball region factor PINB           0.25000    
- The resulting pinball region                 0.61989E-04
+ The resulting pinball region                 0.41818E-03
  Default target edge extension factor TOLS     2.0000    
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
- Max.  Initial penetration 4.771496085E-05 was detected between contact  
- element 5984 and target element 6016.                                   
- You may move entire target surface by : x= 3.364623775E-05, y=          
- 3.383264953E-05, z= 0,to reduce initial penetration.                    
- *WARNING*: The geometric gap/penetration may be too large.  Increase    
- pinball radius if it is a true geometric gap/penetration.  Decrease     
- pinball if it is a false one.                                           
- *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
- separation option may cause an accuracy issue.  Switch to MPC           
- algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
- contact nodes towards the target surface.                               
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Max.  Initial penetration 8.19999648E-10 was detected between contact   
+ element 10183 and target element 10417.                                 
  ****************************************
   
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
- Deformable-deformable contact pair identified by real constant set 7    
- and contact element type 7 has been set up.                             
- MPC anywhere inside pinball may be built
- 3D line-surf contact pair is defined
- Crossed line-to-line contact is also included
- Contact traction based contact model
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 6 and contact element type 5 has been set up.  The         
+ companion pair has real constant set ID 5.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
- Program provided average target radius       0.26911E-04
- *WARNING*: The contact radius R2 has not been defined.                  
- Average contact surface length               0.19603E-02
- Average contact pair depth                   0.29766E-04
- Average target surface length                0.19603E-02
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ Average contact surface length               0.15136E-02
+ Average contact pair depth                   0.10004E-02
+ Average target surface length                0.14765E-02
  Default pinball region factor PINB           0.25000    
- The resulting pinball region                 0.64119E-04
+ The resulting pinball region                 0.25010E-03
  Default target edge extension factor TOLS     2.0000    
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
- Max.  Initial penetration 3.074601091E-05 was detected between contact  
- element 6081 and target element 6104.                                   
- You may move entire target surface by : x= 2.837440682E-05, y=          
- -1.184103984E-05, z= 0,to reduce initial penetration.                   
- *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
- separation option may cause an accuracy issue.  Switch to MPC           
- algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
- contact nodes towards the target surface.                               
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Max.  Initial penetration 8.200005932E-10 was detected between contact  
+ element 10208 and target element 9967.                                  
  ****************************************
   
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
- Deformable-deformable contact pair identified by real constant set 9    
- and contact element type 9 has been set up.                             
- MPC anywhere inside pinball may be built
- 3D line-surf contact pair is defined
- Crossed line-to-line contact is also included
- Contact traction based contact model
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 7 and contact element type 7 has been set up.  The         
+ companion pair has real constant set ID 8.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
- Program provided average target radius       0.26911E-04
- *WARNING*: The contact radius R2 has not been defined.                  
- Average contact surface length               0.16514E-02
- Average contact pair depth                   0.24751E-04
- Average target surface length                0.19603E-02
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ Average contact surface length               0.12825E-02
+ Average contact pair depth                   0.10000E-02
+ Average target surface length                0.14636E-02
  Default pinball region factor PINB           0.25000    
- The resulting pinball region                 0.57850E-04
+ The resulting pinball region                 0.25000E-03
  Default target edge extension factor TOLS     2.0000    
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       1.266   TIME= 20:23:45
- Max.  Initial penetration 3.218395721E-05 was detected between contact  
- element 6118 and target element 6180.                                   
- You may move entire target surface by : x= 2.450053507E-05, y=          
- 2.086937668E-05, z= 0,to reduce initial penetration.                    
- *WARNING*: The geometric gap/penetration may be too large.  Increase    
- pinball radius if it is a true geometric gap/penetration.  Decrease     
- pinball if it is a false one.                                           
- *WARNING*: The initial penetration/gap is relatively large.  Bonded/no  
- separation option may cause an accuracy issue.  Switch to MPC           
- algorithm or you may use the CNCHECK,ADJUST/MORPH command to move the   
- contact nodes towards the target surface.                               
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Max.  Initial penetration 1.281125976E-09 was detected between contact  
+ element 10721 and target element 11022.                                 
+ You may move entire target surface by : x= 9.70211789E-17, y=           
+ -2.210082824E-17, z= 1.281125976E-09,to reduce initial penetration.     
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 8 and contact element type 7 has been set up.  The         
+ companion pair has real constant set ID 7.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ Average contact surface length               0.14872E-02
+ Average contact pair depth                   0.16682E-02
+ Average target surface length                0.12765E-02
+ Default pinball region factor PINB           0.25000    
+ The resulting pinball region                 0.41705E-03
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Max.  Initial penetration 1.282117419E-09 was detected between contact  
+ element 10867 and target element 10534.                                 
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 9 and contact element type 9 has been set up.  The         
+ companion pair has real constant set ID 10.  Both pairs should have     
+ the same behavior.                                                      
+ MAPDL will deactivate the current pair and keep its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ Average contact surface length               0.15041E-02
+ Average contact pair depth                   0.10003E-02
+ Average target surface length                0.12765E-02
+ Default pinball region factor PINB           0.25000    
+ The resulting pinball region                 0.25008E-03
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Max.  Initial penetration 9.936250087E-10 was detected between contact  
+ element 11304 and target element 11726.                                 
+ ****************************************
+  
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Symmetric Deformable- deformable contact pair identified by real        
+ constant set 10 and contact element type 9 has been set up.  The        
+ companion pair has real constant set ID 9.  Both pairs should have the  
+ same behavior.                                                          
+ MAPDL will keep the current pair and deactivate its companion pair,     
+ resulting in asymmetric contact.                                        
+ Auto surface constraint is built
+ Contact algorithm: MPC based approach
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Contact related postprocess items (ETABLE, pressure ...) are not        
+ available.                                                              
+ Contact detection at: nodal point (normal to target surface)
+ MPC will be built internally to handle bonded contact.
+ Average contact surface length               0.12825E-02
+ Average contact pair depth                   0.10000E-02
+ Average target surface length                0.14895E-02
+ Default pinball region factor PINB           0.25000    
+ The resulting pinball region                 0.25000E-03
+ Default target edge extension factor TOLS     2.0000    
+ Initial penetration/gap is excluded.
+ Bonded contact (always) is defined.
+
+ *** NOTE ***                            CP =       3.156   TIME= 20:00:33
+ Max.  Initial penetration 9.228590695E-10 was detected between contact  
+ element 11537 and target element 11165.                                 
  ****************************************
   
   
@@ -487,10 +909,10 @@
   
      D I S T R I B U T E D   D O M A I N   D E C O M P O S E R
   
-  ...Number of elements: 3966
-  ...Number of nodes:    18584
+  ...Number of elements: 8605
+  ...Number of nodes:    31908
   ...Decompose to 4 CPU domains
-  ...Element load balance ratio =     1.013
+  ...Element load balance ratio =     1.048
 
 
                       L O A D   S T E P   O P T I O N S
@@ -502,10 +924,14 @@
       ITEM     FREQUENCY   COMPONENT
        ALL       NONE               
       NSOL        ALL               
+      VENG        ALL               
       STRS        ALL               
       EPEL        ALL               
       EPPL        ALL               
       RSOL        ALL               
+      NLOA        ALL               
+      CONT        ALL               
+      FGRA        ALL               
 
 
 
@@ -513,79 +939,79 @@
 
    TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
                Translational mass               |   Coupled translational/rotational mass
-        0.10828        0.0000        0.0000     |     0.0000       0.40878E-02  -0.11822E-08
-         0.0000       0.10828        0.0000     |   -0.40878E-02    0.0000       0.27750E-08
-         0.0000        0.0000       0.10828     |    0.11822E-08  -0.27750E-08    0.0000    
+        0.10828        0.0000        0.0000     |     0.0000       0.40878E-02   0.25180E-11
+         0.0000       0.10828        0.0000     |   -0.40878E-02    0.0000       0.89883E-11
+         0.0000        0.0000       0.10828     |   -0.25180E-11  -0.89883E-11    0.0000    
      ------------------------------------------ | ------------------------------------------
                                                 |         Rotational mass (inertia)
-                                                |    0.20750E-03   0.10595E-10  -0.10353E-09
-                                                |    0.10595E-10   0.20750E-03  -0.44078E-10
-                                                |   -0.10353E-09  -0.44078E-10   0.54142E-05
+                                                |    0.20750E-03   0.32031E-12  -0.35924E-12
+                                                |    0.32031E-12   0.20750E-03   0.12043E-12
+                                                |   -0.35924E-12   0.12043E-12   0.54142E-05
 
    TOTAL MASS = 0.10828    
      The mass principal axes coincide with the global Cartesian axes
 
-   CENTER OF MASS (X,Y,Z)=   0.25627E-07   0.10917E-07   0.37751E-01
+   CENTER OF MASS (X,Y,Z)=   0.83007E-10  -0.23254E-10   0.37751E-01
 
    TOTAL INERTIA ABOUT CENTER OF MASS
-        0.53184E-04   0.10595E-10   0.12247E-11
-        0.10595E-10   0.53184E-04   0.54930E-12
-        0.12247E-11   0.54930E-12   0.54142E-05
+        0.53184E-04   0.32031E-12  -0.19920E-13
+        0.32031E-12   0.53184E-04   0.25372E-13
+       -0.19920E-13   0.25372E-13   0.54142E-05
      The inertia principal axes coincide with the global Cartesian axes
 
 
   *** MASS SUMMARY BY ELEMENT TYPE ***
 
   TYPE      MASS
-     1  0.517934E-01
-     2  0.516526E-01
-     3  0.241872E-02
-     4  0.241902E-02
+     1  0.517935E-01
+     2  0.516527E-01
+     3  0.241902E-02
+     4  0.241903E-02
 
  Range of element maximum matrix coefficients in global coordinates
- Maximum = 552994347 at element 3617.                                    
- Minimum = 88061971.8 at element 3683.                                   
+ Maximum = 605393236 at element 6497.                                    
+ Minimum = 88331744.7 at element 6646.                                   
 
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.375   0.000217
-        2      1728  SOLID186      0.469   0.000271
-        3       178  SOLID186      0.031   0.000176
-        4       128  SOLID186      0.016   0.000122
-        5        32  CONTA177      0.000   0.000000
-        6        38  TARGE170      0.000   0.000000
-        7        32  CONTA177      0.000   0.000000
-        8        32  TARGE170      0.000   0.000000
-        9        38  CONTA177      0.016   0.000411
-       10        32  TARGE170      0.000   0.000000
- Time at end of element matrix formulation CP = 2.5625.                  
+        1      3168  SOLID186      0.812   0.000256
+        2      3212  SOLID186      0.875   0.000272
+        3       140  SOLID226      0.078   0.000558
+        4       189  SOLID226      0.125   0.000661
+        5       284  CONTA174      0.062   0.000220
+        6       284  TARGE170      0.000   0.000000
+        7       335  CONTA174      0.109   0.000326
+        8       335  TARGE170      0.000   0.000000
+        9       329  CONTA174      0.094   0.000285
+       10       329  TARGE170      0.000   0.000000
+ Time at end of element matrix formulation CP = 6.015625.                
 
   BLOCK LANCZOS CALCULATION OF ALL EIGENVECTORS.
-  NUMBER OF EQUATIONS              =        55140
-  MAXIMUM WAVEFRONT                =          267
-  MAXIMUM MODES STORED             =        55140
-  MINIMUM EIGENVALUE               =  0.15000E+05
-  MAXIMUM EIGENVALUE               =  0.72000E+05
+  NUMBER OF EQUATIONS              =        93215
+  MAXIMUM WAVEFRONT                =          999
+  MAXIMUM MODES STORED             =        93215
+  MINIMUM EIGENVALUE               =  0.36000E+05
+  MAXIMUM EIGENVALUE               =  0.44000E+05
 
 
 
   Memory allocated on only this MPI rank (rank     0)
   -------------------------------------------------------------------
-  Equation solver memory allocated                     =   130.230 MB
-  Equation solver memory required for in-core mode     =   124.079 MB
-  Equation solver memory required for out-of-core mode =    35.709 MB
-  Total (solver and non-solver) memory allocated       =   683.808 MB
+  Equation solver memory allocated                     =   275.335 MB
+  Equation solver memory required for in-core mode     =   262.281 MB
+  Equation solver memory required for out-of-core mode =    81.692 MB
+  Total (solver and non-solver) memory allocated       =   992.663 MB
 
 
   Total memory summed across all MPI ranks on this machines
   -------------------------------------------------------------------
-  Equation solver memory allocated                     =   507.892 MB
-  Equation solver memory required for in-core mode     =   483.901 MB
-  Equation solver memory required for out-of-core mode =   139.255 MB
-  Total (solver and non-solver) memory allocated       =  1895.044 MB
+  Equation solver memory allocated                     =  1188.402 MB
+  Equation solver memory required for in-core mode     =  1132.112 MB
+  Equation solver memory required for out-of-core mode =   289.706 MB
+  Total (solver and non-solver) memory allocated       =  2975.066 MB
 
- *** NOTE ***                            CP =       3.500   TIME= 20:23:47
+ *** NOTE ***                            CP =       7.766   TIME= 20:00:37
  The Distributed Sparse Matrix Solver used by the Block Lanczos          
  eigensolver is currently running in the in-core memory mode.  This      
  memory mode uses the most amount of memory in order to avoid using the  
@@ -593,21 +1019,21 @@
  fastest solution time.  This mode is recommended if enough physical     
  memory is present to accommodate all of the solver data.                
 
-  Process memory required for in-core LANCZOS Workspace             =     105.173965 MB
-  Process memory required for out-of-core LANCZOS Workspace         =     3.103287 MB
+  Process memory required for in-core LANCZOS Workspace             =     216.117203 MB
+  Process memory required for out-of-core LANCZOS Workspace         =     4.456253 MB
 
-  Total   memory required for in-core LANCZOS Workspace             =     421.326477 MB
-  Total   memory required for out-of-core LANCZOS Workspace         =     12.420837 MB
+  Total   memory required for in-core LANCZOS Workspace             =     707.167847 MB
+  Total   memory required for out-of-core LANCZOS Workspace         =     15.906708 MB
 
   Lanczos Memory Mode : INCORE
 
 
-  >> Shift # 1 :  | | |                              : 25 Eigenvalues Converged
+  >> Shift # 1 :  |                                  : 3 Eigenvalues Converged
 
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   20:23:50  NOV 26, 2025 CP=      6.938
+ 01055371  VERSION=WINDOWS x64   20:00:43  NOV 29, 2025 CP=     13.516
 
  simulazioneTrasduttoreUltrasonico--Modal (C3)                                 
 
@@ -619,52 +1045,30 @@
 
 
 
-   FREQUENCY RANGE REQUESTED=   15000.0       72000.0    
-    1     15992.88450530    
-    2     18276.94508238    
-    3     18307.71485218    
-    4     22003.66974733    
-    5     22030.73967389    
-    6     29913.23562622    
-    7     29927.80832427    
-    8     39855.21444082    
-    9     39867.68203323    
-   10     44932.13583692    
-   11     45002.85068999    
-   12     46484.95244325    
-   13     48208.55222824    
-   14     49204.07127604    
-   15     49354.07759937    
-   16     51267.47399319    
-   17     55401.67588544    
-   18     55410.93955386    
-   19     57093.30232768    
-   20     60143.30448214    
-   21     60181.63414733    
-   22     64300.58377955    
-   23     64387.15013592    
-   24     64602.76612140    
-   25     64671.83676684    
+   FREQUENCY RANGE REQUESTED=   36000.0       44000.0    
+    1     37218.60472988    
+    2     37222.31417749    
+    3     39257.19897299    
 
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.219   0.000127
-        2      1728  SOLID186      0.297   0.000172
-        3       178  SOLID186      0.016   0.000088
-        4       128  SOLID186      0.000   0.000000
+        1      3168  SOLID186      0.828   0.000261
+        2      3212  SOLID186      0.734   0.000229
+        3       140  SOLID226      0.141   0.001004
+        4       189  SOLID226      0.125   0.000661
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.000   0.000000
-        2      1728  SOLID186      0.000   0.000000
-        3       178  SOLID186      0.016   0.000088
-        4       128  SOLID186      0.000   0.000000
+        1      3168  SOLID186      0.031   0.000010
+        2      3212  SOLID186      0.094   0.000029
+        3       140  SOLID226      0.000   0.000000
+        4       189  SOLID226      0.016   0.000083
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   20:23:54  NOV 26, 2025 CP=     10.984
+ 01055371  VERSION=WINDOWS x64   20:00:44  NOV 29, 2025 CP=     15.328
 
  simulazioneTrasduttoreUltrasonico--Modal (C3)                                 
 
@@ -675,192 +1079,60 @@
           ***** PARTICIPATION FACTOR CALCULATION *****  X  DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     15992.9       0.62528E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     2     18276.9       0.54714E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     3     18307.7       0.54622E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     4     22003.7       0.45447E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     5     22030.7       0.45391E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     6     29913.2       0.33430E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     7     29927.8       0.33414E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     8     39855.2       0.25091E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     9     39867.7       0.25083E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    10     44932.1       0.22256E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    11     45002.9       0.22221E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    12     46485.0       0.21512E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    13     48208.6       0.20743E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    14     49204.1       0.20324E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    15     49354.1       0.20262E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    16     51267.5       0.19506E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    17     55401.7       0.18050E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    18     55410.9       0.18047E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    19     57093.3       0.17515E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    20     60143.3       0.16627E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    21     60181.6       0.16616E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    22     64300.6       0.15552E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    23     64387.2       0.15531E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    24     64602.8       0.15479E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    25     64671.8       0.15463E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     1     37218.6       0.26868E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     2     37222.3       0.26866E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     3     39257.2       0.25473E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
 
 
 
           ***** PARTICIPATION FACTOR CALCULATION *****  Y  DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     15992.9       0.62528E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     2     18276.9       0.54714E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     3     18307.7       0.54622E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     4     22003.7       0.45447E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     5     22030.7       0.45391E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     6     29913.2       0.33430E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     7     29927.8       0.33414E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     8     39855.2       0.25091E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     9     39867.7       0.25083E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    10     44932.1       0.22256E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    11     45002.9       0.22221E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    12     46485.0       0.21512E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    13     48208.6       0.20743E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    14     49204.1       0.20324E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    15     49354.1       0.20262E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    16     51267.5       0.19506E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    17     55401.7       0.18050E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    18     55410.9       0.18047E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    19     57093.3       0.17515E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    20     60143.3       0.16627E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    21     60181.6       0.16616E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    22     64300.6       0.15552E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    23     64387.2       0.15531E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    24     64602.8       0.15479E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    25     64671.8       0.15463E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     1     37218.6       0.26868E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     2     37222.3       0.26866E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     3     39257.2       0.25473E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
 
 
 
           ***** PARTICIPATION FACTOR CALCULATION *****  Z  DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     15992.9       0.62528E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     2     18276.9       0.54714E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     3     18307.7       0.54622E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     4     22003.7       0.45447E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     5     22030.7       0.45391E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     6     29913.2       0.33430E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     7     29927.8       0.33414E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     8     39855.2       0.25091E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     9     39867.7       0.25083E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    10     44932.1       0.22256E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    11     45002.9       0.22221E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    12     46485.0       0.21512E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    13     48208.6       0.20743E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    14     49204.1       0.20324E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    15     49354.1       0.20262E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    16     51267.5       0.19506E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    17     55401.7       0.18050E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    18     55410.9       0.18047E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    19     57093.3       0.17515E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    20     60143.3       0.16627E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    21     60181.6       0.16616E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    22     64300.6       0.15552E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    23     64387.2       0.15531E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    24     64602.8       0.15479E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    25     64671.8       0.15463E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     1     37218.6       0.26868E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     2     37222.3       0.26866E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     3     39257.2       0.25473E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
 
 
 
           ***** PARTICIPATION FACTOR CALCULATION *****ROTX DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     15992.9       0.62528E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     2     18276.9       0.54714E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     3     18307.7       0.54622E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     4     22003.7       0.45447E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     5     22030.7       0.45391E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     6     29913.2       0.33430E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     7     29927.8       0.33414E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     8     39855.2       0.25091E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     9     39867.7       0.25083E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    10     44932.1       0.22256E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    11     45002.9       0.22221E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    12     46485.0       0.21512E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    13     48208.6       0.20743E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    14     49204.1       0.20324E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    15     49354.1       0.20262E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    16     51267.5       0.19506E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    17     55401.7       0.18050E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    18     55410.9       0.18047E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    19     57093.3       0.17515E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    20     60143.3       0.16627E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    21     60181.6       0.16616E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    22     64300.6       0.15552E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    23     64387.2       0.15531E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    24     64602.8       0.15479E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    25     64671.8       0.15463E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     1     37218.6       0.26868E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     2     37222.3       0.26866E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     3     39257.2       0.25473E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
 
 
 
           ***** PARTICIPATION FACTOR CALCULATION *****ROTY DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     15992.9       0.62528E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     2     18276.9       0.54714E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     3     18307.7       0.54622E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     4     22003.7       0.45447E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     5     22030.7       0.45391E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     6     29913.2       0.33430E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     7     29927.8       0.33414E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     8     39855.2       0.25091E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     9     39867.7       0.25083E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    10     44932.1       0.22256E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    11     45002.9       0.22221E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    12     46485.0       0.21512E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    13     48208.6       0.20743E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    14     49204.1       0.20324E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    15     49354.1       0.20262E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    16     51267.5       0.19506E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    17     55401.7       0.18050E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    18     55410.9       0.18047E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    19     57093.3       0.17515E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    20     60143.3       0.16627E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    21     60181.6       0.16616E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    22     64300.6       0.15552E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    23     64387.2       0.15531E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    24     64602.8       0.15479E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    25     64671.8       0.15463E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     1     37218.6       0.26868E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     2     37222.3       0.26866E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     3     39257.2       0.25473E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
 
 
 
           ***** PARTICIPATION FACTOR CALCULATION *****ROTZ DIRECTION
                                                                                   CUMULATIVE     RATIO EFF.MASS
   MODE   FREQUENCY       PERIOD      PARTIC.FACTOR     RATIO    EFFECTIVE MASS   MASS FRACTION   TO TOTAL MASS
-     1     15992.9       0.62528E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     2     18276.9       0.54714E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     3     18307.7       0.54622E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     4     22003.7       0.45447E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     5     22030.7       0.45391E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     6     29913.2       0.33430E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     7     29927.8       0.33414E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     8     39855.2       0.25091E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-     9     39867.7       0.25083E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    10     44932.1       0.22256E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    11     45002.9       0.22221E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    12     46485.0       0.21512E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    13     48208.6       0.20743E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    14     49204.1       0.20324E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    15     49354.1       0.20262E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    16     51267.5       0.19506E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    17     55401.7       0.18050E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    18     55410.9       0.18047E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    19     57093.3       0.17515E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    20     60143.3       0.16627E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    21     60181.6       0.16616E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    22     64300.6       0.15552E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    23     64387.2       0.15531E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    24     64602.8       0.15479E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
-    25     64671.8       0.15463E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     1     37218.6       0.26868E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     2     37222.3       0.26866E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
+     3     39257.2       0.25473E-04    0.0000        0.000000     0.00000         0.00000         0.00000    
 
 
 
 
 
- *** NOTE ***                            CP =      11.000   TIME= 20:23:54
+ *** NOTE ***                            CP =      15.328   TIME= 20:00:44
  The modes requested are mass normalized (Nrmkey on MODOPT).  However,   
  the modal masses and kinetic energies below are calculated with unit    
  normalized modes.                                                       
@@ -869,42 +1141,17 @@
 
                                                                          EFFECTIVE MASS
   MODE  FREQUENCY   MODAL MASS     KENE      |      X-DIR      RATIO%   Y-DIR      RATIO%   Z-DIR      RATIO% 
-     1  0.1599E+05  0.3746E-01  0.1891E+09   |     0.000        0.00   0.000        0.00   0.000        0.00
-     2  0.1828E+05  0.5445E-02  0.3590E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-     3  0.1831E+05  0.5461E-02  0.3613E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-     4  0.2200E+05  0.1205E-02  0.1151E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-     5  0.2203E+05  0.1203E-02  0.1152E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-     6  0.2991E+05  0.1325E-02  0.2340E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-     7  0.2993E+05  0.1309E-02  0.2314E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-     8  0.3986E+05  0.1247E-02  0.3911E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-     9  0.3987E+05  0.1169E-02  0.3668E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    10  0.4493E+05  0.1125E-02  0.4481E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    11  0.4500E+05  0.1113E-02  0.4451E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    12  0.4648E+05  0.5562E-03  0.2372E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    13  0.4821E+05  0.1966E-01  0.9021E+09   |     0.000        0.00   0.000        0.00   0.000        0.00
-    14  0.4920E+05  0.1162E-01  0.5552E+09   |     0.000        0.00   0.000        0.00   0.000        0.00
-    15  0.4935E+05  0.1214E-01  0.5838E+09   |     0.000        0.00   0.000        0.00   0.000        0.00
-    16  0.5127E+05  0.5867E-03  0.3044E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    17  0.5540E+05  0.4492E-02  0.2722E+09   |     0.000        0.00   0.000        0.00   0.000        0.00
-    18  0.5541E+05  0.4499E-02  0.2727E+09   |     0.000        0.00   0.000        0.00   0.000        0.00
-    19  0.5709E+05  0.2745E-01  0.1766E+10   |     0.000        0.00   0.000        0.00   0.000        0.00
-    20  0.6014E+05  0.1164E-02  0.8311E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    21  0.6018E+05  0.1147E-02  0.8198E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    22  0.6430E+05  0.1064E-02  0.8682E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    23  0.6439E+05  0.1053E-02  0.8617E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    24  0.6460E+05  0.1127E-02  0.9286E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
-    25  0.6467E+05  0.1173E-02  0.9685E+08   |     0.000        0.00   0.000        0.00   0.000        0.00
- --------------------------------------------------------------------------------------------------------------
-   sum                                       |     0.000        0.00   0.000        0.00   0.000        0.00
- --------------------------------------------------------------------------------------------------------------
+     1  0.3722E+05  0.3184E-19  0.8706E-09   |     0.000        0.00   0.000        0.00   0.000        0.00
+     2  0.3722E+05  0.2398E-19  0.6558E-09   |     0.000        0.00   0.000        0.00   0.000        0.00
+     3  0.3926E+05  0.1309E-17  0.3981E-07   |     0.000        0.00   0.000        0.00   0.000        0.00
 
 
  *** MAPDL BINARY FILE STATISTICS
   BUFFER SIZE USED= 16384
-        0.812 MB WRITTEN ON ELEMENT SAVED DATA FILE: file0.esav
-       18.500 MB WRITTEN ON ASSEMBLED MATRIX FILE: file0.full
-        2.750 MB WRITTEN ON MODAL MATRIX FILE: file0.mode
-       14.312 MB WRITTEN ON RESULTS FILE: file0.rst
+        2.125 MB WRITTEN ON ELEMENT SAVED DATA FILE: file0.esav
+       39.438 MB WRITTEN ON ASSEMBLED MATRIX FILE: file0.full
+        0.875 MB WRITTEN ON MODAL MATRIX FILE: file0.mode
+        8.688 MB WRITTEN ON RESULTS FILE: file0.rst
  *************** Write FE CONNECTORS *********
 
  WRITE OUT CONSTRAINT EQUATIONS TO FILE= file.ce                                                                                                                                                                                                                                                             
@@ -914,7 +1161,7 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =        11.375
+ ***** ROUTINE COMPLETED *****  CP =        15.672
 
 
 
@@ -923,11 +1170,11 @@
 
  PRINTOUT RESUMED BY /GOP
 
- *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.3986111    
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.0125000    
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   20:23:55  NOV 26, 2025 CP=     11.438
+ 01055371  VERSION=WINDOWS x64   20:00:45  NOV 29, 2025 CP=     15.812
 
  simulazioneTrasduttoreUltrasonico--Modal (C3)                                 
 
@@ -935,7 +1182,7 @@
 
           ***** MAPDL RESULTS INTERPRETATION (POST1) *****
 
- *** NOTE ***                            CP =      11.438   TIME= 20:23:55
+ *** NOTE ***                            CP =      15.812   TIME= 20:00:45
  Reading results into the database (SET command) will update the current 
  displacement and force boundary conditions in the database with the     
  values from the results file for that load set.  Note that any          
@@ -955,35 +1202,35 @@
  EXIT THE MAPDL POST1 DATABASE PROCESSOR
 
 
- ***** ROUTINE COMPLETED *****  CP =        11.688
+ ***** ROUTINE COMPLETED *****  CP =        15.828
 
 
 
  PRINTOUT RESUMED BY /GOP
 
- *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.3986111    
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.0125000    
 
  PARAMETER _PREPTIME =     0.000000000    
 
- PARAMETER _SOLVTIME =     10.00000000    
+ PARAMETER _SOLVTIME =     13.00000000    
 
  PARAMETER _POSTTIME =     0.000000000    
 
- PARAMETER _TOTALTIM =     10.00000000    
+ PARAMETER _TOTALTIM =     13.00000000    
 
- *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  1.01342975    
+ *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  1.04801239    
 
- *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE= 0.332389600    
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE= 0.185805300    
 
  *GET  _SSMODE   FROM  ACTI  ITEM=SOLU SSMM  VALUE=  2.00000000    
 
- *GET  _NDOFS    FROM  ACTI  ITEM=SOLU NDOF  VALUE=  55140.0000    
- --- Total number of nodes = 18584
- --- Total number of elements = 3966
- --- Element load balance ratio = 1.01342975
- --- Time to combine distributed files = 0.3323896
+ *GET  _NDOFS    FROM  ACTI  ITEM=SOLU NDOF  VALUE=  93215.0000    
+ --- Total number of nodes = 31908
+ --- Total number of elements = 8605
+ --- Element load balance ratio = 1.04801239
+ --- Time to combine distributed files = 0.1858053
  --- Sparse memory mode = 2
- --- Number of DOF = 55140
+ --- Number of DOF = 93215
 
  EXIT MAPDL WITHOUT SAVING DATABASE
 
@@ -994,7 +1241,7 @@
 +--------------------- M A P D L   S T A T I S T I C S ------------------------+
 
 Release: 2025 R2            Build: 25.2       Update: UP20250519   Platform: WINDOWS x64 
-Date Run: 11/26/2025   Time: 20:24     Process ID: 17120
+Date Run: 11/29/2025   Time: 20:00     Process ID: 14996
 Operating System: Windows 11  (Build: 26100)
 
 Processor Model: Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
@@ -1020,39 +1267,39 @@ Input File: dummy.dat
 
   Core                Machine Name   Working Directory
  -----------------------------------------------------
-     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr317B
-     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr317B
-     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr317B
-     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr317B
+     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr4407
+     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr4407
+     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr4407
+     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr4407
  
-Latency time from master to core     1 =    5.048 microseconds
-Latency time from master to core     2 =    5.049 microseconds
-Latency time from master to core     3 =    5.382 microseconds
+Latency time from master to core     1 =    5.129 microseconds
+Latency time from master to core     2 =    6.647 microseconds
+Latency time from master to core     3 =    6.094 microseconds
  
-Communication speed from master to core     1 =  5776.88 MB/sec
-Communication speed from master to core     2 =  5356.87 MB/sec
-Communication speed from master to core     3 =  7445.81 MB/sec
+Communication speed from master to core     1 =  4840.39 MB/sec
+Communication speed from master to core     2 =  4749.80 MB/sec
+Communication speed from master to core     3 =  7587.11 MB/sec
 
-Total CPU time for main thread                    :       10.3 seconds
-Total CPU time summed for all threads             :       12.1 seconds
+Total CPU time for main thread                    :       13.4 seconds
+Total CPU time summed for all threads             :       16.5 seconds
 
 Elapsed time spent obtaining a license            :        0.5 seconds
-Elapsed time spent pre-processing model (/PREP7)  :        0.1 seconds
-Elapsed time spent solution - preprocessing       :        0.2 seconds
-Elapsed time spent computing solution             :        8.8 seconds
-Elapsed time spent solution - postprocessing      :        0.3 seconds
-Elapsed time spent post-processing model (/POST1) :        0.1 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.3 seconds
+Elapsed time spent solution - preprocessing       :        0.7 seconds
+Elapsed time spent computing solution             :       11.1 seconds
+Elapsed time spent solution - postprocessing      :        0.2 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
  
 Eigensolver used                                  :            Block Lanczos
-Equation solver computational rate                :       66.9 Gflops
+Equation solver computational rate                :       65.9 Gflops
 
-Sum of disk space used on all processes           :      200.0 MB
+Sum of disk space used on all processes           :      228.5 MB
 
-Sum of memory used on all processes               :      934.0 MB
-Sum of memory allocated on all processes          :     3254.0 MB
+Sum of memory used on all processes               :     1900.0 MB
+Sum of memory allocated on all processes          :     4075.0 MB
 Physical memory available                         :         32 GB
-Total amount of I/O written to disk               :        0.2 GB
-Total amount of I/O read from disk                :        0.1 GB
+Total amount of I/O written to disk               :        0.1 GB
+Total amount of I/O read from disk                :        0.0 GB
 
 +------------------ E N D   M A P D L   S T A T I S T I C S -------------------+
 
@@ -1068,13 +1315,13 @@ Total amount of I/O read from disk                :        0.1 GB
  |-----------------------------------------------------------------------------|
  |                                                                             |
  |  Database Requested(-db)     1024 MB     Scratch Memory Requested   1024 MB |
- |  Max Database Used(Master)      9 MB     Max Scratch Used(Master)    238 MB |
- |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)   241 MB |
- |  Sum Database Used(All)        12 MB     Sum Scratch Used(All)       922 MB |
+ |  Max Database Used(Master)     20 MB     Max Scratch Used(Master)    464 MB |
+ |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)   568 MB |
+ |  Sum Database Used(All)        23 MB     Sum Scratch Used(All)      1877 MB |
  |                                                                             |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |        CP Time      (sec) =         12.141       Time  =  20:24:05          |
- |        Elapsed Time (sec) =         26.000       Date  =  11/26/2025        |
+ |        CP Time      (sec) =         16.484       Time  =  20:00:56          |
+ |        Elapsed Time (sec) =         30.000       Date  =  11/29/2025        |
  |                                                                             |
  *-----------------------------------------------------------------------------*

@@ -107,7 +107,7 @@
   OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\ImpedancePlot187_Post.out
 
  RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  13:41:08  NOV 27, 2025 CP=      0.109
+ CURRENT JOBNAME=file0  20:30:20  NOV 29, 2025 CP=      0.109
 
 
  RUN SETUP PROCEDURE FROM FILE= C:\Program Files\ANSYS Inc\ANSYS Student\v252\ANSYS\apdl\start.ans
@@ -126,8 +126,8 @@
  TITLE = simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)             
  ANALYSIS TYPE =  HARMONIC             
         10 ELEM TYPES DEFINED    MAX ELEM TYPE NUMBER =            10
-      3966 ELEMENTS DEFINED      MAX ELEMENT NUMBER =            6184
-     18584 NODES DEFINED         MAX NODE NUMBER =              18584
+      8605 ELEMENTS DEFINED      MAX ELEMENT NUMBER =           11815
+     31908 NODES DEFINED         MAX NODE NUMBER =              31908
          4 MATERIALS DEFINED     MAX MATERIAL NUMBER =              4
          6 REAL CONSTS DEFINED   MAX REAL CONST NUMBER =           10
          0 SECTIONS DEFINED      MAX SECTION NUMBER =               0
@@ -152,7 +152,7 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   13:41:08  NOV 27, 2025 CP=      0.484
+ 01055371  VERSION=WINDOWS x64   20:30:21  NOV 29, 2025 CP=      0.453
 
  simulazioneTrasduttoreUltrasonico--Harmonic Response (D3)                     
 
@@ -172,7 +172,7 @@
          SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
  VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
 
- 191 SOLU     0 NCMI      NCMI       1.000      0.5202E+005  100.0      0.5400E+005
+ 191 SOLU     0 NCMI      NCMI       1.000      0.3608E+005  100.0      0.4400E+005
 
  VARIABLE 191 IS A FILL FROM    1 TO  100 BY    1
   STARTING WITH  1.000000      AND INCREMENTING BY  1.000000    
@@ -185,16 +185,16 @@
 
  SELECT      COMPONENT IMPEDANCE PLOT187                                                                                                                                                                                                                                               
 
- PARAMETER NODEID =     16271.00000    
+ PARAMETER NODEID =     29409.00000    
 
- VARIABLE  2 IS REACTION FORCE   16271 CHRG  CHRG    
+ VARIABLE  2 IS REACTION FORCE   29409 CHRG  CHRG    
 
  STORAGE COMPLETE FOR    100 DATA POINTS 
 
          SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
  VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
 
-   2 RFOR 16271 CHRG      CHRG     -0.4061E-006 0.5370E+005 0.5293E-006 0.5372E+005
+   2 RFOR 29409 CHRG      CHRG     -0.8608E-006 0.3880E+005 0.1173E-007 0.3888E+005
 
  COMPLEX LOAD FACTORS  CFACT1=  0.0000      6.2832    
                        CFACT2= -1.0000      0.0000    
@@ -206,14 +206,14 @@
    TIMES (  0.0000    ,  0.0000    )  TIMES VARIABLE   0
  RESULT VARIABLE NAME = CURRENT 
 
- VARIABLE  4  IS AT NODE   16271  ITEM= VOLT COMP=       NAME= VOLT    
+ VARIABLE  4  IS AT NODE   29409  ITEM= VOLT COMP=       NAME= VOLT    
 
  STORAGE COMPLETE FOR    100 DATA POINTS 
 
          SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
  VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
 
-   4 NSOL 16271 VOLT      VOLT       5.000      0.5202E+005  5.000      0.5202E+005
+   4 NSOL 29409 VOLT      VOLT       1.000      0.3608E+005  1.000      0.3608E+005
 
  VARIABLE   5
            IS (  1.0000    ,  0.0000    )  TIMES VARIABLE   4
@@ -231,7 +231,7 @@
  /OUTPUT FILE= ImpedancePlot187.txt
 
 
- ***** ROUTINE COMPLETED *****  CP =         0.922
+ ***** ROUTINE COMPLETED *****  CP =         1.000
 
 
 
@@ -244,7 +244,7 @@
 +--------------------- M A P D L   S T A T I S T I C S ------------------------+
 
 Release: 2025 R2            Build: 25.2       Update: UP20250519   Platform: WINDOWS x64 
-Date Run: 11/27/2025   Time: 13:41     Process ID: 18620
+Date Run: 11/29/2025   Time: 20:30     Process ID: 21292
 Operating System: Windows 11  (Build: 26100)
 
 Processor Model: Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
@@ -275,16 +275,16 @@ Input File: ImpedancePlot187_Post.inp
      2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH
      3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH
  
-Latency time from master to core     1 =    5.737 microseconds
-Latency time from master to core     2 =    6.302 microseconds
-Latency time from master to core     3 =    5.984 microseconds
+Latency time from master to core     1 =    5.073 microseconds
+Latency time from master to core     2 =    5.087 microseconds
+Latency time from master to core     3 =    6.205 microseconds
  
-Communication speed from master to core     1 =  6268.02 MB/sec
-Communication speed from master to core     2 =  6432.99 MB/sec
-Communication speed from master to core     3 =  5545.85 MB/sec
+Communication speed from master to core     1 =  4738.58 MB/sec
+Communication speed from master to core     2 =  5032.49 MB/sec
+Communication speed from master to core     3 =  5684.04 MB/sec
 
-Total CPU time for main thread                    :        0.9 seconds
-Total CPU time summed for all threads             :        1.3 seconds
+Total CPU time for main thread                    :        0.8 seconds
+Total CPU time summed for all threads             :        1.2 seconds
 
 Elapsed time spent obtaining a license            :        0.5 seconds
 Elapsed time spent pre-processing model (/PREP7)  :        0.0 seconds
@@ -297,7 +297,7 @@ Elapsed time spent post-processing model (/POST26):        0.1 seconds
 
 Sum of disk space used on all processes           :        0.0 MB
 
-Sum of memory used on all processes               :       37.0 MB
+Sum of memory used on all processes               :       48.0 MB
 Sum of memory allocated on all processes          :     2880.0 MB
 Physical memory available                         :         32 GB
 Total amount of I/O written to disk               :        0.0 GB
@@ -317,13 +317,13 @@ Total amount of I/O read from disk                :        0.1 GB
  |-----------------------------------------------------------------------------|
  |                                                                             |
  |  Database Requested(-db)     1024 MB     Scratch Memory Requested   1024 MB |
- |  Max Database Used(Master)      9 MB     Max Scratch Used(Master)     10 MB |
+ |  Max Database Used(Master)     18 MB     Max Scratch Used(Master)     12 MB |
  |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)     5 MB |
- |  Sum Database Used(All)        12 MB     Sum Scratch Used(All)        25 MB |
+ |  Sum Database Used(All)        21 MB     Sum Scratch Used(All)        27 MB |
  |                                                                             |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |        CP Time      (sec) =          1.266       Time  =  13:41:18          |
- |        Elapsed Time (sec) =         16.000       Date  =  11/27/2025        |
+ |        CP Time      (sec) =          1.234       Time  =  20:30:31          |
+ |        Elapsed Time (sec) =         17.000       Date  =  11/29/2025        |
  |                                                                             |
  *-----------------------------------------------------------------------------*

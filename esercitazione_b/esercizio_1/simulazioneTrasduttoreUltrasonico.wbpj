@@ -2,10 +2,10 @@
 <Storage>
   <Project Version="25.2.1.0">
     <base-designpoint-name valType="String">0</base-designpoint-name>
-    <timestamp-max valType="Int64">10877</timestamp-max>
+    <timestamp-max valType="Int64">11995</timestamp-max>
     <framework-build-version valType="String">25.2.170.0</framework-build-version>
     <external-version-string valType="String">2025 R2</external-version-string>
-    <last-saved-utc valType="String">11/27/2025 12:30:44</last-saved-utc>
+    <last-saved-utc valType="String">11/29/2025 19:38:22</last-saved-utc>
     <managed-categories valType="String">[report, misc, progress]</managed-categories>
     <expression-scope-container valType="String">Parameters</expression-scope-container>
     <project-type valType="String">WB2</project-type>
@@ -67,8 +67,8 @@
 "4283b6a2-29a2-4a5d-9858-eeaf57cf4d74": "/Schematic/Component:Setup 1",
 "8e5fc174-08d5-4d54-aa33-6dc7d60a4e4a": "/Schematic/Component:Solution 1",
 "ac26c61d-8371-42d1-bb66-18d9f7da09fb": "/Schematic/Component:Results 1",
-"dc214c28-9499-439f-a980-e402f8695560": "/FileContainer/FileReference:F28",
-"f8e3b368-c6ec-40f5-9d32-2964c0a2d23c": "/FileContainer/FileReference:F29"
+"0b29bb2e-c2c8-4432-a5ee-6365f9272a9c": "/FileContainer/FileReference:F33",
+"5c68ebc8-d4a3-4dc3-aadf-f15ff3478053": "/FileContainer/FileReference:F32"
 }</ReferenceList>
       </ProjectReferenceList>
       <DesignPointReferenceListCollection>
@@ -179,7 +179,7 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 10603, "Input": 2342, "Output": 2342}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 11935, "Input": 2342, "Output": 2342}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
       <Object Name="/FileContainer/FileReference:F1" Version="1.0">
@@ -190,7 +190,7 @@
       <Object Name="/FileContainer/FileReference:F2" Version="1.0">
         <class-type valType="String">FileReference</class-type>
         <object-name valType="String">F2</object-name>
-        <member-data valType="String">{"DisplayText": "act.dat", "FileType": $$7f45f4cf-18a7-4700-93cd-92a29f225c69, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\act.dat", "ReferenceCount": 93}</member-data>
+        <member-data valType="String">{"DisplayText": "act.dat", "FileType": $$7f45f4cf-18a7-4700-93cd-92a29f225c69, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\act.dat", "ReferenceCount": 112}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F15" Version="1.0">
         <class-type valType="String">FileReference</class-type>
@@ -217,9 +217,9 @@
         <object-name valType="String">F9</object-name>
         <member-data valType="String">{"DisplayText": "SYS.mechdb", "FileType": $$49520cc0-fec0-42d2-9ef9-10f9f5b3da35, "DependentFiles": [], "ContainerAssociations": [], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\global\MECH\SYS.mechdb", "ReferenceCount": 3}</member-data>
       </Object>
-      <Object Name="/FileContainer/FileReference:F28" Version="1.0">
+      <Object Name="/FileContainer/FileReference:F32" Version="1.0">
         <class-type valType="String">FileReference</class-type>
-        <object-name valType="String">F28</object-name>
+        <object-name valType="String">F32</object-name>
         <member-data valType="String">{"DisplayText": "SYS.engd", "FileType": $$24737275-8825-4c83-a08b-8a6448b80876, "DependentFiles": [], "ContainerAssociations": ["Model 1"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\SYS-3\MECH\Model\SYS.engd", "ReferenceCount": 1}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F13" Version="1.0">
@@ -247,9 +247,9 @@
         <object-name valType="String">F24</object-name>
         <member-data valType="String">{"DisplayText": "SYS-4.pmdb", "FileType": $$c96ddd3c-57c0-45b2-8ff5-5f74d2acb3cd, "DependentFiles": [], "ContainerAssociations": ["Model 2"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\global\MECH\SYS-4\AssembledModel\SYS-4.pmdb", "ReferenceCount": 1}</member-data>
       </Object>
-      <Object Name="/FileContainer/FileReference:F29" Version="1.0">
+      <Object Name="/FileContainer/FileReference:F33" Version="1.0">
         <class-type valType="String">FileReference</class-type>
-        <object-name valType="String">F29</object-name>
+        <object-name valType="String">F33</object-name>
         <member-data valType="String">{"DisplayText": "SYS.engd", "FileType": $$24737275-8825-4c83-a08b-8a6448b80876, "DependentFiles": [], "ContainerAssociations": ["Model 2"], "SkipForDesignPointDuplication": False, "IsDeletable": True, "ExternalSource": None, "LastDownloadFromRepository": -1, "Location": r"$(ProjectName)_files\dp0\SYS-4\MECH\Model\SYS.engd", "ReferenceCount": 1}</member-data>
       </Object>
       <Object Name="/FileContainer/FileReference:F27" Version="1.0">
@@ -268,148 +268,9 @@
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 10779, "Input": 2343, "Output": 2343}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 11993, "Input": 2343, "Output": 2343}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
-      <Object Name="/Messages/StoredMessage:Message 2" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 2</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Information", "MessageCategory": "None", "Summary": "The Setup component in Harmonic Response requires user input before it can be updated. For instructions on how to address the cell in its current state, click the blue triangle in the lower right corner of the cell in the Project Schematic.", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 17:48:54, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 1" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 1</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Information", "MessageCategory": "None", "Summary": "The Model component in Harmonic Response requires user input before it can be updated. For instructions on how to address the cell in its current state, click the blue triangle in the lower right corner of the cell in the Project Schematic.", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 17:42:13, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Information", "MessageCategory": "None", "Summary": "To transfer materials from the component Solution in system Modal to the downstream component Model in system Harmonic Response, make sure that the Engineering Data cells are linked", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 17:41:01, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 3" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 3</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\global\MECH\SYS-3\AssembledModel\SYS-3.pmdb""", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 20:24:12, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 4" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 4</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": "Unable to clean addins in Mechanical. Either the application crashed or Workbench lost communication with it (No connection could be made because the target machine actively refused it 127.0.0.1:56654).", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 20:24:33, "Visibility": "Information", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 5" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 5</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Error", "MessageCategory": "None", "Summary": "Update of the Model component in Harmonic Response failed: Conversion Failed. Either the application crashed or Workbench lost communication with it.", "Details": """System.Net.Sockets.SocketException: No connection could be made because the target machine actively refused it 127.0.0.1:56654
-
-Server stack trace: 
-   at System.Net.Sockets.Socket.Connect(IPAddress[] addresses, Int32 port)
-   at System.Runtime.Remoting.Channels.RemoteConnection.CreateNewSocket(AddressFamily family)
-   at System.Runtime.Remoting.Channels.SocketCache.GetSocket(String machinePortAndSid, Boolean openNew)
-   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.SendRequestWithRetry(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream)
-   at System.Runtime.Remoting.Channels.Tcp.TcpClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders&amp; responseHeaders, Stream&amp; responseStream)
-   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
-
-Exception rethrown at [0]: 
-   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
-   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
-   at Ans.Simulation.RemoteItf.ISimulationHelper.Convert(MeshFileOptions meshFileOptions, ConversionOptions options)
-   at Ansys.Addins.Infrastructure.Remoting.RemotingApiHelper.FatalApiMethodInvalidOperationException[TReturn](String message, RemotingApiMethod`1 callback)
---- Ansys.Addins.Infrastructure.Exceptions.AddinUserException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
-   at Ansys.Addins.Infrastructure.Remoting.RemotingApiHelper.FatalApiMethodInvalidOperationException[TReturn](String message, RemotingApiMethod`1 callback)
-   at Ansys.Simulation.Core.Commands.AddinModelAssembler.Convert(IFullContext context, MeshFileOptions meshFileOptions, IMeshToGeometryOptionsProvider meshToGeometryOptionsProvider)
---- Ans.ModelConverter.RemoteLib.Exceptions.ModelTransferFailedException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
-   at Ansys.Simulation.Core.Commands.AddinModelAssembler.Convert(IFullContext context, MeshFileOptions meshFileOptions, IMeshToGeometryOptionsProvider meshToGeometryOptionsProvider)
-   at Ans.ModelConverter.RemoteLib.AddinWorkflow.AssemblyBase.Assemble(IFullContext context)
-   at Ansys.Simulation.Core.Commands.AddinModelAssembler.Assemble(IFullContext context)
-   at Ansys.Simulation.Core.Commands.RefreshModel.ProcessAssemblyFiles(IFullContext context, Dictionary`2 modelConversionFilesMap, Dictionary`2 modelAssemblyFilesMap)
-   at Ansys.Simulation.Core.Commands.RefreshModel.ExecuteCommand(IFullContext context)
---- Ans.ModelConverter.RemoteLib.Exceptions.ModelTransferFailedException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
-   at Ansys.Simulation.Core.Commands.RefreshModel.ExecuteCommand(IFullContext context)
-   at Ansys.Addins.Infrastructure.CommandUtilities.CommandHelper.Execute(IFullContext context)
-   at Ansys.Core.Commands.Concurrency.CommandWorkUnit.executeInContext(CommandContext subContext, IExecutionEngineCallback tracer)
-   at Ansys.Core.Commands.Concurrency.BaseWorkUnit.doExecute(IExecutionEngineCallback executionEngine, CommandContext subContext)
-   at Ansys.Core.Commands.Concurrency.BaseWorkUnit.Execute(IExecutionEngineCallback executionEngine, Boolean dontCatchExceptions)
---- Ansys.Core.Commands.CommandFailedException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
-CommandName: Mechanical.RefreshModel(Container=\"Model 2\", UpdateOptions=Set(DpUpdateType=None, HeldLicenseId=None, LicenseStatsId=\"6927152dc096414e8557a1a34f242e6f\", DesignPointUpdateQueue=None, MaxNumberOfCores=0))
-   at Ansys.Core.Commands.CommandAsyncResult.RethrowFailureException(Exception e)
-   at Ansys.Core.Commands.CommandAsyncResult.Wait(Int32 milliSecondsTimeout, Boolean exitContext)
-   at Ansys.Simulation.Core.Commands.RefreshModel.InvokeAndWait(IProtectedContext context, DataContainerReference Container, ReadOnlyCollection`1 UpstreamContainersToRefresh, Boolean IsBatchMode, Boolean IsUpdateFromCADOnly, ReadOnlyCollection`1 RemainingContainers, UpdateOptions UpdateOptions)
-   at Ansys.Simulation.Core.Commands.UpdateModel.ExecuteCommand(IFullContext context)
-   at Ansys.Addins.Infrastructure.CommandUtilities.CommandHelper.Execute(IFullContext context)
-   at Ansys.Core.Commands.Concurrency.CommandWorkUnit.executeInContext(CommandContext subContext, IExecutionEngineCallback tracer)
-   at Ansys.Core.Commands.Concurrency.BaseWorkUnit.doExecute(IExecutionEngineCallback executionEngine, CommandContext subContext)
-   at Ansys.Core.Commands.Concurrency.BaseWorkUnit.Execute(IExecutionEngineCallback executionEngine, Boolean dontCatchExceptions)
---- Ansys.Core.Commands.CommandFailedException: Conversion Failed. Either the application crashed or Workbench lost communication with it.
-CommandName: Mechanical.UpdateModel(Container=\"Model 2\", RemainingDownstreamContainers=[\"Setup 1\", \"Solution 1\", \"Results 1\"], UpdateOptions=Set(DpUpdateType=None, HeldLicenseId=None, LicenseStatsId=\"6927152dc096414e8557a1a34f242e6f\", DesignPointUpdateQueue=None, MaxNumberOfCores=0))
-   at Ansys.Core.Commands.CommandAsyncResult.RethrowFailureException(Exception e)
-   at Ansys.Core.Commands.CommandAsyncResult.WaitForSuspendOrComplete(Int32 milliSecondsTimeout, Boolean exitContext)
-   at Ansys.ProjectSchematic.Data.ComponentTemplateEntity.Update(IFullContext context, IProgressMonitor progressMonitor, Int32 milliSecondsTimeout, DataContainerReference container, String dataGroup, UpdateOptions updateOptions, IEnumerable`1 downstream, IEnumerable`1 allRemaining)
-   at Ansys.ProjectSchematic.Update.UpdateTask.Update(IFullContext context, IProgressMonitor progressMonitor, Int32 milliSecondsTimeout, UpdateOptions updateOptions, IEnumerable`1 downstream, IEnumerable`1 allRemaining)
-   at Ansys.ProjectSchematic.Update.ComponentUpdatePlugin.updateComponent(IContextForUpdatePlugin callbacks, UpdateTask task, String trackToken, IProgressMonitor progressMonitor, Int32 milliSecondsTimeout, TaskHolder remainingTasksInThisDp, List`1 dependentTasks)
-   at Ansys.ProjectSchematic.Update.ComponentUpdatePlugin.&lt;&gt;c__DisplayClass0_0.&lt;UpdateComponent&gt;b__0()
-   at Ansys.ProjectSchematic.Update.ExecuteWithErrorBehaviour.Execute(IContextForUpdatePlugin callbacks, UpdateErrorBehavior behavior, Action op, UpdateTask forTask, Action opUponError)
-""", "Association": "", "DateTimeStamp": 11/26/2025 20:24:33, "Visibility": "Error", "MessageSourceContainer": None, "MessageSourceEntity": $$3e725962-179b-4dea-85b2-9259c779b14c, "AdditionalMessageData": None, "DesignPoint": "0"}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 6" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 6</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Error", "MessageCategory": "None", "Summary": "Update failed for the Model component in Harmonic Response.  Conversion Failed. Either the application crashed or Workbench lost communication with it.", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 20:24:35, "Visibility": "Error", "MessageSourceContainer": None, "MessageSourceEntity": $$3e725962-179b-4dea-85b2-9259c779b14c, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 7" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 7</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\global\MECH\SYS-4\AssembledModel\SYS-4.pmdb""", "Details": None, "Association": "", "DateTimeStamp": 11/26/2025 20:30:14, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 8" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 8</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file0.err""", "Details": None, "Association": "", "DateTimeStamp": 11/27/2025 12:29:25, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 9" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 9</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file1.err""", "Details": None, "Association": "", "DateTimeStamp": 11/27/2025 12:29:25, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 10" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 10</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file2.err""", "Details": None, "Association": "", "DateTimeStamp": 11/27/2025 12:29:25, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 11" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 11</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file3.err""", "Details": None, "Association": "", "DateTimeStamp": 11/27/2025 12:29:25, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 12" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 12</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file0.log""", "Details": None, "Association": "", "DateTimeStamp": 11/27/2025 12:29:25, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 13" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 13</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file1.out""", "Details": None, "Association": "", "DateTimeStamp": 11/27/2025 12:29:25, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 14" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 14</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file2.out""", "Details": None, "Association": "", "DateTimeStamp": 11/27/2025 12:29:25, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
-      <Object Name="/Messages/StoredMessage:Message 15" Version="1.0">
-        <class-type valType="String">StoredMessage</class-type>
-        <object-name valType="String">Message 15</object-name>
-        <member-data valType="String">{"DisplayText": "Message", "MessageType": "Warning", "MessageCategory": "None", "Summary": r"""The following project file may not have been backed up before it was modified:
-C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file3.out""", "Details": None, "Association": "", "DateTimeStamp": 11/27/2025 12:29:25, "Visibility": "Warning", "MessageSourceContainer": None, "MessageSourceEntity": None, "AdditionalMessageData": None, "DesignPoint": None}</member-data>
-      </Object>
     </Container>
     <Container Name="Parameters" Version="1.0">
       <container-type valType="String">Ansys.ParameterManager.ParameterManagerAddin:parameters</container-type>
@@ -418,13 +279,13 @@ C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneT
       <maxUpdateOrder valType="Double">1</maxUpdateOrder>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 10864, "Input": 10867, "Output": 2346}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 11983, "Input": 11984, "Output": 2346}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Parameters/DesignPoint:0" Version="1.0">
         <class-type valType="String">DesignPoint</class-type>
         <object-name valType="String">0</object-name>
-        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": [], "ValidRetainedData": [], "ErrorsOnLastUpdate": {"$$3e725962-179b-4dea-85b2-9259c779b14c": "Update of the Model component in Harmonic Response failed: Conversion Failed. Either the application crashed or Workbench lost communication with it."}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model in SYS, Model 1 in SYS 1, Setup in SYS 1, Solution in SYS 1, Results in SYS 1, Model 2 in SYS 2"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": False, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
+        <member-data valType="String">{"DisplayText": "DP 0", "JustDuplicated": False, "PartiallyRetainedData": [], "ValidRetainedData": [], "ErrorsOnLastUpdate": {}, "LastUpdateInformation": {"DidUpdate": "True", "DidPreRsmUpdate": "False", "UpdatedComponents": "Model 2 in SYS 2"}, "Parameters": {}, "ParameterErrors": {}, "CurrentValues": {}, "ParameterStatus": {}, "Note": None, "IsUpToDate": True, "Exported": True, "Retained": True, "CurrentStateExported": False, "IsDataModelValid": True, "HasRetainedData": True, "HasBeenSolved": True, "UpdateOrder": 1}</member-data>
         <properties-setByUserFlag-data valType="String">["IsDataModelValid"]</properties-setByUserFlag-data>
       </Object>
       <Object Name="/Parameters/DesignPointReportSetting:Design Points Report Setting" Version="1.0">
@@ -440,7 +301,7 @@ C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneT
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 10598, "Input": 10756, "Output": 2349}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 11962, "Input": 11859, "Output": 2349}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Schematic/System:Geom" Version="1.0">
@@ -611,7 +472,7 @@ C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneT
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
       <last-updated valType="Int64">0</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 7512, "Input": 2683, "Output": 2683}</last-modified-by-usage>
+      <last-modified-by-usage valType="String">{"Extrinsic": 11249, "Input": 2683, "Output": 2683}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <contains-significant-data valType="Boolean">false</contains-significant-data>
     </Container>

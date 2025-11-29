@@ -1,12 +1,13 @@
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       20:23:44
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       20:00:31
 
- *** WARNING ***                         CP =       0.766   TIME= 20:23:45
- Component _CONSTRAINEDNODES does not contain any entities.  The OUTRES  
- command is ignored.                                                     
-
- *** WARNING ***                         CP =       1.094   TIME= 20:23:45
+ *** WARNING ***                         CP =       1.906   TIME= 20:00:33
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       1.141   TIME= 20:23:45
+ *** WARNING ***                         CP =       1.969   TIME= 20:00:33
  No constraints have been defined using the D command.                   
+
+ *** WARNING ***                         CP =       2.406   TIME= 20:00:33
+ Contact element 10208 is missing DOF VOLT (and possibly others) of      
+ underlying base element 6519.  Similar mismatches may exist elsewhere,  
+ but checking for this is discontinued.                                  

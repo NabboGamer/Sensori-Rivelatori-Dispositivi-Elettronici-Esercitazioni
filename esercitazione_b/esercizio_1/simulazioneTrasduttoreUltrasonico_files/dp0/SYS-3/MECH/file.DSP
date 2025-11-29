@@ -5,38 +5,38 @@
  = multifrontal statistics =
  ===========================
 
-     number of equations                     =           55140
-     no. of nonzeroes in lower triangle of a =         4085969
-     no. of nonzeroes in the factor l        =        39127708
-     ratio of nonzeroes in factor (min/max)  =          0.8647
-     number of super nodes                   =            1006
-     maximum order of a front matrix         =            2343
-     maximum size of a front matrix          =         2745996
-     maximum size of a front trapezoid       =         2281830
+     number of equations                     =           93215
+     no. of nonzeroes in lower triangle of a =         8374721
+     no. of nonzeroes in the factor l        =       103005311
+     ratio of nonzeroes in factor (min/max)  =          0.6402
+     number of super nodes                   =            1639
+     maximum order of a front matrix         =            4305
+     maximum size of a front matrix          =         9268665
+     maximum size of a front trapezoid       =         5137290
      ParMETIS reordering method used (speed) 
-     no. of floating point ops for factor    =      3.9741D+10
-     no. of floating point ops for solve     =      1.5170D+08
-     ratio of flops for factor (min/max)     =          0.8187
+     no. of floating point ops for factor    =      1.9247D+11
+     no. of floating point ops for solve     =      4.0224D+08
+     ratio of flops for factor (min/max)     =          0.7219
      ratio of allocated memory (max/min)     =          1.0000
      number of positive pivots               =               0
      number of negative pivots               =               1
      number of near-zero pivots              =               0
      partial pivoting tolerance used         =      2.9644-323
-     number of 1x1 pivots                    =           55129
-     number of 2x2 pivots                    =              11
+     number of 1x1 pivots                    =           90704
+     number of 2x2 pivots                    =            2511
      number of delayed pivots                =               0
      number of deferred pivots               =               0
      factorization panel size                =             128
      number of processes used                =               4
      number of threads per process used      =               1
      number of cores used                    =               4
-     time (cpu & wall) for structure input   =        0.000000        0.000000
-     time (cpu & wall) for ordering          =        0.000000        0.265625
+     time (cpu & wall) for structure input   =        0.000000        0.015625
+     time (cpu & wall) for ordering          =        0.000000        0.312500
      time (cpu & wall) for other matrix prep =        0.000000        0.000000
      time (cpu & wall) for value input       =        0.000000        0.000000
-     time (cpu & wall) for matrix distrib.   =        0.000000        0.109375
-     time (cpu & wall) for numeric factor    =        0.000000        0.593750
-     computational rate (gflops) for factor  =        Infinity       66.932956
+     time (cpu & wall) for matrix distrib.   =        0.000000        0.203125
+     time (cpu & wall) for numeric factor    =        0.000000        2.921875
+     computational rate (gflops) for factor  =        Infinity       65.871572
 
      no input or output performed
 
