@@ -1,0 +1,329 @@
+
+ Ansys Mechanical Enterprise Academic Student      
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *         ANSYS MAPDL 2025 R2          LEGAL NOTICES          *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2025 Ansys, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of Ansys, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the Ansys, Inc. online documentation or the Ansys, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * Ansys, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * Ansys, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the Ansys, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the Ansys, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ 2025 R2 
+     
+ Point Releases and Patches installed:   
+     
+ Discovery 2025 R2   
+ Core WB Files 2025 R2   
+ optiSLang 2025 R2   
+ CFX (includes CFD-Post) 2025 R2 
+ Chemkin 2025 R2 
+ EnSight 2025 R2 
+ FENSAP-ICE 2025 R2  
+ Fluent (includes CFD-Post) 2025 R2  
+ Polyflow (includes CFD-Post) 2025 R2
+ Forte (includes EnSight) 2025 R2
+ Rocky 2025 R2   
+ TurboGrid 2025 R2   
+ ACIS Geometry Interface 2025 R2 
+ AutoCAD Geometry Interface 2025 R2  
+ Catia, Version 4 Geometry Interface 2025 R2 
+ Catia, Version 5 Geometry Interface 2025 R2 
+ Catia, Version 6 Geometry Interface 2025 R2 
+ Creo Elements/Direct Modeling Geometry Interface 2025 R2
+ Creo Parametric Geometry Interface 2025 R2  
+ Inventor Geometry Interface 2025 R2 
+ JTOpen Geometry Interface 2025 R2   
+ NX Geometry Interface 2025 R2   
+ Parasolid Geometry Interface  2025 R2   
+ Solid Edge Geometry Interface 2025 R2   
+ SOLIDWORKS Geometry Interface 2025 R2   
+ Speos 2025 R2   
+ SpaceClaim 2025 R2  
+ Speos RPC 2025 R2   
+ Zemax OpticStudio 2025 R2   
+ Dynamic Reporting 2025 R2   
+ Aqwa 2025 R2
+ Autodyn 2025 R2 
+ Material Calibration App 2025 R2
+ Mechanical Products 2025 R2 
+ Motion 2025 R2  
+ Academic Student 2025 R2
+
+
+          *****  MAPDL COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = NOLIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  INPUT FILE NAME              = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH\ImpedancePlot187_Post.inp
+  OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH\ImpedancePlot187_Post.out
+
+ RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
+ CURRENT JOBNAME=file0  19:24:13  NOV 29, 2025 CP=      0.141
+
+
+ RUN SETUP PROCEDURE FROM FILE= C:\Program Files\ANSYS Inc\ANSYS Student\v252\ANSYS\apdl\start.ans
+
+ /INPUT FILE= C:\Program Files\ANSYS Inc\ANSYS Student\v252\ANSYS\apdl\start.ans  LINE=       0
+  
+ ***********  ImpedancePlot187 ***********
+  
+
+ CURRENT JOBNAME REDEFINED AS FILE
+
+ RESUME ANSYS DATA FROM FILE NAME=FILE.DB                                                                                                                                                                                                                                                             
+
+ *** MAPDL GLOBAL STATUS *** 
+
+ TITLE = simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (
+ ANALYSIS TYPE =  HARMONIC             
+        16 ELEM TYPES DEFINED    MAX ELEM TYPE NUMBER =            16
+      8478 ELEMENTS DEFINED      MAX ELEMENT NUMBER =           11930
+     31292 NODES DEFINED         MAX NODE NUMBER =              31292
+         6 MATERIALS DEFINED     MAX MATERIAL NUMBER =              6
+        10 REAL CONSTS DEFINED   MAX REAL CONST NUMBER =           16
+         0 SECTIONS DEFINED      MAX SECTION NUMBER =               0
+         1 COORD SYS DEFINED     MAX COORD SYS NUMBER =            12
+         3 COUPLING EQNS DEFINED MAX COUPLING EQN NUMBER =          3
+ 
+ ACTIVE COORDINATE SYSTEM             =          0  (CARTESIAN)
+ NUMBER OF DEFINED NODAL CONSTRAINTS  =          3
+ NUMBER OF DEFINED NODAL LOADS        =          0
+ NUMBER OF DEFINED COMPONENTS         =          6
+ NUMBER OF DEFINED ELEM SURFACE LOADS =          0
+ NUMBER OF DEFINED ELEM BODY LOADS    =          0
+ NUMBER OF DEFINED NODE BODY FORCES   =          0
+ CURRENT LOAD CASE =      0 OF      0
+ LOAD SET   =       1
+ SUBSTEP    =     101
+ TIME/FREQ  =    0.0000    
+
+ INITIAL JOBNAME = file
+ CURRENT JOBNAME = FILE
+ CMBLOCK read of NODE component IMPEDANCE PLOT187                                                                                                                                                                                                                                                 completed
+
+ *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
+ Ansys Mechanical Enterprise Academic Student      
+ 01055371  VERSION=WINDOWS x64   19:24:13  NOV 29, 2025 CP=      0.641
+
+ simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (D3)     
+
+
+
+
+          ***** TIME-HISTORY POSTPROCESSOR (POST26) *****
+
+ ALL POST26 SPECIFICATIONS ARE RESET TO INITIAL DEFAULTS
+
+ MAXIMUM NUMBER OF VARIABLES=200
+
+ VARIABLE191 IS ITEM= NCMI  COMP=       NAME= NCMI     FROM LOAD SET SUMMARY 
+
+ STORAGE COMPLETE FOR    101 DATA POINTS 
+
+         SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
+ VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
+
+ 191 SOLU     0 NCMI      NCMI       1.000      0.1557E+005  101.0      0.7200E+005
+
+ VARIABLE 191 IS A FILL FROM    1 TO  101 BY    1
+  STARTING WITH  1.000000      AND INCREMENTING BY  1.000000    
+
+ VARIABLE 191  IS THE REAL PART OF
+     (  1.0000    ,  0.0000    )  TIMES VARIABLE 191
+ RESULT VARIABLE NAME = 191     
+
+ NUMBER OF LINES PER PAGE SET TO   99999
+
+ SELECT      COMPONENT IMPEDANCE PLOT187                                                                                                                                                                                                                                               
+
+ PARAMETER NODEID =     16121.00000    
+
+ VARIABLE  2 IS REACTION FORCE   16121 CHRG  CHRG    
+
+ STORAGE COMPLETE FOR    101 DATA POINTS 
+
+         SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
+ VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
+
+   2 RFOR 16121 CHRG      CHRG     -0.3857E-008 0.5604E+005 0.8697E-008 0.3894E+005
+
+ COMPLEX LOAD FACTORS  CFACT1=  0.0000      6.2832    
+                       CFACT2= -1.0000      0.0000    
+                       CFACT3=  0.0000      0.0000    
+
+ VARIABLE   3
+      IS (  0.0000    ,  6.2832    )  TIMES VARIABLE   1
+   TIMES ( -1.0000    ,  0.0000    )  TIMES VARIABLE   2
+   TIMES (  0.0000    ,  0.0000    )  TIMES VARIABLE   0
+ RESULT VARIABLE NAME = CURRENT 
+
+ VARIABLE  4  IS AT NODE   16121  ITEM= VOLT COMP=       NAME= VOLT    
+
+ STORAGE COMPLETE FOR    101 DATA POINTS 
+
+         SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
+ VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
+
+   4 NSOL 16121 VOLT      VOLT       1.000      0.1557E+005  1.000      0.1557E+005
+
+ VARIABLE   5
+           IS (  1.0000    ,  0.0000    )  TIMES VARIABLE   4
+   DIVIDED BY (  1.0000    ,  0.0000    )  TIMES VARIABLE   3
+ RESULT VARIABLE NAME = IMPD    
+
+ VARIABLE   6  IS THE REAL PART OF
+     (  1.0000    ,  0.0000    )  TIMES VARIABLE   5
+ RESULT VARIABLE NAME = IMPD_REAL
+
+ VARIABLE   7  IS THE IMAGINARY PART OF
+     (  1.0000    ,  0.0000    )  TIMES VARIABLE   5
+ RESULT VARIABLE NAME = IMPD_IMAG
+
+ /OUTPUT FILE= ImpedancePlot187.txt
+
+
+ ***** ROUTINE COMPLETED *****  CP =         1.375
+
+
+
+ EXIT MAPDL WITHOUT SAVING DATABASE
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          0
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
++--------------------- M A P D L   S T A T I S T I C S ------------------------+
+
+Release: 2025 R2            Build: 25.2       Update: UP20250519   Platform: WINDOWS x64 
+Date Run: 11/29/2025   Time: 19:24     Process ID: 10964
+Operating System: Windows 11  (Build: 26100)
+
+Processor Model: Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
+
+Compiler: Intel(R) Fortran Compiler Classic Version 2021.9  (Build: 20230302)
+          Intel(R) C/C++ Compiler Classic Version 2021.9  (Build: 20230302)
+          Intel(R) oneAPI Math Kernel Library Version 2024.2.3-Product Build 20250403
+
+Number of machines requested            :    1
+Total number of cores available         :   16
+Number of physical cores available      :    8
+Number of processes requested           :    4
+Number of threads per process requested :    1
+Total number of cores requested         :    4 (Distributed Memory Parallel)               
+MPI Type: INTELMPI
+MPI Version: Intel(R) MPI Library 2021.14 for Windows* OS
+
+
+GPU Acceleration: Not Requested
+
+Job Name: FILE0
+Input File: ImpedancePlot187_Post.inp
+
+  Core                Machine Name   Working Directory
+ -----------------------------------------------------
+     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH
+     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH
+     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH
+     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH
+ 
+Latency time from master to core     1 =    8.923 microseconds
+Latency time from master to core     2 =    9.242 microseconds
+Latency time from master to core     3 =    9.118 microseconds
+ 
+Communication speed from master to core     1 =  3909.93 MB/sec
+Communication speed from master to core     2 =  4733.90 MB/sec
+Communication speed from master to core     3 =  4171.27 MB/sec
+
+Total CPU time for main thread                    :        1.1 seconds
+Total CPU time summed for all threads             :        1.5 seconds
+
+Elapsed time spent obtaining a license            :        0.5 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.0 seconds
+Elapsed time spent solution - preprocessing       :        0.0 seconds
+Elapsed time spent computing solution             :        0.0 seconds
+Elapsed time spent solution - postprocessing      :        0.0 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+Elapsed time spent post-processing model (/POST26):        0.2 seconds
+ 
+
+Sum of disk space used on all processes           :        0.0 MB
+
+Sum of memory used on all processes               :       49.0 MB
+Sum of memory allocated on all processes          :     2880.0 MB
+Physical memory available                         :         32 GB
+Total amount of I/O written to disk               :        0.0 GB
+Total amount of I/O read from disk                :        0.1 GB
+
++------------------ E N D   M A P D L   S T A T I S T I C S -------------------+
+
+
+ *-----------------------------------------------------------------------------*
+ |                                                                             |
+ |                               RUN COMPLETED                                 |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |  Ansys MAPDL 2025 R2         Build 25.2         UP20250519    WINDOWS x64   |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |  Database Requested(-db)     1024 MB     Scratch Memory Requested   1024 MB |
+ |  Max Database Used(Master)     19 MB     Max Scratch Used(Master)     12 MB |
+ |  Max Database Used(Workers)     1 MB     Max Scratch Used(Workers)     5 MB |
+ |  Sum Database Used(All)        22 MB     Sum Scratch Used(All)        27 MB |
+ |                                                                             |
+ |-----------------------------------------------------------------------------|
+ |                                                                             |
+ |        CP Time      (sec) =          1.547       Time  =  19:24:25          |
+ |        Elapsed Time (sec) =         18.000       Date  =  11/29/2025        |
+ |                                                                             |
+ *-----------------------------------------------------------------------------*

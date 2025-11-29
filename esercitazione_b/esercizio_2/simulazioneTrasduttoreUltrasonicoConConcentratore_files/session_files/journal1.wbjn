@@ -1,0 +1,210 @@
+# encoding: utf-8
+# 2025 R2
+SetScriptVersion(Version="25.2.170")
+Save(Overwrite=True)
+fileType1 = GetFileType(Name="EngineeringData")
+ImportFile(
+    FilePath="C:/Users/stolf/dev/Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici/esercitazione_b/utility/ansys_material_library.xml",
+    FileType=fileType1)
+Refresh()
+Save(Overwrite=True)
+system1 = GetSystem(Name="Engineering Data")
+engineeringData1 = system1.GetContainer(ComponentName="Engineering Data")
+material1 = engineeringData1.GetMaterial(Name="PZ26")
+material1.Description = 'Valori presi da "Ferroperm Matdata"'
+Save(Overwrite=True)
+matl1 = engineeringData1.CreateMaterial(Name="Titanio")
+matlProp1 = matl1.CreateProperty(
+    Name="Density",
+    Qualifiers={"Definition": "", "Behavior": ""})
+matlProp2 = matl1.CreateProperty(
+    Name="Elasticity",
+    Behavior="Isotropic",
+    Qualifiers={"Definition": "", "Behavior": "Isotropic"})
+matl1.SetColor(
+    Red=228,
+    Green=225,
+    Blue=232)
+material1.Description = 'Valori presi da "Ferroperm Matdata.xlsx"'
+material1.Description = 'Valori presi dal foglio Exell "Ferroperm Matdata.xlsx"'
+matlProp1.SetData(
+    Index=-1,
+    Variables=["Density"],
+    Values=[["4480 [kg m^-3]"]])
+matlProp2.SetData(
+    Index=-1,
+    Variables=["Young's Modulus"],
+    Values=[["166700000000 [Pa]"]])
+matlProp2.SetData(
+    Variables=["Poisson's Ratio"],
+    Values=[["0.32"]])
+matl1.Description = 'Valori prelevati dal pdf ""'
+matl1.Description = "Acoustic Properties of Solids, Onda Corporation"
+matl1.Description = 'Valori prelevati dal pdf "Acoustic Properties of Solids, Onda Corporation"'
+Save(Overwrite=True)
+material1.SetSuppression(Suppressed=True)
+matl1.SetSuppression(Suppressed=True)
+EngData.WriteMaterials(
+    MaterialList=[matl1],
+    FilePath="C:/Users/stolf/dev/Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici/esercitazione_b/utility/ansys_material_library.xml",
+    Format="MatML31",
+    UnitSystem="MKS_STANDARD",
+    ReplaceMaterial=True,
+    OverwriteTarget=True)
+material1.Refresh(Source="C:/Users/stolf/dev/Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici/esercitazione_b/utility/ansys_material_library.xml")
+Save(Overwrite=True)
+material1.SetSuppression(Suppressed=False)
+matl1.SetSuppression(Suppressed=False)
+EngData.WriteMaterials(
+    MaterialList=[material1, matl1],
+    FilePath="C:/Users/stolf/dev/Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici/esercitazione_b/utility/ansys_material_library.xml",
+    Format="MatML31",
+    UnitSystem="MKS_STANDARD",
+    ReplaceMaterial=True,
+    OverwriteTarget=True)
+material1.Description = 'Valori presi da "Ferroperm MatData"'
+material1.Description = 'Valori presi dal foglio Excell "Ferroperm MatData"'
+material1.Description = 'Valori prelevati dal foglio Excell "Ferroperm MatData"'
+material1.Description = "Valori prelevati dal'excell \"Ferroperm MatData\""
+material1.Description = "Valori prelevati dall'excell \"Ferroperm MatData\""
+EngData.WriteMaterials(
+    MaterialList=[material1, matl1],
+    FilePath="C:/Users/stolf/dev/Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici/esercitazione_b/utility/ansys_material_library.xml",
+    Format="MatML31",
+    UnitSystem="MKS_STANDARD",
+    ReplaceMaterial=True,
+    OverwriteTarget=True)
+template1 = GetTemplate(TemplateName="EngData")
+system2 = template1.CreateSystem(
+    Position="Below",
+    RelativeTo=system1)
+engineeringData2 = system2.GetContainer(ComponentName="Engineering Data")
+material2 = engineeringData2.GetMaterial(Name="Structural Steel")
+material2.Delete()
+engineeringData2.Import(
+    Source="C:/Users/stolf/dev/Esercitazioni Sensori, Rivelatori e Dispositivi Elettronici/esercitazione_b/utility/ansys_material_library.xml",
+    Company="ANSYS",
+    ProviderName="Disk")
+Save(Overwrite=True)
+system1.Delete()
+Save(Overwrite=True)
+Refresh()
+template2 = GetTemplate(TemplateName="Geometry")
+system3 = template2.CreateSystem(
+    Position="Below",
+    RelativeTo=system2)
+geometry1 = system3.GetContainer(ComponentName="Geometry")
+geometryProperties1 = geometry1.GetGeometryProperties()
+geometryProperties1.GeometryImportAnalysisType = "AnalysisType_2D"
+geometry1.Edit()
+geometry1.Exit()
+system3.Delete()
+system4 = template2.CreateSystem(
+    Position="Below",
+    RelativeTo=system2)
+geometry2 = system4.GetContainer(ComponentName="Geometry")
+geometryProperties2 = geometry2.GetGeometryProperties()
+geometryProperties2.GeometryImportAnalysisType = "AnalysisType_2D"
+geometry2.Edit(IsDiscoveryGeometry=True)
+geometry2.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+geometry2.Exit()
+Refresh()
+geometry2.Edit()
+geometry2.Exit()
+Save(Overwrite=True)
+system2.DisplayText = "Material Data"
+Save(Overwrite=True)
+Save(Overwrite=True)
+template3 = GetTemplate(TemplateName="Mechanical Model")
+system5 = template3.CreateSystem(
+    Position="Below",
+    RelativeTo=system4)
+engineeringDataComponent1 = system5.GetComponent(Name="Engineering Data")
+engineeringDataComponent2 = system2.GetComponent(Name="Engineering Data")
+engineeringDataComponent1.ReplaceWithShare(
+    TargetSystem=system5,
+    ComponentToShare=engineeringDataComponent2,
+    SourceSystem=system2)
+geometryComponent1 = system5.GetComponent(Name="Geometry")
+geometryComponent2 = system4.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system5,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system4)
+system2.DisplayText = "Materials Data"
+modelComponent1 = system5.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system5.GetContainer(ComponentName="Model")
+model1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Extensions.LoadExtension(
+    Id="0cd64874-101b-4182-aef8-530cf9982bb6",
+    Version="2020.1",
+    Format="Binary")
+Save(Overwrite=True)
+model1.Exit()
+template4 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+system6 = template4.CreateSystem(
+    Position="Right",
+    RelativeTo=system5)
+engineeringDataComponent3 = system6.GetComponent(Name="Engineering Data")
+engineeringDataComponent3.ReplaceWithShare(
+    TargetSystem=system6,
+    ComponentToShare=engineeringDataComponent1,
+    SourceSystem=system5)
+geometryComponent3 = system6.GetComponent(Name="Geometry")
+geometryComponent3.ReplaceWithShare(
+    TargetSystem=system6,
+    ComponentToShare=geometryComponent1,
+    SourceSystem=system5)
+Save(Overwrite=True)
+model1.Edit()
+model1.Exit()
+Refresh()
+template5 = GetTemplate(
+    TemplateName="Harmonic Response",
+    Solver="ANSYS")
+system7 = template5.CreateSystem(
+    Position="Below",
+    RelativeTo=system6)
+modelComponent2 = system7.GetComponent(Name="Model")
+modelComponent1.TransferData(TargetComponent=modelComponent2)
+geometryComponent3.DeleteShare(System=system6)
+engineeringDataComponent3.DeleteShare(System=system6)
+system6.Delete()
+system8 = template4.CreateSystem(
+    Position="Above",
+    RelativeTo=system7)
+modelComponent3 = system8.GetComponent(Name="Model")
+modelComponent1.TransferData(TargetComponent=modelComponent3)
+Save(Overwrite=True)
+modelComponent3.Refresh()
+modelComponent3.Refresh()
+Refresh()
+model1.Edit()
+modelComponent1.Update(AllDependencies=True)
+modelComponent1.Update(AllDependencies=True)
+modelComponent3.Update(AllDependencies=True)
+setup1 = system8.GetContainer(ComponentName="Setup")
+setup1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+model2 = system8.GetContainer(ComponentName="Model")
+model2.Exit()
+Save(Overwrite=True)
