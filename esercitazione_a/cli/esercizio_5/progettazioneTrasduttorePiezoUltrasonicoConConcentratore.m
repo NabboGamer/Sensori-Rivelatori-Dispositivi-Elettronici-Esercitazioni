@@ -20,7 +20,7 @@
 %    per calcolare FTT e Zin del concentratore su tutta la banda.
 % 2) Via reti 2-porte usando solo i tratti a sezione costante (M3 e M4):
 %    si applicano le matrici M dei cilindri (eq. 3.18–3.23) risalendo dal carico
-%    per ottenere Z_in(acustica) e componendo le FTT come di consueto.
+%    per ottenere Zin(acustica) e componendo le FTT come di consueto.
 %
 % In questo script si adotta la strada (2): gradino ideale modellato come
 % giunzione di area a lunghezza nulla fra due tratti cilindrici (M3, M4),
