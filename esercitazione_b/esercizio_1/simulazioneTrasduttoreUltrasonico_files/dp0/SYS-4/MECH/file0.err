@@ -1,53 +1,53 @@
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       20:16:20
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       15:56:52
 
- *** WARNING ***                         CP =       1.531   TIME= 20:16:22
+ *** WARNING ***                         CP =       1.719   TIME= 15:56:53
  The data for *GET entity NODE item CPS and NODE= 30493 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       1.531   TIME= 20:16:22
+ *** WARNING ***                         CP =       1.719   TIME= 15:56:53
  The data for *GET entity NODE item CPS and NODE= 29409 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       1.594   TIME= 20:16:22
+ *** WARNING ***                         CP =       1.750   TIME= 15:56:53
  The data for *GET entity NODE item CPS and NODE= 29405 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       2.797   TIME= 20:16:22
+ *** WARNING ***                         CP =       3.328   TIME= 15:56:54
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       3.422   TIME= 20:16:22
+ *** WARNING ***                         CP =       3.938   TIME= 15:56:54
  Contact element 10208 is missing DOF VOLT (and possibly others) of      
  underlying base element 6519.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ *** WARNING ***                         CP =       4.750   TIME= 15:56:54
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ *** WARNING ***                         CP =       4.750   TIME= 15:56:54
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ *** WARNING ***                         CP =       4.750   TIME= 15:56:54
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ *** WARNING ***                         CP =       4.750   TIME= 15:56:54
  Contact element 10208 is missing DOF VOLT (and possibly others) of      
  underlying base element 6519.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ *** WARNING ***                         CP =       4.750   TIME= 15:56:54
  Contact element 10208 is missing DOF VOLT (and possibly others) of      
  underlying base element 6519.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       4.328   TIME= 20:16:23
+ *** WARNING ***                         CP =       4.750   TIME= 15:56:54
  Contact element 10208 is missing DOF VOLT (and possibly others) of      
  underlying base element 6519.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       20:30:20
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       16:56:38

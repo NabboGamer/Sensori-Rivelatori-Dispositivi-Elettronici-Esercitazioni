@@ -107,7 +107,7 @@
   OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\file2.out
 
  RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file2  20:30:20  NOV 29, 2025 CP=      4.250
+ CURRENT JOBNAME=file2  16:56:39  NOV 30, 2025 CP=      4.312
 
 
  CURRENT JOBNAME REDEFINED AS FILE
@@ -132,7 +132,7 @@
  |                                                                             |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |        CP Time      (sec) =          4.578       Time  =  20:30:21          |
- |        Elapsed Time (sec) =          7.000       Date  =  11/29/2025        |
+ |        CP Time      (sec) =          5.266       Time  =  16:56:40          |
+ |        Elapsed Time (sec) =          7.000       Date  =  11/30/2025        |
  |                                                                             |
  *-----------------------------------------------------------------------------*

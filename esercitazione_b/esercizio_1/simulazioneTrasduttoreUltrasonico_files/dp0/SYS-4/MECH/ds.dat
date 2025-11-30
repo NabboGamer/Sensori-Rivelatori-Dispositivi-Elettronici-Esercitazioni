@@ -15,7 +15,7 @@
 /COM,
 ! ****** End   Custom Load Command Snippet ******
 *DIM,_wb_ProjectScratch_dir,string,248
-_wb_ProjectScratch_dir(1) = 'C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\Scr127C\'
+_wb_ProjectScratch_dir(1) = 'C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\_ProjectScratch\ScrC5FD\'
 *DIM,_wb_SolverFiles_dir,string,248
 _wb_SolverFiles_dir(1) = 'C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_1\simulazioneTrasduttoreUltrasonico_files\dp0\SYS-4\MECH\'
 *DIM,_wb_userfiles_dir,string,248
@@ -47608,7 +47608,7 @@ hropt,full
 thexpand,off     ! ignore thermal strains
 kbc,1
 harfrq,36000,44000
-nsub,100
+nsub,400
 outres,erase
 outres,all,none
 outres,nsol,all
