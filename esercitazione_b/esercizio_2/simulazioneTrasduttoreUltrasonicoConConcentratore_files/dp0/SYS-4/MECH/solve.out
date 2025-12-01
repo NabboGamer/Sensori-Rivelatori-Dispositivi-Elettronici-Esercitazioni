@@ -106,13 +106,13 @@
   DISTRIBUTED MEMORY PARALLEL REQUESTED
        4 PARALLEL PROCESSES REQUESTED WITH SINGLE THREAD PER PROCESS
     TOTAL OF     4 CORES REQUESTED
-  INPUT FILE NAME              = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\ScrD191\dummy.dat
-  OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\ScrD191\solve.out
+  INPUT FILE NAME              = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\Scr3002\dummy.dat
+  OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\Scr3002\solve.out
   START-UP FILE MODE           = NOREAD
   STOP FILE MODE               = NOREAD
 
  RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  19:13:37  NOV 29, 2025 CP=      0.109
+ CURRENT JOBNAME=file0  21:38:41  DEC 01, 2025 CP=      0.156
 
 
  PARAMETER _DS_PROGRESS =     999.0000000    
@@ -121,11 +121,11 @@
 
 
 
- *** NOTE ***                            CP =       0.484   TIME= 19:13:38
+ *** NOTE ***                            CP =       0.422   TIME= 21:38:41
  The /CONFIG,NOELDB command is not valid in a distributed memory         
  parallel solution.  Command is ignored.                                 
 
- *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  19.2272222    
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  21.6447222    
 
  TITLE= 
  simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (D3)     
@@ -142,7 +142,7 @@
  SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
 
- PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\ScrD191\
+ PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\Scr3002\
 
  SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
   TYPE=STRI  DIMENSIONS=      248        1        1
@@ -179,7 +179,7 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   19:13:38  NOV 29, 2025 CP=      0.516
+ 01055371  VERSION=WINDOWS x64   21:38:41  DEC 01, 2025 CP=      0.438
 
  simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (D3)     
 
@@ -210,7 +210,7 @@
  *********** Send Named Selection as Node Component ***********
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.078
+ ***** ROUTINE COMPLETED *****  CP =         0.938
 
 
  --- Number of total nodes = 31292
@@ -221,7 +221,7 @@
  --- Number of condensed parts = 0
  --- Number of total elements = 8478
 
- *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  19.2272222    
+ *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  21.6447222    
 
  *****  MAPDL SOLUTION ROUTINE  *****
 
@@ -244,7 +244,7 @@
  HARMONIC FREQUENCY RANGE - END=  72000.      BEGIN=  15000.    
   EXCITATION FREQUENCY ARRAY : _HARMUSERFORCINGFREQSTEPS                                                                                                                                                                                                                                       
 
- USE   100 SUBSTEP(S) THIS LOAD STEP FOR ALL  DEGREES OF FREEDOM
+ USE   570 SUBSTEP(S) THIS LOAD STEP FOR ALL  DEGREES OF FREEDOM
 
  ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
 
@@ -286,13 +286,13 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.078
+ ***** ROUTINE COMPLETED *****  CP =         0.938
 
 
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   19:13:38  NOV 29, 2025 CP=      1.078
+ 01055371  VERSION=WINDOWS x64   21:38:41  DEC 01, 2025 CP=      0.938
 
  simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (D3)     
 
@@ -452,7 +452,7 @@
  EM UNITS = USER  EPZERO= 0.88540E-11
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.266
+ ***** ROUTINE COMPLETED *****  CP =         1.141
 
 
 
@@ -470,13 +470,13 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.266
+ ***** ROUTINE COMPLETED *****  CP =         1.188
 
 
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   19:13:38  NOV 29, 2025 CP=      1.266
+ 01055371  VERSION=WINDOWS x64   21:38:41  DEC 01, 2025 CP=      1.188
 
  simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (D3)     
 
@@ -636,7 +636,7 @@
  EM UNITS = USER  EPZERO= 0.88540E-11
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.516
+ ***** ROUTINE COMPLETED *****  CP =         1.375
 
 
 
@@ -657,7 +657,7 @@
 
  PARAMETER _ISCP =     0.000000000    
 
- *** WARNING ***                         CP =       1.516   TIME= 19:13:38
+ *** WARNING ***                         CP =       1.375   TIME= 21:38:41
  The data for *GET entity NODE item CPS and NODE= 17050 is not defined.  
                                                                          
   The *GET command is ignored.                                           
@@ -684,7 +684,7 @@
 
  PARAMETER _ISCP =     0.000000000    
 
- *** WARNING ***                         CP =       1.516   TIME= 19:13:38
+ *** WARNING ***                         CP =       1.375   TIME= 21:38:41
  The data for *GET entity NODE item CPS and NODE= 16121 is not defined.  
                                                                          
   The *GET command is ignored.                                           
@@ -712,7 +712,7 @@
 
  PARAMETER _ISCP =     0.000000000    
 
- *** WARNING ***                         CP =       1.516   TIME= 19:13:38
+ *** WARNING ***                         CP =       1.375   TIME= 21:38:41
  The data for *GET entity NODE item CPS and NODE= 16117 is not defined.  
                                                                          
   The *GET command is ignored.                                           
@@ -737,7 +737,7 @@
 
  *ENDIF
 
- *** NOTE ***                            CP =       1.641   TIME= 19:13:38
+ *** NOTE ***                            CP =       1.500   TIME= 21:38:41
  The automatic domain decomposition logic has selected the FREQ domain   
  decomposition method with 1 processes per frequency solution.           
 
@@ -747,19 +747,19 @@
 
    D I S T R I B U T E D   D O M A I N   D E C O M P O S E R
 
- ...Number of frequency solutions:  101
+ ...Number of frequency solutions:  571
  ...Decompose to 4 frequency domains (with 1 processes per domain)
 
 
- *** WARNING ***                         CP =       3.109   TIME= 19:13:39
+ *** WARNING ***                         CP =       2.984   TIME= 21:38:42
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** NOTE ***                            CP =       3.172   TIME= 19:13:39
+ *** NOTE ***                            CP =       3.047   TIME= 21:38:42
  The model data was checked and warning messages were found.             
   Please review output or errors file (                                  
  C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_Pr 
- rojectScratch\ScrD191\file0.err ) for these warning messages.           
+ rojectScratch\Scr3002\file0.err ) for these warning messages.           
 
  *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
       --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
@@ -776,7 +776,7 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   19:13:39  NOV 29, 2025 CP=      3.172
+ 01055371  VERSION=WINDOWS x64   21:38:42  DEC 01, 2025 CP=      3.109
 
  simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (D3)     
 
@@ -793,24 +793,24 @@
    COMPLEX DISPLACEMENT PRINT OPTION . . . . . . .REAL AND IMAGINARY       
    GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
 
- *** NOTE ***                            CP =       3.234   TIME= 19:13:39
+ *** NOTE ***                            CP =       3.109   TIME= 21:38:42
  The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
  SOLID226 will be piezoelectric.                                         
 
- *** NOTE ***                            CP =       3.234   TIME= 19:13:39
+ *** NOTE ***                            CP =       3.109   TIME= 21:38:42
  The structural-electrostatic analysis with KEYOPT(1) = 1001 of element  
  SOLID226 will be piezoelectric.                                         
 
- *** NOTE ***                            CP =       3.234   TIME= 19:13:39
+ *** NOTE ***                            CP =       3.141   TIME= 21:38:42
  The conditions for direct assembly have been met.  No .emat or .erot    
  files will be produced.                                                 
 
- *** WARNING ***                         CP =       3.797   TIME= 19:13:39
+ *** WARNING ***                         CP =       3.672   TIME= 21:38:42
  Contact element 10087 is missing DOF VOLT (and possibly others) of      
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 7 and contact element type 7 has been set up.  The         
  companion pair has real constant set ID 8.  Both pairs should have the  
@@ -820,7 +820,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -834,25 +834,25 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Max.  Initial penetration 8.199999993E-10 was detected between contact  
  element 10022 and target element 10325.                                 
  ****************************************
   
 
- *** WARNING ***                         CP =       4.688   TIME= 19:13:39
+ *** WARNING ***                         CP =       4.469   TIME= 21:38:42
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       4.688   TIME= 19:13:39
+ *** WARNING ***                         CP =       4.469   TIME= 21:38:42
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       4.688   TIME= 19:13:39
+ *** WARNING ***                         CP =       4.469   TIME= 21:38:42
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 8 and contact element type 7 has been set up.  The         
  companion pair has real constant set ID 7.  Both pairs should have the  
@@ -862,7 +862,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -876,23 +876,23 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Max.  Initial penetration 8.200004772E-10 was detected between contact  
  element 10177 and target element 9919.                                  
  ****************************************
   
 
- *** WARNING ***                         CP =       4.688   TIME= 19:13:39
+ *** WARNING ***                         CP =       4.469   TIME= 21:38:42
  Contact element 10087 is missing DOF VOLT (and possibly others) of      
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       4.688   TIME= 19:13:39
+ *** WARNING ***                         CP =       4.469   TIME= 21:38:42
  Contact element 10087 is missing DOF VOLT (and possibly others) of      
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 9 and contact element type 9 has been set up.  The         
  companion pair has real constant set ID 10.  Both pairs should have     
@@ -902,7 +902,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -916,7 +916,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Max.  Initial penetration 1.244154998E-09 was detected between contact  
  element 10530 and target element 10755.                                 
  You may move entire target surface by : x= 6.62213929E-17, y=           
@@ -924,12 +924,12 @@
  ****************************************
   
 
- *** WARNING ***                         CP =       4.688   TIME= 19:13:39
+ *** WARNING ***                         CP =       4.469   TIME= 21:38:42
  Contact element 10087 is missing DOF VOLT (and possibly others) of      
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 10 and contact element type 9 has been set up.  The        
  companion pair has real constant set ID 9.  Both pairs should have the  
@@ -939,7 +939,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -953,13 +953,13 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Max.  Initial penetration 1.292393692E-09 was detected between contact  
  element 10634 and target element 10372.                                 
  ****************************************
   
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 11 and contact element type 11 has been set up.  The       
  companion pair has real constant set ID 12.  Both pairs should have     
@@ -969,7 +969,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -983,13 +983,13 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Max.  Initial penetration 9.868541574E-10 was detected between contact  
  element 10906 and target element 11262.                                 
  ****************************************
   
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 12 and contact element type 11 has been set up.  The       
  companion pair has real constant set ID 11.  Both pairs should have     
@@ -999,7 +999,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1013,13 +1013,13 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Max.  Initial penetration 9.899868304E-10 was detected between contact  
  element 11019 and target element 10859.                                 
  ****************************************
   
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 13 and contact element type 13 has been set up.  The       
  companion pair has real constant set ID 14.  Both pairs should have     
@@ -1029,7 +1029,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1043,14 +1043,14 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Min.  Initial gap 9.999993231E-05 was detected between contact element  
  11447 and target element 11563.                                         
  Contact is detected due to initial settings.                            
  ****************************************
   
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 14 and contact element type 13 has been set up.  The       
  companion pair has real constant set ID 13.  Both pairs should have     
@@ -1060,7 +1060,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1074,14 +1074,14 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Min.  Initial gap 9.999988565E-05 was detected between contact element  
  11484 and target element 11267.                                         
  Contact is detected due to initial settings.                            
  ****************************************
   
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 15 and contact element type 15 has been set up.  The       
  companion pair has real constant set ID 16.  Both pairs should have     
@@ -1091,7 +1091,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1105,7 +1105,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Max.  Initial penetration 2.415185343E-09 was detected between contact  
  element 11785 and target element 11903.                                 
  You may move entire target surface by : x= -3.201999457E-15, y=         
@@ -1113,7 +1113,7 @@
  ****************************************
   
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 16 and contact element type 15 has been set up.  The       
  companion pair has real constant set ID 15.  Both pairs should have     
@@ -1123,7 +1123,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1137,7 +1137,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       4.688   TIME= 19:13:39
+ *** NOTE ***                            CP =       4.469   TIME= 21:38:42
  Max.  Initial penetration 2.771616787E-09 was detected between contact  
  element 11854 and target element 11699.                                 
  You may move entire target surface by : x= 2.100788566E-17, y=          
@@ -1151,7 +1151,7 @@
 
    LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
    FREQUENCY RANGE . . . . . . . . . . . . . . . .  15000.     TO   72000.    
-   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .   100
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .   570
    EXCITATION FREQUENCY ARRAY. . . . . . . . . . .  _HARMUSERFORCINGFREQSTEPS
    STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .   YES
    PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
@@ -1170,7 +1170,7 @@
       FGRA        ALL               
 
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 7 and contact element type 7 has been set up.  The         
  companion pair has real constant set ID 8.  Both pairs should have the  
@@ -1180,7 +1180,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1194,13 +1194,13 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Max.  Initial penetration 8.199999993E-10 was detected between contact  
  element 10022 and target element 10325.                                 
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 8 and contact element type 7 has been set up.  The         
  companion pair has real constant set ID 7.  Both pairs should have the  
@@ -1210,7 +1210,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1224,13 +1224,13 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Max.  Initial penetration 8.200004772E-10 was detected between contact  
  element 10177 and target element 9919.                                  
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 9 and contact element type 9 has been set up.  The         
  companion pair has real constant set ID 10.  Both pairs should have     
@@ -1240,7 +1240,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1254,7 +1254,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Max.  Initial penetration 1.244154998E-09 was detected between contact  
  element 10530 and target element 10755.                                 
  You may move entire target surface by : x= 6.62213929E-17, y=           
@@ -1262,7 +1262,7 @@
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 10 and contact element type 9 has been set up.  The        
  companion pair has real constant set ID 9.  Both pairs should have the  
@@ -1272,7 +1272,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1286,13 +1286,13 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Max.  Initial penetration 1.292393692E-09 was detected between contact  
  element 10634 and target element 10372.                                 
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 11 and contact element type 11 has been set up.  The       
  companion pair has real constant set ID 12.  Both pairs should have     
@@ -1302,7 +1302,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1316,13 +1316,13 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Max.  Initial penetration 9.868541574E-10 was detected between contact  
  element 10906 and target element 11262.                                 
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 12 and contact element type 11 has been set up.  The       
  companion pair has real constant set ID 11.  Both pairs should have     
@@ -1332,7 +1332,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1346,13 +1346,13 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Max.  Initial penetration 9.899868304E-10 was detected between contact  
  element 11019 and target element 10859.                                 
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 13 and contact element type 13 has been set up.  The       
  companion pair has real constant set ID 14.  Both pairs should have     
@@ -1362,7 +1362,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1376,14 +1376,14 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Min.  Initial gap 9.999993231E-05 was detected between contact element  
  11447 and target element 11563.                                         
  Contact is detected due to initial settings.                            
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 14 and contact element type 13 has been set up.  The       
  companion pair has real constant set ID 13.  Both pairs should have     
@@ -1393,7 +1393,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1407,14 +1407,14 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Min.  Initial gap 9.999988565E-05 was detected between contact element  
  11484 and target element 11267.                                         
  Contact is detected due to initial settings.                            
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 15 and contact element type 15 has been set up.  The       
  companion pair has real constant set ID 16.  Both pairs should have     
@@ -1424,7 +1424,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1438,7 +1438,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Max.  Initial penetration 2.415185343E-09 was detected between contact  
  element 11785 and target element 11903.                                 
  You may move entire target surface by : x= -3.201999457E-15, y=         
@@ -1446,7 +1446,7 @@
  ****************************************
   
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Symmetric Deformable- deformable contact pair identified by real        
  constant set 16 and contact element type 15 has been set up.  The       
  companion pair has real constant set ID 15.  Both pairs should have     
@@ -1456,7 +1456,7 @@
  Auto surface constraint is built
  Contact algorithm: MPC based approach
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Contact related postprocess items (ETABLE, pressure ...) are not        
  available.                                                              
  Contact detection at: nodal point (normal to target surface)
@@ -1470,7 +1470,7 @@
  Initial penetration/gap is excluded.
  Bonded contact (always) is defined.
 
- *** NOTE ***                            CP =       6.328   TIME= 19:13:40
+ *** NOTE ***                            CP =       6.078   TIME= 21:38:43
  Max.  Initial penetration 2.771616787E-09 was detected between contact  
  element 11854 and target element 11699.                                 
  You may move entire target surface by : x= 2.100788566E-17, y=          
@@ -1521,25 +1521,25 @@
    *** ELEMENT MATRIX FORMULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.547   0.000316
-        2      1692  SOLID186      0.531   0.000314
+        1      1728  SOLID186      0.594   0.000344
+        2      1692  SOLID186      0.578   0.000342
         3       120  SOLID226      0.094   0.000781
         4       128  SOLID226      0.094   0.000732
         5      1026  SOLID186      0.312   0.000305
-        6      1748  SOLID186      0.484   0.000277
+        6      1748  SOLID186      0.562   0.000322
         7       216  CONTA174      0.062   0.000289
-        8       216  TARGE170      0.016   0.000072
-        9       222  CONTA174      0.047   0.000211
+        8       216  TARGE170      0.000   0.000000
+        9       222  CONTA174      0.062   0.000282
        10       222  TARGE170      0.000   0.000000
        11       248  CONTA174      0.078   0.000315
        12       248  TARGE170      0.000   0.000000
        13       186  CONTA174      0.062   0.000336
        14       186  TARGE170      0.000   0.000000
-       15       146  CONTA174      0.016   0.000107
+       15       146  CONTA174      0.047   0.000321
        16       146  TARGE170      0.000   0.000000
- Time at end of element matrix formulation CP = 9.40625.                 
+ Time at end of element matrix formulation CP = 9.234375.                
 
- *** NOTE ***                            CP =      10.578   TIME= 19:13:45
+ *** NOTE ***                            CP =      10.453   TIME= 21:38:48
  The initial memory allocation (-m) has been exceeded.                   
   Supplemental memory allocations are being used.                        
 
@@ -1552,147 +1552,617 @@
   Equation solver memory allocated                     =  1913.203 MB
   Equation solver memory required for in-core mode     =  1831.272 MB
   Equation solver memory required for out-of-core mode =   534.955 MB
-  Total (solver and non-solver) memory allocated       =  3388.457 MB
+  Total (solver and non-solver) memory allocated       =  3389.438 MB
 
- *** NOTE ***                            CP =      11.531   TIME= 19:13:46
+ *** NOTE ***                            CP =      11.562   TIME= 21:38:49
  The Sparse Matrix Solver is currently running in the in-core memory     
  mode.  This memory mode uses the most amount of memory in order to      
  avoid using the hard drive as much as possible, which most often        
  results in the fastest solution time.  This mode is recommended if      
  enough physical memory is present to accommodate all of the solver      
  data.                                                                   
- Sparse solver maximum pivot= 5.461436024E+09 at node 20168 UY.          
- Sparse solver minimum pivot= 23534801.5 at node 4749 UY.                
- Sparse solver minimum pivot in absolute value= 23534801.5 at node 4749  
- UY.                                                                     
+ Sparse solver maximum pivot= 6.907623007E+09 at node 11401 UZ.          
+ Sparse solver minimum pivot= 28285328 at node 16393 UZ.                 
+ Sparse solver minimum pivot in absolute value= 28285328 at node 16393   
+ UZ.                                                                     
 
    *** ELEMENT RESULT CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.391   0.000226
-        2      1692  SOLID186      0.344   0.000203
-        3       120  SOLID226      0.078   0.000651
-        4       128  SOLID226      0.078   0.000610
+        1      1728  SOLID186      0.422   0.000244
+        2      1692  SOLID186      0.359   0.000212
+        3       120  SOLID226      0.094   0.000781
+        4       128  SOLID226      0.062   0.000488
         5      1026  SOLID186      0.203   0.000198
-        6      1748  SOLID186      0.359   0.000206
+        6      1748  SOLID186      0.422   0.000241
 
    *** NODAL LOAD CALCULATION TIMES
      TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
 
-        1      1728  SOLID186      0.047   0.000027
-        2      1692  SOLID186      0.062   0.000037
+        1      1728  SOLID186      0.016   0.000009
+        2      1692  SOLID186      0.094   0.000055
         3       120  SOLID226      0.016   0.000130
-        4       128  SOLID226      0.016   0.000122
-        5      1026  SOLID186      0.000   0.000000
-        6      1748  SOLID186      0.047   0.000027
- *** LOAD STEP     1   SUBSTEP     1  COMPLETED.  FREQUENCY=   15570.0    
- *** LOAD STEP     1   SUBSTEP     2  COMPLETED.  FREQUENCY=   16140.0    
- *** LOAD STEP     1   SUBSTEP     3  COMPLETED.  FREQUENCY=   16710.0    
- *** LOAD STEP     1   SUBSTEP     4  COMPLETED.  FREQUENCY=   17280.0    
- *** LOAD STEP     1   SUBSTEP     5  COMPLETED.  FREQUENCY=   17850.0    
- *** LOAD STEP     1   SUBSTEP     6  COMPLETED.  FREQUENCY=   18420.0    
- *** LOAD STEP     1   SUBSTEP     7  COMPLETED.  FREQUENCY=   18990.0    
- *** LOAD STEP     1   SUBSTEP     8  COMPLETED.  FREQUENCY=   19560.0    
- *** LOAD STEP     1   SUBSTEP     9  COMPLETED.  FREQUENCY=   20130.0    
- *** LOAD STEP     1   SUBSTEP    10  COMPLETED.  FREQUENCY=   20700.0    
- *** LOAD STEP     1   SUBSTEP    11  COMPLETED.  FREQUENCY=   21270.0    
- *** LOAD STEP     1   SUBSTEP    12  COMPLETED.  FREQUENCY=   21840.0    
- *** LOAD STEP     1   SUBSTEP    13  COMPLETED.  FREQUENCY=   22410.0    
- *** LOAD STEP     1   SUBSTEP    14  COMPLETED.  FREQUENCY=   22980.0    
- *** LOAD STEP     1   SUBSTEP    15  COMPLETED.  FREQUENCY=   23550.0    
- *** LOAD STEP     1   SUBSTEP    16  COMPLETED.  FREQUENCY=   24120.0    
- *** LOAD STEP     1   SUBSTEP    17  COMPLETED.  FREQUENCY=   24690.0    
- *** LOAD STEP     1   SUBSTEP    18  COMPLETED.  FREQUENCY=   25260.0    
- *** LOAD STEP     1   SUBSTEP    19  COMPLETED.  FREQUENCY=   25830.0    
- *** LOAD STEP     1   SUBSTEP    20  COMPLETED.  FREQUENCY=   26400.0    
- *** LOAD STEP     1   SUBSTEP    21  COMPLETED.  FREQUENCY=   26970.0    
- *** LOAD STEP     1   SUBSTEP    22  COMPLETED.  FREQUENCY=   27540.0    
- *** LOAD STEP     1   SUBSTEP    23  COMPLETED.  FREQUENCY=   28110.0    
- *** LOAD STEP     1   SUBSTEP    24  COMPLETED.  FREQUENCY=   28680.0    
- *** LOAD STEP     1   SUBSTEP    25  COMPLETED.  FREQUENCY=   29250.0    
- *** LOAD STEP     1   SUBSTEP    26  COMPLETED.  FREQUENCY=   29820.0    
- *** LOAD STEP     1   SUBSTEP    27  COMPLETED.  FREQUENCY=   30390.0    
- *** LOAD STEP     1   SUBSTEP    28  COMPLETED.  FREQUENCY=   30960.0    
- *** LOAD STEP     1   SUBSTEP    29  COMPLETED.  FREQUENCY=   31530.0    
- *** LOAD STEP     1   SUBSTEP    30  COMPLETED.  FREQUENCY=   32100.0    
- *** LOAD STEP     1   SUBSTEP    31  COMPLETED.  FREQUENCY=   32670.0    
- *** LOAD STEP     1   SUBSTEP    32  COMPLETED.  FREQUENCY=   33240.0    
- *** LOAD STEP     1   SUBSTEP    33  COMPLETED.  FREQUENCY=   33810.0    
- *** LOAD STEP     1   SUBSTEP    34  COMPLETED.  FREQUENCY=   34380.0    
- *** LOAD STEP     1   SUBSTEP    35  COMPLETED.  FREQUENCY=   34950.0    
- *** LOAD STEP     1   SUBSTEP    36  COMPLETED.  FREQUENCY=   35520.0    
- *** LOAD STEP     1   SUBSTEP    37  COMPLETED.  FREQUENCY=   36090.0    
- *** LOAD STEP     1   SUBSTEP    38  COMPLETED.  FREQUENCY=   36660.0    
- *** LOAD STEP     1   SUBSTEP    39  COMPLETED.  FREQUENCY=   37230.0    
- *** LOAD STEP     1   SUBSTEP    40  COMPLETED.  FREQUENCY=   37800.0    
- *** LOAD STEP     1   SUBSTEP    41  COMPLETED.  FREQUENCY=   38370.0    
- *** LOAD STEP     1   SUBSTEP    42  COMPLETED.  FREQUENCY=   38940.0    
- *** LOAD STEP     1   SUBSTEP    43  COMPLETED.  FREQUENCY=   39510.0    
- *** LOAD STEP     1   SUBSTEP    44  COMPLETED.  FREQUENCY=   40080.0    
- *** LOAD STEP     1   SUBSTEP    45  COMPLETED.  FREQUENCY=   40650.0    
- *** LOAD STEP     1   SUBSTEP    46  COMPLETED.  FREQUENCY=   41220.0    
- *** LOAD STEP     1   SUBSTEP    47  COMPLETED.  FREQUENCY=   41790.0    
- *** LOAD STEP     1   SUBSTEP    48  COMPLETED.  FREQUENCY=   42360.0    
- *** LOAD STEP     1   SUBSTEP    49  COMPLETED.  FREQUENCY=   42930.0    
- *** LOAD STEP     1   SUBSTEP    50  COMPLETED.  FREQUENCY=   43500.0    
- *** LOAD STEP     1   SUBSTEP    51  COMPLETED.  FREQUENCY=   44070.0    
- *** LOAD STEP     1   SUBSTEP    52  COMPLETED.  FREQUENCY=   44640.0    
- *** LOAD STEP     1   SUBSTEP    53  COMPLETED.  FREQUENCY=   45210.0    
- *** LOAD STEP     1   SUBSTEP    54  COMPLETED.  FREQUENCY=   45780.0    
- *** LOAD STEP     1   SUBSTEP    55  COMPLETED.  FREQUENCY=   46350.0    
- *** LOAD STEP     1   SUBSTEP    56  COMPLETED.  FREQUENCY=   46920.0    
- *** LOAD STEP     1   SUBSTEP    57  COMPLETED.  FREQUENCY=   47490.0    
- *** LOAD STEP     1   SUBSTEP    58  COMPLETED.  FREQUENCY=   48060.0    
- *** LOAD STEP     1   SUBSTEP    59  COMPLETED.  FREQUENCY=   48263.0    
- *** LOAD STEP     1   SUBSTEP    60  COMPLETED.  FREQUENCY=   48630.0    
- *** LOAD STEP     1   SUBSTEP    61  COMPLETED.  FREQUENCY=   49200.0    
- *** LOAD STEP     1   SUBSTEP    62  COMPLETED.  FREQUENCY=   49770.0    
- *** LOAD STEP     1   SUBSTEP    63  COMPLETED.  FREQUENCY=   50340.0    
- *** LOAD STEP     1   SUBSTEP    64  COMPLETED.  FREQUENCY=   50910.0    
- *** LOAD STEP     1   SUBSTEP    65  COMPLETED.  FREQUENCY=   51480.0    
- *** LOAD STEP     1   SUBSTEP    66  COMPLETED.  FREQUENCY=   52050.0    
- *** LOAD STEP     1   SUBSTEP    67  COMPLETED.  FREQUENCY=   52620.0    
- *** LOAD STEP     1   SUBSTEP    68  COMPLETED.  FREQUENCY=   53190.0    
- *** LOAD STEP     1   SUBSTEP    69  COMPLETED.  FREQUENCY=   53760.0    
- *** LOAD STEP     1   SUBSTEP    70  COMPLETED.  FREQUENCY=   54330.0    
- *** LOAD STEP     1   SUBSTEP    71  COMPLETED.  FREQUENCY=   54900.0    
- *** LOAD STEP     1   SUBSTEP    72  COMPLETED.  FREQUENCY=   55470.0    
- *** LOAD STEP     1   SUBSTEP    73  COMPLETED.  FREQUENCY=   56040.0    
- *** LOAD STEP     1   SUBSTEP    74  COMPLETED.  FREQUENCY=   56610.0    
- *** LOAD STEP     1   SUBSTEP    75  COMPLETED.  FREQUENCY=   57180.0    
- *** LOAD STEP     1   SUBSTEP    76  COMPLETED.  FREQUENCY=   57750.0    
- *** LOAD STEP     1   SUBSTEP    77  COMPLETED.  FREQUENCY=   58320.0    
- *** LOAD STEP     1   SUBSTEP    78  COMPLETED.  FREQUENCY=   58890.0    
- *** LOAD STEP     1   SUBSTEP    79  COMPLETED.  FREQUENCY=   59460.0    
- *** LOAD STEP     1   SUBSTEP    80  COMPLETED.  FREQUENCY=   60030.0    
- *** LOAD STEP     1   SUBSTEP    81  COMPLETED.  FREQUENCY=   60600.0    
- *** LOAD STEP     1   SUBSTEP    82  COMPLETED.  FREQUENCY=   61170.0    
- *** LOAD STEP     1   SUBSTEP    83  COMPLETED.  FREQUENCY=   61740.0    
- *** LOAD STEP     1   SUBSTEP    84  COMPLETED.  FREQUENCY=   62310.0    
- *** LOAD STEP     1   SUBSTEP    85  COMPLETED.  FREQUENCY=   62880.0    
- *** LOAD STEP     1   SUBSTEP    86  COMPLETED.  FREQUENCY=   63450.0    
- *** LOAD STEP     1   SUBSTEP    87  COMPLETED.  FREQUENCY=   64020.0    
- *** LOAD STEP     1   SUBSTEP    88  COMPLETED.  FREQUENCY=   64590.0    
- *** LOAD STEP     1   SUBSTEP    89  COMPLETED.  FREQUENCY=   65160.0    
- *** LOAD STEP     1   SUBSTEP    90  COMPLETED.  FREQUENCY=   65730.0    
- *** LOAD STEP     1   SUBSTEP    91  COMPLETED.  FREQUENCY=   66300.0    
- *** LOAD STEP     1   SUBSTEP    92  COMPLETED.  FREQUENCY=   66870.0    
- *** LOAD STEP     1   SUBSTEP    93  COMPLETED.  FREQUENCY=   67440.0    
- *** LOAD STEP     1   SUBSTEP    94  COMPLETED.  FREQUENCY=   68010.0    
- *** LOAD STEP     1   SUBSTEP    95  COMPLETED.  FREQUENCY=   68580.0    
- *** LOAD STEP     1   SUBSTEP    96  COMPLETED.  FREQUENCY=   69150.0    
- *** LOAD STEP     1   SUBSTEP    97  COMPLETED.  FREQUENCY=   69720.0    
- *** LOAD STEP     1   SUBSTEP    98  COMPLETED.  FREQUENCY=   70290.0    
- *** LOAD STEP     1   SUBSTEP    99  COMPLETED.  FREQUENCY=   70860.0    
- *** LOAD STEP     1   SUBSTEP   100  COMPLETED.  FREQUENCY=   71430.0    
- *** LOAD STEP     1   SUBSTEP   101  COMPLETED.  FREQUENCY=   72000.0    
+        4       128  SOLID226      0.031   0.000244
+        5      1026  SOLID186      0.016   0.000015
+        6      1748  SOLID186      0.062   0.000036
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.  FREQUENCY=   15100.0    
+ *** LOAD STEP     1   SUBSTEP     2  COMPLETED.  FREQUENCY=   15200.0    
+ *** LOAD STEP     1   SUBSTEP     3  COMPLETED.  FREQUENCY=   15300.0    
+ *** LOAD STEP     1   SUBSTEP     4  COMPLETED.  FREQUENCY=   15400.0    
+ *** LOAD STEP     1   SUBSTEP     5  COMPLETED.  FREQUENCY=   15500.0    
+ *** LOAD STEP     1   SUBSTEP     6  COMPLETED.  FREQUENCY=   15600.0    
+ *** LOAD STEP     1   SUBSTEP     7  COMPLETED.  FREQUENCY=   15700.0    
+ *** LOAD STEP     1   SUBSTEP     8  COMPLETED.  FREQUENCY=   15800.0    
+ *** LOAD STEP     1   SUBSTEP     9  COMPLETED.  FREQUENCY=   15900.0    
+ *** LOAD STEP     1   SUBSTEP    10  COMPLETED.  FREQUENCY=   16000.0    
+ *** LOAD STEP     1   SUBSTEP    11  COMPLETED.  FREQUENCY=   16100.0    
+ *** LOAD STEP     1   SUBSTEP    12  COMPLETED.  FREQUENCY=   16200.0    
+ *** LOAD STEP     1   SUBSTEP    13  COMPLETED.  FREQUENCY=   16300.0    
+ *** LOAD STEP     1   SUBSTEP    14  COMPLETED.  FREQUENCY=   16400.0    
+ *** LOAD STEP     1   SUBSTEP    15  COMPLETED.  FREQUENCY=   16500.0    
+ *** LOAD STEP     1   SUBSTEP    16  COMPLETED.  FREQUENCY=   16600.0    
+ *** LOAD STEP     1   SUBSTEP    17  COMPLETED.  FREQUENCY=   16700.0    
+ *** LOAD STEP     1   SUBSTEP    18  COMPLETED.  FREQUENCY=   16800.0    
+ *** LOAD STEP     1   SUBSTEP    19  COMPLETED.  FREQUENCY=   16900.0    
+ *** LOAD STEP     1   SUBSTEP    20  COMPLETED.  FREQUENCY=   17000.0    
+ *** LOAD STEP     1   SUBSTEP    21  COMPLETED.  FREQUENCY=   17100.0    
+ *** LOAD STEP     1   SUBSTEP    22  COMPLETED.  FREQUENCY=   17200.0    
+ *** LOAD STEP     1   SUBSTEP    23  COMPLETED.  FREQUENCY=   17300.0    
+ *** LOAD STEP     1   SUBSTEP    24  COMPLETED.  FREQUENCY=   17400.0    
+ *** LOAD STEP     1   SUBSTEP    25  COMPLETED.  FREQUENCY=   17500.0    
+ *** LOAD STEP     1   SUBSTEP    26  COMPLETED.  FREQUENCY=   17600.0    
+ *** LOAD STEP     1   SUBSTEP    27  COMPLETED.  FREQUENCY=   17700.0    
+ *** LOAD STEP     1   SUBSTEP    28  COMPLETED.  FREQUENCY=   17800.0    
+ *** LOAD STEP     1   SUBSTEP    29  COMPLETED.  FREQUENCY=   17900.0    
+ *** LOAD STEP     1   SUBSTEP    30  COMPLETED.  FREQUENCY=   18000.0    
+ *** LOAD STEP     1   SUBSTEP    31  COMPLETED.  FREQUENCY=   18100.0    
+ *** LOAD STEP     1   SUBSTEP    32  COMPLETED.  FREQUENCY=   18200.0    
+ *** LOAD STEP     1   SUBSTEP    33  COMPLETED.  FREQUENCY=   18300.0    
+ *** LOAD STEP     1   SUBSTEP    34  COMPLETED.  FREQUENCY=   18400.0    
+ *** LOAD STEP     1   SUBSTEP    35  COMPLETED.  FREQUENCY=   18500.0    
+ *** LOAD STEP     1   SUBSTEP    36  COMPLETED.  FREQUENCY=   18600.0    
+ *** LOAD STEP     1   SUBSTEP    37  COMPLETED.  FREQUENCY=   18700.0    
+ *** LOAD STEP     1   SUBSTEP    38  COMPLETED.  FREQUENCY=   18800.0    
+ *** LOAD STEP     1   SUBSTEP    39  COMPLETED.  FREQUENCY=   18900.0    
+ *** LOAD STEP     1   SUBSTEP    40  COMPLETED.  FREQUENCY=   19000.0    
+ *** LOAD STEP     1   SUBSTEP    41  COMPLETED.  FREQUENCY=   19100.0    
+ *** LOAD STEP     1   SUBSTEP    42  COMPLETED.  FREQUENCY=   19200.0    
+ *** LOAD STEP     1   SUBSTEP    43  COMPLETED.  FREQUENCY=   19300.0    
+ *** LOAD STEP     1   SUBSTEP    44  COMPLETED.  FREQUENCY=   19400.0    
+ *** LOAD STEP     1   SUBSTEP    45  COMPLETED.  FREQUENCY=   19500.0    
+ *** LOAD STEP     1   SUBSTEP    46  COMPLETED.  FREQUENCY=   19600.0    
+ *** LOAD STEP     1   SUBSTEP    47  COMPLETED.  FREQUENCY=   19700.0    
+ *** LOAD STEP     1   SUBSTEP    48  COMPLETED.  FREQUENCY=   19800.0    
+ *** LOAD STEP     1   SUBSTEP    49  COMPLETED.  FREQUENCY=   19900.0    
+ *** LOAD STEP     1   SUBSTEP    50  COMPLETED.  FREQUENCY=   20000.0    
+ *** LOAD STEP     1   SUBSTEP    51  COMPLETED.  FREQUENCY=   20100.0    
+ *** LOAD STEP     1   SUBSTEP    52  COMPLETED.  FREQUENCY=   20200.0    
+ *** LOAD STEP     1   SUBSTEP    53  COMPLETED.  FREQUENCY=   20300.0    
+ *** LOAD STEP     1   SUBSTEP    54  COMPLETED.  FREQUENCY=   20400.0    
+ *** LOAD STEP     1   SUBSTEP    55  COMPLETED.  FREQUENCY=   20500.0    
+ *** LOAD STEP     1   SUBSTEP    56  COMPLETED.  FREQUENCY=   20600.0    
+ *** LOAD STEP     1   SUBSTEP    57  COMPLETED.  FREQUENCY=   20700.0    
+ *** LOAD STEP     1   SUBSTEP    58  COMPLETED.  FREQUENCY=   20800.0    
+ *** LOAD STEP     1   SUBSTEP    59  COMPLETED.  FREQUENCY=   20900.0    
+ *** LOAD STEP     1   SUBSTEP    60  COMPLETED.  FREQUENCY=   21000.0    
+ *** LOAD STEP     1   SUBSTEP    61  COMPLETED.  FREQUENCY=   21100.0    
+ *** LOAD STEP     1   SUBSTEP    62  COMPLETED.  FREQUENCY=   21200.0    
+ *** LOAD STEP     1   SUBSTEP    63  COMPLETED.  FREQUENCY=   21300.0    
+ *** LOAD STEP     1   SUBSTEP    64  COMPLETED.  FREQUENCY=   21400.0    
+ *** LOAD STEP     1   SUBSTEP    65  COMPLETED.  FREQUENCY=   21500.0    
+ *** LOAD STEP     1   SUBSTEP    66  COMPLETED.  FREQUENCY=   21600.0    
+ *** LOAD STEP     1   SUBSTEP    67  COMPLETED.  FREQUENCY=   21700.0    
+ *** LOAD STEP     1   SUBSTEP    68  COMPLETED.  FREQUENCY=   21800.0    
+ *** LOAD STEP     1   SUBSTEP    69  COMPLETED.  FREQUENCY=   21900.0    
+ *** LOAD STEP     1   SUBSTEP    70  COMPLETED.  FREQUENCY=   22000.0    
+ *** LOAD STEP     1   SUBSTEP    71  COMPLETED.  FREQUENCY=   22100.0    
+ *** LOAD STEP     1   SUBSTEP    72  COMPLETED.  FREQUENCY=   22200.0    
+ *** LOAD STEP     1   SUBSTEP    73  COMPLETED.  FREQUENCY=   22300.0    
+ *** LOAD STEP     1   SUBSTEP    74  COMPLETED.  FREQUENCY=   22400.0    
+ *** LOAD STEP     1   SUBSTEP    75  COMPLETED.  FREQUENCY=   22500.0    
+ *** LOAD STEP     1   SUBSTEP    76  COMPLETED.  FREQUENCY=   22600.0    
+ *** LOAD STEP     1   SUBSTEP    77  COMPLETED.  FREQUENCY=   22700.0    
+ *** LOAD STEP     1   SUBSTEP    78  COMPLETED.  FREQUENCY=   22800.0    
+ *** LOAD STEP     1   SUBSTEP    79  COMPLETED.  FREQUENCY=   22900.0    
+ *** LOAD STEP     1   SUBSTEP    80  COMPLETED.  FREQUENCY=   23000.0    
+ *** LOAD STEP     1   SUBSTEP    81  COMPLETED.  FREQUENCY=   23100.0    
+ *** LOAD STEP     1   SUBSTEP    82  COMPLETED.  FREQUENCY=   23200.0    
+ *** LOAD STEP     1   SUBSTEP    83  COMPLETED.  FREQUENCY=   23300.0    
+ *** LOAD STEP     1   SUBSTEP    84  COMPLETED.  FREQUENCY=   23400.0    
+ *** LOAD STEP     1   SUBSTEP    85  COMPLETED.  FREQUENCY=   23500.0    
+ *** LOAD STEP     1   SUBSTEP    86  COMPLETED.  FREQUENCY=   23600.0    
+ *** LOAD STEP     1   SUBSTEP    87  COMPLETED.  FREQUENCY=   23700.0    
+ *** LOAD STEP     1   SUBSTEP    88  COMPLETED.  FREQUENCY=   23800.0    
+ *** LOAD STEP     1   SUBSTEP    89  COMPLETED.  FREQUENCY=   23900.0    
+ *** LOAD STEP     1   SUBSTEP    90  COMPLETED.  FREQUENCY=   24000.0    
+ *** LOAD STEP     1   SUBSTEP    91  COMPLETED.  FREQUENCY=   24100.0    
+ *** LOAD STEP     1   SUBSTEP    92  COMPLETED.  FREQUENCY=   24200.0    
+ *** LOAD STEP     1   SUBSTEP    93  COMPLETED.  FREQUENCY=   24300.0    
+ *** LOAD STEP     1   SUBSTEP    94  COMPLETED.  FREQUENCY=   24400.0    
+ *** LOAD STEP     1   SUBSTEP    95  COMPLETED.  FREQUENCY=   24500.0    
+ *** LOAD STEP     1   SUBSTEP    96  COMPLETED.  FREQUENCY=   24600.0    
+ *** LOAD STEP     1   SUBSTEP    97  COMPLETED.  FREQUENCY=   24700.0    
+ *** LOAD STEP     1   SUBSTEP    98  COMPLETED.  FREQUENCY=   24800.0    
+ *** LOAD STEP     1   SUBSTEP    99  COMPLETED.  FREQUENCY=   24900.0    
+ *** LOAD STEP     1   SUBSTEP   100  COMPLETED.  FREQUENCY=   25000.0    
+ *** LOAD STEP     1   SUBSTEP   101  COMPLETED.  FREQUENCY=   25100.0    
+ *** LOAD STEP     1   SUBSTEP   102  COMPLETED.  FREQUENCY=   25200.0    
+ *** LOAD STEP     1   SUBSTEP   103  COMPLETED.  FREQUENCY=   25300.0    
+ *** LOAD STEP     1   SUBSTEP   104  COMPLETED.  FREQUENCY=   25400.0    
+ *** LOAD STEP     1   SUBSTEP   105  COMPLETED.  FREQUENCY=   25500.0    
+ *** LOAD STEP     1   SUBSTEP   106  COMPLETED.  FREQUENCY=   25600.0    
+ *** LOAD STEP     1   SUBSTEP   107  COMPLETED.  FREQUENCY=   25700.0    
+ *** LOAD STEP     1   SUBSTEP   108  COMPLETED.  FREQUENCY=   25800.0    
+ *** LOAD STEP     1   SUBSTEP   109  COMPLETED.  FREQUENCY=   25900.0    
+ *** LOAD STEP     1   SUBSTEP   110  COMPLETED.  FREQUENCY=   26000.0    
+ *** LOAD STEP     1   SUBSTEP   111  COMPLETED.  FREQUENCY=   26100.0    
+ *** LOAD STEP     1   SUBSTEP   112  COMPLETED.  FREQUENCY=   26200.0    
+ *** LOAD STEP     1   SUBSTEP   113  COMPLETED.  FREQUENCY=   26300.0    
+ *** LOAD STEP     1   SUBSTEP   114  COMPLETED.  FREQUENCY=   26400.0    
+ *** LOAD STEP     1   SUBSTEP   115  COMPLETED.  FREQUENCY=   26500.0    
+ *** LOAD STEP     1   SUBSTEP   116  COMPLETED.  FREQUENCY=   26600.0    
+ *** LOAD STEP     1   SUBSTEP   117  COMPLETED.  FREQUENCY=   26700.0    
+ *** LOAD STEP     1   SUBSTEP   118  COMPLETED.  FREQUENCY=   26800.0    
+ *** LOAD STEP     1   SUBSTEP   119  COMPLETED.  FREQUENCY=   26900.0    
+ *** LOAD STEP     1   SUBSTEP   120  COMPLETED.  FREQUENCY=   27000.0    
+ *** LOAD STEP     1   SUBSTEP   121  COMPLETED.  FREQUENCY=   27100.0    
+ *** LOAD STEP     1   SUBSTEP   122  COMPLETED.  FREQUENCY=   27200.0    
+ *** LOAD STEP     1   SUBSTEP   123  COMPLETED.  FREQUENCY=   27300.0    
+ *** LOAD STEP     1   SUBSTEP   124  COMPLETED.  FREQUENCY=   27400.0    
+ *** LOAD STEP     1   SUBSTEP   125  COMPLETED.  FREQUENCY=   27500.0    
+ *** LOAD STEP     1   SUBSTEP   126  COMPLETED.  FREQUENCY=   27600.0    
+ *** LOAD STEP     1   SUBSTEP   127  COMPLETED.  FREQUENCY=   27700.0    
+ *** LOAD STEP     1   SUBSTEP   128  COMPLETED.  FREQUENCY=   27800.0    
+ *** LOAD STEP     1   SUBSTEP   129  COMPLETED.  FREQUENCY=   27900.0    
+ *** LOAD STEP     1   SUBSTEP   130  COMPLETED.  FREQUENCY=   28000.0    
+ *** LOAD STEP     1   SUBSTEP   131  COMPLETED.  FREQUENCY=   28100.0    
+ *** LOAD STEP     1   SUBSTEP   132  COMPLETED.  FREQUENCY=   28200.0    
+ *** LOAD STEP     1   SUBSTEP   133  COMPLETED.  FREQUENCY=   28300.0    
+ *** LOAD STEP     1   SUBSTEP   134  COMPLETED.  FREQUENCY=   28400.0    
+ *** LOAD STEP     1   SUBSTEP   135  COMPLETED.  FREQUENCY=   28500.0    
+ *** LOAD STEP     1   SUBSTEP   136  COMPLETED.  FREQUENCY=   28600.0    
+ *** LOAD STEP     1   SUBSTEP   137  COMPLETED.  FREQUENCY=   28700.0    
+ *** LOAD STEP     1   SUBSTEP   138  COMPLETED.  FREQUENCY=   28800.0    
+ *** LOAD STEP     1   SUBSTEP   139  COMPLETED.  FREQUENCY=   28900.0    
+ *** LOAD STEP     1   SUBSTEP   140  COMPLETED.  FREQUENCY=   29000.0    
+ *** LOAD STEP     1   SUBSTEP   141  COMPLETED.  FREQUENCY=   29100.0    
+ *** LOAD STEP     1   SUBSTEP   142  COMPLETED.  FREQUENCY=   29200.0    
+ *** LOAD STEP     1   SUBSTEP   143  COMPLETED.  FREQUENCY=   29300.0    
+ *** LOAD STEP     1   SUBSTEP   144  COMPLETED.  FREQUENCY=   29400.0    
+ *** LOAD STEP     1   SUBSTEP   145  COMPLETED.  FREQUENCY=   29500.0    
+ *** LOAD STEP     1   SUBSTEP   146  COMPLETED.  FREQUENCY=   29600.0    
+ *** LOAD STEP     1   SUBSTEP   147  COMPLETED.  FREQUENCY=   29700.0    
+ *** LOAD STEP     1   SUBSTEP   148  COMPLETED.  FREQUENCY=   29800.0    
+ *** LOAD STEP     1   SUBSTEP   149  COMPLETED.  FREQUENCY=   29900.0    
+ *** LOAD STEP     1   SUBSTEP   150  COMPLETED.  FREQUENCY=   30000.0    
+ *** LOAD STEP     1   SUBSTEP   151  COMPLETED.  FREQUENCY=   30100.0    
+ *** LOAD STEP     1   SUBSTEP   152  COMPLETED.  FREQUENCY=   30200.0    
+ *** LOAD STEP     1   SUBSTEP   153  COMPLETED.  FREQUENCY=   30300.0    
+ *** LOAD STEP     1   SUBSTEP   154  COMPLETED.  FREQUENCY=   30400.0    
+ *** LOAD STEP     1   SUBSTEP   155  COMPLETED.  FREQUENCY=   30500.0    
+ *** LOAD STEP     1   SUBSTEP   156  COMPLETED.  FREQUENCY=   30600.0    
+ *** LOAD STEP     1   SUBSTEP   157  COMPLETED.  FREQUENCY=   30700.0    
+ *** LOAD STEP     1   SUBSTEP   158  COMPLETED.  FREQUENCY=   30800.0    
+ *** LOAD STEP     1   SUBSTEP   159  COMPLETED.  FREQUENCY=   30900.0    
+ *** LOAD STEP     1   SUBSTEP   160  COMPLETED.  FREQUENCY=   31000.0    
+ *** LOAD STEP     1   SUBSTEP   161  COMPLETED.  FREQUENCY=   31100.0    
+ *** LOAD STEP     1   SUBSTEP   162  COMPLETED.  FREQUENCY=   31200.0    
+ *** LOAD STEP     1   SUBSTEP   163  COMPLETED.  FREQUENCY=   31300.0    
+ *** LOAD STEP     1   SUBSTEP   164  COMPLETED.  FREQUENCY=   31400.0    
+ *** LOAD STEP     1   SUBSTEP   165  COMPLETED.  FREQUENCY=   31500.0    
+ *** LOAD STEP     1   SUBSTEP   166  COMPLETED.  FREQUENCY=   31600.0    
+ *** LOAD STEP     1   SUBSTEP   167  COMPLETED.  FREQUENCY=   31700.0    
+ *** LOAD STEP     1   SUBSTEP   168  COMPLETED.  FREQUENCY=   31800.0    
+ *** LOAD STEP     1   SUBSTEP   169  COMPLETED.  FREQUENCY=   31900.0    
+ *** LOAD STEP     1   SUBSTEP   170  COMPLETED.  FREQUENCY=   32000.0    
+ *** LOAD STEP     1   SUBSTEP   171  COMPLETED.  FREQUENCY=   32100.0    
+ *** LOAD STEP     1   SUBSTEP   172  COMPLETED.  FREQUENCY=   32200.0    
+ *** LOAD STEP     1   SUBSTEP   173  COMPLETED.  FREQUENCY=   32300.0    
+ *** LOAD STEP     1   SUBSTEP   174  COMPLETED.  FREQUENCY=   32400.0    
+ *** LOAD STEP     1   SUBSTEP   175  COMPLETED.  FREQUENCY=   32500.0    
+ *** LOAD STEP     1   SUBSTEP   176  COMPLETED.  FREQUENCY=   32600.0    
+ *** LOAD STEP     1   SUBSTEP   177  COMPLETED.  FREQUENCY=   32700.0    
+ *** LOAD STEP     1   SUBSTEP   178  COMPLETED.  FREQUENCY=   32800.0    
+ *** LOAD STEP     1   SUBSTEP   179  COMPLETED.  FREQUENCY=   32900.0    
+ *** LOAD STEP     1   SUBSTEP   180  COMPLETED.  FREQUENCY=   33000.0    
+ *** LOAD STEP     1   SUBSTEP   181  COMPLETED.  FREQUENCY=   33100.0    
+ *** LOAD STEP     1   SUBSTEP   182  COMPLETED.  FREQUENCY=   33200.0    
+ *** LOAD STEP     1   SUBSTEP   183  COMPLETED.  FREQUENCY=   33300.0    
+ *** LOAD STEP     1   SUBSTEP   184  COMPLETED.  FREQUENCY=   33400.0    
+ *** LOAD STEP     1   SUBSTEP   185  COMPLETED.  FREQUENCY=   33500.0    
+ *** LOAD STEP     1   SUBSTEP   186  COMPLETED.  FREQUENCY=   33600.0    
+ *** LOAD STEP     1   SUBSTEP   187  COMPLETED.  FREQUENCY=   33700.0    
+ *** LOAD STEP     1   SUBSTEP   188  COMPLETED.  FREQUENCY=   33800.0    
+ *** LOAD STEP     1   SUBSTEP   189  COMPLETED.  FREQUENCY=   33900.0    
+ *** LOAD STEP     1   SUBSTEP   190  COMPLETED.  FREQUENCY=   34000.0    
+ *** LOAD STEP     1   SUBSTEP   191  COMPLETED.  FREQUENCY=   34100.0    
+ *** LOAD STEP     1   SUBSTEP   192  COMPLETED.  FREQUENCY=   34200.0    
+ *** LOAD STEP     1   SUBSTEP   193  COMPLETED.  FREQUENCY=   34300.0    
+ *** LOAD STEP     1   SUBSTEP   194  COMPLETED.  FREQUENCY=   34400.0    
+ *** LOAD STEP     1   SUBSTEP   195  COMPLETED.  FREQUENCY=   34500.0    
+ *** LOAD STEP     1   SUBSTEP   196  COMPLETED.  FREQUENCY=   34600.0    
+ *** LOAD STEP     1   SUBSTEP   197  COMPLETED.  FREQUENCY=   34700.0    
+ *** LOAD STEP     1   SUBSTEP   198  COMPLETED.  FREQUENCY=   34800.0    
+ *** LOAD STEP     1   SUBSTEP   199  COMPLETED.  FREQUENCY=   34900.0    
+ *** LOAD STEP     1   SUBSTEP   200  COMPLETED.  FREQUENCY=   35000.0    
+ *** LOAD STEP     1   SUBSTEP   201  COMPLETED.  FREQUENCY=   35100.0    
+ *** LOAD STEP     1   SUBSTEP   202  COMPLETED.  FREQUENCY=   35200.0    
+ *** LOAD STEP     1   SUBSTEP   203  COMPLETED.  FREQUENCY=   35300.0    
+ *** LOAD STEP     1   SUBSTEP   204  COMPLETED.  FREQUENCY=   35400.0    
+ *** LOAD STEP     1   SUBSTEP   205  COMPLETED.  FREQUENCY=   35500.0    
+ *** LOAD STEP     1   SUBSTEP   206  COMPLETED.  FREQUENCY=   35600.0    
+ *** LOAD STEP     1   SUBSTEP   207  COMPLETED.  FREQUENCY=   35700.0    
+ *** LOAD STEP     1   SUBSTEP   208  COMPLETED.  FREQUENCY=   35800.0    
+ *** LOAD STEP     1   SUBSTEP   209  COMPLETED.  FREQUENCY=   35900.0    
+ *** LOAD STEP     1   SUBSTEP   210  COMPLETED.  FREQUENCY=   36000.0    
+ *** LOAD STEP     1   SUBSTEP   211  COMPLETED.  FREQUENCY=   36100.0    
+ *** LOAD STEP     1   SUBSTEP   212  COMPLETED.  FREQUENCY=   36200.0    
+ *** LOAD STEP     1   SUBSTEP   213  COMPLETED.  FREQUENCY=   36300.0    
+ *** LOAD STEP     1   SUBSTEP   214  COMPLETED.  FREQUENCY=   36400.0    
+ *** LOAD STEP     1   SUBSTEP   215  COMPLETED.  FREQUENCY=   36500.0    
+ *** LOAD STEP     1   SUBSTEP   216  COMPLETED.  FREQUENCY=   36600.0    
+ *** LOAD STEP     1   SUBSTEP   217  COMPLETED.  FREQUENCY=   36700.0    
+ *** LOAD STEP     1   SUBSTEP   218  COMPLETED.  FREQUENCY=   36800.0    
+ *** LOAD STEP     1   SUBSTEP   219  COMPLETED.  FREQUENCY=   36900.0    
+ *** LOAD STEP     1   SUBSTEP   220  COMPLETED.  FREQUENCY=   37000.0    
+ *** LOAD STEP     1   SUBSTEP   221  COMPLETED.  FREQUENCY=   37100.0    
+ *** LOAD STEP     1   SUBSTEP   222  COMPLETED.  FREQUENCY=   37200.0    
+ *** LOAD STEP     1   SUBSTEP   223  COMPLETED.  FREQUENCY=   37300.0    
+ *** LOAD STEP     1   SUBSTEP   224  COMPLETED.  FREQUENCY=   37400.0    
+ *** LOAD STEP     1   SUBSTEP   225  COMPLETED.  FREQUENCY=   37500.0    
+ *** LOAD STEP     1   SUBSTEP   226  COMPLETED.  FREQUENCY=   37600.0    
+ *** LOAD STEP     1   SUBSTEP   227  COMPLETED.  FREQUENCY=   37700.0    
+ *** LOAD STEP     1   SUBSTEP   228  COMPLETED.  FREQUENCY=   37800.0    
+ *** LOAD STEP     1   SUBSTEP   229  COMPLETED.  FREQUENCY=   37900.0    
+ *** LOAD STEP     1   SUBSTEP   230  COMPLETED.  FREQUENCY=   38000.0    
+ *** LOAD STEP     1   SUBSTEP   231  COMPLETED.  FREQUENCY=   38100.0    
+ *** LOAD STEP     1   SUBSTEP   232  COMPLETED.  FREQUENCY=   38200.0    
+ *** LOAD STEP     1   SUBSTEP   233  COMPLETED.  FREQUENCY=   38300.0    
+ *** LOAD STEP     1   SUBSTEP   234  COMPLETED.  FREQUENCY=   38400.0    
+ *** LOAD STEP     1   SUBSTEP   235  COMPLETED.  FREQUENCY=   38500.0    
+ *** LOAD STEP     1   SUBSTEP   236  COMPLETED.  FREQUENCY=   38600.0    
+ *** LOAD STEP     1   SUBSTEP   237  COMPLETED.  FREQUENCY=   38700.0    
+ *** LOAD STEP     1   SUBSTEP   238  COMPLETED.  FREQUENCY=   38800.0    
+ *** LOAD STEP     1   SUBSTEP   239  COMPLETED.  FREQUENCY=   38900.0    
+ *** LOAD STEP     1   SUBSTEP   240  COMPLETED.  FREQUENCY=   39000.0    
+ *** LOAD STEP     1   SUBSTEP   241  COMPLETED.  FREQUENCY=   39100.0    
+ *** LOAD STEP     1   SUBSTEP   242  COMPLETED.  FREQUENCY=   39200.0    
+ *** LOAD STEP     1   SUBSTEP   243  COMPLETED.  FREQUENCY=   39300.0    
+ *** LOAD STEP     1   SUBSTEP   244  COMPLETED.  FREQUENCY=   39400.0    
+ *** LOAD STEP     1   SUBSTEP   245  COMPLETED.  FREQUENCY=   39500.0    
+ *** LOAD STEP     1   SUBSTEP   246  COMPLETED.  FREQUENCY=   39600.0    
+ *** LOAD STEP     1   SUBSTEP   247  COMPLETED.  FREQUENCY=   39700.0    
+ *** LOAD STEP     1   SUBSTEP   248  COMPLETED.  FREQUENCY=   39800.0    
+ *** LOAD STEP     1   SUBSTEP   249  COMPLETED.  FREQUENCY=   39900.0    
+ *** LOAD STEP     1   SUBSTEP   250  COMPLETED.  FREQUENCY=   40000.0    
+ *** LOAD STEP     1   SUBSTEP   251  COMPLETED.  FREQUENCY=   40100.0    
+ *** LOAD STEP     1   SUBSTEP   252  COMPLETED.  FREQUENCY=   40200.0    
+ *** LOAD STEP     1   SUBSTEP   253  COMPLETED.  FREQUENCY=   40300.0    
+ *** LOAD STEP     1   SUBSTEP   254  COMPLETED.  FREQUENCY=   40400.0    
+ *** LOAD STEP     1   SUBSTEP   255  COMPLETED.  FREQUENCY=   40500.0    
+ *** LOAD STEP     1   SUBSTEP   256  COMPLETED.  FREQUENCY=   40600.0    
+ *** LOAD STEP     1   SUBSTEP   257  COMPLETED.  FREQUENCY=   40700.0    
+ *** LOAD STEP     1   SUBSTEP   258  COMPLETED.  FREQUENCY=   40800.0    
+ *** LOAD STEP     1   SUBSTEP   259  COMPLETED.  FREQUENCY=   40900.0    
+ *** LOAD STEP     1   SUBSTEP   260  COMPLETED.  FREQUENCY=   41000.0    
+ *** LOAD STEP     1   SUBSTEP   261  COMPLETED.  FREQUENCY=   41100.0    
+ *** LOAD STEP     1   SUBSTEP   262  COMPLETED.  FREQUENCY=   41200.0    
+ *** LOAD STEP     1   SUBSTEP   263  COMPLETED.  FREQUENCY=   41300.0    
+ *** LOAD STEP     1   SUBSTEP   264  COMPLETED.  FREQUENCY=   41400.0    
+ *** LOAD STEP     1   SUBSTEP   265  COMPLETED.  FREQUENCY=   41500.0    
+ *** LOAD STEP     1   SUBSTEP   266  COMPLETED.  FREQUENCY=   41600.0    
+ *** LOAD STEP     1   SUBSTEP   267  COMPLETED.  FREQUENCY=   41700.0    
+ *** LOAD STEP     1   SUBSTEP   268  COMPLETED.  FREQUENCY=   41800.0    
+ *** LOAD STEP     1   SUBSTEP   269  COMPLETED.  FREQUENCY=   41900.0    
+ *** LOAD STEP     1   SUBSTEP   270  COMPLETED.  FREQUENCY=   42000.0    
+ *** LOAD STEP     1   SUBSTEP   271  COMPLETED.  FREQUENCY=   42100.0    
+ *** LOAD STEP     1   SUBSTEP   272  COMPLETED.  FREQUENCY=   42200.0    
+ *** LOAD STEP     1   SUBSTEP   273  COMPLETED.  FREQUENCY=   42300.0    
+ *** LOAD STEP     1   SUBSTEP   274  COMPLETED.  FREQUENCY=   42400.0    
+ *** LOAD STEP     1   SUBSTEP   275  COMPLETED.  FREQUENCY=   42500.0    
+ *** LOAD STEP     1   SUBSTEP   276  COMPLETED.  FREQUENCY=   42600.0    
+ *** LOAD STEP     1   SUBSTEP   277  COMPLETED.  FREQUENCY=   42700.0    
+ *** LOAD STEP     1   SUBSTEP   278  COMPLETED.  FREQUENCY=   42800.0    
+ *** LOAD STEP     1   SUBSTEP   279  COMPLETED.  FREQUENCY=   42900.0    
+ *** LOAD STEP     1   SUBSTEP   280  COMPLETED.  FREQUENCY=   43000.0    
+ *** LOAD STEP     1   SUBSTEP   281  COMPLETED.  FREQUENCY=   43100.0    
+ *** LOAD STEP     1   SUBSTEP   282  COMPLETED.  FREQUENCY=   43200.0    
+ *** LOAD STEP     1   SUBSTEP   283  COMPLETED.  FREQUENCY=   43300.0    
+ *** LOAD STEP     1   SUBSTEP   284  COMPLETED.  FREQUENCY=   43400.0    
+ *** LOAD STEP     1   SUBSTEP   285  COMPLETED.  FREQUENCY=   43500.0    
+ *** LOAD STEP     1   SUBSTEP   286  COMPLETED.  FREQUENCY=   43600.0    
+ *** LOAD STEP     1   SUBSTEP   287  COMPLETED.  FREQUENCY=   43700.0    
+ *** LOAD STEP     1   SUBSTEP   288  COMPLETED.  FREQUENCY=   43800.0    
+ *** LOAD STEP     1   SUBSTEP   289  COMPLETED.  FREQUENCY=   43900.0    
+ *** LOAD STEP     1   SUBSTEP   290  COMPLETED.  FREQUENCY=   44000.0    
+ *** LOAD STEP     1   SUBSTEP   291  COMPLETED.  FREQUENCY=   44100.0    
+ *** LOAD STEP     1   SUBSTEP   292  COMPLETED.  FREQUENCY=   44200.0    
+ *** LOAD STEP     1   SUBSTEP   293  COMPLETED.  FREQUENCY=   44300.0    
+ *** LOAD STEP     1   SUBSTEP   294  COMPLETED.  FREQUENCY=   44400.0    
+ *** LOAD STEP     1   SUBSTEP   295  COMPLETED.  FREQUENCY=   44500.0    
+ *** LOAD STEP     1   SUBSTEP   296  COMPLETED.  FREQUENCY=   44600.0    
+ *** LOAD STEP     1   SUBSTEP   297  COMPLETED.  FREQUENCY=   44700.0    
+ *** LOAD STEP     1   SUBSTEP   298  COMPLETED.  FREQUENCY=   44800.0    
+ *** LOAD STEP     1   SUBSTEP   299  COMPLETED.  FREQUENCY=   44900.0    
+ *** LOAD STEP     1   SUBSTEP   300  COMPLETED.  FREQUENCY=   45000.0    
+ *** LOAD STEP     1   SUBSTEP   301  COMPLETED.  FREQUENCY=   45100.0    
+ *** LOAD STEP     1   SUBSTEP   302  COMPLETED.  FREQUENCY=   45200.0    
+ *** LOAD STEP     1   SUBSTEP   303  COMPLETED.  FREQUENCY=   45300.0    
+ *** LOAD STEP     1   SUBSTEP   304  COMPLETED.  FREQUENCY=   45400.0    
+ *** LOAD STEP     1   SUBSTEP   305  COMPLETED.  FREQUENCY=   45500.0    
+ *** LOAD STEP     1   SUBSTEP   306  COMPLETED.  FREQUENCY=   45600.0    
+ *** LOAD STEP     1   SUBSTEP   307  COMPLETED.  FREQUENCY=   45700.0    
+ *** LOAD STEP     1   SUBSTEP   308  COMPLETED.  FREQUENCY=   45800.0    
+ *** LOAD STEP     1   SUBSTEP   309  COMPLETED.  FREQUENCY=   45900.0    
+ *** LOAD STEP     1   SUBSTEP   310  COMPLETED.  FREQUENCY=   46000.0    
+ *** LOAD STEP     1   SUBSTEP   311  COMPLETED.  FREQUENCY=   46100.0    
+ *** LOAD STEP     1   SUBSTEP   312  COMPLETED.  FREQUENCY=   46200.0    
+ *** LOAD STEP     1   SUBSTEP   313  COMPLETED.  FREQUENCY=   46300.0    
+ *** LOAD STEP     1   SUBSTEP   314  COMPLETED.  FREQUENCY=   46400.0    
+ *** LOAD STEP     1   SUBSTEP   315  COMPLETED.  FREQUENCY=   46500.0    
+ *** LOAD STEP     1   SUBSTEP   316  COMPLETED.  FREQUENCY=   46600.0    
+ *** LOAD STEP     1   SUBSTEP   317  COMPLETED.  FREQUENCY=   46700.0    
+ *** LOAD STEP     1   SUBSTEP   318  COMPLETED.  FREQUENCY=   46800.0    
+ *** LOAD STEP     1   SUBSTEP   319  COMPLETED.  FREQUENCY=   46900.0    
+ *** LOAD STEP     1   SUBSTEP   320  COMPLETED.  FREQUENCY=   47000.0    
+ *** LOAD STEP     1   SUBSTEP   321  COMPLETED.  FREQUENCY=   47100.0    
+ *** LOAD STEP     1   SUBSTEP   322  COMPLETED.  FREQUENCY=   47200.0    
+ *** LOAD STEP     1   SUBSTEP   323  COMPLETED.  FREQUENCY=   47300.0    
+ *** LOAD STEP     1   SUBSTEP   324  COMPLETED.  FREQUENCY=   47400.0    
+ *** LOAD STEP     1   SUBSTEP   325  COMPLETED.  FREQUENCY=   47500.0    
+ *** LOAD STEP     1   SUBSTEP   326  COMPLETED.  FREQUENCY=   47600.0    
+ *** LOAD STEP     1   SUBSTEP   327  COMPLETED.  FREQUENCY=   47700.0    
+ *** LOAD STEP     1   SUBSTEP   328  COMPLETED.  FREQUENCY=   47800.0    
+ *** LOAD STEP     1   SUBSTEP   329  COMPLETED.  FREQUENCY=   47900.0    
+ *** LOAD STEP     1   SUBSTEP   330  COMPLETED.  FREQUENCY=   48000.0    
+ *** LOAD STEP     1   SUBSTEP   331  COMPLETED.  FREQUENCY=   48100.0    
+ *** LOAD STEP     1   SUBSTEP   332  COMPLETED.  FREQUENCY=   48200.0    
+ *** LOAD STEP     1   SUBSTEP   333  COMPLETED.  FREQUENCY=   48263.0    
+ *** LOAD STEP     1   SUBSTEP   334  COMPLETED.  FREQUENCY=   48300.0    
+ *** LOAD STEP     1   SUBSTEP   335  COMPLETED.  FREQUENCY=   48400.0    
+ *** LOAD STEP     1   SUBSTEP   336  COMPLETED.  FREQUENCY=   48500.0    
+ *** LOAD STEP     1   SUBSTEP   337  COMPLETED.  FREQUENCY=   48600.0    
+ *** LOAD STEP     1   SUBSTEP   338  COMPLETED.  FREQUENCY=   48700.0    
+ *** LOAD STEP     1   SUBSTEP   339  COMPLETED.  FREQUENCY=   48800.0    
+ *** LOAD STEP     1   SUBSTEP   340  COMPLETED.  FREQUENCY=   48900.0    
+ *** LOAD STEP     1   SUBSTEP   341  COMPLETED.  FREQUENCY=   49000.0    
+ *** LOAD STEP     1   SUBSTEP   342  COMPLETED.  FREQUENCY=   49100.0    
+ *** LOAD STEP     1   SUBSTEP   343  COMPLETED.  FREQUENCY=   49200.0    
+ *** LOAD STEP     1   SUBSTEP   344  COMPLETED.  FREQUENCY=   49300.0    
+ *** LOAD STEP     1   SUBSTEP   345  COMPLETED.  FREQUENCY=   49400.0    
+ *** LOAD STEP     1   SUBSTEP   346  COMPLETED.  FREQUENCY=   49500.0    
+ *** LOAD STEP     1   SUBSTEP   347  COMPLETED.  FREQUENCY=   49600.0    
+ *** LOAD STEP     1   SUBSTEP   348  COMPLETED.  FREQUENCY=   49700.0    
+ *** LOAD STEP     1   SUBSTEP   349  COMPLETED.  FREQUENCY=   49800.0    
+ *** LOAD STEP     1   SUBSTEP   350  COMPLETED.  FREQUENCY=   49900.0    
+ *** LOAD STEP     1   SUBSTEP   351  COMPLETED.  FREQUENCY=   50000.0    
+ *** LOAD STEP     1   SUBSTEP   352  COMPLETED.  FREQUENCY=   50100.0    
+ *** LOAD STEP     1   SUBSTEP   353  COMPLETED.  FREQUENCY=   50200.0    
+ *** LOAD STEP     1   SUBSTEP   354  COMPLETED.  FREQUENCY=   50300.0    
+ *** LOAD STEP     1   SUBSTEP   355  COMPLETED.  FREQUENCY=   50400.0    
+ *** LOAD STEP     1   SUBSTEP   356  COMPLETED.  FREQUENCY=   50500.0    
+ *** LOAD STEP     1   SUBSTEP   357  COMPLETED.  FREQUENCY=   50600.0    
+ *** LOAD STEP     1   SUBSTEP   358  COMPLETED.  FREQUENCY=   50700.0    
+ *** LOAD STEP     1   SUBSTEP   359  COMPLETED.  FREQUENCY=   50800.0    
+ *** LOAD STEP     1   SUBSTEP   360  COMPLETED.  FREQUENCY=   50900.0    
+ *** LOAD STEP     1   SUBSTEP   361  COMPLETED.  FREQUENCY=   51000.0    
+ *** LOAD STEP     1   SUBSTEP   362  COMPLETED.  FREQUENCY=   51100.0    
+ *** LOAD STEP     1   SUBSTEP   363  COMPLETED.  FREQUENCY=   51200.0    
+ *** LOAD STEP     1   SUBSTEP   364  COMPLETED.  FREQUENCY=   51300.0    
+ *** LOAD STEP     1   SUBSTEP   365  COMPLETED.  FREQUENCY=   51400.0    
+ *** LOAD STEP     1   SUBSTEP   366  COMPLETED.  FREQUENCY=   51500.0    
+ *** LOAD STEP     1   SUBSTEP   367  COMPLETED.  FREQUENCY=   51600.0    
+ *** LOAD STEP     1   SUBSTEP   368  COMPLETED.  FREQUENCY=   51700.0    
+ *** LOAD STEP     1   SUBSTEP   369  COMPLETED.  FREQUENCY=   51800.0    
+ *** LOAD STEP     1   SUBSTEP   370  COMPLETED.  FREQUENCY=   51900.0    
+ *** LOAD STEP     1   SUBSTEP   371  COMPLETED.  FREQUENCY=   52000.0    
+ *** LOAD STEP     1   SUBSTEP   372  COMPLETED.  FREQUENCY=   52100.0    
+ *** LOAD STEP     1   SUBSTEP   373  COMPLETED.  FREQUENCY=   52200.0    
+ *** LOAD STEP     1   SUBSTEP   374  COMPLETED.  FREQUENCY=   52300.0    
+ *** LOAD STEP     1   SUBSTEP   375  COMPLETED.  FREQUENCY=   52400.0    
+ *** LOAD STEP     1   SUBSTEP   376  COMPLETED.  FREQUENCY=   52500.0    
+ *** LOAD STEP     1   SUBSTEP   377  COMPLETED.  FREQUENCY=   52600.0    
+ *** LOAD STEP     1   SUBSTEP   378  COMPLETED.  FREQUENCY=   52700.0    
+ *** LOAD STEP     1   SUBSTEP   379  COMPLETED.  FREQUENCY=   52800.0    
+ *** LOAD STEP     1   SUBSTEP   380  COMPLETED.  FREQUENCY=   52900.0    
+ *** LOAD STEP     1   SUBSTEP   381  COMPLETED.  FREQUENCY=   53000.0    
+ *** LOAD STEP     1   SUBSTEP   382  COMPLETED.  FREQUENCY=   53100.0    
+ *** LOAD STEP     1   SUBSTEP   383  COMPLETED.  FREQUENCY=   53200.0    
+ *** LOAD STEP     1   SUBSTEP   384  COMPLETED.  FREQUENCY=   53300.0    
+ *** LOAD STEP     1   SUBSTEP   385  COMPLETED.  FREQUENCY=   53400.0    
+ *** LOAD STEP     1   SUBSTEP   386  COMPLETED.  FREQUENCY=   53500.0    
+ *** LOAD STEP     1   SUBSTEP   387  COMPLETED.  FREQUENCY=   53600.0    
+ *** LOAD STEP     1   SUBSTEP   388  COMPLETED.  FREQUENCY=   53700.0    
+ *** LOAD STEP     1   SUBSTEP   389  COMPLETED.  FREQUENCY=   53800.0    
+ *** LOAD STEP     1   SUBSTEP   390  COMPLETED.  FREQUENCY=   53900.0    
+ *** LOAD STEP     1   SUBSTEP   391  COMPLETED.  FREQUENCY=   54000.0    
+ *** LOAD STEP     1   SUBSTEP   392  COMPLETED.  FREQUENCY=   54100.0    
+ *** LOAD STEP     1   SUBSTEP   393  COMPLETED.  FREQUENCY=   54200.0    
+ *** LOAD STEP     1   SUBSTEP   394  COMPLETED.  FREQUENCY=   54300.0    
+ *** LOAD STEP     1   SUBSTEP   395  COMPLETED.  FREQUENCY=   54400.0    
+ *** LOAD STEP     1   SUBSTEP   396  COMPLETED.  FREQUENCY=   54500.0    
+ *** LOAD STEP     1   SUBSTEP   397  COMPLETED.  FREQUENCY=   54600.0    
+ *** LOAD STEP     1   SUBSTEP   398  COMPLETED.  FREQUENCY=   54700.0    
+ *** LOAD STEP     1   SUBSTEP   399  COMPLETED.  FREQUENCY=   54800.0    
+ *** LOAD STEP     1   SUBSTEP   400  COMPLETED.  FREQUENCY=   54900.0    
+ *** LOAD STEP     1   SUBSTEP   401  COMPLETED.  FREQUENCY=   55000.0    
+ *** LOAD STEP     1   SUBSTEP   402  COMPLETED.  FREQUENCY=   55100.0    
+ *** LOAD STEP     1   SUBSTEP   403  COMPLETED.  FREQUENCY=   55200.0    
+ *** LOAD STEP     1   SUBSTEP   404  COMPLETED.  FREQUENCY=   55300.0    
+ *** LOAD STEP     1   SUBSTEP   405  COMPLETED.  FREQUENCY=   55400.0    
+ *** LOAD STEP     1   SUBSTEP   406  COMPLETED.  FREQUENCY=   55500.0    
+ *** LOAD STEP     1   SUBSTEP   407  COMPLETED.  FREQUENCY=   55600.0    
+ *** LOAD STEP     1   SUBSTEP   408  COMPLETED.  FREQUENCY=   55700.0    
+ *** LOAD STEP     1   SUBSTEP   409  COMPLETED.  FREQUENCY=   55800.0    
+ *** LOAD STEP     1   SUBSTEP   410  COMPLETED.  FREQUENCY=   55900.0    
+ *** LOAD STEP     1   SUBSTEP   411  COMPLETED.  FREQUENCY=   56000.0    
+ *** LOAD STEP     1   SUBSTEP   412  COMPLETED.  FREQUENCY=   56100.0    
+ *** LOAD STEP     1   SUBSTEP   413  COMPLETED.  FREQUENCY=   56200.0    
+ *** LOAD STEP     1   SUBSTEP   414  COMPLETED.  FREQUENCY=   56300.0    
+ *** LOAD STEP     1   SUBSTEP   415  COMPLETED.  FREQUENCY=   56400.0    
+ *** LOAD STEP     1   SUBSTEP   416  COMPLETED.  FREQUENCY=   56500.0    
+ *** LOAD STEP     1   SUBSTEP   417  COMPLETED.  FREQUENCY=   56600.0    
+ *** LOAD STEP     1   SUBSTEP   418  COMPLETED.  FREQUENCY=   56700.0    
+ *** LOAD STEP     1   SUBSTEP   419  COMPLETED.  FREQUENCY=   56800.0    
+ *** LOAD STEP     1   SUBSTEP   420  COMPLETED.  FREQUENCY=   56900.0    
+ *** LOAD STEP     1   SUBSTEP   421  COMPLETED.  FREQUENCY=   57000.0    
+ *** LOAD STEP     1   SUBSTEP   422  COMPLETED.  FREQUENCY=   57100.0    
+ *** LOAD STEP     1   SUBSTEP   423  COMPLETED.  FREQUENCY=   57200.0    
+ *** LOAD STEP     1   SUBSTEP   424  COMPLETED.  FREQUENCY=   57300.0    
+ *** LOAD STEP     1   SUBSTEP   425  COMPLETED.  FREQUENCY=   57400.0    
+ *** LOAD STEP     1   SUBSTEP   426  COMPLETED.  FREQUENCY=   57500.0    
+ *** LOAD STEP     1   SUBSTEP   427  COMPLETED.  FREQUENCY=   57600.0    
+ *** LOAD STEP     1   SUBSTEP   428  COMPLETED.  FREQUENCY=   57700.0    
+ *** LOAD STEP     1   SUBSTEP   429  COMPLETED.  FREQUENCY=   57800.0    
+ *** LOAD STEP     1   SUBSTEP   430  COMPLETED.  FREQUENCY=   57900.0    
+ *** LOAD STEP     1   SUBSTEP   431  COMPLETED.  FREQUENCY=   58000.0    
+ *** LOAD STEP     1   SUBSTEP   432  COMPLETED.  FREQUENCY=   58100.0    
+ *** LOAD STEP     1   SUBSTEP   433  COMPLETED.  FREQUENCY=   58200.0    
+ *** LOAD STEP     1   SUBSTEP   434  COMPLETED.  FREQUENCY=   58300.0    
+ *** LOAD STEP     1   SUBSTEP   435  COMPLETED.  FREQUENCY=   58400.0    
+ *** LOAD STEP     1   SUBSTEP   436  COMPLETED.  FREQUENCY=   58500.0    
+ *** LOAD STEP     1   SUBSTEP   437  COMPLETED.  FREQUENCY=   58600.0    
+ *** LOAD STEP     1   SUBSTEP   438  COMPLETED.  FREQUENCY=   58700.0    
+ *** LOAD STEP     1   SUBSTEP   439  COMPLETED.  FREQUENCY=   58800.0    
+ *** LOAD STEP     1   SUBSTEP   440  COMPLETED.  FREQUENCY=   58900.0    
+ *** LOAD STEP     1   SUBSTEP   441  COMPLETED.  FREQUENCY=   59000.0    
+ *** LOAD STEP     1   SUBSTEP   442  COMPLETED.  FREQUENCY=   59100.0    
+ *** LOAD STEP     1   SUBSTEP   443  COMPLETED.  FREQUENCY=   59200.0    
+ *** LOAD STEP     1   SUBSTEP   444  COMPLETED.  FREQUENCY=   59300.0    
+ *** LOAD STEP     1   SUBSTEP   445  COMPLETED.  FREQUENCY=   59400.0    
+ *** LOAD STEP     1   SUBSTEP   446  COMPLETED.  FREQUENCY=   59500.0    
+ *** LOAD STEP     1   SUBSTEP   447  COMPLETED.  FREQUENCY=   59600.0    
+ *** LOAD STEP     1   SUBSTEP   448  COMPLETED.  FREQUENCY=   59700.0    
+ *** LOAD STEP     1   SUBSTEP   449  COMPLETED.  FREQUENCY=   59800.0    
+ *** LOAD STEP     1   SUBSTEP   450  COMPLETED.  FREQUENCY=   59900.0    
+ *** LOAD STEP     1   SUBSTEP   451  COMPLETED.  FREQUENCY=   60000.0    
+ *** LOAD STEP     1   SUBSTEP   452  COMPLETED.  FREQUENCY=   60100.0    
+ *** LOAD STEP     1   SUBSTEP   453  COMPLETED.  FREQUENCY=   60200.0    
+ *** LOAD STEP     1   SUBSTEP   454  COMPLETED.  FREQUENCY=   60300.0    
+ *** LOAD STEP     1   SUBSTEP   455  COMPLETED.  FREQUENCY=   60400.0    
+ *** LOAD STEP     1   SUBSTEP   456  COMPLETED.  FREQUENCY=   60500.0    
+ *** LOAD STEP     1   SUBSTEP   457  COMPLETED.  FREQUENCY=   60600.0    
+ *** LOAD STEP     1   SUBSTEP   458  COMPLETED.  FREQUENCY=   60700.0    
+ *** LOAD STEP     1   SUBSTEP   459  COMPLETED.  FREQUENCY=   60800.0    
+ *** LOAD STEP     1   SUBSTEP   460  COMPLETED.  FREQUENCY=   60900.0    
+ *** LOAD STEP     1   SUBSTEP   461  COMPLETED.  FREQUENCY=   61000.0    
+ *** LOAD STEP     1   SUBSTEP   462  COMPLETED.  FREQUENCY=   61100.0    
+ *** LOAD STEP     1   SUBSTEP   463  COMPLETED.  FREQUENCY=   61200.0    
+ *** LOAD STEP     1   SUBSTEP   464  COMPLETED.  FREQUENCY=   61300.0    
+ *** LOAD STEP     1   SUBSTEP   465  COMPLETED.  FREQUENCY=   61400.0    
+ *** LOAD STEP     1   SUBSTEP   466  COMPLETED.  FREQUENCY=   61500.0    
+ *** LOAD STEP     1   SUBSTEP   467  COMPLETED.  FREQUENCY=   61600.0    
+ *** LOAD STEP     1   SUBSTEP   468  COMPLETED.  FREQUENCY=   61700.0    
+ *** LOAD STEP     1   SUBSTEP   469  COMPLETED.  FREQUENCY=   61800.0    
+ *** LOAD STEP     1   SUBSTEP   470  COMPLETED.  FREQUENCY=   61900.0    
+ *** LOAD STEP     1   SUBSTEP   471  COMPLETED.  FREQUENCY=   62000.0    
+ *** LOAD STEP     1   SUBSTEP   472  COMPLETED.  FREQUENCY=   62100.0    
+ *** LOAD STEP     1   SUBSTEP   473  COMPLETED.  FREQUENCY=   62200.0    
+ *** LOAD STEP     1   SUBSTEP   474  COMPLETED.  FREQUENCY=   62300.0    
+ *** LOAD STEP     1   SUBSTEP   475  COMPLETED.  FREQUENCY=   62400.0    
+ *** LOAD STEP     1   SUBSTEP   476  COMPLETED.  FREQUENCY=   62500.0    
+ *** LOAD STEP     1   SUBSTEP   477  COMPLETED.  FREQUENCY=   62600.0    
+ *** LOAD STEP     1   SUBSTEP   478  COMPLETED.  FREQUENCY=   62700.0    
+ *** LOAD STEP     1   SUBSTEP   479  COMPLETED.  FREQUENCY=   62800.0    
+ *** LOAD STEP     1   SUBSTEP   480  COMPLETED.  FREQUENCY=   62900.0    
+ *** LOAD STEP     1   SUBSTEP   481  COMPLETED.  FREQUENCY=   63000.0    
+ *** LOAD STEP     1   SUBSTEP   482  COMPLETED.  FREQUENCY=   63100.0    
+ *** LOAD STEP     1   SUBSTEP   483  COMPLETED.  FREQUENCY=   63200.0    
+ *** LOAD STEP     1   SUBSTEP   484  COMPLETED.  FREQUENCY=   63300.0    
+ *** LOAD STEP     1   SUBSTEP   485  COMPLETED.  FREQUENCY=   63400.0    
+ *** LOAD STEP     1   SUBSTEP   486  COMPLETED.  FREQUENCY=   63500.0    
+ *** LOAD STEP     1   SUBSTEP   487  COMPLETED.  FREQUENCY=   63600.0    
+ *** LOAD STEP     1   SUBSTEP   488  COMPLETED.  FREQUENCY=   63700.0    
+ *** LOAD STEP     1   SUBSTEP   489  COMPLETED.  FREQUENCY=   63800.0    
+ *** LOAD STEP     1   SUBSTEP   490  COMPLETED.  FREQUENCY=   63900.0    
+ *** LOAD STEP     1   SUBSTEP   491  COMPLETED.  FREQUENCY=   64000.0    
+ *** LOAD STEP     1   SUBSTEP   492  COMPLETED.  FREQUENCY=   64100.0    
+ *** LOAD STEP     1   SUBSTEP   493  COMPLETED.  FREQUENCY=   64200.0    
+ *** LOAD STEP     1   SUBSTEP   494  COMPLETED.  FREQUENCY=   64300.0    
+ *** LOAD STEP     1   SUBSTEP   495  COMPLETED.  FREQUENCY=   64400.0    
+ *** LOAD STEP     1   SUBSTEP   496  COMPLETED.  FREQUENCY=   64500.0    
+ *** LOAD STEP     1   SUBSTEP   497  COMPLETED.  FREQUENCY=   64600.0    
+ *** LOAD STEP     1   SUBSTEP   498  COMPLETED.  FREQUENCY=   64700.0    
+ *** LOAD STEP     1   SUBSTEP   499  COMPLETED.  FREQUENCY=   64800.0    
+ *** LOAD STEP     1   SUBSTEP   500  COMPLETED.  FREQUENCY=   64900.0    
+ *** LOAD STEP     1   SUBSTEP   501  COMPLETED.  FREQUENCY=   65000.0    
+ *** LOAD STEP     1   SUBSTEP   502  COMPLETED.  FREQUENCY=   65100.0    
+ *** LOAD STEP     1   SUBSTEP   503  COMPLETED.  FREQUENCY=   65200.0    
+ *** LOAD STEP     1   SUBSTEP   504  COMPLETED.  FREQUENCY=   65300.0    
+ *** LOAD STEP     1   SUBSTEP   505  COMPLETED.  FREQUENCY=   65400.0    
+ *** LOAD STEP     1   SUBSTEP   506  COMPLETED.  FREQUENCY=   65500.0    
+ *** LOAD STEP     1   SUBSTEP   507  COMPLETED.  FREQUENCY=   65600.0    
+ *** LOAD STEP     1   SUBSTEP   508  COMPLETED.  FREQUENCY=   65700.0    
+ *** LOAD STEP     1   SUBSTEP   509  COMPLETED.  FREQUENCY=   65800.0    
+ *** LOAD STEP     1   SUBSTEP   510  COMPLETED.  FREQUENCY=   65900.0    
+ *** LOAD STEP     1   SUBSTEP   511  COMPLETED.  FREQUENCY=   66000.0    
+ *** LOAD STEP     1   SUBSTEP   512  COMPLETED.  FREQUENCY=   66100.0    
+ *** LOAD STEP     1   SUBSTEP   513  COMPLETED.  FREQUENCY=   66200.0    
+ *** LOAD STEP     1   SUBSTEP   514  COMPLETED.  FREQUENCY=   66300.0    
+ *** LOAD STEP     1   SUBSTEP   515  COMPLETED.  FREQUENCY=   66400.0    
+ *** LOAD STEP     1   SUBSTEP   516  COMPLETED.  FREQUENCY=   66500.0    
+ *** LOAD STEP     1   SUBSTEP   517  COMPLETED.  FREQUENCY=   66600.0    
+ *** LOAD STEP     1   SUBSTEP   518  COMPLETED.  FREQUENCY=   66700.0    
+ *** LOAD STEP     1   SUBSTEP   519  COMPLETED.  FREQUENCY=   66800.0    
+ *** LOAD STEP     1   SUBSTEP   520  COMPLETED.  FREQUENCY=   66900.0    
+ *** LOAD STEP     1   SUBSTEP   521  COMPLETED.  FREQUENCY=   67000.0    
+ *** LOAD STEP     1   SUBSTEP   522  COMPLETED.  FREQUENCY=   67100.0    
+ *** LOAD STEP     1   SUBSTEP   523  COMPLETED.  FREQUENCY=   67200.0    
+ *** LOAD STEP     1   SUBSTEP   524  COMPLETED.  FREQUENCY=   67300.0    
+ *** LOAD STEP     1   SUBSTEP   525  COMPLETED.  FREQUENCY=   67400.0    
+ *** LOAD STEP     1   SUBSTEP   526  COMPLETED.  FREQUENCY=   67500.0    
+ *** LOAD STEP     1   SUBSTEP   527  COMPLETED.  FREQUENCY=   67600.0    
+ *** LOAD STEP     1   SUBSTEP   528  COMPLETED.  FREQUENCY=   67700.0    
+ *** LOAD STEP     1   SUBSTEP   529  COMPLETED.  FREQUENCY=   67800.0    
+ *** LOAD STEP     1   SUBSTEP   530  COMPLETED.  FREQUENCY=   67900.0    
+ *** LOAD STEP     1   SUBSTEP   531  COMPLETED.  FREQUENCY=   68000.0    
+ *** LOAD STEP     1   SUBSTEP   532  COMPLETED.  FREQUENCY=   68100.0    
+ *** LOAD STEP     1   SUBSTEP   533  COMPLETED.  FREQUENCY=   68200.0    
+ *** LOAD STEP     1   SUBSTEP   534  COMPLETED.  FREQUENCY=   68300.0    
+ *** LOAD STEP     1   SUBSTEP   535  COMPLETED.  FREQUENCY=   68400.0    
+ *** LOAD STEP     1   SUBSTEP   536  COMPLETED.  FREQUENCY=   68500.0    
+ *** LOAD STEP     1   SUBSTEP   537  COMPLETED.  FREQUENCY=   68600.0    
+ *** LOAD STEP     1   SUBSTEP   538  COMPLETED.  FREQUENCY=   68700.0    
+ *** LOAD STEP     1   SUBSTEP   539  COMPLETED.  FREQUENCY=   68800.0    
+ *** LOAD STEP     1   SUBSTEP   540  COMPLETED.  FREQUENCY=   68900.0    
+ *** LOAD STEP     1   SUBSTEP   541  COMPLETED.  FREQUENCY=   69000.0    
+ *** LOAD STEP     1   SUBSTEP   542  COMPLETED.  FREQUENCY=   69100.0    
+ *** LOAD STEP     1   SUBSTEP   543  COMPLETED.  FREQUENCY=   69200.0    
+ *** LOAD STEP     1   SUBSTEP   544  COMPLETED.  FREQUENCY=   69300.0    
+ *** LOAD STEP     1   SUBSTEP   545  COMPLETED.  FREQUENCY=   69400.0    
+ *** LOAD STEP     1   SUBSTEP   546  COMPLETED.  FREQUENCY=   69500.0    
+ *** LOAD STEP     1   SUBSTEP   547  COMPLETED.  FREQUENCY=   69600.0    
+ *** LOAD STEP     1   SUBSTEP   548  COMPLETED.  FREQUENCY=   69700.0    
+ *** LOAD STEP     1   SUBSTEP   549  COMPLETED.  FREQUENCY=   69800.0    
+ *** LOAD STEP     1   SUBSTEP   550  COMPLETED.  FREQUENCY=   69900.0    
+ *** LOAD STEP     1   SUBSTEP   551  COMPLETED.  FREQUENCY=   70000.0    
+ *** LOAD STEP     1   SUBSTEP   552  COMPLETED.  FREQUENCY=   70100.0    
+ *** LOAD STEP     1   SUBSTEP   553  COMPLETED.  FREQUENCY=   70200.0    
+ *** LOAD STEP     1   SUBSTEP   554  COMPLETED.  FREQUENCY=   70300.0    
+ *** LOAD STEP     1   SUBSTEP   555  COMPLETED.  FREQUENCY=   70400.0    
+ *** LOAD STEP     1   SUBSTEP   556  COMPLETED.  FREQUENCY=   70500.0    
+ *** LOAD STEP     1   SUBSTEP   557  COMPLETED.  FREQUENCY=   70600.0    
+ *** LOAD STEP     1   SUBSTEP   558  COMPLETED.  FREQUENCY=   70700.0    
+ *** LOAD STEP     1   SUBSTEP   559  COMPLETED.  FREQUENCY=   70800.0    
+ *** LOAD STEP     1   SUBSTEP   560  COMPLETED.  FREQUENCY=   70900.0    
+ *** LOAD STEP     1   SUBSTEP   561  COMPLETED.  FREQUENCY=   71000.0    
+ *** LOAD STEP     1   SUBSTEP   562  COMPLETED.  FREQUENCY=   71100.0    
+ *** LOAD STEP     1   SUBSTEP   563  COMPLETED.  FREQUENCY=   71200.0    
+ *** LOAD STEP     1   SUBSTEP   564  COMPLETED.  FREQUENCY=   71300.0    
+ *** LOAD STEP     1   SUBSTEP   565  COMPLETED.  FREQUENCY=   71400.0    
+ *** LOAD STEP     1   SUBSTEP   566  COMPLETED.  FREQUENCY=   71500.0    
+ *** LOAD STEP     1   SUBSTEP   567  COMPLETED.  FREQUENCY=   71600.0    
+ *** LOAD STEP     1   SUBSTEP   568  COMPLETED.  FREQUENCY=   71700.0    
+ *** LOAD STEP     1   SUBSTEP   569  COMPLETED.  FREQUENCY=   71800.0    
+ *** LOAD STEP     1   SUBSTEP   570  COMPLETED.  FREQUENCY=   71900.0    
+ *** LOAD STEP     1   SUBSTEP   571  COMPLETED.  FREQUENCY=   72000.0    
 
 
  *** MAPDL BINARY FILE STATISTICS
   BUFFER SIZE USED= 16384
        22.125 MB WRITTEN ON ELEMENT SAVED DATA FILE: file0.esav
       131.625 MB WRITTEN ON ASSEMBLED MATRIX FILE: file0.full
-      217.938 MB WRITTEN ON RESULTS FILE: file0.rst
+     1182.312 MB WRITTEN ON RESULTS FILE: file0.rst
  *************** Write FE CONNECTORS *********
 
  WRITE OUT CONSTRAINT EQUATIONS TO FILE= file.ce                                                                                                                                                                                                                                                             
@@ -1703,17 +2173,17 @@
  FINISH SOLUTION PROCESSING
 
 
- ***** ROUTINE COMPLETED *****  CP =       614.156
+ ***** ROUTINE COMPLETED *****  CP =      3528.109
 
 
 
  PRINTOUT RESUMED BY /GOP
 
- *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  19.3980556    
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.6316667    
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   19:23:53  NOV 29, 2025 CP=    614.172
+ 01055371  VERSION=WINDOWS x64   22:37:54  DEC 01, 2025 CP=   3528.125
 
  simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (D3)     
 
@@ -1721,7 +2191,7 @@
 
           ***** MAPDL RESULTS INTERPRETATION (POST1) *****
 
- *** NOTE ***                            CP =     614.172   TIME= 19:23:53
+ *** NOTE ***                            CP =    3528.125   TIME= 22:37:54
  Reading results into the database (SET command) will update the current 
  displacement and force boundary conditions in the database with the     
  values from the results file for that load set.  Note that any          
@@ -1739,25 +2209,25 @@
  EXIT THE MAPDL POST1 DATABASE PROCESSOR
 
 
- ***** ROUTINE COMPLETED *****  CP =       614.172
+ ***** ROUTINE COMPLETED *****  CP =      3528.125
 
 
 
  PRINTOUT RESUMED BY /GOP
 
- *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  19.3980556    
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  22.6316667    
 
  PARAMETER _PREPTIME =     0.000000000    
 
- PARAMETER _SOLVTIME =     615.0000000    
+ PARAMETER _SOLVTIME =     3553.000000    
 
  PARAMETER _POSTTIME =     0.000000000    
 
- PARAMETER _TOTALTIM =     615.0000000    
+ PARAMETER _TOTALTIM =     3553.000000    
 
  *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  0.00000000    
 
- *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE=  1.68905530    
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE=  13.0656946    
 
  *GET  _SSMODE   FROM  ACTI  ITEM=SOLU SSMM  VALUE=  2.00000000    
 
@@ -1767,7 +2237,7 @@
  --- Total number of nodes = 31292
  --- Total number of elements = 8478
  --- Element load balance ratio = 0
- --- Time to combine distributed files = 1.6890553
+ --- Time to combine distributed files = 13.0656946
  --- Sparse memory mode = 2
  --- Number of DOF = 89384
 
@@ -1777,7 +2247,7 @@
  NUMBER OF WARNING MESSAGES ENCOUNTERED=         11
  NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
 
- *** NOTE ***                            CP =     614.469   TIME= 19:24:05
+ *** NOTE ***                            CP =    3528.312   TIME= 22:38:06
  The solution for the current simulation was performed using 1 cores.    
  The parallel performance of this simulation on this hardware indicates  
  that this simulation would benefit from using additional CPU cores.     
@@ -1787,7 +2257,7 @@
 +--------------------- M A P D L   S T A T I S T I C S ------------------------+
 
 Release: 2025 R2            Build: 25.2       Update: UP20250519   Platform: WINDOWS x64 
-Date Run: 11/29/2025   Time: 19:24     Process ID: 6832
+Date Run: 12/01/2025   Time: 22:38     Process ID: 14396
 Operating System: Windows 11  (Build: 26100)
 
 Processor Model: Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
@@ -1813,39 +2283,39 @@ Input File: dummy.dat
 
   Core                Machine Name   Working Directory
  -----------------------------------------------------
-     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\ScrD191
-     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\ScrD191
-     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\ScrD191
-     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\ScrD191
+     0         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\Scr3002
+     1         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\Scr3002
+     2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\Scr3002
+     3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\Scr3002
  
-Latency time from master to core     1 =    5.286 microseconds
-Latency time from master to core     2 =    6.182 microseconds
-Latency time from master to core     3 =    6.848 microseconds
+Latency time from master to core     1 =    5.386 microseconds
+Latency time from master to core     2 =    5.342 microseconds
+Latency time from master to core     3 =    6.322 microseconds
  
-Communication speed from master to core     1 =  4467.13 MB/sec
-Communication speed from master to core     2 =  4925.90 MB/sec
-Communication speed from master to core     3 =  5860.38 MB/sec
+Communication speed from master to core     1 =  4391.53 MB/sec
+Communication speed from master to core     2 =  4634.11 MB/sec
+Communication speed from master to core     3 =  6856.89 MB/sec
 
-Total CPU time for main thread                    :      610.8 seconds
-Total CPU time summed for all threads             :      614.5 seconds
+Total CPU time for main thread                    :     3524.1 seconds
+Total CPU time summed for all threads             :     3528.3 seconds
 
-Elapsed time spent obtaining a license            :        0.5 seconds
+Elapsed time spent obtaining a license            :        0.6 seconds
 Elapsed time spent pre-processing model (/PREP7)  :        0.2 seconds
-Elapsed time spent solution - preprocessing       :        1.2 seconds
-Elapsed time spent computing solution             :      611.2 seconds
-Elapsed time spent solution - postprocessing      :        1.7 seconds
+Elapsed time spent solution - preprocessing       :        1.1 seconds
+Elapsed time spent computing solution             :     3537.4 seconds
+Elapsed time spent solution - postprocessing      :       13.1 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
  
 Equation solver used                              :            Sparse (symmetric)
-Equation solver computational rate                :        5.9 Gflops
+Equation solver computational rate                :        7.0 Gflops
 
-Sum of disk space used on all processes           :     2112.6 MB
+Sum of disk space used on all processes           :     8897.7 MB
 
 Sum of memory used on all processes               :     8525.0 MB
 Sum of memory allocated on all processes          :    11907.0 MB
 Physical memory available                         :         32 GB
-Total amount of I/O written to disk               :        1.9 GB
-Total amount of I/O read from disk                :        3.4 GB
+Total amount of I/O written to disk               :       10.2 GB
+Total amount of I/O read from disk                :       19.7 GB
 
 +------------------ E N D   M A P D L   S T A T I S T I C S -------------------+
 
@@ -1867,7 +2337,7 @@ Total amount of I/O read from disk                :        3.4 GB
  |                                                                             |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |        CP Time      (sec) =        614.469       Time  =  19:24:05          |
- |        Elapsed Time (sec) =        633.000       Date  =  11/29/2025        |
+ |        CP Time      (sec) =       3528.312       Time  =  22:38:06          |
+ |        Elapsed Time (sec) =       3571.000       Date  =  12/01/2025        |
  |                                                                             |
  *-----------------------------------------------------------------------------*

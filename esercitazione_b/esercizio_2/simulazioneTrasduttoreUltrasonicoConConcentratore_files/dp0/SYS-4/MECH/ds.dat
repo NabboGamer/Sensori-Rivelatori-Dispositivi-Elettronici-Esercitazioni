@@ -15,7 +15,7 @@
 /COM,
 ! ****** End   Custom Load Command Snippet ******
 *DIM,_wb_ProjectScratch_dir,string,248
-_wb_ProjectScratch_dir(1) = 'C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\ScrD191\'
+_wb_ProjectScratch_dir(1) = 'C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\_ProjectScratch\Scr3002\'
 *DIM,_wb_SolverFiles_dir,string,248
 _wb_SolverFiles_dir(1) = 'C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH\'
 *DIM,_wb_userfiles_dir,string,248
@@ -46703,7 +46703,7 @@ kbc,1
 *DIM,_harmUserForcingFreqSteps,,1
 _harmUserForcingFreqSteps(1) = 48263
 harfrq,15000,72000,,,%_harmUserForcingFreqSteps%
-nsub,100
+nsub,570
 outres,erase
 outres,all,none
 outres,nsol,all
