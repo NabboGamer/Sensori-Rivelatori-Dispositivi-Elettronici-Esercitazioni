@@ -70,8 +70,21 @@ classdef Controller < Component
         end
 
         function onButtonPushed( obj, ~, ~ )
-            modello = obj.App.Modello;
-            modello.simulate();
+            % Imposta lo stato di caricamento
+            obj.Button.Text = "Simulazione...";
+            obj.Button.Enable = "off";
+            drawnow;
+
+            try
+                modello = obj.App.Modello;
+                modello.simulate();
+            catch ME
+                obj.App.showError(ME.message);
+            end
+
+            % Ripristina lo stato del pulsante
+            obj.Button.Text = "Simula";
+            obj.Button.Enable = "on";
         end % onButtonPushed
 
     end % methods
@@ -95,7 +108,6 @@ classdef Controller < Component
             tipologiaSimulazionePanel.Layout.Row = 1;
             tipologiaSimulazionePanel.Layout.Column = 1;
 
-            uilabel(tipologiaSimulazionePanel, "Text", "Tipologia Simulazione");
             obj.DropDownMenu = uidropdown(tipologiaSimulazionePanel, "ValueChangedFcn", @obj.onSimulationChanged);
 
 

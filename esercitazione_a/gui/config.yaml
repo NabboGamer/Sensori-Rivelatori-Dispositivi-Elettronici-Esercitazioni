@@ -4,7 +4,7 @@
     - kind: CeramicsTab
       values:
         MenuForma: Quadrato
-        CampoParametro1: 0.01
+        CampoParametro1: 0.010
         CampoSpessore: 0.001
         MenuPz: 'Pz26'
       disabled:
@@ -29,5 +29,9 @@
     - "fmax = f(1,index_max);"
     - "Keff = ((fmax^2) - (fmin^2))/(fmax^2);"
   resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
+  plots:
+    - name: Zin
+      drawing:
+        - 'stampaGrafici(f, moduloZi, faseZi, "Zin: input impedance", "blue", "Zin");'
 
   
