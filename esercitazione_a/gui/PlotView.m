@@ -5,20 +5,13 @@ classdef PlotView < Component
 
     properties
         App(:,1) App
-        % Line width.
-        LineWidth(1, 1) double {mustBePositive, mustBeFinite} = 1.5
-        % Line color.
-        LineColor {validatecolor} = "k"
     end % properties
 
-    properties ( GetAccess = ?Testable, SetAccess = private )
-        Grid(:, 1) matlab.ui.container.GridLayout {mustBeScalarOrEmpty}
-        Axes1(:, 1) matlab.ui.control.UIAxes {mustBeScalarOrEmpty}
-        Axes2(:, 1) matlab.ui.control.UIAxes {mustBeScalarOrEmpty}
-        % Line object used to visualize the model data.
-        Line(:, 1) matlab.graphics.primitive.Line {mustBeScalarOrEmpty}
-        Line2(:, 1) matlab.graphics.primitive.Line {mustBeScalarOrEmpty}
-    end % properties ( GetAccess = ?Testable, SetAccess = private )
+    properties ( SetAccess = private )
+        TabGroup(:, 1) matlab.ui.container.TabGroup {mustBeScalarOrEmpty}
+        Tabs(:, 1) cell = {}
+        Panel(:, 1) matlab.ui.container.Panel {mustBeScalarOrEmpty}
+    end % properties ( SetAccess = private )
 
     properties ( Access = private )
         % Listener object used to respond dynamically to model events.
@@ -35,20 +28,28 @@ classdef PlotView < Component
                 "DataChanged", ...
                 @( s, e ) weakObj.Handle.onDataChanged( s, e ) );
 
+            % Crea le tabs ora che l'App e il Modello sono disponibili
+            createTabs(obj);
 
             % Refresh the view.
             onDataChanged( obj, [], [] )
 
         end
 
-        function ToggleSecondPlot( obj, show )
-            if show
-                obj.Grid.RowHeight = {'1x', '1x'};
-                obj.Axes2.Visible = 'on';
-            else
-                obj.Grid.RowHeight = {'1x', 0};
-                obj.Axes2.Visible = 'off';
+        function updatePlot(obj, index, figureChildren)
+            %UPDATEPLOT Updates the specified tab with new plot content.
+
+            if index > numel(obj.Tabs) || index < 1
+                return;
             end
+
+            currentTab = obj.Tabs{index};
+
+            % Pulisci la tab prima di disegnare
+            delete(currentTab.Children);
+
+            % Copia il contenuto della figura temporanea nella tab
+            copyobj(figureChildren, currentTab);
         end
 
         function obj = PlotView( namedArgs )
@@ -73,31 +74,17 @@ classdef PlotView < Component
         function setup( obj )
             %SETUP Initialize the view.
 
-            obj.Grid = uigridlayout(obj, [2 1]);
-            obj.Grid.RowHeight = {'1x', '1x'};
-            obj.Grid.Padding = 0;
-            obj.Grid.RowSpacing = 0;
+            % Crea il panel con bordo arrotondato
+            obj.Panel = uipanel( ...
+                "Parent", obj, ...
+                "BorderType", "line", ...
+                "BorderWidth", 2, ...
+                "BackgroundColor", [1 1 1]);
 
-            % Create the view graphics.
-            obj.Axes1 = uiaxes( "Parent", obj.Grid );
-            obj.Axes2 = uiaxes( "Parent", obj.Grid );
-
-            obj.Line = line( ...
-                "Parent", obj.Axes1, ...
-                "XData", NaN, ...
-                "YData", NaN, ...
-                "Color", obj.Axes1.ColorOrder(1, :), ...
-                "LineWidth", 1.5 );
-
-            obj.Line2 = line( ...
-                "Parent", obj.Axes2, ...
-                "XData", NaN, ...
-                "YData", NaN, ...
-                "Color", obj.Axes2.ColorOrder(2, :), ...
-                "LineWidth", 1.5 );
-
-            obj.Axes1.Color = 'white';
-            obj.Axes2.Color = 'white';
+            % Crea il TabGroup all'interno del panel
+            obj.TabGroup = uitabgroup(obj.Panel, ...
+                "Units", "normalized", ...
+                "Position", [0 0 1 1]);
 
         end % setup
 
@@ -105,10 +92,7 @@ classdef PlotView < Component
             %UPDATE Update the view in response to changes in the public
             %properties.
 
-            set( obj.Line, "LineWidth", obj.LineWidth, ...
-                "Color", obj.LineColor )
-            set( obj.Line2, "LineWidth", obj.LineWidth, ...
-                "Color", obj.LineColor )
+
 
         end % update
 
@@ -120,12 +104,33 @@ classdef PlotView < Component
             %ONDATACHANGED Listener callback, responding to the model event
             %"DataChanged".
 
-            % Retrieve the most recent data and update the line.
-            data = obj.App.Modello.Data;
-            set( obj.Line, "XData", 1:numel( data ), "YData", data )
-            set( obj.Line2, "XData", 1:numel( data ), "YData", data ) % Placeholder logic for second plot
+            % I comandi di drawing vengono eseguiti in Model.simulate
+            % dove tutte le variabili sono disponibili
 
         end % onDataChanged
+
+        function createTabs( obj )
+            %CREATETABS Crea dinamicamente le tabs basandosi sulla configurazione
+
+            % Ottieni la configurazione dei plots
+            if isempty(obj.App) || isempty(obj.App.Modello) || ...
+                    isempty(obj.App.Modello.Config) || ...
+                    ~isfield(obj.App.Modello.Config{1}, 'plots')
+                return;
+            end
+
+            plots = obj.App.Modello.Config{1}.plots;
+
+            % Crea una tab per ciascun elemento in plots
+            for i = 1:numel(plots)
+                plotConfig = plots{i};
+
+                % Crea la tab con il nome specificato
+                tab = uitab(obj.TabGroup, "Title", plotConfig.name);
+                obj.Tabs{end+1} = tab;
+            end
+
+        end % createTabs
 
     end % methods ( Access = private )
 

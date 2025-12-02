@@ -98,6 +98,42 @@ classdef Model < handle
                 obj.ResultText = replace(obj.ResultText, '\t', '    ');
             end
 
+            %% Esecuzione comandi di drawing per i plots
+            if isfield(obj.Config{1}, 'plots')
+                plots = obj.Config{1}.plots;
+
+                % Ottieni i tabs dalla PlotView
+
+                for i = 1:numel(plots)
+                    plotConfig = plots{i};
+
+                    drawingCommands = plotConfig.drawing;
+
+                    % Crea una figura tradizionale temporanea invisibile
+                    % Questo è necessario perché stampaGrafici usa subplot che lavora su figure
+                    tempFig = figure('Visible', 'off');
+
+                    % Esegui ogni comando di drawing
+                    for j = 1:numel(drawingCommands)
+                        cmd = drawingCommands{j};
+                        % Valuta il comando nel workspace corrente
+                        eval(cmd);
+
+                        % Aggiungi hold on tra i comandi per sovrapporre i grafici
+                        if j < numel(drawingCommands)
+                            hold on;
+                        end
+                    end
+
+                    % Aggiorna la tab corrispondente usando il metodo di PlotView
+                    obj.App.VistaGrafici.updatePlot(i, tempFig.Children);
+
+                    % Chiudi la figura temporanea
+                    close(tempFig);
+                end
+
+            end
+
             notify( obj, "DataChanged" )
 
         end % simulate

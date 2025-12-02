@@ -10,14 +10,14 @@ classdef CeramicsTab < Component
         MenuForma(:, 1) matlab.ui.control.DropDown {mustBeScalarOrEmpty}
 
         EtichettaParametro1(:, 1) matlab.ui.control.Label {mustBeScalarOrEmpty}
-        CampoParametro1(:, 1) matlab.ui.control.NumericEditField {mustBeScalarOrEmpty}
+        CampoParametro1(:, 1) matlab.ui.control.Spinner {mustBeScalarOrEmpty}
         UnitaParametro1(:, 1) matlab.ui.control.Label {mustBeScalarOrEmpty}
 
         EtichettaParametro2(:, 1) matlab.ui.control.Label {mustBeScalarOrEmpty}
-        CampoParametro2(:, 1) matlab.ui.control.NumericEditField {mustBeScalarOrEmpty}
+        CampoParametro2(:, 1) matlab.ui.control.Spinner {mustBeScalarOrEmpty}
         UnitaParametro2(:, 1) matlab.ui.control.Label {mustBeScalarOrEmpty}
 
-        CampoSpessore(:, 1) matlab.ui.control.NumericEditField {mustBeScalarOrEmpty}
+        CampoSpessore(:, 1) matlab.ui.control.Spinner {mustBeScalarOrEmpty}
         UnitaSpessore(:, 1) matlab.ui.control.Label {mustBeScalarOrEmpty}
 
         MenuZ1(:, 1) matlab.ui.control.DropDown {mustBeScalarOrEmpty}
@@ -111,17 +111,17 @@ classdef CeramicsTab < Component
 
             % Parametro 1
             obj.EtichettaParametro1 = uilabel( "Parent", obj.Griglia, "Text", "Lato" );
-            obj.CampoParametro1 = uieditfield( "numeric", "Parent", obj.Griglia );
+            obj.CampoParametro1 = uispinner( "Parent", obj.Griglia, "Step", 1e-3, "Limits", [0, 1] );
             obj.UnitaParametro1 = uilabel( "Parent", obj.Griglia, "Text", "m" );
 
             % Parametro 2
             obj.EtichettaParametro2 = uilabel( "Parent", obj.Griglia, "Text", "Altezza" );
-            obj.CampoParametro2 = uieditfield( "numeric", "Parent", obj.Griglia );
+            obj.CampoParametro2 = uispinner( "Parent", obj.Griglia, "Step", 1e-3, "Limits", [0, 1] );
             obj.UnitaParametro2 = uilabel( "Parent", obj.Griglia, "Text", "m" );
 
             % Spessore
             etichettaSpessore = uilabel( "Parent", obj.Griglia, "Text", "Spessore" );
-            obj.CampoSpessore = uieditfield( "numeric", "Parent", obj.Griglia );
+            obj.CampoSpessore = uispinner( "Parent", obj.Griglia, "Step", 1e-3, "Limits", [0, 1] );
             obj.UnitaSpessore = uilabel( "Parent", obj.Griglia, "Text", "m" );
 
             % Z1
