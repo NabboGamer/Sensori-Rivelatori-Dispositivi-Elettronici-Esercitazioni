@@ -53,18 +53,18 @@ classdef Controller < Component
             % Popola il menu a discesa dalla configurazione
             config = obj.App.Modello.Config;
             if ~isempty(config) && iscell(config)
-                simTypes = strings(0);
+                exercises = strings(0);
                 for i = 1:length(config)
                     item = config{i};
-                    if isfield(item, 'simType')
-                        simTypes(end+1) = string(item.simType);
+                    if isfield(item, 'exercise')
+                        exercises(end+1) = string(item.exercise);
                     end
                 end
 
-                if ~isempty(simTypes)
-                    obj.DropDownMenu.Items = simTypes;
-                    obj.DropDownMenu.Value = simTypes(1);
-                    obj.applySimulationConfig(simTypes(1));
+                if ~isempty(exercises)
+                    obj.DropDownMenu.Items = exercises;
+                    obj.DropDownMenu.Value = exercises(1);
+                    obj.applySimulationConfig(exercises(1));
                 end
             end
         end
@@ -103,7 +103,7 @@ classdef Controller < Component
             tipologiaSimulazionePanel = uigridlayout( ...
                 "Parent", obj.Grid, ...
                 "RowHeight", "1x", ...
-                "ColumnWidth", {"0.5x", "0.5x"}, ...
+                "ColumnWidth", "1x", ...
                 "Padding", 0);
             tipologiaSimulazionePanel.Layout.Row = 1;
             tipologiaSimulazionePanel.Layout.Column = 1;
@@ -125,18 +125,22 @@ classdef Controller < Component
             obj.applySimulationConfig(selected);
         end
 
-        function applySimulationConfig(obj, simType)
+        function applySimulationConfig(obj, exercise)
             config = obj.App.Modello.Config;
             imageName = "";
             defaults = [];
+            settings = [];
 
             for i = 1:length(config)
-                if strcmp(config{i}.simType, simType)
+                if strcmp(config{i}.exercise, exercise)
                     if isfield(config{i}, 'image')
                         imageName = config{i}.image;
                     end
                     if isfield(config{i}, 'defaults')
                         defaults = config{i}.defaults;
+                    end
+                    if isfield(config{i}, 'settings')
+                        settings = config{i}.settings;
                     end
                     break;
                 end
@@ -147,9 +151,8 @@ classdef Controller < Component
                 obj.Image.ImageSource = imagePath;
             end
 
-            if ~isempty(defaults)
-                obj.TabController.applySettings(defaults);
-            end
+            obj.TabController.loadTabs(settings);
+            obj.TabController.applySettings(defaults);
         end
 
     end % methods ( Access = private )

@@ -33,13 +33,13 @@ classdef Model < handle
             %SIMULATE Esegue una simulazione basata sul tipo selezionato.
 
             %% Geometria
-            l = obj.App.TabController.TabCeramica.CampoSpessore.Value;
+            l = obj.App.TabController.getTab('CeramicsTab').getComponent('CampoSpessore').Value;
             ordineDiGrandezzal = calcolaOrdineDiGrandezza(l);
 
-            forma = obj.App.TabController.TabCeramica.MenuForma.Value;
+            forma = obj.App.TabController.getTab('CeramicsTab').getComponent('MenuForma').Value;
             switch forma
                 case "Quadrato"
-                    L = obj.App.TabController.TabCeramica.CampoParametro1.Value;
+                    L = obj.App.TabController.getTab('CeramicsTab').getComponent('CampoParametro1').Value;
                     ordineDiGrandezzaL = calcolaOrdineDiGrandezza(L);
                     if (ordineDiGrandezzaL >= (ordineDiGrandezzal + 1))
                         areaFaccia = L * L;
@@ -48,8 +48,8 @@ classdef Model < handle
                         return;
                     end
                 case "Rettangolo"
-                    L = obj.App.TabController.TabCeramica.CampoParametro1.Value;
-                    w = obj.App.TabController.TabCeramica.CampoParametro2.Value;
+                    L = obj.App.TabController.getTab('CeramicsTab').getComponent('CampoParametro1').Value;
+                    w = obj.App.TabController.getTab('CeramicsTab').getComponent('CampoParametro2').Value;
                     ordineDiGrandezzaL = calcolaOrdineDiGrandezza(L);
                     ordineDiGrandezzaw = calcolaOrdineDiGrandezza(w);
                     if (ordineDiGrandezzaL >= (ordineDiGrandezzal + 1) && ...
@@ -60,7 +60,7 @@ classdef Model < handle
                         return;
                     end
                 case "Cerchio"
-                    R = obj.App.TabController.TabCeramica.CampoParametro1.Value;
+                    R = obj.App.TabController.getTab('CeramicsTab').getComponent('CampoParametro1').Value;
                     ordineDiGrandezzaR = calcolaOrdineDiGrandezza(R);
                     if (ordineDiGrandezzaR >= (ordineDiGrandezzal + 1))
                         areaFaccia = pi * (R^2);
@@ -72,7 +72,7 @@ classdef Model < handle
 
             %% Pzt config
             keyMap = containers.Map([obj.PztProperties{:,1}], obj.PztProperties(:,2));
-            selezionePzt = obj.App.TabController.TabCeramica.MenuPz.Value;
+            selezionePzt = obj.App.TabController.getTab('CeramicsTab').getComponent('MenuPz').Value;
             pztProps = keyMap(selezionePzt);
             rho = pztProps(1);
             c33 = pztProps(2);

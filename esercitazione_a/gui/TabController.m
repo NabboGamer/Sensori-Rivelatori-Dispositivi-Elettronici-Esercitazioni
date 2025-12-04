@@ -7,10 +7,8 @@ classdef TabController < Component
     end
 
     properties ( GetAccess = public, SetAccess = private )
-        TabFrequenza(:, 1)
-        TabPlot(:, 1)
         TabRisultati(:, 1)
-        TabCeramica(:, 1)
+        Tabs containers.Map
         GruppoTab(:, 1)
     end
 
@@ -30,6 +28,8 @@ classdef TabController < Component
             % Chiama il costruttore della superclasse.
             obj@Component()
 
+            obj.Tabs = containers.Map();
+
             % Imposta le proprietà specificate dall'utente.
             set( obj, namedArgs )
 
@@ -37,21 +37,71 @@ classdef TabController < Component
 
         function set.App( obj, app )
             obj.App = app;
-            if ~isempty(obj.TabCeramica)
-                obj.TabCeramica.App = app;
+            % Update existing tabs
+            if ~isempty(obj.Tabs)
+                keys = obj.Tabs.keys;
+                for i = 1:length(keys)
+                    obj.Tabs(keys{i}).App = app;
+                end
             end
-            if ~isempty(obj.TabFrequenza)
-                obj.TabFrequenza.App = app;
-            end
-            if ~isempty(obj.TabPlot)
-                obj.TabPlot.App = app;
-            end
+
             if ~isempty(obj.TabRisultati)
                 obj.TabRisultati.App = app;
             end
 
             if isempty(obj.Listener)
                 obj.Listener = addlistener(obj.App.Modello, 'DataChanged', @obj.onDataChanged);
+            end
+        end
+
+        function loadTabs(obj, tabConfigs)
+            %LOADTABS Genera le tab dinamicamente dalla configurazione
+
+            % Rimuovi le tab dinamiche esistenti
+            if ~isempty(obj.Tabs)
+                keys = obj.Tabs.keys;
+                for i = 1:length(keys)
+                    tabComp = obj.Tabs(keys{i});
+                    % Elimina il contenitore uitab (parent del component)
+                    delete(tabComp.Parent);
+                    delete(tabComp);
+                end
+                remove(obj.Tabs, keys);
+            end
+
+            % Crea le nuove tab
+            for i = 1:length(tabConfigs)
+                conf = tabConfigs{i};
+
+                % Crea uitab prima della tab risultati
+                t = uitab(obj.GruppoTab, "Title", conf.name);
+
+                % Crea DynamicTab
+                % FIX: Refactored DynamicTab constructor
+                dt = DynamicTab(t, conf);
+
+                if ~isempty(obj.App)
+                    dt.App = obj.App;
+                end
+
+                % Salva nella mappa
+                if isfield(conf, 'id')
+                    obj.Tabs(conf.id) = dt;
+                end
+            end
+
+            % Assicura che TabRisultati sia l'ultima
+            children = obj.GruppoTab.Children;
+            resTab = obj.TabRisultati.Parent;
+            if children(end) ~= resTab
+                % Reorder
+                otherTabs = children(children ~= resTab);
+                obj.GruppoTab.Children = [otherTabs; resTab];
+            end
+
+            % Seleziona la prima tab
+            if ~isempty(obj.GruppoTab.Children)
+                obj.GruppoTab.SelectedTab = obj.GruppoTab.Children(1);
             end
         end
 
@@ -62,22 +112,21 @@ classdef TabController < Component
 
             for i = 1:length(defaults)
                 setting = defaults{i};
-                if isfield(setting, 'kind')
-                    switch setting.kind
-                        case 'CeramicsTab'
-                            if ~isempty(obj.TabCeramica)
-                                obj.TabCeramica.applySettings(setting);
-                            end
-                        case 'FrequencyTab'
-                            if ~isempty(obj.TabFrequenza)
-                                obj.TabFrequenza.applySettings(setting);
-                            end
-                        case 'PlotTab'
-                            if ~isempty(obj.TabPlot)
-                                obj.TabPlot.applySettings(setting);
-                            end
+                if isfield(setting, 'id')
+                    tabId = setting.id;
+                    if isKey(obj.Tabs, tabId)
+                        tabObj = obj.Tabs(tabId);
+                        tabObj.applySettings(setting);
                     end
                 end
+            end
+        end
+
+        function tab = getTab(obj, id)
+            if isKey(obj.Tabs, id)
+                tab = obj.Tabs(id);
+            else
+                tab = [];
             end
         end
     end
@@ -89,15 +138,11 @@ classdef TabController < Component
             grid.RowHeight = "1x";
             grid.ColumnWidth = "1x";
             grid.Padding = 0;
-            obj.GruppoTab = uitabgroup(grid);
-            ceramicaTabContainer = uitab(obj.GruppoTab, "Title", "Ceramica");
-            obj.TabCeramica = CeramicsTab("Parent", ceramicaTabContainer);
-            frequenzaTabContainer = uitab(obj.GruppoTab, "Title", "Frequenza");
-            obj.TabFrequenza = FrequencyTab("Parent", frequenzaTabContainer);
-            plotTabContainer = uitab(obj.GruppoTab, "Title", "Grafici");
-            obj.TabPlot = PlotTab("Parent", plotTabContainer);
+            obj.GruppoTab = uitabgroup(grid, "Position", [0,0,1,1]);
+
             risultatiTabContainer = uitab(obj.GruppoTab, "Title", "Risultati");
-            obj.TabRisultati = ResultTab("Parent", risultatiTabContainer);
+            % FIX: Refactored ResultTab constructor
+            obj.TabRisultati = ResultTab(risultatiTabContainer);
         end
 
         function update( ~ )
@@ -107,6 +152,7 @@ classdef TabController < Component
 
     methods ( Access = private )
         function onDataChanged(obj, ~, ~)
+            % obj.TabRisultati.Parent is the uitab
             obj.GruppoTab.SelectedTab = obj.TabRisultati.Parent;
         end
     end
