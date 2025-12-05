@@ -51,26 +51,6 @@
           Step: 0.001
           Limits: [0, 1]
         - kind: uidropdown
-          id: MenuZ1
-          labels:
-            - text: Z1
-              position: left
-          Items:
-            - Aria (20°C)
-            - Acqua (20°C)
-            - Alcol Etilico
-            - Gel (Ultrasonico)
-        - kind: uidropdown
-          id: MenuZ2
-          labels:
-            - text: Z2
-              position: left
-          Items:
-            - Aria (20°C)
-            - Acqua (20°C)
-            - Alcol Etilico
-            - Gel (Ultrasonico)
-        - kind: uidropdown
           id: MenuPz
           labels:
             - text: Pz
@@ -84,3 +64,26 @@
             - Pz28
             - Pz29
             - Pz34
+- name: Impedenze
+  id: ImpedenzeTab
+  components:
+    - kind: uidropdown
+      id: MenuZ1
+      labels:
+        - text: Z1
+          position: left
+      Items:
+        - Aria (20°C)
+        - Acqua (20°C)
+        - Alcol Etilico
+        - Gel (Ultrasonico)
+    - kind: uidropdown
+      id: MenuZ2
+      labels:
+        - text: Z2
+          position: left
+      Items:
+        - Aria (20°C)
+        - Acqua (20°C)
+        - Alcol Etilico
+        - Gel (Ultrasonico)
