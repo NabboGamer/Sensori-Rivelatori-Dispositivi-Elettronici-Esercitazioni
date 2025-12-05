@@ -26,7 +26,7 @@ classdef Model < handle
         function obj = Model()
             addpath("../core")
             obj.PztProperties = caricaStrutturaProprietaPzt();
-            obj.Config = YamlParser.read(fullfile(fileparts(mfilename('fullpath')), 'config.yaml'));
+            obj.Config = YamlParser.read(fullfile(fileparts(mfilename('fullpath')), 'config/config.yaml'));
         end
 
         function simulate( obj )

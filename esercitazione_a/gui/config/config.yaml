@@ -1,0 +1,18 @@
+- exercise: Caratterizzazione Ceramica (Thickness)
+  image: singleCeramics.png
+  settings: carat_ceram_thick/tabSettings.yaml
+  defaults:
+    - id: CeramicsTab
+      values:
+        MenuForma: Quadrato
+        CampoParametro1: 0.010
+        CampoSpessore: 0.001
+        MenuPz: 'Pz26'
+  pipeline: carat_ceram_thick/pipeline.yaml
+  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
+  plots:
+    - name: Zin
+      drawing:
+        - 'stampaGrafici(f, moduloZi, faseZi, "Zin: input impedance", "blue", "Zin");'
+
+  
