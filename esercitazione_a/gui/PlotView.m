@@ -28,12 +28,41 @@ classdef PlotView < Component
                 "DataChanged", ...
                 @( s, e ) weakObj.Handle.onDataChanged( s, e ) );
 
-            % Crea le tabs ora che l'App e il Modello sono disponibili
-            createTabs(obj);
+            % Inizializza le tabs con l'esercizio attualmente selezionato
+            if ~isempty(obj.App.Controller) && ~isempty(obj.App.Controller.DropDownMenu)
+                currentExercise = obj.App.Controller.DropDownMenu.Value;
+                obj.initializeTabs(currentExercise);
+            end
 
             % Refresh the view.
             onDataChanged( obj, [], [] )
 
+        end
+
+        function initializeTabs(obj, exerciseName)
+            %INITIALIZETABS Inizializza le tab basandosi sul nome dell'esercizio
+
+            % Pulisci le tab esistenti
+            delete(obj.TabGroup.Children);
+            obj.Tabs = {};
+
+            % Trova la configurazione per l'esercizio specificato
+            config = obj.App.Modello.Config;
+            foundConfig = [];
+
+            for i = 1:numel(config)
+                if strcmp(config{i}.exercise, exerciseName)
+                    foundConfig = config{i};
+                    break;
+                end
+            end
+
+            if isempty(foundConfig) || ~isfield(foundConfig, 'plots')
+                return;
+            end
+
+            % Crea le nuove tab
+            obj.createTabs(foundConfig.plots);
         end
 
         function updatePlot(obj, index, figureChildren)
@@ -109,17 +138,8 @@ classdef PlotView < Component
 
         end % onDataChanged
 
-        function createTabs( obj )
-            %CREATETABS Crea dinamicamente le tabs basandosi sulla configurazione
-
-            % Ottieni la configurazione dei plots
-            if isempty(obj.App) || isempty(obj.App.Modello) || ...
-                    isempty(obj.App.Modello.Config) || ...
-                    ~isfield(obj.App.Modello.Config{1}, 'plots')
-                return;
-            end
-
-            plots = obj.App.Modello.Config{1}.plots;
+        function createTabs( obj, plots )
+            %CREATETABS Crea dinamicamente le tabs basandosi sulla configurazione passata
 
             % Crea una tab per ciascun elemento in plots
             for i = 1:numel(plots)

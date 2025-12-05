@@ -3,7 +3,7 @@ classdef Controller < Component
 
     % Copyright 2021-2025 The MathWorks, Inc.
 
-    properties ( GetAccess = ?Testable, SetAccess = private )
+    properties ( GetAccess = public, SetAccess = private )
         Button(:, 1) matlab.ui.control.Button {mustBeScalarOrEmpty}
         DropDownMenu(:, 1) matlab.ui.control.DropDown {mustBeScalarOrEmpty}
         Image(:, 1)
@@ -153,6 +153,14 @@ classdef Controller < Component
 
             obj.TabController.loadTabs(settings);
             obj.TabController.applySettings(defaults);
+
+            % Aggiorna l'esercizio corrente nel modello
+            obj.App.Modello.CurrentExercise = exercise;
+
+            % Aggiorna le tabs dei grafici se la vista è disponibile
+            if ~isempty(obj.App.VistaGrafici)
+                obj.App.VistaGrafici.initializeTabs(exercise);
+            end
         end
 
     end % methods ( Access = private )

@@ -8,6 +8,7 @@ classdef Model < handle
         Simulazione(:, 1)
         Config
         ResultText
+        CurrentExercise string {mustBeScalarOrEmpty}
     end
 
     properties ( SetAccess = private )
@@ -27,6 +28,10 @@ classdef Model < handle
             addpath("../core")
             obj.PztProperties = caricaStrutturaProprietaPzt();
             obj.Config = YamlParser.read(fullfile(fileparts(mfilename('fullpath')), 'config/config.yaml'));
+
+            if ~isempty(obj.Config) && iscell(obj.Config) && isfield(obj.Config{1}, 'exercise')
+                obj.CurrentExercise = obj.Config{1}.exercise;
+            end
         end
 
         function simulate( obj )
@@ -84,23 +89,37 @@ classdef Model < handle
             theta = (omega .* l) ./ v;
             C0 = (areaFaccia/(beta33*l));
 
+            %% Configurazione Specifica
+            currentConfig = [];
+            for i = 1:numel(obj.Config)
+                if strcmp(obj.Config{i}.exercise, obj.CurrentExercise)
+                    currentConfig = obj.Config{i};
+                    break;
+                end
+            end
+
+            if isempty(currentConfig)
+                obj.App.showError("Configurazione non trovata per l'esercizio selezionato.");
+                return;
+            end
+
             %% Pipeline
-            pipeline = obj.Config{1}.pipeline;
+            pipeline = currentConfig.pipeline;
             for j = 1:length(pipeline)
                 cmd = pipeline{j};
                 eval(cmd);
             end
 
             %% Risultato (testuale)
-            if isfield(obj.Config{1}, 'resultText')
-                obj.ResultText = eval(obj.Config{1}.resultText);
+            if isfield(currentConfig, 'resultText')
+                obj.ResultText = eval(currentConfig.resultText);
                 obj.ResultText = replace(obj.ResultText, '\n', newline);
                 obj.ResultText = replace(obj.ResultText, '\t', '    ');
             end
 
             %% Esecuzione comandi di drawing per i plots
-            if isfield(obj.Config{1}, 'plots')
-                plots = obj.Config{1}.plots;
+            if isfield(currentConfig, 'plots')
+                plots = currentConfig.plots;
 
                 % Ottieni i tabs dalla PlotView
 

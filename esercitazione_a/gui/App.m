@@ -41,9 +41,9 @@ classdef App < handle
             obj.VistaGrafici = PlotView("Parent", obj.Layout);
 
             %% Dipendenze
-            obj.Controller.App = obj;
-            obj.Modello.App = obj;
             obj.VistaGrafici.App = obj;
+            obj.Modello.App = obj;
+            obj.Controller.App = obj;
 
             obj.VistaGrafici.Subscribe();
 
