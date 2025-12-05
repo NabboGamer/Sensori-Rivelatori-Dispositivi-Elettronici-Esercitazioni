@@ -16,7 +16,6 @@ strutturaImpedenzeAcustiche{4,1} = "Gel (Ultrasonico)";
 strutturaImpedenzeAcustiche{4,2} = 1500000;
 
 % Converti in containers.Map per permettere l'accesso tramite chiave
-% Converti in containers.Map per permettere l'accesso tramite chiave
 keys = string(strutturaImpedenzeAcustiche(:, 1));
 values = strutturaImpedenzeAcustiche(:, 2);
 strutturaImpedenzeAcustiche = containers.Map(keys, values);
