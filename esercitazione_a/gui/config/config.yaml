@@ -6,6 +6,7 @@
       values:
         MenuForma: Quadrato
         CampoParametro1: 0.010
+        CampoParametro2: 0.010
         CampoSpessore: 0.001
         MenuPz: 'Pz26'
   pipeline: carat_ceram_thick/pipeline.yaml
