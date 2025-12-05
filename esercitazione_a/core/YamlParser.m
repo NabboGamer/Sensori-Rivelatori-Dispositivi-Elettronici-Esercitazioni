@@ -14,12 +14,18 @@ classdef YamlParser
                 end
             end
 
-            [result, ~] = YamlParser.parseBlock(lines);
+            % Ottieni la directory del file corrente per risolvere i percorsi relativi
+            [currentDir, ~, ~] = fileparts(filePath);
+            if isempty(currentDir)
+                currentDir = pwd;
+            end
+
+            [result, ~] = YamlParser.parseBlock(lines, currentDir);
         end
     end
 
     methods (Static, Access = private)
-        function [result, remaining] = parseBlock(lines)
+        function [result, remaining] = parseBlock(lines, currentDir)
             if isempty(lines)
                 result = [];
                 remaining = [];
@@ -81,7 +87,7 @@ classdef YamlParser
 
                         if isempty(firstContent)
                             % Elemento definito nelle righe successive
-                            [nestedRes, ~] = YamlParser.parseBlock(itemBlockRaw(2:end));
+                            [nestedRes, ~] = YamlParser.parseBlock(itemBlockRaw(2:end), currentDir);
                             result{end+1} = nestedRes;
                         elseif contains(firstContent, ':') && ~startsWith(firstContent, '"') && ~startsWith(firstContent, "'")
                             % Inizio mappa inline: "- chiave: valore"
@@ -103,11 +109,11 @@ classdef YamlParser
                                 end
                             end
 
-                            [nestedRes, ~] = YamlParser.parseBlock(mapLines);
+                            [nestedRes, ~] = YamlParser.parseBlock(mapLines, currentDir);
                             result{end+1} = nestedRes;
                         else
                             % Scalare o stringa tra virgolette
-                            result{end+1} = YamlParser.parseValue(firstContent);
+                            result{end+1} = YamlParser.parseValue(firstContent, currentDir);
                         end
                     else
                         idx = idx + 1;
@@ -153,7 +159,7 @@ classdef YamlParser
 
                         if nestedIdx > startIdx
                             nestedBlock = lines(startIdx:nestedIdx-1);
-                            [nestedRes, ~] = YamlParser.parseBlock(nestedBlock);
+                            [nestedRes, ~] = YamlParser.parseBlock(nestedBlock, currentDir);
                             result.(key) = nestedRes;
                             idx = nestedIdx;
                         else
@@ -163,7 +169,7 @@ classdef YamlParser
                         end
                     else
                         % Scalare
-                        result.(key) = YamlParser.parseValue(valPart);
+                        result.(key) = YamlParser.parseValue(valPart, currentDir);
                         idx = idx + 1;
                     end
                 end
@@ -171,7 +177,7 @@ classdef YamlParser
             end
         end
 
-        function val = parseValue(str)
+        function val = parseValue(str, currentDir)
             str = strtrim(str);
             if startsWith(str, '"') && endsWith(str, '"')
                 val = str(2:end-1);
@@ -183,6 +189,14 @@ classdef YamlParser
                     val = true;
                 elseif strcmpi(str, 'false')
                     val = false;
+                elseif endsWith(str, '.yaml', 'IgnoreCase', true)
+                    % Gestione inclusione ricorsiva file YAML
+                    fullPath = fullfile(currentDir, str);
+                    if exist(fullPath, 'file')
+                        val = YamlParser.read(fullPath);
+                    else
+                        val = str; % Se il file non esiste, trattalo come stringa
+                    end
                 else
                     val = str;
                 end
