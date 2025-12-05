@@ -1,0 +1,46 @@
+- "ZoD = areaFaccia * v * rho;"
+- "Zel = 1E+06; %1MOhm"
+- "selezioneZ1 = obj.App.TabController.getTab('CeramicsTab').getComponent('MenuZ1').Value"
+- "selezioneZ2 = obj.App.TabController.getTab('CeramicsTab').getComponent('MenuZ2').Value"
+- "keyMap = caricaStrutturaImpedenzeAcustiche();"
+- "z1 = keyMap(string(selezioneZ1));"
+- "z2 = keyMap(string(selezioneZ2));"
+- "Z1 = areaFaccia * z1;"
+- "Z2 = areaFaccia * z2;"
+- "A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);"
+- "B_side1 = calcolaMatriceB(A, Z2);"
+- "B_side2 = calcolaMatriceB(A, Z1);"
+- "[Zin_side1, FTT_side1, FTR_side1] = calcolaFunzioniDiTrasferimento(B_side1, Z1, Zel);"
+- "[Zin_side2, FTT_side2, FTR_side2] = calcolaFunzioniDiTrasferimento(B_side2, Z2, Zel);"
+- 'if(Z1 == Z2) var_z = "Impedance"; var_FTT = "TTF"; var_FTR = "RTF"; else var_z = "Impedance"; var_FTT = "TTF Comparing"; var_FTR = "RTF Comparing"; end'
+- "index_min = (Zin_side1{1} == min(Zin_side1{1}));"
+- "index_max = (Zin_side1{1} == max(Zin_side1{1}));"
+- "fmin = f(1,index_min);"
+- "fmax = f(1,index_max);"
+- "Keff = ((fmax^2) - (fmin^2))/(fmax^2);"
+#
+# Esercizio su mezzi standard
+#
+- 'var_z = "Impedance Comparing ARIA-ARIA vs ACQUA-ACQUA";'
+- 'var_FTT = "TTF Comparing ARIA-ARIA vs ACQUA-ACQUA";'
+- 'var_FTR = "RTF Comparing ARIA-ARIA vs ACQUA-ACQUA";'
+#
+# ARIA-ARIA
+#
+- "z1 = 414.5;"
+- "z2 = 414.5;"
+- "Z1 = areaFaccia * z1;"
+- "Z2 = areaFaccia * z2;"
+- "A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);"
+- "B_side1 = calcolaMatriceB(A, Z2);"
+- "[Zin_side1, FTT_side1, FTR_side1] = calcolaFunzioniDiTrasferimento(B_side1, Z1, Zel);"
+#
+# ACQUA-ACQUA
+#
+- "z1 = 1479036;"
+- "z2 = 1479036;"
+- "Z1 = areaFaccia * z1;"
+- "Z2 = areaFaccia * z2;"
+- "A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);"
+- "B_side1 = calcolaMatriceB(A, Z2);"
+- "[Zin_side1, FTT_side1, FTR_side1] = calcolaFunzioniDiTrasferimento(B_side1, Z1, Zel);"
