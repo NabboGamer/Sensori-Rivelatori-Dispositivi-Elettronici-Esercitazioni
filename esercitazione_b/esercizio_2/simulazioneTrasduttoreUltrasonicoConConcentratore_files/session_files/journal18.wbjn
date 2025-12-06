@@ -1,0 +1,54 @@
+# encoding: utf-8
+# 2025 R2
+SetScriptVersion(Version="25.2.170")
+system1 = GetSystem(Name="SYS 1")
+setup1 = system1.GetContainer(ComponentName="Setup")
+setup1.Edit()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Exit()
+template1 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+system2 = template1.CreateSystem(
+    Position="Above",
+    RelativeTo=system1)
+system2.Delete()
+system3 = GetSystem(Name="SYS")
+system4 = template1.CreateSystem(
+    Position="Above",
+    RelativeTo=system3)
+engineeringDataComponent1 = system4.GetComponent(Name="Engineering Data")
+system5 = GetSystem(Name="ENGD")
+engineeringDataComponent2 = system5.GetComponent(Name="Engineering Data")
+engineeringDataComponent1.ReplaceWithShare(
+    TargetSystem=system4,
+    ComponentToShare=engineeringDataComponent2,
+    SourceSystem=system5)
+system4.DisplayText = "Concentrator Moda Analisysl"
+system4.DisplayText = "Concentrator Moda Analysisl"
+system4.DisplayText = "Concentrator Moda Analysis"
+Save(Overwrite=True)
+system4.DisplayText = "Concentrator Modal"
+system6 = GetSystem(Name="Geom")
+system6.DisplayText = "Trasducer Geometry"
+system6.DisplayText = "Transducer Geometry"
+system3.DisplayText = "Transducer Mechanical Model"
+system1.DisplayText = "Transducer Modal"
+system7 = GetSystem(Name="SYS 2")
+system7.DisplayText = "Transducer Harmonic Response"
+Save(Overwrite=True)
+Save(Overwrite=True)
+geometry1 = system4.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+geometry1.Exit()
+modelComponent1 = system4.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model2 = system4.GetContainer(ComponentName="Model")
+model2.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+model2.Exit()
+Save(Overwrite=True)

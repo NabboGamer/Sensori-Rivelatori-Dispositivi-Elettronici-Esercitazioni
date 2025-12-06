@@ -1,53 +1,53 @@
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       21:38:40
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       14:09:13
 
- *** WARNING ***                         CP =       1.375   TIME= 21:38:41
- The data for *GET entity NODE item CPS and NODE= 17050 is not defined.  
+ *** WARNING ***                         CP =       1.359   TIME= 14:09:14
+ The data for *GET entity NODE item CPS and NODE= 16987 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       1.375   TIME= 21:38:41
+ *** WARNING ***                         CP =       1.359   TIME= 14:09:14
  The data for *GET entity NODE item CPS and NODE= 16121 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       1.375   TIME= 21:38:41
+ *** WARNING ***                         CP =       1.359   TIME= 14:09:14
  The data for *GET entity NODE item CPS and NODE= 16117 is not defined.  
                                                                          
   The *GET command is ignored.                                           
 
- *** WARNING ***                         CP =       2.984   TIME= 21:38:42
+ *** WARNING ***                         CP =       3.047   TIME= 14:09:15
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       3.672   TIME= 21:38:42
- Contact element 10087 is missing DOF VOLT (and possibly others) of      
+ *** WARNING ***                         CP =       3.656   TIME= 14:09:15
+ Contact element 9938 is missing DOF VOLT (and possibly others) of       
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       4.469   TIME= 21:38:42
+ *** WARNING ***                         CP =       4.500   TIME= 14:09:16
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       4.469   TIME= 21:38:42
+ *** WARNING ***                         CP =       4.500   TIME= 14:09:16
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       4.469   TIME= 21:38:42
+ *** WARNING ***                         CP =       4.500   TIME= 14:09:16
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       4.469   TIME= 21:38:42
- Contact element 10087 is missing DOF VOLT (and possibly others) of      
+ *** WARNING ***                         CP =       4.500   TIME= 14:09:16
+ Contact element 9938 is missing DOF VOLT (and possibly others) of       
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       4.469   TIME= 21:38:42
- Contact element 10087 is missing DOF VOLT (and possibly others) of      
+ *** WARNING ***                         CP =       4.500   TIME= 14:09:16
+ Contact element 9938 is missing DOF VOLT (and possibly others) of       
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
 
- *** WARNING ***                         CP =       4.469   TIME= 21:38:42
- Contact element 10087 is missing DOF VOLT (and possibly others) of      
+ *** WARNING ***                         CP =       4.500   TIME= 14:09:16
+ Contact element 9938 is missing DOF VOLT (and possibly others) of       
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       22:38:15
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       15:00:53

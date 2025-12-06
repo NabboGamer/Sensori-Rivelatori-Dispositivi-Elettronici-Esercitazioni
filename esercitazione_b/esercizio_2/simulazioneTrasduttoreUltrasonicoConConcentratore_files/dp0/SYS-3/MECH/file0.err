@@ -1,13 +1,13 @@
-/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       18:47:49
+/COM,ANSYS RELEASE 2025 R2           BUILD 25.2      UP20250519       13:59:57
 
- *** WARNING ***                         CP =       1.625   TIME= 18:47:50
+ *** WARNING ***                         CP =       1.562   TIME= 13:59:58
  Element shape checking is currently inactive.  Issue SHPP,ON or         
  SHPP,WARN to reactivate, if desired.                                    
 
- *** WARNING ***                         CP =       1.688   TIME= 18:47:50
+ *** WARNING ***                         CP =       1.656   TIME= 13:59:58
  No constraints have been defined using the D command.                   
 
- *** WARNING ***                         CP =       2.125   TIME= 18:47:50
- Contact element 10087 is missing DOF VOLT (and possibly others) of      
+ *** WARNING ***                         CP =       2.062   TIME= 13:59:58
+ Contact element 9938 is missing DOF VOLT (and possibly others) of       
  underlying base element 3421.  Similar mismatches may exist elsewhere,  
  but checking for this is discontinued.                                  
