@@ -1,29 +1,47 @@
 - name: Zin
+  rules:
+    - 'mezziStandard == false'
   drawing:
     - 'stampaGrafici(f, Zin_side1{1}, Zin_side1{2}, var_z, "blue", "Zin");'
 - name: TTF
+  rules:
+    - 'mezziStandard == false'
   drawing:
     - 'stampaGrafici(f, FTT_side1{1}, FTT_side1{2}, var_FTT, "blue", "TTF_s_i_d_e_1", "TTF");'
     - 'stampaGrafici(f, FTT_side2{1}, FTT_side2{2}, var_FTT, "orange", "TTF_s_i_d_e_2", "TTF");'
 - name: RTF
+  rules:
+    - 'mezziStandard == false'
   drawing:
     - 'stampaGrafici(f, FTR_side1{1}, FTR_side1{2}, var_FTR, "blue", "RTF_s_i_d_e_1", "RTF");'
     - 'stampaGrafici(f, FTR_side2{1}, FTR_side2{2}, var_FTR, "orange", "RTF_s_i_d_e_2", "RTF");'
 - name: Zin (ARIA-ARIA)
+  rules:
+    - 'mezziStandard == true'
   drawing:
-    - 'stampaGrafici(f, Zin_side1{1}, Zin_side1{2}, var_z, "blue", "Zin_A_R_I_A_-_A_R_I_A", "Zin");'
+    - 'var_z = "Impedance Comparing ARIA-ARIA vs ACQUA-ACQUA"; var_FTT = "TTF Comparing ARIA-ARIA vs ACQUA-ACQUA"; var_FTR = "RTF Comparing ARIA-ARIA vs ACQUA-ACQUA"; stampaGrafici(f, Zin_side1_aria{1}, Zin_side1_aria{2}, var_z, "blue", "Zin_A_R_I_A_-_A_R_I_A", "Zin");'
 - name: TTF (ARIA-ARIA)
+  rules:
+    - 'mezziStandard == true'
   drawing:
-    - 'stampaGrafici(f, FTT_side1{1}, FTT_side1{2}, var_FTT, "blue", "TTF_s_i_d_e_1", "TTF");'
+    - 'stampaGrafici(f, FTT_side1_aria{1}, FTT_side1_aria{2}, var_FTT, "blue", "TTF_s_i_d_e_1", "TTF");'
 - name: RTF (ARIA-ARIA)
+  rules:
+    - 'mezziStandard == true'
   drawing:
-    - 'stampaGrafici(f, FTR_side1{1}, FTR_side1{2}, var_FTR, "blue", "RTF_s_i_d_e_1", "RTF");'
+    - 'stampaGrafici(f, FTR_side1_aria{1}, FTR_side1_aria{2}, var_FTR, "blue", "RTF_s_i_d_e_1", "RTF");'
 - name: Zin (ACQUA-ACQUA)
+  rules:
+    - 'mezziStandard == true'
   drawing:
-    - 'stampaGrafici(f, Zin_side1{1}, Zin_side1{2}, var_z, "blue", "Zin_A_C_Q_U_A_-_A_C_Q_U_A", "Zin");'
+    - 'stampaGrafici(f, Zin_side1_acqua{1}, Zin_side1_acqua{2}, var_z, "blue", "Zin_A_C_Q_U_A_-_A_C_Q_U_A", "Zin");'
 - name: TTF (ACQUA-ACQUA)
+  rules:
+    - 'mezziStandard == true'
   drawing:
-    - 'stampaGrafici(f, FTT_side1{1}, FTT_side1{2}, var_FTT, "blue", "TTF_s_i_d_e_1", "TTF");'
+    - 'stampaGrafici(f, FTT_side1_acqua{1}, FTT_side1_acqua{2}, var_FTT, "blue", "TTF_s_i_d_e_1", "TTF");'
 - name: RTF (ACQUA-ACQUA)
+  rules:
+    - 'mezziStandard == true'
   drawing:
-    - 'stampaGrafici(f, FTR_side1{1}, FTR_side1{2}, var_FTR, "blue", "RTF_s_i_d_e_1", "RTF");'
+    - 'stampaGrafici(f, FTR_side1_acqua{1}, FTR_side1_acqua{2}, var_FTR, "blue", "RTF_s_i_d_e_1", "RTF");'

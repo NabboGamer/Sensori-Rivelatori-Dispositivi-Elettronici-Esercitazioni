@@ -17,30 +17,30 @@
 - "index_max = (Zin_side1{1} == max(Zin_side1{1}));"
 - "fmin = f(1,index_min);"
 - "fmax = f(1,index_max);"
-- "Keff = ((fmax^2) - (fmin^2))/(fmax^2);"
+- "Keff_custom = ((fmax^2) - (fmin^2))/(fmax^2);"
 #
 # Esercizio su mezzi standard
 #
-- 'var_z = "Impedance Comparing ARIA-ARIA vs ACQUA-ACQUA";'
-- 'var_FTT = "TTF Comparing ARIA-ARIA vs ACQUA-ACQUA";'
-- 'var_FTR = "RTF Comparing ARIA-ARIA vs ACQUA-ACQUA";'
-#
-# ARIA-ARIA
-#
-- "z1 = 414.5;"
-- "z2 = 414.5;"
-- "Z1 = areaFaccia * z1;"
-- "Z2 = areaFaccia * z2;"
-- "A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);"
-- "B_side1 = calcolaMatriceB(A, Z2);"
-- "[Zin_side1, FTT_side1, FTR_side1] = calcolaFunzioniDiTrasferimento(B_side1, Z1, Zel);"
-#
-# ACQUA-ACQUA
-#
-- "z1 = 1479036;"
-- "z2 = 1479036;"
-- "Z1 = areaFaccia * z1;"
-- "Z2 = areaFaccia * z2;"
-- "A = calcolaMatriceA(ZoD, omega, v, l, h33, C0);"
-- "B_side1 = calcolaMatriceB(A, Z2);"
-- "[Zin_side1, FTT_side1, FTR_side1] = calcolaFunzioniDiTrasferimento(B_side1, Z1, Zel);"
+- "z1_aria = 414.5;"
+- "z2_aria = 414.5;"
+- "Z1_aria = areaFaccia * z1_aria;"
+- "Z2_aria = areaFaccia * z2_aria;"
+- "B_side1_aria = calcolaMatriceB(A, Z2_aria);"
+- "[Zin_side1_aria, FTT_side1_aria, FTR_side1_aria] = calcolaFunzioniDiTrasferimento(B_side1_aria, Z1_aria, Zel);"
+- "z1_acqua = 1479036;"
+- "z2_acqua = 1479036;"
+- "Z1_acqua = areaFaccia * z1_acqua;"
+- "Z2_acqua = areaFaccia * z2_acqua;"
+- "B_side1_acqua = calcolaMatriceB(A, Z2_acqua);"
+- "[Zin_side1_acqua, FTT_side1_acqua, FTR_side1_acqua] = calcolaFunzioniDiTrasferimento(B_side1_acqua, Z1_acqua, Zel);"
+- "index_min = (Zin_side1_aria{1} == min(Zin_side1_aria{1}));"
+- "index_max = (Zin_side1_aria{1} == max(Zin_side1_aria{1}));"
+- "fmin = f(1,index_min);"
+- "fmax = f(1,index_max);"
+- "Keff_aria = ((fmax^2) - (fmin^2))/(fmax^2);"
+- "index_min = (Zin_side1_acqua{1} == min(Zin_side1_acqua{1}));"
+- "index_max = (Zin_side1_acqua{1} == max(Zin_side1_acqua{1}));"
+- "fmin = f(1,index_min);"
+- "fmax = f(1,index_max);"
+- "Keff_acqua = ((fmax^2) - (fmin^2))/(fmax^2);"
+- 'if (mezziStandard) Keff = "\n\tAria: " + num2str(Keff_aria) + "\n\tAcqua: " + num2str(Keff_acqua); else Keff = Keff_custom; end'

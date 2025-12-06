@@ -9,8 +9,8 @@
         CampoParametro2: 0.010
         CampoSpessore: 0.001
         MenuPz: 'Pz26'
-  pipeline: carat_ceram_thick/pipeline.yaml
   resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
+  pipeline: carat_ceram_thick/pipeline.yaml
   plots:
     - name: Zin
       drawing:
@@ -30,6 +30,7 @@
       values:
         MenuZ1: 'Aria (20°C)'
         MenuZ2: 'Aria (20°C)'
+        CheckMezziStandard: false
   pipeline: model_termi_thick/pipeline.yaml
   resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
   plots: model_termi_thick/plots.yaml
