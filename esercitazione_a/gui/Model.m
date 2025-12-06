@@ -89,6 +89,13 @@ classdef Model < handle
             theta = (omega .* l) ./ v;
             C0 = (areaFaccia/(beta33*l));
 
+            %% Impedenze
+            try
+                mezziStandard = obj.App.TabController.getTab('ImpedenzeTab').getComponent('CheckMezziStandard').Value;
+            catch
+                mezziStandard = false;
+            end
+
             %% Configurazione Specifica
             currentConfig = [];
             for i = 1:numel(obj.Config)
@@ -120,11 +127,43 @@ classdef Model < handle
             %% Esecuzione comandi di drawing per i plots
             if isfield(currentConfig, 'plots')
                 plots = currentConfig.plots;
+                validPlots = {};
 
-                % Ottieni i tabs dalla PlotView
-
+                % Filtra i plots in base alle regole
                 for i = 1:numel(plots)
                     plotConfig = plots{i};
+                    isValid = true;
+
+                    if isfield(plotConfig, 'rules')
+                        rules = plotConfig.rules;
+                        for k = 1:numel(rules)
+                            rule = rules{k};
+                            % Valuta la regola nel workspace corrente
+                            try
+                                ruleResult = eval(rule);
+                                if ~ruleResult
+                                    isValid = false;
+                                    break;
+                                end
+                            catch ME
+                                fprintf('Errore nella valutazione della regola "%s": %s\n', rule, ME.message);
+                                isValid = false;
+                                break;
+                            end
+                        end
+                    end
+
+                    if isValid
+                        validPlots{end+1} = plotConfig;
+                    end
+                end
+
+                % Aggiorna le tabs nella view con i plots filtrati
+                obj.App.VistaGrafici.setupTabs(validPlots);
+
+                % Disegna i plots validi
+                for i = 1:numel(validPlots)
+                    plotConfig = validPlots{i};
 
                     drawingCommands = plotConfig.drawing;
 

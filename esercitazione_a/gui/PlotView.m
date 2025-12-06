@@ -43,8 +43,8 @@ classdef PlotView < Component
             %INITIALIZETABS Inizializza le tab basandosi sul nome dell'esercizio
 
             % Pulisci le tab esistenti
-            delete(obj.TabGroup.Children);
-            obj.Tabs = {};
+            % delete(obj.TabGroup.Children);
+            % obj.Tabs = {};
 
             % Trova la configurazione per l'esercizio specificato
             config = obj.App.Modello.Config;
@@ -62,7 +62,7 @@ classdef PlotView < Component
             end
 
             % Crea le nuove tab
-            obj.createTabs(foundConfig.plots);
+            obj.setupTabs(foundConfig.plots);
         end
 
         function updatePlot(obj, index, figureChildren)
@@ -95,6 +95,24 @@ classdef PlotView < Component
             set( obj, namedArgs )
 
         end % constructor
+
+        function setupTabs( obj, plots )
+            %SETUPTABS Crea dinamicamente le tabs basandosi sulla configurazione passata
+
+            % Pulisci le tab esistenti
+            delete(obj.TabGroup.Children);
+            obj.Tabs = {};
+
+            % Crea una tab per ciascun elemento in plots
+            for i = 1:numel(plots)
+                plotConfig = plots{i};
+
+                % Crea la tab con il nome specificato
+                tab = uitab(obj.TabGroup, "Title", plotConfig.name);
+                obj.Tabs{end+1} = tab;
+            end
+
+        end % setupTabs
 
     end % methods
 
@@ -137,20 +155,6 @@ classdef PlotView < Component
             % dove tutte le variabili sono disponibili
 
         end % onDataChanged
-
-        function createTabs( obj, plots )
-            %CREATETABS Crea dinamicamente le tabs basandosi sulla configurazione passata
-
-            % Crea una tab per ciascun elemento in plots
-            for i = 1:numel(plots)
-                plotConfig = plots{i};
-
-                % Crea la tab con il nome specificato
-                tab = uitab(obj.TabGroup, "Title", plotConfig.name);
-                obj.Tabs{end+1} = tab;
-            end
-
-        end % createTabs
 
     end % methods ( Access = private )
 

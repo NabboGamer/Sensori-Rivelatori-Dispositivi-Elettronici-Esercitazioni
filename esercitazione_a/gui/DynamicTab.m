@@ -8,6 +8,7 @@ classdef DynamicTab < handle
         Grid matlab.ui.container.GridLayout
         VisibilityRules containers.Map
         LabelRules containers.Map
+        EnableRules containers.Map
         Config
         Parent(:, 1) matlab.ui.container.Tab {mustBeScalarOrEmpty}
     end
@@ -19,6 +20,7 @@ classdef DynamicTab < handle
             obj.ComponentLabels = containers.Map();
             obj.VisibilityRules = containers.Map();
             obj.LabelRules = containers.Map();
+            obj.EnableRules = containers.Map();
 
             % Create grid directly on the parent (uitab)
             obj.Grid = uigridlayout("Parent", parent, ...
@@ -72,6 +74,7 @@ classdef DynamicTab < handle
             % Ricontrolla visibilità ed etichette dopo aver applicato le impostazioni
             obj.checkVisibility();
             obj.updateLabels();
+            obj.checkEnable();
         end
 
         function comp = getComponent(obj, id)
@@ -111,6 +114,9 @@ classdef DynamicTab < handle
             end
             if ~isempty(obj.LabelRules)
                 remove(obj.LabelRules, obj.LabelRules.keys);
+            end
+            if ~isempty(obj.EnableRules)
+                remove(obj.EnableRules, obj.EnableRules.keys);
             end
 
             % Pulisci i figli della griglia (ma non la griglia stessa)
@@ -239,6 +245,12 @@ classdef DynamicTab < handle
                             obj.VisibilityRules(compDef.id) = compDef.visible_when;
                         end
 
+                        if isfield(compDef, 'disable_when')
+                            obj.EnableRules(compDef.id) = compDef.disable_when;
+                        elseif isfield(compDef, 'disabled_when')
+                            obj.EnableRules(compDef.id) = compDef.disabled_when;
+                        end
+
                         % Aggiungi ValueChangedFcn per attivare aggiornamenti
                         % Lo aggiungiamo a tutto ciò che lo possiede
                         if isprop(newComp, 'ValueChangedFcn')
@@ -259,11 +271,13 @@ classdef DynamicTab < handle
             % Controllo iniziale visibilità ed etichette
             obj.checkVisibility();
             obj.updateLabels();
+            obj.checkEnable();
         end
 
         function onValueChanged(obj, ~, ~)
             obj.checkVisibility();
             obj.updateLabels();
+            obj.checkEnable();
         end
 
         function checkVisibility(obj)
@@ -310,6 +324,43 @@ classdef DynamicTab < handle
                         for k=1:length(lbls)
                             lbls(k).Visible = lblVis;
                         end
+                    end
+                end
+            end
+        end
+
+        function checkEnable(obj)
+            if isempty(obj.EnableRules)
+                return;
+            end
+
+            keys = obj.EnableRules.keys;
+            for i = 1:length(keys)
+                targetId = keys{i};
+                rule = obj.EnableRules(targetId);
+
+                if isKey(obj.Components, targetId)
+                    targetComp = obj.Components(targetId);
+
+                    shouldDisable = false;
+                    if isfield(rule, 'id') && isfield(rule, 'value')
+                        triggerId = rule.id;
+                        expectedValue = rule.value;
+
+                        if isKey(obj.Components, triggerId)
+                            triggerComp = obj.Components(triggerId);
+                            actualValue = triggerComp.Value;
+
+                            if isequal(actualValue, expectedValue)
+                                shouldDisable = true;
+                            end
+                        end
+                    end
+
+                    if shouldDisable
+                        targetComp.Enable = 'off';
+                    else
+                        targetComp.Enable = 'on';
                     end
                 end
             end
