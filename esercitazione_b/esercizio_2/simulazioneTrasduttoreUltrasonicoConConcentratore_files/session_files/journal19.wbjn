@@ -1,0 +1,104 @@
+# encoding: utf-8
+# 2025 R2
+SetScriptVersion(Version="25.2.170")
+system1 = GetSystem(Name="SYS 3")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+geometry1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+geometry1.Exit()
+Save(Overwrite=True)
+model1.Exit()
+system2 = GetSystem(Name="Geom")
+geometry2 = system2.GetContainer(ComponentName="Geometry")
+geometry2.Edit()
+Save(Overwrite=True)
+geometry2.Exit()
+system3 = GetSystem(Name="SYS")
+modelComponent1 = system3.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model2 = system3.GetContainer(ComponentName="Model")
+model2.Edit()
+Save(Overwrite=True)
+model2.Exit()
+modelComponent1.Update(AllDependencies=True)
+Save(Overwrite=True)
+system1.Notes = """Questa analisi modale è utile per allineare la autofrequenza del concentratore con la autofrequenza del Langevin modellato e simulato nell'esercizio precedente.
+Questo risulta necessario siccome il Langevin è stato dimensionato come in MATLAB, e quindi in Ansys, ovviamente, risulta avere una autofrequenza non esattamente a 40kHz."""
+system1.Notes = """Questa analisi modale è utile per allineare la autofrequenza del concentratore con la autofrequenza del Langevin modellato e simulato nell'esercizio precedente.
+Questo risulta necessario siccome il Langevin è stato dimensionato come in MATLAB, e quindi in Ansys, ovviamente, risulta avere una autofrequenza non esattamente a 40kHz. Grazie a questa analisi si possono dimensionare le due parti del conenctratore in modo da fare il suddettto matching.
+Ovviamente queste modifiche vengono poi riportate nella modellazione e simulazione sottostabnte del Langevin con concentratore."""
+system1.Notes = """Questa analisi modale è utile per allineare la autofrequenza del concentratore con la autofrequenza del Langevin modellato e simulato nell'esercizio precedente.
+Questo risulta necessario siccome il Langevin è stato dimensionato come in MATLAB, e quindi in Ansys, ovviamente, risulta avere una autofrequenza non esattamente a 40kHz. Grazie a questa analisi si possono dimensionare le due parti del conenctratore in modo da fare il suddettto matching. 
+Ovviamente queste modifiche vengono poi riportate nella modellazione e simulazione sottostabnte del Langevin con concentratore."""
+Save(Overwrite=True)
+system4 = GetSystem(Name="SYS 1")
+modelComponent2 = system4.GetComponent(Name="Model")
+modelComponent2.Refresh()
+model3 = system4.GetContainer(ComponentName="Model")
+model3.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+system1.Notes = """MODULO RICHIESTO DAL PROF
+
+
+Questa analisi modale è utile per allineare la autofrequenza del concentratore con la autofrequenza del Langevin modellato e simulato nell'esercizio precedente.
+Questo risulta necessario siccome il Langevin è stato dimensionato come in MATLAB, e quindi in Ansys, ovviamente, risulta avere una autofrequenza non esattamente a 40kHz. Grazie a questa analisi si possono dimensionare le due parti del conenctratore in modo da fare il suddettto matching. 
+Ovviamente queste modifiche vengono poi riportate nella modellazione e simulazione sottostabnte del Langevin con concentratore."""
+system1.Notes = """MODULO RICHIESTO DAL PROF
+
+Questa analisi modale è utile per allineare la autofrequenza del concentratore con la autofrequenza del Langevin modellato e simulato nell'esercizio precedente.
+Questo risulta necessario siccome il Langevin è stato dimensionato come in MATLAB, e quindi in Ansys, ovviamente, risulta avere una autofrequenza non esattamente a 40kHz. Grazie a questa analisi si possono dimensionare le due parti del conenctratore in modo da fare il suddettto matching. 
+Ovviamente queste modifiche vengono poi riportate nella modellazione e simulazione sottostabnte del Langevin con concentratore."""
+system1.Notes = """MODULO RICHIESTO DAL PROF
+
+Questa analisi modale è utile per allineare la autofrequenza del concentratore con la autofrequenza del Langevin modellato e simulato nell'esercizio precedente.
+Siccome il Langevin è stato dimensionato come in MATLAB, e quindi in Ansys, ovviamente, risulta avere una autofrequenza non esattamente a 40kHz. Grazie a questa analisi si possono dimensionare le due parti del conenctratore in modo da fare il suddettto matching. 
+Ovviamente queste modifiche vengono poi riportate nella modellazione e simulazione sottostabnte del Langevin con concentratore."""
+system1.Notes = """MODULO RICHIESTO DAL PROF
+
+Questa analisi modale è utile per allineare la autofrequenza del concentratore con la autofrequenza del Langevin modellato e simulato nell'esercizio precedente.
+Siccome il Langevin è stato dimensionato come in MATLAB, e quindi in Ansys, ovviamente, risulta avere una autofrequenza non esattamente a 40kHz. Grazie a questa analisi si possono dimensionare le due parti del conenctratore in modo da fare il suddettto matching. 
+Ovviamente queste modifiche vengono poi riportate nella modellazione e simulazione sottostante del Langevin con concentratore."""
+system5 = GetSystem(Name="SYS 2")
+modelComponent3 = system5.GetComponent(Name="Model")
+modelComponent3.Refresh()
+model4 = system5.GetContainer(ComponentName="Model")
+model4.Edit()
+system1.Notes = """MODULO RICHIESTO DAL PROF
+
+Questa analisi modale è utile per allineare la autofrequenza del concentratore con la autofrequenza del Langevin modellato e simulato nell'esercizio precedente.
+Siccome il Langevin è stato dimensionato come in MATLAB, e quindi in Ansys, ovviamente, risulta avere una autofrequenza non esattamente a 40kHz. Grazie a questa analisi si possono dimensionare le due parti del conenctratore(ovvero si varia lo spessore rispetto alla modellazione teorica poi implementata esattamente in MATLAB) in modo da fare il suddettto matching. 
+Ovviamente queste modifiche vengono poi riportate nella modellazione e simulazione sottostante del Langevin con concentratore."""
+model2.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+model2.Exit()
+setup1 = system5.GetContainer(ComponentName="Setup")
+setup1.Edit()
+setup2 = system4.GetContainer(ComponentName="Setup")
+setup2.Edit()
+model4.Exit()
+modelComponent1.UpdateUpstreamComponents()
+setup2.Edit()
+model3.Exit()
+model2.Edit()
+model2.Exit()
+model3.Edit()
+Save(Overwrite=True)
+setup1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+setup2.Edit()
+model3.Exit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)

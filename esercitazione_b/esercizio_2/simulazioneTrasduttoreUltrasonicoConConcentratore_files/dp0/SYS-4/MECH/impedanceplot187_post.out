@@ -107,7 +107,7 @@
   OUTPUT FILE NAME             = C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH\ImpedancePlot187_Post.out
 
  RELEASE= 2025 R2              BUILD= 25.2      UP20250519   VERSION=WINDOWS x64 
- CURRENT JOBNAME=file0  22:38:16  DEC 01, 2025 CP=      0.109
+ CURRENT JOBNAME=file0  15:00:53  DEC 06, 2025 CP=      0.109
 
 
  RUN SETUP PROCEDURE FROM FILE= C:\Program Files\ANSYS Inc\ANSYS Student\v252\ANSYS\apdl\start.ans
@@ -126,8 +126,8 @@
  TITLE = simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (
  ANALYSIS TYPE =  HARMONIC             
         16 ELEM TYPES DEFINED    MAX ELEM TYPE NUMBER =            16
-      8478 ELEMENTS DEFINED      MAX ELEMENT NUMBER =           11930
-     31292 NODES DEFINED         MAX NODE NUMBER =              31292
+      8375 ELEMENTS DEFINED      MAX ELEMENT NUMBER =           11761
+     30857 NODES DEFINED         MAX NODE NUMBER =              30857
          6 MATERIALS DEFINED     MAX MATERIAL NUMBER =              6
         10 REAL CONSTS DEFINED   MAX REAL CONST NUMBER =           16
          0 SECTIONS DEFINED      MAX SECTION NUMBER =               0
@@ -152,9 +152,9 @@
 
  *** MAPDL - ENGINEERING ANALYSIS SYSTEM  RELEASE 2025 R2          25.2     ***
  Ansys Mechanical Enterprise Academic Student      
- 01055371  VERSION=WINDOWS x64   22:38:16  DEC 01, 2025 CP=      0.500
+ 01055371  VERSION=WINDOWS x64   15:00:54  DEC 06, 2025 CP=      0.469
 
- simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (D3)     
+ simulazioneTrasduttoreUltrasonicoConConcentratore--Harmonic Response (E3)     
 
 
 
@@ -194,7 +194,7 @@
          SUMMARY OF VARIABLES STORED THIS STEP AND EXTREME VALUES
  VARI TYPE    IDENTIFIERS   NAME     MINIMUM    AT FREQ     MAXIMUM    AT FREQ
 
-   2 RFOR 16121 CHRG      CHRG     -0.1095E-005 0.3890E+005 0.1844E-007 0.5650E+005
+   2 RFOR 16121 CHRG      CHRG     -0.1230E-007 0.5660E+005 0.8308E-008 0.5670E+005
 
  COMPLEX LOAD FACTORS  CFACT1=  0.0000      6.2832    
                        CFACT2= -1.0000      0.0000    
@@ -231,7 +231,7 @@
  /OUTPUT FILE= ImpedancePlot187.txt
 
 
- ***** ROUTINE COMPLETED *****  CP =         1.969
+ ***** ROUTINE COMPLETED *****  CP =         1.875
 
 
 
@@ -244,7 +244,7 @@
 +--------------------- M A P D L   S T A T I S T I C S ------------------------+
 
 Release: 2025 R2            Build: 25.2       Update: UP20250519   Platform: WINDOWS x64 
-Date Run: 12/01/2025   Time: 22:38     Process ID: 3220
+Date Run: 12/06/2025   Time: 15:01     Process ID: 14324
 Operating System: Windows 11  (Build: 26100)
 
 Processor Model: Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz
@@ -275,24 +275,24 @@ Input File: ImpedancePlot187_Post.inp
      2         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH
      3         Dell-XPS-di-Michael   C:\Users\stolf\dev\EsercitazioniSensori\esercitazione_b\esercizio_2\simulazioneTrasduttoreUltrasonicoConConcentratore_files\dp0\SYS-4\MECH
  
-Latency time from master to core     1 =    5.632 microseconds
-Latency time from master to core     2 =    5.753 microseconds
-Latency time from master to core     3 =    5.833 microseconds
+Latency time from master to core     1 =    5.104 microseconds
+Latency time from master to core     2 =    5.074 microseconds
+Latency time from master to core     3 =    5.613 microseconds
  
-Communication speed from master to core     1 =  4733.62 MB/sec
-Communication speed from master to core     2 =  5230.30 MB/sec
-Communication speed from master to core     3 =  5251.10 MB/sec
+Communication speed from master to core     1 =  4363.48 MB/sec
+Communication speed from master to core     2 =  7033.21 MB/sec
+Communication speed from master to core     3 =  7279.61 MB/sec
 
-Total CPU time for main thread                    :        1.5 seconds
-Total CPU time summed for all threads             :        2.0 seconds
+Total CPU time for main thread                    :        1.3 seconds
+Total CPU time summed for all threads             :        1.9 seconds
 
-Elapsed time spent obtaining a license            :        0.5 seconds
+Elapsed time spent obtaining a license            :        0.4 seconds
 Elapsed time spent pre-processing model (/PREP7)  :        0.0 seconds
 Elapsed time spent solution - preprocessing       :        0.0 seconds
 Elapsed time spent computing solution             :        0.0 seconds
 Elapsed time spent solution - postprocessing      :        0.0 seconds
 Elapsed time spent post-processing model (/POST1) :        0.0 seconds
-Elapsed time spent post-processing model (/POST26):        0.7 seconds
+Elapsed time spent post-processing model (/POST26):        0.6 seconds
  
 
 Sum of disk space used on all processes           :        0.0 MB
@@ -323,7 +323,7 @@ Total amount of I/O read from disk                :        0.7 GB
  |                                                                             |
  |-----------------------------------------------------------------------------|
  |                                                                             |
- |        CP Time      (sec) =          2.016       Time  =  22:38:28          |
- |        Elapsed Time (sec) =         18.000       Date  =  12/01/2025        |
+ |        CP Time      (sec) =          1.938       Time  =  15:01:05          |
+ |        Elapsed Time (sec) =         17.000       Date  =  12/06/2025        |
  |                                                                             |
  *-----------------------------------------------------------------------------*
