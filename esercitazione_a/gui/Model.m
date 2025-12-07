@@ -114,7 +114,13 @@ classdef Model < handle
             pipeline = currentConfig.pipeline;
             for j = 1:length(pipeline)
                 cmd = pipeline{j};
-                eval(cmd);
+                try
+                    eval(cmd);
+                catch ME
+                    fprintf("Error executing pipeline command: %s\nError: %s\n", cmd, ME.message);
+                    obj.App.showError("Pipeline Error: " + ME.message + newline + "Command: " + cmd);
+                    rethrow(ME);
+                end
             end
 
             %% Risultato (testuale)
@@ -175,7 +181,13 @@ classdef Model < handle
                     for j = 1:numel(drawingCommands)
                         cmd = drawingCommands{j};
                         % Valuta il comando nel workspace corrente
-                        eval(cmd);
+                        try
+                            eval(cmd);
+                        catch ME
+                            fprintf('Errore nella valutazione del comando (plotting)"%s": %s\n', cmd, ME.message);
+                            obj.App.showError("Plotting Error: " + ME.message + newline + "Command: " + cmd);
+                            rethrow(ME);
+                        end
 
                         % Aggiungi hold on tra i comandi per sovrapporre i grafici
                         if j < numel(drawingCommands)

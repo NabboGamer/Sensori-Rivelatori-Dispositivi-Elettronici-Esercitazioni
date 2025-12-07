@@ -75,12 +75,8 @@ classdef Controller < Component
             obj.Button.Enable = "off";
             drawnow;
 
-            try
-                modello = obj.App.Modello;
-                modello.simulate();
-            catch ME
-                obj.App.showError(ME.message);
-            end
+            modello = obj.App.Modello;
+            modello.simulate();
 
             % Ripristina lo stato del pulsante
             obj.Button.Text = "Simula";
