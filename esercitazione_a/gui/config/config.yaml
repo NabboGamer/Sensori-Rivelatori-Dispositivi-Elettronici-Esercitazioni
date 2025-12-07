@@ -34,3 +34,23 @@
   pipeline: model_termi_thick/pipeline.yaml
   resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
   plots: model_termi_thick/plots.yaml
+- exercise: Modello Terminale (Thickness Coupled)
+  image: singleCeramics.png
+  settings: model_termi_thick_coupled/tabSettings.yaml
+  defaults:
+    - id: CeramicsTab
+      values:
+        MenuForma: Quadrato
+        CampoParametro1: 0.010
+        CampoParametro2: 0.010
+        CampoSpessore: 0.001
+        CampoCoppie: 1
+        MenuPz: 'Pz26'
+    - id: ImpedenzeTab
+      values:
+        CheckMezziStandard: false
+        MenuZ1: 'Aria (20°C)'
+        MenuZ2: 'Acqua (20°C)'
+  pipeline: model_termi_thick_coupled/pipeline.yaml
+  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
+  plots: model_termi_thick_coupled/plots.yaml
