@@ -1,0 +1,4 @@
+MATLAB Toolbox requirements:
+- Signal Processing Toolbox;
+- Image Processing Toolbox;
+- Parallel Computing Toolbox;
