@@ -15,6 +15,7 @@ evalin('base', 'clear'), close all; clc;
 cprintf('Comments', "+------------------------------------2-D TEMPLATE GENERATION------------------------------------+\n");
 cprintf('Comments', "\n");
 
+
 cprintf('Comments', "+------------------Preprocessing/Features Extraction------------------+\n");
 % Generazione percorsi
 percorsoCorrente     = pwd + string(filesep);
@@ -64,6 +65,8 @@ end
 cprintf('Comments', "Elaborazione immagini terminata!\n");
 cprintf('Comments', "+---------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");
+
+
 cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");cprintf('Comments', "\n");
 
@@ -72,15 +75,14 @@ cprintf('Comments', "\n");cprintf('Comments', "\n");
 cprintf('Comments', "+-------------------------------EXPERIMENTAL RESULTS AND ANALYSIS-------------------------------+\n");
 cprintf('Comments', "\n");
 
+
 % Matching
-cprintf('Comments', "+------------------------------Matching-------------------------------+\n");
-
-% matching2D(percorsoTemplates,percorsoMatching)
-% load(strcat(percorsoMatching,'/TabellaScore.mat'));
-% writetable(tabellaScore, strcat(percorsoMatching,'/tabellaScore.xlsx'));
-% disp(tabellaScore)
-
-cprintf('Comments', "+---------------------------------------------------------------------+\n");
+cprintf('Comments', "+----------------------------------------Matching-----------------------------------------+\n");
+matching2D(percorsoTemplates,percorsoMatching)
+load(fullfile(percorsoMatching,"tabellaScore.mat"));
+writetable(tabellaScore, fullfile(percorsoMatching,"tabellaScore.xlsx"));
+disp(tabellaScore)
+cprintf('Comments', "+-----------------------------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");
 
 
@@ -91,5 +93,7 @@ cprintf('Comments', "+---------------------------Stampa Grafici-----------------
 
 cprintf('Comments', "+---------------------------------------------------------------------+\n");
 cprintf('Comments', "\n")
+
+
 cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");cprintf('Comments', "\n");
