@@ -7,6 +7,7 @@
 %  - Verification;
 %  - Identification
 
+addpath('./core/');
 addpath('./utility/');
 addpath('./external/');
 evalin('base', 'clear'), close all; clc;
@@ -15,8 +16,7 @@ cprintf('Comments', "+------------------------------------2-D TEMPLATE GENERATIO
 cprintf('Comments', "\n");
 
 cprintf('Comments', "+------------------Preprocessing/Features Extraction------------------+\n");
-%% Generazione percorsi
-
+% Generazione percorsi
 percorsoCorrente     = pwd + string(filesep);
 percorsoDBImmagini   = fullfile(percorsoCorrente, "db") + string(filesep);
 percorsoProcessing   = fullfile(percorsoCorrente, "processing", '') + string(filesep);
@@ -36,27 +36,24 @@ filesStruct(1:2) = [];
 
 scelta = filterPicker();
 
-%% Import delle immagini delle impronte del palmo 2D e Preprocessing/Features Extraction
+% Caricamento delle immagini delle impronte del palmo 2D e Preprocessing/Features Extraction
+cprintf('Comments', "Elaborazione immagini iniziata...\n");
 for i = 1 : size(filesStruct,1)
-
     nomeCampione = filesStruct(i).name;
-    percorsoImmaginiCampione   = fullfile(percorsoDBImmagini, nomeCampione)+ string(filesep);
-    percorsoProcessingCampione = fullfile(percorsoProcessing, nomeCampione)+ string(filesep);
-    percorsoTemplatesCampione  = fullfile(percorsoTemplates, nomeCampione)+ string(filesep);
+    percorsoImmaginiCampione   = fullfile(percorsoDBImmagini, nomeCampione) + string(filesep);
+    percorsoProcessingCampione = fullfile(percorsoProcessing, nomeCampione) + string(filesep);
+    percorsoTemplatesCampione  = fullfile(percorsoTemplates, nomeCampione)  + string(filesep);
     creaCartella(percorsoProcessingCampione);creaCartella(percorsoTemplatesCampione);
     
     % struct che contiene le immagini dell'utente
     immaginiCampione = dir(percorsoImmaginiCampione);
     immaginiCampione(1:2) = [];
-
     for j = 1 : size(immaginiCampione,1)
-
         nomeImmagine = immaginiCampione(j).name;
         idx1 = find(nomeImmagine == '_', 1, 'last');  % posizione dell'ultimo underscore
         idx2 = find(nomeImmagine == '.', 1, 'last');  % posizione dell'ultimo punto
         numStr = nomeImmagine(idx1+1:idx2-1);
         percorsoImmagineDaElaborare = fullfile(percorsoImmaginiCampione, nomeImmagine);
-
         % Estrazione e salvataggio dei template
         template = estraiTemplate(percorsoImmagineDaElaborare,percorsoProcessingCampione,numStr,scelta);
         imwrite(template, strcat(percorsoTemplatesCampione,'template_', numStr, '.jpg'));
@@ -64,12 +61,18 @@ for i = 1 : size(filesStruct,1)
     end
 
 end
-
+cprintf('Comments', "Elaborazione immagini terminata!\n");
 cprintf('Comments', "+---------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");
+cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
+cprintf('Comments', "\n");cprintf('Comments', "\n");
 
 
-%% Matching
+
+cprintf('Comments', "+-------------------------------EXPERIMENTAL RESULTS AND ANALYSIS-------------------------------+\n");
+cprintf('Comments', "\n");
+
+% Matching
 cprintf('Comments', "+------------------------------Matching-------------------------------+\n");
 
 % matching2D(percorsoTemplates,percorsoMatching)
@@ -80,10 +83,13 @@ cprintf('Comments', "+------------------------------Matching--------------------
 cprintf('Comments', "+---------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");
 
-% %% 4.Stampa dei grafici
-% disp(newline)
-% disp('+----------------Stampa i grafici-----------------+')
-% plotStatistiche(percorsoRisultati,tabellaScore)
-% disp('+-------------Palmprint completato----------------+')
 
+% Stampa dei grafici
+cprintf('Comments', "+---------------------------Stampa Grafici----------------------------+\n");
+
+% plotStatistiche(percorsoRisultati,tabellaScore)
+
+cprintf('Comments', "+---------------------------------------------------------------------+\n");
+cprintf('Comments', "\n")
 cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
+cprintf('Comments', "\n");cprintf('Comments', "\n");
