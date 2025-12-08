@@ -39,16 +39,12 @@ function scoreFinale = calcolaScore2D(mat1,mat2)
         matMatchARot=imrotate(matMatchA,angle,'bilinear','crop');
         for i=0:50 %(riga+16-riga+1)
             for j=0:50
-                matAppoggioTraslata=matriceGrandeB([i+1:rigaMatchA+i],[j+1:colonnaMatchA+j]);
+                matAppoggioTraslata=matriceGrandeB(i+1:rigaMatchA+i,j+1:colonnaMatchA+j);
                 punteggioScore=sum(sum(matMatchARot & matAppoggioTraslata));
                 if(punteggioScore>maxScore)
                     maxScore=punteggioScore;
                     matFinaleB=matAppoggioTraslata;
-                    angoloScore=angle;
-                    matMatchARotFinale=matMatchARot;
                     denom = sum(sum(mat1))+sum(sum(matFinaleB));
-                    rigaScore=i;
-                    colonnaScore=j;
                 end
             end
         end

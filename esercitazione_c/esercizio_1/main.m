@@ -12,11 +12,6 @@ addpath('./utility/');
 addpath('./external/');
 evalin('base', 'clear'), close all; clc;
 
-cprintf('Comments', "+------------------------------------2-D TEMPLATE GENERATION------------------------------------+\n");
-cprintf('Comments', "\n");
-
-
-cprintf('Comments', "+------------------Preprocessing/Features Extraction------------------+\n");
 % Generazione percorsi
 percorsoCorrente     = pwd + string(filesep);
 percorsoDBImmagini   = fullfile(percorsoCorrente, "db") + string(filesep);
@@ -26,6 +21,12 @@ percorsoMatching     = fullfile(percorsoCorrente, "matching", '') + string(files
 percorsoRisultati    = fullfile(percorsoCorrente, "out", '') + string(filesep);
 creaCartella(percorsoProcessing);creaCartella(percorsoTemplates);
 creaCartella(percorsoMatching);creaCartella(percorsoRisultati);
+
+cprintf('Comments', "+------------------------------------2-D TEMPLATE GENERATION------------------------------------+\n");
+cprintf('Comments', "\n");
+
+
+cprintf('Comments', "+------------------Preprocessing/Features Extraction------------------+\n");
 
 % Dato un percorso assoluto la funzione predefinita dir restituisce, come
 % la stessa funzione cmd, la lista dei file e delle cartelle presenti al
@@ -86,11 +87,9 @@ cprintf('Comments', "+----------------------------------------------------------
 cprintf('Comments', "\n");
 
 
-% Stampa dei grafici
-cprintf('Comments', "+---------------------------Stampa Grafici----------------------------+\n");
-
-% plotStatistiche(percorsoRisultati,tabellaScore)
-
+% Calcolo statistiche e stampa dei grafici
+cprintf('Comments', "+------------------------Calcolo Statistiche--------------------------+\n");
+calcolaStatistiche(tabellaScore);
 cprintf('Comments', "+---------------------------------------------------------------------+\n");
 cprintf('Comments', "\n")
 
