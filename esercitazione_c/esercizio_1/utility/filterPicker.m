@@ -5,4 +5,5 @@ function scelta = filterPicker()
     cprintf('Text', '\t 2) Filtro SRAD\n');
     
     scelta = convalidaInput(2);
+    cprintf('Comments', "\n");
 end

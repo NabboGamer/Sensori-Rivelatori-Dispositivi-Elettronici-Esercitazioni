@@ -17,16 +17,14 @@ cprintf('Comments', "\n");
 cprintf('Comments', "+------------------Preprocessing/Features Extraction------------------+\n");
 %% Generazione percorsi
 
-percorsoCorrente     = pwd;
-percorsoDBImmagini   = fullfile(percorsoCorrente, "db");
-percorsoProcessing   = fullfile(percorsoCorrente, "processing", '');
-percorsoTemplates    = fullfile(percorsoCorrente, "templates", '');
-percorsoMatching     = fullfile(percorsoCorrente, "matching", '');
-percorsoRisultati    = fullfile(percorsoCorrente, "out", '');
-creaCartella(percorsoProcessing);
-creaCartella(percorsoTemplates);
-creaCartella(percorsoMatching);
-creaCartella(percorsoRisultati);
+percorsoCorrente     = pwd + string(filesep);
+percorsoDBImmagini   = fullfile(percorsoCorrente, "db") + string(filesep);
+percorsoProcessing   = fullfile(percorsoCorrente, "processing", '') + string(filesep);
+percorsoTemplates    = fullfile(percorsoCorrente, "templates", '') + string(filesep);
+percorsoMatching     = fullfile(percorsoCorrente, "matching", '') + string(filesep);
+percorsoRisultati    = fullfile(percorsoCorrente, "out", '') + string(filesep);
+creaCartella(percorsoProcessing);creaCartella(percorsoTemplates);
+creaCartella(percorsoMatching);creaCartella(percorsoRisultati);
 
 % Dato un percorso assoluto la funzione predefinita dir restituisce, come
 % la stessa funzione cmd, la lista dei file e delle cartelle presenti al
@@ -37,17 +35,15 @@ filesStruct = dir(percorsoDBImmagini);
 filesStruct(1:2) = [];
 
 scelta = filterPicker();
-cprintf('Comments', "\n");
 
 %% Import delle immagini delle impronte del palmo 2D e Preprocessing/Features Extraction
 for i = 1 : size(filesStruct,1)
 
     nomeCampione = filesStruct(i).name;
-    percorsoImmaginiCampione   = fullfile(percorsoDBImmagini, nomeCampione);
-    percorsoProcessingCampione = fullfile(percorsoProcessing, nomeCampione);
-    percorsoTemplatesCampione  = fullfile(percorsoTemplates, nomeCampione);
-    creaCartella(percorsoProcessingCampione); 
-    creaCartella(percorsoTemplatesCampione);
+    percorsoImmaginiCampione   = fullfile(percorsoDBImmagini, nomeCampione)+ string(filesep);
+    percorsoProcessingCampione = fullfile(percorsoProcessing, nomeCampione)+ string(filesep);
+    percorsoTemplatesCampione  = fullfile(percorsoTemplates, nomeCampione)+ string(filesep);
+    creaCartella(percorsoProcessingCampione);creaCartella(percorsoTemplatesCampione);
     
     % struct che contiene le immagini dell'utente
     immaginiCampione = dir(percorsoImmaginiCampione);
@@ -56,14 +52,15 @@ for i = 1 : size(filesStruct,1)
     for j = 1 : size(immaginiCampione,1)
 
         nomeImmagine = immaginiCampione(j).name;
-        idx = find(nomeImmagine == '_', 1, 'last');  % posizione dell'ultimo underscore
-        numStr = nomeImmagine(idx+1:end);
-        immagineDaElaborare = fullfile(percorsoImmaginiCampione, nomeImmagine);
+        idx1 = find(nomeImmagine == '_', 1, 'last');  % posizione dell'ultimo underscore
+        idx2 = find(nomeImmagine == '.', 1, 'last');  % posizione dell'ultimo punto
+        numStr = nomeImmagine(idx1+1:idx2-1);
+        percorsoImmagineDaElaborare = fullfile(percorsoImmaginiCampione, nomeImmagine);
 
         % Estrazione e salvataggio dei template
-        template = estraiTemplate(immagineDaElaborare,percorsoProcessingCampione,numStr,scelta);
+        template = estraiTemplate(percorsoImmagineDaElaborare,percorsoProcessingCampione,numStr,scelta);
         imwrite(template, strcat(percorsoTemplatesCampione,'template_', numStr, '.jpg'));
-        save(strcat(percorsoTemplatesCampione,'template_', numStr, '.dat'), 'template');
+        save(strcat(percorsoTemplatesCampione,'template_', numStr, '.mat'), 'template');
     end
 
 end
@@ -72,18 +69,17 @@ cprintf('Comments', "+----------------------------------------------------------
 cprintf('Comments', "\n");
 
 
-% 
-% %% 3.Matching
-% disp(newline)
-% disp('+--------------Inizio il matching----------------+')
+%% Matching
+cprintf('Comments', "+------------------------------Matching-------------------------------+\n");
+
 % matching2D(percorsoTemplates,percorsoMatching)
 % load(strcat(percorsoMatching,'/TabellaScore.mat'));
 % writetable(tabellaScore, strcat(percorsoMatching,'/tabellaScore.xlsx'));
 % disp(tabellaScore)
-% disp('+-------------Matching completato----------------+')
-% disp('Program paused, press any key to continue...')
-% pause();
-% 
+
+cprintf('Comments', "+---------------------------------------------------------------------+\n");
+cprintf('Comments', "\n");
+
 % %% 4.Stampa dei grafici
 % disp(newline)
 % disp('+----------------Stampa i grafici-----------------+')

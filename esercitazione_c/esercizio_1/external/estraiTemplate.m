@@ -1,6 +1,5 @@
 function templateImg = estraiTemplate(percorsoImmagine, percorsoProcessing, numStr, scelta)
     
-    percorsoProcessing = percorsoProcessing + string(filesep);
     %% 1) Lettura immagine
     I = imread(percorsoImmagine);
     
@@ -14,12 +13,12 @@ function templateImg = estraiTemplate(percorsoImmagine, percorsoProcessing, numS
         case 1
             filteredImage = filtroDiLee(im2, [9,9]);
             imwrite(filteredImage, strcat(percorsoProcessing, '02.LEE_', numStr, '.jpg'));
-            cprintf('Comments', "Applicato filtro di Lee all'immagine corrente\n");
+            % cprintf('Comments', "Applicato filtro di Lee all'immagine corrente\n");
     
         case 2
             filteredImage = filtroSRAD(im2, 40, 1.5, [10 15 40 40]);
             imwrite(filteredImage, strcat(percorsoProcessing, '03.SRAD_', numStr, '.jpg'));
-            cprintf('Comments', "Applicato filtro SRAD all'immagine corrente\n");
+            % cprintf('Comments', "Applicato filtro SRAD all'immagine corrente\n");
     
     end
 
