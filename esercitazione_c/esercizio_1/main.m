@@ -4,8 +4,7 @@
 %  - Preprocessing;
 %  - Features Extraction;
 %  - Matching;
-%  - Verification;
-%  - Identification
+%  - Calcolo Statistiche.
 
 addpath('./core/');
 addpath('./utility/');
