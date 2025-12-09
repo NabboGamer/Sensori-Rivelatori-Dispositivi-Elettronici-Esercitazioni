@@ -14,10 +14,10 @@ evalin('base', 'clear'), close all; clc;
 % Generazione percorsi
 percorsoCorrente     = pwd + string(filesep);
 percorsoDBImmagini   = fullfile(percorsoCorrente, "db") + string(filesep);
-percorsoProcessing   = fullfile(percorsoCorrente, "processing", '') + string(filesep);
-percorsoTemplates    = fullfile(percorsoCorrente, "templates", '') + string(filesep);
-percorsoMatching     = fullfile(percorsoCorrente, "matching", '') + string(filesep);
-percorsoRisultati    = fullfile(percorsoCorrente, "out", '') + string(filesep);
+percorsoProcessing   = fullfile(percorsoCorrente, "processing") + string(filesep);
+percorsoTemplates    = fullfile(percorsoCorrente, "templates") + string(filesep);
+percorsoMatching     = fullfile(percorsoCorrente, "matching") + string(filesep);
+percorsoRisultati    = fullfile(percorsoCorrente, "out") + string(filesep);
 creaCartella(percorsoProcessing);creaCartella(percorsoTemplates);
 creaCartella(percorsoMatching);creaCartella(percorsoRisultati);
 
