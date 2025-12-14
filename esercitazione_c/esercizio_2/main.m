@@ -1,16 +1,32 @@
-%TODO: Aggiungere intestazione script
+% Questo script data una cartella "db" contenente n sottocartelle di utenti 
+% contenenti caiscuna n sottocartelle di acquisizioni contenenti ciascuna n
+% immagini 2D del'impronta del palmo, effettua le seguenti operazioni:
+%  - Preprocessing;
+%  - Features Extraction;
+%  - Matching;
+%  - Calcolo Statistiche.
 
 addpath('./core/');
 addpath('./utility/');
 addpath('./external/');
 evalin('base', 'clear'), close all; clc;
 
+%% 0) Generazione percorsi
+percorsoCorrente     = pwd + string(filesep);
+percorsoDBImmagini   = fullfile(percorsoCorrente, "db",         string(filesep));
+percorsoProcessing   = fullfile(percorsoCorrente, "processing", string(filesep));
+percorsoTemplates    = fullfile(percorsoCorrente, "templates",  string(filesep));
+percorsoMatching     = fullfile(percorsoCorrente, "matching",   string(filesep));
+percorsoRisultati    = fullfile(percorsoCorrente, "out",        string(filesep));
+creaCartella(percorsoProcessing);creaCartella(percorsoTemplates);
+creaCartella(percorsoMatching);creaCartella(percorsoRisultati);
+
 %% 1) Caricamento delle immagini e generazione dei template
 
 cprintf('Comments', "+------------------------------------2-D TEMPLATE GENERATION------------------------------------+\n");
 cprintf('Comments', "\n");
 cprintf('Comments', "+------------------Preprocessing/Features Extraction------------------+\n");
-elaboraImmagini();
+generaTemplates2D(percorsoDBImmagini, percorsoProcessing, percorsoTemplates);
 cprintf('Comments', "+---------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");
 cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");

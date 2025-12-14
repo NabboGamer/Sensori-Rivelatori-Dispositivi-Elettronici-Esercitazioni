@@ -1,27 +1,16 @@
-function elaboraImmagini()
+function generaTemplates2D(percorsoDBImmagini, percorsoProcessing, percorsoTemplates)
     
     cprintf('Comments', "Elaborazione immagini iniziata...\n");
     cprintf('Comments', "\n");
-    % ----------------------------
-    % 1) Generazione percorsi
-    % ----------------------------
-    percorsoCorrente     = pwd + string(filesep);
-    percorsoDBImmagini   = fullfile(percorsoCorrente, "db",         string(filesep));
-    percorsoProcessing   = fullfile(percorsoCorrente, "processing", string(filesep));
-    percorsoTemplates    = fullfile(percorsoCorrente, "templates",  string(filesep));
-    percorsoMatching     = fullfile(percorsoCorrente, "matching",   string(filesep));
-    percorsoRisultati    = fullfile(percorsoCorrente, "out",        string(filesep));
-    creaCartella(percorsoProcessing);creaCartella(percorsoTemplates);
-    creaCartella(percorsoMatching);creaCartella(percorsoRisultati);
     
     % ----------------------------
-    % 2) Scelte filtri
+    % 1) Scelte filtri
     % ----------------------------
     sceltaFiltroDenoising   = denoisingFilterPicker();  
     sceltaFiltroEnhancement = enhancementFilterPicker();
 
     % -----------------------------------
-    % 3) Cartella processing e template
+    % 2) Cartella processing e template
     % -----------------------------------
     cartellaProcessingSetupCorrenteFiltri = sprintf("processing_%s_%s", sceltaFiltroDenoising, sceltaFiltroEnhancement);
     percorsoProcessing = fullfile(percorsoProcessing, cartellaProcessingSetupCorrenteFiltri);
@@ -31,7 +20,7 @@ function elaboraImmagini()
     creaCartella(percorsoTemplates);
 
     % ----------------------------
-    % 4) Scansione file
+    % 3) Scansione file
     % ----------------------------
     sottoCartelleUtenti = dir(percorsoDBImmagini);
     sottoCartelleUtenti = sottoCartelleUtenti([sottoCartelleUtenti.isdir]);
@@ -42,7 +31,7 @@ function elaboraImmagini()
     tStart = tic;
 
     % ----------------------------
-    % 5) Loop utenti + immagini
+    % 4) Loop immagini
     % ----------------------------
     for i = 1 : numel(sottoCartelleUtenti)
         % Scendo nelle cartelle dei vari utenti
