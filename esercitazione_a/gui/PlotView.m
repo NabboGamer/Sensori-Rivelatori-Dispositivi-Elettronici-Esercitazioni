@@ -11,6 +11,7 @@ classdef PlotView < Component
         TabGroup(:, 1) matlab.ui.container.TabGroup {mustBeScalarOrEmpty}
         Tabs(:, 1) cell = {}
         Panel(:, 1) matlab.ui.container.Panel {mustBeScalarOrEmpty}
+        MessageLabel(:, 1) matlab.ui.control.Label {mustBeScalarOrEmpty}
     end % properties ( SetAccess = private )
 
     properties ( Access = private )
@@ -28,10 +29,10 @@ classdef PlotView < Component
                 "DataChanged", ...
                 @( s, e ) weakObj.Handle.onDataChanged( s, e ) );
 
-            % Inizializza le tabs con l'esercizio attualmente selezionato
+            % Inizializza le tabs con l'esercizio attualmente selezionato (in modalità reset)
             if ~isempty(obj.App.Controller) && ~isempty(obj.App.Controller.DropDownMenu)
                 currentExercise = obj.App.Controller.DropDownMenu.Value;
-                obj.initializeTabs(currentExercise);
+                obj.resetView(currentExercise);
             end
 
             % Refresh the view.
@@ -39,30 +40,16 @@ classdef PlotView < Component
 
         end
 
-        function initializeTabs(obj, exerciseName)
-            %INITIALIZETABS Inizializza le tab basandosi sul nome dell'esercizio
+        function resetView(obj, ~)
+            %RESETVIEW Resetta la vista mostrando il messaggio di attesa e nascondendo i grafici
 
             % Pulisci le tab esistenti
-            % delete(obj.TabGroup.Children);
-            % obj.Tabs = {};
+            delete(obj.TabGroup.Children);
+            obj.Tabs = {};
 
-            % Trova la configurazione per l'esercizio specificato
-            config = obj.App.Modello.Config;
-            foundConfig = [];
-
-            for i = 1:numel(config)
-                if strcmp(config{i}.exercise, exerciseName)
-                    foundConfig = config{i};
-                    break;
-                end
-            end
-
-            if isempty(foundConfig) || ~isfield(foundConfig, 'plots')
-                return;
-            end
-
-            % Crea le nuove tab
-            obj.setupTabs(foundConfig.plots);
+            % Gestione visibilità
+            obj.TabGroup.Visible = 'off';
+            obj.MessageLabel.Visible = 'on';
         end
 
         function updatePlot(obj, index, figureChildren)
@@ -99,6 +86,10 @@ classdef PlotView < Component
         function setupTabs( obj, plots )
             %SETUPTABS Crea dinamicamente le tabs basandosi sulla configurazione passata
 
+            % Gestione visibilità: Nascondi messaggio, mostra tabs
+            obj.MessageLabel.Visible = 'off';
+            obj.TabGroup.Visible = 'on';
+
             % Pulisci le tab esistenti
             delete(obj.TabGroup.Children);
             obj.Tabs = {};
@@ -131,7 +122,41 @@ classdef PlotView < Component
             % Crea il TabGroup all'interno del panel
             obj.TabGroup = uitabgroup(obj.Panel, ...
                 "Units", "normalized", ...
-                "Position", [0 0 1 1]);
+                "Position", [0 0 1 1], ...
+                "Visible", "off");
+
+            % Crea la label di messaggio
+            obj.MessageLabel = uilabel(obj.Panel);
+            obj.MessageLabel.HorizontalAlignment = 'center';
+            obj.MessageLabel.VerticalAlignment = 'center';
+            obj.MessageLabel.Position = [0 0 1 1]; % O usa layout managers se preferisci, ma qui normalized su panel funziona bene se il panel ha size
+            % Nota: Position di uilabel non supporta 'normalized' direttamente se non dentro un contenitore che lo supporta bene o usando layout.
+            % Ma uipanel supporta il posizionamento assoluto dei figli.
+            % Usiamo uigridlayout interno al panel per centrare facilmente, oppure impostiamo Position relativa.
+            % Per semplicità, rendiamo il panel un gridlayout container o usiamo un layout manager interno.
+
+            % Refactoring per usare Grid Layout nel Panel per centrare la label
+            obj.Panel.AutoResizeChildren = 'off'; % Disabilita gestione automatica che potrebbe confliggere
+
+            % Layout Manager per il Panel
+            panelLayout = uigridlayout(obj.Panel);
+            panelLayout.ColumnWidth = {'1x'};
+            panelLayout.RowHeight = {'1x'};
+            panelLayout.Padding = 0;
+
+            % Ricollega TabGroup al layout
+            obj.TabGroup.Parent = panelLayout;
+            obj.TabGroup.Layout.Row = 1;
+            obj.TabGroup.Layout.Column = 1;
+
+            % Ricollega MessageLabel al layout
+            obj.MessageLabel.Parent = panelLayout;
+            obj.MessageLabel.Layout.Row = 1;
+            obj.MessageLabel.Layout.Column = 1;
+            obj.MessageLabel.Text = 'Effettuare una simulazione per visualizzare i grafici';
+            obj.MessageLabel.FontSize = 14;
+            obj.MessageLabel.FontColor = [0.5 0.5 0.5];
+            obj.MessageLabel.Visible = 'on';
 
         end % setup
 

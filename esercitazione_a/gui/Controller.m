@@ -155,7 +155,7 @@ classdef Controller < Component
 
             % Aggiorna le tabs dei grafici se la vista è disponibile
             if ~isempty(obj.App.VistaGrafici)
-                obj.App.VistaGrafici.initializeTabs(exercise);
+                obj.App.VistaGrafici.resetView(exercise);
             end
         end
 
