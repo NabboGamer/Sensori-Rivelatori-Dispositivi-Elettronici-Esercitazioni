@@ -2,6 +2,7 @@
 doc/~$lazione Esercitazioni Sensori.docx
 *.tmp
 *.rst
+.DS_Store
 esercitazione_c/esercizio_1/db
 esercitazione_c/esercizio_1/processing
 esercitazione_c/esercizio_1/templates
