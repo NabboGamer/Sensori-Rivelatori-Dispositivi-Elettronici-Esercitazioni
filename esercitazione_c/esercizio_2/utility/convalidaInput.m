@@ -1,5 +1,6 @@
 function scelta = convalidaInput(maxNumberOfChoice)
-
+    %CONVALIDAINPUT Legge e valida una scelta numerica da console
+    
     while true
         inputString = input('Scelta-> ', 's');
         try
@@ -17,4 +18,3 @@ function scelta = convalidaInput(maxNumberOfChoice)
     end
     
 end
-

@@ -26,21 +26,21 @@ creaCartella(percorsoMatching);creaCartella(percorsoRisultati);
 cprintf('Comments', "+------------------------------------2-D TEMPLATE GENERATION------------------------------------+\n");
 cprintf('Comments', "\n");
 cprintf('Comments', "+------------------Preprocessing/Features Extraction------------------+\n");
-generaTemplates2D(percorsoDBImmagini, percorsoProcessing, percorsoTemplates);
+percorsoTemplates = generaTemplates2D(percorsoDBImmagini, percorsoProcessing, percorsoTemplates);
 cprintf('Comments', "+---------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");
 cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");cprintf('Comments', "\n");
 
 
-% %% 2) Generazione dei template 3D
-% disp(newline)
-% disp('+---------Generazione dei template 3D iniziato------+');
-% generaTemplates3D(templateDir)
-% disp('+---Template generati correttamente---+');
-% disp('Program paused, press any key to continue...')
-% pause();
-% 
+%% 2) Generazione dei template 3D
+cprintf('Comments', "+------------------------------------3-D TEMPLATE GENERATION------------------------------------+\n");
+cprintf('Comments', "\n");
+generaTemplates3D(percorsoTemplates);
+cprintf('Comments', "\n");
+cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
+cprintf('Comments', "\n");cprintf('Comments', "\n");
+
 % %% 3) Matching
 % %Generiamo la tabella finale con gli score dei confronti
 % disp(newline)

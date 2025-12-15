@@ -1,7 +1,22 @@
-function generaTemplates2D(percorsoDBImmagini, percorsoProcessing, percorsoTemplates)
+function percorsoTemplates = generaTemplates2D(percorsoDBImmagini, percorsoProcessing, percorsoTemplates)
+    %GENERATEMPLATES2D Genera template 2D a partire da un database di immagini.
+    %
+    %   Scansiona ricorsivamente la struttura del database immagini organizzata
+    %   per utente e acquisizione, applica una pipeline di denoising ed
+    %   enhancement scelta tramite picker, e salva per ogni immagine:
+    %       - il template 2D in formato .jpg
+    %       - il template 2D in formato .mat (variabile: templateImg)
+    %
+    %   La funzione crea automaticamente una sottocartella di "processing" e una
+    %   di "templates" che includono nel nome la combinazione di filtri selezionata:
+    %       processing_<denoising>_<enhancement>/
+    %       templates_<denoising>_<enhancement>/
+    %   mantenendo la stessa gerarchia di cartelle del DB:
+    %       <utente>/<acquisizione>/
     
     cprintf('Comments', "Elaborazione immagini iniziata...\n");
     cprintf('Comments', "\n");
+    tStart = tic;
     
     % ----------------------------
     % 1) Scelte filtri
@@ -27,8 +42,6 @@ function generaTemplates2D(percorsoDBImmagini, percorsoProcessing, percorsoTempl
     sottoCartelleUtenti = sottoCartelleUtenti(~ismember({sottoCartelleUtenti.name}, {'.','..'}));
 
     % cprintf('Comments', "Generazione file .mat e .jpg in corso \n");
-
-    tStart = tic;
 
     % ----------------------------
     % 4) Loop immagini
