@@ -79,9 +79,9 @@ classdef Controller < Component
             try
                 modello.simulate();
             catch ME
-                if ~isempty(obj.App)
-                    obj.App.showError("Errore imprevisto durante la simulazione: " + ME.message);
-                end
+                % if ~isempty(obj.App)
+                %     obj.App.showError("Errore imprevisto durante la simulazione: " + ME.message);
+                % end
                 obj.Button.Text = "Simula";
                 obj.Button.Enable = "on";
                 rethrow(ME);

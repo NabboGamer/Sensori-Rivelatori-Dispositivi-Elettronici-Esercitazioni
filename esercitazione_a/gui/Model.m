@@ -119,7 +119,7 @@ classdef Model < handle
                 catch ME
                     fprintf("Error executing pipeline command: %s\nError: %s\n", cmd, ME.message);
                     obj.App.showError("Pipeline Error: " + ME.message + newline + "Command: " + cmd);
-                    % rethrow(ME);
+                    rethrow(ME);
                 end
             end
 
@@ -186,7 +186,7 @@ classdef Model < handle
                         catch ME
                             fprintf('Errore nella valutazione del comando (plotting)"%s": %s\n', cmd, ME.message);
                             obj.App.showError("Plotting Error: " + ME.message + newline + "Command: " + cmd);
-                            % rethrow(ME); % Removed to prevent app crash
+                            rethrow(ME); % Removed to prevent app crash
                         end
 
                         % Aggiungi hold on tra i comandi per sovrapporre i grafici
