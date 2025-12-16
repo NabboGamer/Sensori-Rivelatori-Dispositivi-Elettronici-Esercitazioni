@@ -1,11 +1,11 @@
 - name: Ceramica
-      id: CeramicsTab
-      components:
-        - kind: uidropdown
-          id: MenuForma
-          labels:
-            - text: Forma
-              position: left
+  id: CeramicsTab
+  components:
+    - kind: uidropdown
+      id: MenuForma
+      labels:
+        - text: Forma
+          position: left
           Items:
             - Quadrato
             - Rettangolo
