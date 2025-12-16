@@ -112,12 +112,22 @@ classdef PlotView < Component
         function setup( obj )
             %SETUP Initialize the view.
 
+            % Create a grid layout to manage the resizing of the component
+            grid = uigridlayout(obj);
+            grid.RowHeight = "1x";
+            grid.ColumnWidth = "1x";
+            grid.Padding = 0;
+
             % Crea il panel con bordo arrotondato
             obj.Panel = uipanel( ...
-                "Parent", obj, ...
+                "Parent", grid, ... % Parent to the grid
                 "BorderType", "line", ...
                 "BorderWidth", 2, ...
                 "BackgroundColor", [1 1 1]);
+            
+            % Set layout properties for the panel
+            obj.Panel.Layout.Row = 1;
+            obj.Panel.Layout.Column = 1;
 
             % Crea il TabGroup all'interno del panel
             obj.TabGroup = uitabgroup(obj.Panel, ...
@@ -129,11 +139,7 @@ classdef PlotView < Component
             obj.MessageLabel = uilabel(obj.Panel);
             obj.MessageLabel.HorizontalAlignment = 'center';
             obj.MessageLabel.VerticalAlignment = 'center';
-            obj.MessageLabel.Position = [0 0 1 1]; % O usa layout managers se preferisci, ma qui normalized su panel funziona bene se il panel ha size
-            % Nota: Position di uilabel non supporta 'normalized' direttamente se non dentro un contenitore che lo supporta bene o usando layout.
-            % Ma uipanel supporta il posizionamento assoluto dei figli.
-            % Usiamo uigridlayout interno al panel per centrare facilmente, oppure impostiamo Position relativa.
-            % Per semplicità, rendiamo il panel un gridlayout container o usiamo un layout manager interno.
+            obj.MessageLabel.Position = [0 0 1 1]; 
 
             % Refactoring per usare Grid Layout nel Panel per centrare la label
             obj.Panel.AutoResizeChildren = 'off'; % Disabilita gestione automatica che potrebbe confliggere
