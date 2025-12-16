@@ -21,8 +21,8 @@ percorsoRisultati    = fullfile(percorsoCorrente, "out",        string(filesep))
 creaCartella(percorsoProcessing);creaCartella(percorsoTemplates);
 creaCartella(percorsoMatching);creaCartella(percorsoRisultati);
 
-%% 1) Caricamento delle immagini e generazione dei template
 
+%% 1) Caricamento delle immagini e generazione dei template
 cprintf('Comments', "+------------------------------------2-D TEMPLATE GENERATION------------------------------------+\n");
 cprintf('Comments', "\n");
 cprintf('Comments', "+------------------Preprocessing/Features Extraction------------------+\n");
@@ -36,26 +36,29 @@ cprintf('Comments', "\n");cprintf('Comments', "\n");
 %% 2) Generazione dei template 3D
 cprintf('Comments', "+------------------------------------3-D TEMPLATE GENERATION------------------------------------+\n");
 cprintf('Comments', "\n");
-generaTemplates3D(percorsoTemplates);
+percorsoTemplates3D = generaTemplates3D(percorsoTemplates);
 cprintf('Comments', "\n");
 cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");cprintf('Comments', "\n");
 
-% %% 3) Matching
-% %Generiamo la tabella finale con gli score dei confronti
-% disp(newline)
-% disp('+----------Matching iniziato-------+');
-% alpha = 2;
-% matching3DParallel(alpha,templateDir);
-% filterName = templateDir(9:end);
-% load(fullfile(pwd, strcat('Matching/','TabellaScore',filterName,'_',num2str(alpha),'.mat')));
-% disp(tabellaScore)
-% disp('+---------Matching completato------+');
-% disp('Program paused, press any key to continue...')
-% pause();
-% 
-% %% 4) Stampa grafici
-% disp(newline)
-% disp('+----------Plotting grafici iniziato-------+');
+
+cprintf('Comments', "+-------------------------------EXPERIMENTAL RESULTS AND ANALYSIS-------------------------------+\n");
+cprintf('Comments', "\n");
+
+%% 3) Matching
+cprintf('Comments', "+----------------------------------------Matching-----------------------------------------+\n");
+cprintf('Comments', "\n");
+alpha = 2;
+tabellaScore = matching3D(percorsoTemplates3D, percorsoMatching, alpha);
+disp(tabellaScore)
+cprintf('Comments', "+-----------------------------------------------------------------------------------------+\n");
+cprintf('Comments', "\n");
+
+%% 4) Stampa grafici
+cprintf('Comments', "+------------------------Calcolo Statistiche--------------------------+\n");
 % plotStatistiche(alpha,filterName,tabellaScore)
-% disp('+----------Palmprint 3D completato---------+');
+cprintf('Comments', "+---------------------------------------------------------------------+\n");
+cprintf('Comments', "\n")
+
+cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
+cprintf('Comments', "\n");cprintf('Comments', "\n");

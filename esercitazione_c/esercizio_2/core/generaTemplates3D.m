@@ -1,4 +1,4 @@
-function generaTemplates3D(percorsoTemplates, sizeNeighboorhod)
+function percorsoTemplates3D = generaTemplates3D(percorsoTemplates, sizeNeighboorhod)
     % GENERATEMPLATE3D si occupa di generare template 3D partendo dai template 2D salvati come template_*.mat
     % 
     % Struttura attesa:
@@ -29,8 +29,8 @@ function generaTemplates3D(percorsoTemplates, sizeNeighboorhod)
     nomeCartellaTemplates = parts(end);
     
     nomeCartellaTemplates3D = strcat(nomeCartellaTemplates, "_3d");
-    percorsoCartellaTemplates3D = fullfile(percorsoPadreCartellaTemplates, nomeCartellaTemplates3D);
-    creaCartella(percorsoCartellaTemplates3D);
+    percorsoTemplates3D = fullfile(percorsoPadreCartellaTemplates, nomeCartellaTemplates3D);
+    creaCartella(percorsoTemplates3D);
 
     sottoCartelleUtenti = dir(percorsoTemplates);
     sottoCartelleUtenti = sottoCartelleUtenti([sottoCartelleUtenti.isdir]);
@@ -53,7 +53,7 @@ function generaTemplates3D(percorsoTemplates, sizeNeighboorhod)
 
             filtraggio = filtraggioInProfondita(matriceZXY, sizeNeighboorhod);
 
-            outAcq = fullfile(percorsoCartellaTemplates3D, nomeUtente, nomeAcq);
+            outAcq = fullfile(percorsoTemplates3D, nomeUtente, nomeAcq);
             creaCartella(outAcq);
 
             % nome base file
