@@ -52,7 +52,10 @@ classdef DynamicTab < handle
                         comp = obj.Components(compId);
                         try
                             comp.Value = val;
-                        catch
+                        catch ME
+                            if ~isempty(obj.App)
+                                uialert(obj.App.Figure, ["Errore nell'impostare il valore per " + compId, ME.message], "Errore");
+                            end
                         end
                     end
                 end

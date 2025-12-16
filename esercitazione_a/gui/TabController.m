@@ -73,20 +73,28 @@ classdef TabController < Component
             for i = 1:length(tabConfigs)
                 conf = tabConfigs{i};
 
-                % Crea uitab prima della tab risultati
-                t = uitab(obj.GruppoTab, "Title", conf.name);
+                try
+                    % Crea uitab prima della tab risultati
+                    t = uitab(obj.GruppoTab, "Title", conf.name);
 
-                % Crea DynamicTab
-                % FIX: Refactored DynamicTab constructor
-                dt = DynamicTab(t, conf);
+                    % Crea DynamicTab
+                    % FIX: Refactored DynamicTab constructor
+                    dt = DynamicTab(t, conf);
 
-                if ~isempty(obj.App)
-                    dt.App = obj.App;
-                end
+                    if ~isempty(obj.App)
+                        dt.App = obj.App;
+                    end
 
-                % Salva nella mappa
-                if isfield(conf, 'id')
-                    obj.Tabs(conf.id) = dt;
+                    % Salva nella mappa
+                    if isfield(conf, 'id')
+                        obj.Tabs(conf.id) = dt;
+                    end
+                catch ME
+                    if ~isempty(obj.App)
+                        obj.App.showError("Errore durante la creazione della tab '" + conf.name + "': " + ME.message);
+                    else
+                        rethrow(ME);
+                    end
                 end
             end
 
@@ -112,11 +120,17 @@ classdef TabController < Component
 
             for i = 1:length(defaults)
                 setting = defaults{i};
-                if isfield(setting, 'id')
-                    tabId = setting.id;
-                    if isKey(obj.Tabs, tabId)
-                        tabObj = obj.Tabs(tabId);
-                        tabObj.applySettings(setting);
+                try
+                    if isfield(setting, 'id')
+                        tabId = setting.id;
+                        if isKey(obj.Tabs, tabId)
+                            tabObj = obj.Tabs(tabId);
+                            tabObj.applySettings(setting);
+                        end
+                    end
+                catch ME
+                    if ~isempty(obj.App)
+                        obj.App.showError("Errore durante l'applicazione delle impostazioni: " + ME.message);
                     end
                 end
             end

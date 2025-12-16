@@ -65,7 +65,13 @@ classdef PlotView < Component
             delete(currentTab.Children);
 
             % Copia il contenuto della figura temporanea nella tab
-            copyobj(figureChildren, currentTab);
+            try
+                copyobj(figureChildren, currentTab);
+            catch ME
+                if ~isempty(obj.App)
+                    obj.App.showError("Errore durante l'aggiornamento del grafico: " + ME.message);
+                end
+            end
         end
 
         function obj = PlotView( namedArgs )
@@ -98,9 +104,16 @@ classdef PlotView < Component
             for i = 1:numel(plots)
                 plotConfig = plots{i};
 
-                % Crea la tab con il nome specificato
-                tab = uitab(obj.TabGroup, "Title", plotConfig.name);
-                obj.Tabs{end+1} = tab;
+                try
+                    % Crea la tab con il nome specificato
+                    tab = uitab(obj.TabGroup, "Title", plotConfig.name);
+                    obj.Tabs{end+1} = tab;
+                catch ME
+
+                    if ~isempty(obj.App)
+                        obj.App.showError("Errore nel setup della tab grafico '" + plotConfig.name + "': " + ME.message);
+                    end
+                end
             end
 
         end % setupTabs
@@ -124,7 +137,7 @@ classdef PlotView < Component
                 "BorderType", "line", ...
                 "BorderWidth", 2, ...
                 "BackgroundColor", [1 1 1]);
-            
+
             % Set layout properties for the panel
             obj.Panel.Layout.Row = 1;
             obj.Panel.Layout.Column = 1;
@@ -139,7 +152,7 @@ classdef PlotView < Component
             obj.MessageLabel = uilabel(obj.Panel);
             obj.MessageLabel.HorizontalAlignment = 'center';
             obj.MessageLabel.VerticalAlignment = 'center';
-            obj.MessageLabel.Position = [0 0 1 1]; 
+            obj.MessageLabel.Position = [0 0 1 1];
 
             % Refactoring per usare Grid Layout nel Panel per centrare la label
             obj.Panel.AutoResizeChildren = 'off'; % Disabilita gestione automatica che potrebbe confliggere
