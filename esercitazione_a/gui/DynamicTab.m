@@ -201,7 +201,8 @@ classdef DynamicTab < handle
 
                             try
                                 newComp.(targetProp) = val;
-                            catch
+                            catch ME
+                                fprintf('Warning: Failed to set property "%s" on component "%s". Error: %s\n', targetProp, compDef.id, ME.message);
                             end
                         end
 

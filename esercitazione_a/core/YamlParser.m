@@ -183,6 +183,12 @@ classdef YamlParser
                 val = str(2:end-1);
             elseif startsWith(str, "'") && endsWith(str, "'")
                 val = str(2:end-1);
+            elseif startsWith(str, '[') && endsWith(str, ']')
+                val = str2num(str);
+                if isempty(val) && ~strcmp(str, '[]') && ~strcmp(str, '[ ]')
+                    % Fallback if conversion fails (e.g. non-numeric list)
+                    val = str;
+                end
             elseif isnan(str2double(str))
                 % È una stringa o booleano
                 if strcmpi(str, 'true')
