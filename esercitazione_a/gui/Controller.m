@@ -76,7 +76,16 @@ classdef Controller < Component
             drawnow;
 
             modello = obj.App.Modello;
-            modello.simulate();
+            try
+                modello.simulate();
+            catch ME
+                if ~isempty(obj.App)
+                    obj.App.showError("Errore imprevisto durante la simulazione: " + ME.message);
+                end
+                obj.Button.Text = "Simula";
+                obj.Button.Enable = "on";
+                rethrow(ME);
+            end
 
             % Ripristina lo stato del pulsante
             obj.Button.Text = "Simula";
