@@ -64,8 +64,39 @@
         CampoParametro1: 0.010
         CampoParametro2: 0.010
         CampoSpessore: 0.001
-        CampoCoppie: 1
         MenuPz: 'Pz26'
   pipeline: trasd_piezo_wideb/pipeline.yaml
   resultText: "['Banda Frazionaria no backing no plate:\n\n\t -3db: ', num2str(FBW_3dB_without_backing_without_plate), '\n\t -6db: ', num2str(FBW_6dB_without_backing_without_plate), '\n\nBanda Frazionaria con backing no plate:\n\n\t -3db: ', num2str(FBW_3dB_with_backing_without_plate), '\n\t -6db: ', num2str(FBW_6dB_with_backing_without_plate), '\n\nBanda Frazionaria no backing con plate:\n\n\t -3db: ', num2str(FBW_3dB_without_backing_with_plate), '\n\t -6db: ', num2str(FBW_6dB_without_backing_with_plate), '\n\nBanda Frazionaria con backing con plate:\n\n\t -3db: ', num2str(FBW_3dB_with_backing_with_plate), '\n\n\t -6db: ', num2str(FBW_6dB_with_backing_with_plate), '\n\nLo spessore ottimale è: l_plate=', num2str(l_plate_best_scaled), '\nLa Banda Frazionaria a -3dB ottimale è:', num2str(FBW_max), '\nSpessore convertito: ', num2str(l_plate_best_previous_scaled), ' → ', num2str(l_plate_best_scaled), '\nBanda Frazionaria a -3dB con backing e plate ottimizzato: FBW= ', num2str(FBW_3dB_with_backing_with_plate), '\nBanda Frazionaria a -6dB con backing e plate ottimizzato: FBW= ', num2str(FBW_6dB_with_backing_with_plate)]"
   plots: trasd_piezo_wideb/plots.yaml
+- exercise: Progettazione trasduttore ultrasonico (singolo)
+  image: langevin.png
+  settings: trasd_piezo_ultra_single/tabSettings.yaml
+  defaults:
+    - id: CeramicsTab
+      values:
+        MenuForma: Quadrato
+        CampoParametro1: 0.010
+        CampoParametro2: 0.010
+        CampoSpessore: 0.001
+        MenuPz: 'Pz27'
+    - id: MaterialiTab
+      values:
+        MenuStrati: Acciaio inossidabile 347
+  pipeline: trasd_piezo_ultra_single/pipeline.yaml
+  plots: trasd_piezo_ultra_single/plots.yaml
+- exercise: Progettazione trasduttore ultrasonico (accoppiato)
+  image: langevin.png
+  settings: trasd_piezo_ultra_coupled/tabSettings.yaml
+  defaults:
+    - id: CeramicsTab
+      values:
+        MenuForma: Quadrato
+        CampoParametro1: 0.010
+        CampoParametro2: 0.010
+        CampoSpessore: 0.001
+        MenuPz: 'Pz27'
+    - id: MaterialiTab
+      values:
+        MenuStrati: Acciaio inossidabile 347
+  pipeline: trasd_piezo_ultra_coupled/pipeline.yaml
+  plots: trasd_piezo_ultra_coupled/plots.yaml
