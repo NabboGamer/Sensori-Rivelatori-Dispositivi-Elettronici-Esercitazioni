@@ -103,12 +103,16 @@ classdef PlotView < Component
             % Crea una tab per ciascun elemento in plots
             for i = 1:numel(plots)
                 plotConfig = plots{i};
+                tab = [];
 
                 try
                     % Crea la tab con il nome specificato
                     tab = uitab(obj.TabGroup, "Title", plotConfig.name);
                     obj.Tabs{end+1} = tab;
                 catch ME
+                    if ~isempty(tab) && isvalid(tab)
+                        delete(tab);
+                    end
 
                     if ~isempty(obj.App)
                         obj.App.showError("Errore nel setup della tab grafico '" + plotConfig.name + "': " + ME.message);

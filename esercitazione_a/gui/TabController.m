@@ -72,6 +72,7 @@ classdef TabController < Component
             % Crea le nuove tab
             for i = 1:length(tabConfigs)
                 conf = tabConfigs{i};
+                t = [];
 
                 try
                     % Crea uitab prima della tab risultati
@@ -90,6 +91,10 @@ classdef TabController < Component
                         obj.Tabs(conf.id) = dt;
                     end
                 catch ME
+                    if ~isempty(t) && isvalid(t)
+                        delete(t);
+                    end
+
                     if ~isempty(obj.App)
                         obj.App.showError("Errore durante la creazione della tab '" + conf.name + "': " + ME.message);
                     else
