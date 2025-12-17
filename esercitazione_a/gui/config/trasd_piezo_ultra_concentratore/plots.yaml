@@ -1,0 +1,6 @@
+- name: Zin
+  drawing:
+    - "stampaGrafici(f, Zin{1}, Zin{2}, 'Zin of the Langevin Ultrasonic Trasducer with the velocity Concentrator', 'blue', 'Zin', 'Zin');"
+- name: FTT
+  drawing:
+    - "stampaGrafici(f, FTT{1}, FTT{2}, 'TTF of the Langevin Ultrasonic Trasducer with the velocity Concentrator', 'blue', 'TTF', 'TTF');"

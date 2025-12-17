@@ -100,3 +100,21 @@
         MenuStrati: Acciaio inossidabile 347
   pipeline: trasd_piezo_ultra_coupled/pipeline.yaml
   plots: trasd_piezo_ultra_coupled/plots.yaml
+- exercise: Progettazione trasduttore ultrasonico con concentratore
+  image: langevin.png
+  settings: trasd_piezo_ultra_concentratore/tabSettings.yaml
+  defaults:
+    - id: CeramicsTab
+      values:
+        MenuForma: Quadrato
+        CampoParametro1: 0.010
+        CampoParametro2: 0.010
+        CampoSpessore: 0.001
+        MenuPz: 'Pz27'
+    - id: MaterialiTab
+      values:
+        MenuStrati: Acciaio inossidabile 347
+        MenuConcentratore: Acciaio inossidabile 347
+        CampoGuadagno: 1.5
+  pipeline: trasd_piezo_ultra_concentratore/pipeline.yaml
+  plots: trasd_piezo_ultra_concentratore/plots.yaml
