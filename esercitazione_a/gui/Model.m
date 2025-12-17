@@ -128,10 +128,11 @@ classdef Model < handle
 
             %% Risultato (testuale)
             if isfield(currentConfig, 'resultText')
+                resultText = currentConfig.resultText;
                 try
-                    obj.ResultText = eval(currentConfig.resultText);
+                    obj.ResultText = eval(resultText);
                 catch ME
-                    fprintf('Errore nella valutazione della regola "%s": %s\n', rule, ME.message);
+                    fprintf('Errore nella valutazione del testo "%s": %s\n', resultText, ME.message);
                     obj.App.showError("Result-text Error: " + ME.message + newline + "Command: " + cmd);                    
                     return;
                 end
