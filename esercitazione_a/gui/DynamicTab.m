@@ -13,6 +13,12 @@ classdef DynamicTab < handle
         Parent(:, 1) matlab.ui.container.Tab {mustBeScalarOrEmpty}
     end
 
+    properties ( Access = private )
+        Listener event.listener {mustBeScalarOrEmpty}
+        ButtonPushedListener event.listener {mustBeScalarOrEmpty}
+        ButtonReleasedListener event.listener {mustBeScalarOrEmpty}
+    end % properties ( Access = private )
+
     methods
         function obj = DynamicTab(parent, config)
             obj.Parent = parent;
@@ -34,6 +40,37 @@ classdef DynamicTab < handle
         function set.Config(obj, config)
             obj.Config = config;
             obj.build();
+        end
+
+
+        function Subscribe( obj )
+            if ~isempty(obj.App) && ~isempty(obj.App.Controller)
+                obj.ButtonPushedListener = listener( obj.App.Controller, ...
+                    "ButtonPushed", ...
+                    @obj.onButtonPushed );
+                obj.ButtonReleasedListener = listener( obj.App.Controller, ...
+                    "ButtonReleased", ...
+                    @obj.onButtonReleased );
+            end
+        end
+
+        function onButtonPushed(obj, ~, ~)
+            if ~isempty(obj.Components)
+                comps = values(obj.Components);
+                for k = 1:length(comps)
+                    comps{k}.Enable = 'off';
+                end
+            end
+        end
+
+        function onButtonReleased(obj, ~, ~)
+            if ~isempty(obj.Components)
+                comps = values(obj.Components);
+                for k = 1:length(comps)
+                    comps{k}.Enable = 'on';
+                end
+            end
+            obj.checkEnable();
         end
 
         function applySettings(obj, settings)

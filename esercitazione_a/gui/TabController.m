@@ -84,6 +84,7 @@ classdef TabController < Component
 
                     if ~isempty(obj.App)
                         dt.App = obj.App;
+                        dt.Subscribe();
                     end
 
                     % Salva nella mappa
