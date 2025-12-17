@@ -133,7 +133,7 @@ classdef Model < handle
                     obj.ResultText = eval(resultText);
                 catch ME
                     fprintf('Errore nella valutazione del testo "%s": %s\n', resultText, ME.message);
-                    obj.App.showError("Result-text Error: " + ME.message + newline + "Command: " + cmd);                    
+                    obj.App.showError("Result-text Error: " + ME.message + newline + "Command: " + cmd);
                     return;
                 end
                 obj.ResultText = replace(obj.ResultText, '\n', newline);

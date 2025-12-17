@@ -15,6 +15,12 @@ classdef Controller < Component
         App(:, 1) App {mustBeScalarOrEmpty}
     end
 
+    events ( NotifyAccess = private )
+        % Event broadcast when the data is changed.
+        ButtonPushed
+        ButtonReleased
+    end
+
     methods
 
         function obj = Controller( namedArgs )
@@ -71,8 +77,10 @@ classdef Controller < Component
 
         function onButtonPushed( obj, ~, ~ )
             % Imposta lo stato di caricamento
+            notify(obj, "ButtonPushed");
             obj.Button.Text = "Simulazione...";
             obj.Button.Enable = "off";
+            obj.DropDownMenu.Enable = "off";
             drawnow;
 
             modello = obj.App.Modello;
@@ -84,12 +92,16 @@ classdef Controller < Component
                 % end
                 obj.Button.Text = "Simula";
                 obj.Button.Enable = "on";
+                obj.DropDownMenu.Enable = "on";
+                notify(obj, "ButtonReleased");
                 rethrow(ME);
             end
 
             % Ripristina lo stato del pulsante
             obj.Button.Text = "Simula";
             obj.Button.Enable = "on";
+            obj.DropDownMenu.Enable = "on";
+            notify(obj, "ButtonReleased");
         end % onButtonPushed
 
     end % methods
