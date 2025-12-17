@@ -1,4 +1,11 @@
 function matching2D(percorsoTemplates, percorsoMatching)
+    %MATCHING2D esegue il matching 2D tra tutti i template presenti nel database.
+    %
+    % Carica tutti i template salvati in formato .mat all'interno della 
+    % directory percorsoTemplates (organizzata in sottocartelle, una per 
+    % campione/utente), calcola lo score di similarità per ogni coppia di 
+    % template distinta (i < j) tramite la funzione CALCOLASCORE2D, e salva 
+    % in output una tabella riassuntiva contenente tutte le combinazioni confrontate.
     
     p = gcp('nocreate');
     if isempty(p)
