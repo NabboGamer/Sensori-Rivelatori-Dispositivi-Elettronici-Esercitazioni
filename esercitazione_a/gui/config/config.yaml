@@ -118,3 +118,27 @@
         CampoGuadagno: 1.5
   pipeline: trasd_piezo_ultra_concentratore/pipeline.yaml
   plots: trasd_piezo_ultra_concentratore/plots.yaml
+- exercise: Analizzatore Ceramiche Piezoelettriche
+  #image: 
+  settings: analiz_ceram_piezo/tabSettings.yaml
+  defaults:
+    - id: CeramicsTab
+      values:
+        MenuForma: Quadrato
+        CampoParametro1: 0.010
+        CampoParametro2: 0.010
+        CampoSpessore: 0.001
+        CampoMassa: 1.0000
+    - id: FlowTab
+      values:
+        CampoFlow: 1
+        CampoZiFlow: 1
+    - id: ParametriTab
+      values:
+        CampoC0: 1
+        CampoR1: 1
+        CampoL1: 1
+        CampoC1: 1
+  pipeline: analiz_ceram_piezo/pipeline.yaml
+  plots: analiz_ceram_piezo/plots.yaml
+  resultText: "str(T)"

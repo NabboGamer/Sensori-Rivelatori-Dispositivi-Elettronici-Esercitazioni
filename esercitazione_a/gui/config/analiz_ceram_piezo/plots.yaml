@@ -1,0 +1,4 @@
+- name: Zin
+  drawing:
+    - "stampaGrafici(f, Zin{1}, Zin{2}, 'Impedence Comparing', 'blue', 'Zin', 'Zin');"
+    - "stampaGrafici(f, Zin_ceq{1}, Zin_ceq{2}, 'Impedence Comparing', 'orange', 'Zin_c_e_q', 'Zin');"

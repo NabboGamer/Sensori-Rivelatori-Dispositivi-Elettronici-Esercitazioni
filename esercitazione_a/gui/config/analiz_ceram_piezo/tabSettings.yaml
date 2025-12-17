@@ -1,0 +1,110 @@
+- name: Ceramica
+  id: CeramicsTab
+  components:
+    - kind: uidropdown
+      id: MenuForma
+      labels:
+        - text: Forma
+          position: left
+      Items:
+        - Quadrato
+        - Rettangolo
+        - Cerchio 
+    - kind: uispinner
+      id: CampoParametro1
+      labels:
+        - text: Placeholder
+          position: left
+          rules:
+            - id: MenuForma
+              value: Quadrato
+              text: Lato
+            - id: MenuForma
+              value: Rettangolo
+              text: Base
+            - id: MenuForma
+              value: Cerchio
+              text: Raggio
+        - text: m
+          position: right
+      Step: 0.001
+      Limits: [0, 1]
+    - kind: uispinner
+      id: CampoParametro2
+      visible_when:
+        id: MenuForma
+        value: Rettangolo
+      labels:
+        - text: Altezza
+          position: left
+        - text: m
+          position: right
+      Step: 0.001
+      Limits: [0, 1]
+    - kind: uispinner
+      id: CampoSpessore
+      labels:
+        - text: Spessore
+          position: left
+        - text: m
+          position: right
+      Step: 0.001
+      Limits: [0, 1]
+    - kind: uispinner
+      id: CampoMassa
+      labels:
+        - text: Massa
+          position: left
+        - text: kg
+          position: right
+      Step: 0.0001
+      Limits: [0.0001, 1]
+- name: Flow
+  id: FlowTab
+  components:
+    - kind: uispinner
+      id: CampoFlow
+      labels:
+        - text: flow
+          position: left    
+      Step: 0.001
+      Limits: [0.001, inf]
+    - kind: uispinner
+      id: CampoZiFlow
+      labels:
+        - text: Zi_flow
+          position: left
+      Step: 0.001
+      Limits: [0.001, inf]  
+- name: Circuito Equivalente
+  id: ParametriTab
+  components:
+    - kind: uispinner
+      id: CampoC0
+      labels:
+        - text: C0
+          position: left
+      Step: 0.001
+      Limits: [0.001, inf]
+    - kind: uispinner
+      id: CampoR1
+      labels:
+        - text: R1
+          position: left
+      Step: 0.001
+      Limits: [0.001, inf]
+    - kind: uispinner
+      id: CampoL1
+      labels:
+        - text: L1
+          position: left
+      Step: 0.001
+      Limits: [0.001, inf]
+    - kind: uispinner
+      id: CampoC1
+      labels:
+        - text: C1
+          position: left
+      Step: 0.001
+      Limits: [0.001, inf]
+    
