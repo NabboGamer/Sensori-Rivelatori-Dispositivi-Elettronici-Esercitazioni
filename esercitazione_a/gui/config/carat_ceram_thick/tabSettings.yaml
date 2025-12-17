@@ -1,66 +1,66 @@
 - name: Ceramica
-      id: CeramicsTab
-      components:
-        - kind: uidropdown
-          id: MenuForma
-          labels:
-            - text: Forma
-              position: left
-          Items:
-            - Quadrato
-            - Rettangolo
-            - Cerchio 
-        - kind: uispinner
-          id: CampoParametro1
-          labels:
-            - text: Placeholder
-              position: left
-              rules:
-                - id: MenuForma
-                  value: Quadrato
-                  text: Lato
-                - id: MenuForma
-                  value: Rettangolo
-                  text: Base
-                - id: MenuForma
-                  value: Cerchio
-                  text: Raggio
+  id: CeramicsTab
+  components:
+    - kind: uidropdown
+      id: MenuForma
+      labels:
+        - text: Forma
+          position: left
+      Items:
+        - Quadrato
+        - Rettangolo
+        - Cerchio 
+    - kind: uispinner
+      id: CampoParametro1
+      labels:
+        - text: Placeholder
+          position: left
+          rules:
+            - id: MenuForma
+              value: Quadrato
+              text: Lato
+            - id: MenuForma
+              value: Rettangolo
+              text: Base
+            - id: MenuForma
+              value: Cerchio
+              text: Raggio
             - text: m
               position: right
-          Step: 0.001
-          Limits: [0, 1]
-        - kind: uispinner
-          id: CampoParametro2
-          visible_when:
-            id: MenuForma
-            value: Rettangolo
-          labels:
-            - text: Altezza
-              position: left
-            - text: m
-              position: right
-          Step: 0.001
-          Limits: [0, 1]
-        - kind: uispinner
-          id: CampoSpessore
-          labels:
-            - text: Spessore
-              position: left
-            - text: m
-              position: right
-          Step: 0.001
-          Limits: [0, 1]
-        - kind: uidropdown
-          id: MenuPz
-          labels:
-            - text: Pz
-              position: left
-          Items:
-            - Pz21
-            - Pz23
-            - Pz24
-            - Pz26
-            - Pz27
-            - Pz28
-            - Pz29
-            - Pz34
+      Step: 0.001
+      Limits: [0, 1]
+    - kind: uispinner
+      id: CampoParametro2
+      visible_when:
+        id: MenuForma
+        value: Rettangolo
+      labels:
+        - text: Altezza
+          position: left
+        - text: m
+          position: right
+      Step: 0.001
+      Limits: [0, 1]
+    - kind: uispinner
+      id: CampoSpessore
+      labels:
+        - text: Spessore
+          position: left
+        - text: m
+          position: right
+      Step: 0.001
+      Limits: [0, 1]
+    - kind: uidropdown
+      id: MenuPz
+      labels:
+        - text: Pz
+          position: left
+      Items:
+        - Pz21
+        - Pz23
+        - Pz24
+        - Pz26
+        - Pz27
+        - Pz28
+        - Pz29
+        - Pz34
