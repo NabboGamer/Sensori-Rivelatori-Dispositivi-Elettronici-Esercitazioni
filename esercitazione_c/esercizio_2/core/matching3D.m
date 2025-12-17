@@ -82,6 +82,7 @@ function tabellaScore = matching3D(percorsoTemplates, percorsoMatching, alpha)
 
     sec = toc(tStart);
     cprintf('Comments', "Calcolo dei matching scores terminato dopo %.3f secondi!\n", sec);
+    cprintf('Comments', "\n");
 
     % 6) Salvataggio
     % nome filtro dal nome cartella root: templates_lee_bh4_3d -> lee_bh4

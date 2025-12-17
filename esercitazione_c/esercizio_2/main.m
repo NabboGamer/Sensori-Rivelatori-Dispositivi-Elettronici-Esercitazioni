@@ -56,7 +56,7 @@ cprintf('Comments', "\n");
 
 %% 4) Stampa grafici
 cprintf('Comments', "+------------------------Calcolo Statistiche--------------------------+\n");
-% plotStatistiche(alpha,filterName,tabellaScore)
+calcolaStatistiche(tabellaScore);
 cprintf('Comments', "+---------------------------------------------------------------------+\n");
 cprintf('Comments', "\n")
 
