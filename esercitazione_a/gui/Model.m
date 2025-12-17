@@ -76,19 +76,22 @@ classdef Model < handle
             end
 
             %% Pzt config
-            keyMap = containers.Map([obj.PztProperties{:,1}], obj.PztProperties(:,2));
-            selezionePzt = obj.App.TabController.getTab('CeramicsTab').getComponent('MenuPz').Value;
-            pztProps = keyMap(selezionePzt);
-            rho = pztProps(1);
-            c33 = pztProps(2);
-            h33 = pztProps(3);
-            e33 = pztProps(4);
-            beta33 = h33/e33;
-            v = sqrt(c33/rho);
-            [f, omega] = calcolaIntervalliFrequenzeEPulsazioniDiRisonanza(v, l);
-            theta = (omega .* l) ./ v;
-            C0 = (areaFaccia/(beta33*l));
-
+            try
+                keyMap = containers.Map([obj.PztProperties{:,1}], obj.PztProperties(:,2));
+                selezionePzt = obj.App.TabController.getTab('CeramicsTab').getComponent('MenuPz').Value;
+                pztProps = keyMap(selezionePzt);
+                rho = pztProps(1);
+                c33 = pztProps(2);
+                h33 = pztProps(3);
+                e33 = pztProps(4);
+                beta33 = h33/e33;
+                v = sqrt(c33/rho);
+                [f, omega] = calcolaIntervalliFrequenzeEPulsazioniDiRisonanza(v, l);
+                theta = (omega .* l) ./ v;
+                C0 = (areaFaccia/(beta33*l));
+            catch
+                fprintf('WARNING: Impossibile trovare il componente MenuPz in CeramicsTab. Le proprietà della ceramica non verranno impostate.');
+            end
             %% Impedenze
             try
                 mezziStandard = obj.App.TabController.getTab('ImpedenzeTab').getComponent('CheckMezziStandard').Value;
@@ -125,7 +128,13 @@ classdef Model < handle
 
             %% Risultato (testuale)
             if isfield(currentConfig, 'resultText')
-                obj.ResultText = eval(currentConfig.resultText);
+                try
+                    obj.ResultText = eval(currentConfig.resultText);
+                catch ME
+                    fprintf('Errore nella valutazione della regola "%s": %s\n', rule, ME.message);
+                    obj.App.showError("Result-text Error: " + ME.message + newline + "Command: " + cmd);                    
+                    return;
+                end
                 obj.ResultText = replace(obj.ResultText, '\n', newline);
                 obj.ResultText = replace(obj.ResultText, '\t', '    ');
             end
