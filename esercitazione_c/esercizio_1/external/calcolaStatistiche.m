@@ -1,21 +1,4 @@
 function calcolaStatistiche(tabellaScore)
-
-    %% Etichetto i confronti come genuini o impostori
-    for i = 1 : height(tabellaScore)
-        template1 = char(tabellaScore.Template1(i));
-        idx1 = find(template1 == '_', 1, 'first');
-        nomeUtente1 = template1(1:idx1-1);
-    
-        template2 = char(tabellaScore.Template2(i));
-        idx2 = find(template2 == '_', 1, 'first');
-        nomeUtente2 = template2(1:idx2-1);
-            
-        if(strcmp(nomeUtente1,nomeUtente2)) 
-            tabellaScore.Risultato(i) = {'Genuino'}; 
-        else
-            tabellaScore.Risultato(i) = {'Impostore'};
-        end
-    end
     
     %% Ricavo la tabella genuini e impostori
     tabellaGenuinoML = cell(1,3);
@@ -27,7 +10,7 @@ function calcolaStatistiche(tabellaScore)
     
         risultato = tabellaScore{i,4};
     
-        if (strcmp(risultato,'Genuino'))
+        if risultato == "Genuino"
             genuino = genuino + 1;
             tabellaGenuinoML(genuino,1) = {tabellaScore.Template1(i)};
             tabellaGenuinoML(genuino,2) = {tabellaScore.Template2(i)};
@@ -37,7 +20,6 @@ function calcolaStatistiche(tabellaScore)
             tabellaImpostoreML(impostore,1) = {tabellaScore.Template1(i)};
             tabellaImpostoreML(impostore,2) = {tabellaScore.Template2(i)};
             tabellaImpostoreML(impostore,3) = {round(tabellaScore{i,3}*100)};
-    
         end
         
     end

@@ -77,12 +77,12 @@ cprintf('Comments', "\n");
 
 
 % Matching
-cprintf('Comments', "+----------------------------------------Matching-----------------------------------------+\n");
+cprintf('Comments', "+-------------------------------------------Matching--------------------------------------------+\n");
 matching2D(percorsoTemplates,percorsoMatching)
 load(fullfile(percorsoMatching,"tabellaScore.mat"));
 writetable(tabellaScore, fullfile(percorsoMatching,"tabellaScore.xlsx"));
 disp(tabellaScore)
-cprintf('Comments', "+-----------------------------------------------------------------------------------------+\n");
+cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");
 
 

@@ -65,14 +65,23 @@ function matching2D(percorsoTemplates, percorsoMatching)
             tabellaFinale{sp,1} = name1;
             tabellaFinale{sp,2} = name2;
             tabellaFinale{sp,3} = score(i,j);
-    
+
+            nomeUtente1 = extractBefore(name1, "_");
+            nomeUtente2 = extractBefore(name2, "_");
+            if(strcmp(nomeUtente1,nomeUtente2)) 
+                tabellaFinale{sp,4} = "Genuino"; 
+            else
+                tabellaFinale{sp,4} = "Impostore";
+            end
+        
             sp = sp + 1;
         end
     end
     
-    tabellaScore = cell2table(tabellaFinale, 'VariableNames', {'Template1' 'Template2' 'Score'});
+    tabellaScore = cell2table(tabellaFinale, 'VariableNames', {'Template1' 'Template2' 'Score' 'Confronto'});
     tabellaScore.Template1 = categorical(tabellaScore.Template1);
     tabellaScore.Template2 = categorical(tabellaScore.Template2);
+    tabellaScore.Confronto = categorical(tabellaScore.Confronto);
 
     save(fullfile(percorsoMatching,"tabellaScore.mat"), 'tabellaScore');
     
