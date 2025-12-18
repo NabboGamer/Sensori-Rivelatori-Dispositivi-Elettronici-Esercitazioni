@@ -46,12 +46,12 @@ cprintf('Comments', "+-------------------------------EXPERIMENTAL RESULTS AND AN
 cprintf('Comments', "\n");
 
 %% 3) Matching
-cprintf('Comments', "+----------------------------------------Matching-----------------------------------------+\n");
+cprintf('Comments', "+-------------------------------------------Matching--------------------------------------------+\n");
 cprintf('Comments', "\n");
 alpha = 2;
 tabellaScore = matching3D(percorsoTemplates3D, percorsoMatching, alpha);
 disp(tabellaScore)
-cprintf('Comments', "+-----------------------------------------------------------------------------------------+\n");
+cprintf('Comments', "+-----------------------------------------------------------------------------------------------+\n");
 cprintf('Comments', "\n");
 
 %% 4) Stampa grafici

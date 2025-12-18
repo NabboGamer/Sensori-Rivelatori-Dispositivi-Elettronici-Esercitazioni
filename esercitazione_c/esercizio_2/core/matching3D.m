@@ -61,8 +61,10 @@ function tabellaScore = matching3D(percorsoTemplates, percorsoMatching, alpha)
 
     % 4) Matching parallelo
     scoreVec = zeros(numPairs, 1);
+    confVec = strings(numPairs, 1);
     % Copia read-only dei template su ogni worker (meno overhead nel parfor)
     templatesConst = parallel.pool.Constant(templates);
+    idsConst = parallel.pool.Constant(ids);
 
     parfor t = 1:numPairs
         i = idx1(t);
@@ -70,15 +72,25 @@ function tabellaScore = matching3D(percorsoTemplates, percorsoMatching, alpha)
         tmp1 = templatesConst.Value{i}; % accesso alla copia locale del worker
         tmp2 = templatesConst.Value{j};
         scoreVec(t) = calcolaScore3D(tmp1, tmp2, alpha);
+
+        nomeUtente1 = extractBefore(idsConst.Value{i}, "_");
+        nomeUtente2 = extractBefore(idsConst.Value{j}, "_");
+        if(strcmp(nomeUtente1,nomeUtente2)) 
+            confVec(t) = "Genuino";
+        else
+            confVec(t) = "Impostore";
+        end
     end
 
     % 5) Tabella finale
     tabellaScore = table( ids(double(idx1)), ...
                           ids(double(idx2)), ...
                           scoreVec, ...
-                          'VariableNames', {'Template1','Template2','Score'} );
+                          confVec, ...
+                          'VariableNames', {'Template1','Template2','Score','Confronto'} );
     tabellaScore.Template1 = categorical(tabellaScore.Template1);
     tabellaScore.Template2 = categorical(tabellaScore.Template2);
+    tabellaScore.Confronto = categorical(tabellaScore.Confronto);
 
     sec = toc(tStart);
     cprintf('Comments', "Calcolo dei matching scores terminato dopo %.3f secondi!\n", sec);
