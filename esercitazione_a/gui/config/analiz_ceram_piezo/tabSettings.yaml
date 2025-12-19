@@ -59,14 +59,16 @@
           position: right
       Step: 0.0001
       Limits: [0.0001, 1]
-- name: Flow
+- name: flow
   id: FlowTab
   components:
     - kind: uispinner
       id: CampoFlow
       labels:
         - text: flow
-          position: left    
+          position: left
+        - text: Hz
+          position: right  
       Step: 0.001
       Limits: [0.001, inf]
     - kind: uispinner
@@ -74,6 +76,8 @@
       labels:
         - text: Zi_flow
           position: left
+        - text: Ω
+          position: right
       Step: 0.001
       Limits: [0.001, inf]  
 - name: Circuito Equivalente
@@ -84,6 +88,8 @@
       labels:
         - text: C0
           position: left
+        - text: pF
+          position: right
       Step: 0.001
       Limits: [0.001, inf]
     - kind: uispinner
@@ -91,6 +97,8 @@
       labels:
         - text: R1
           position: left
+        - text: Ω
+          position: right
       Step: 0.001
       Limits: [0.001, inf]
     - kind: uispinner
@@ -98,6 +106,8 @@
       labels:
         - text: L1
           position: left
+        - text: μH
+          position: right
       Step: 0.001
       Limits: [0.001, inf]
     - kind: uispinner
@@ -105,6 +115,8 @@
       labels:
         - text: C1
           position: left
+        - text: pF
+          position: right
       Step: 0.001
       Limits: [0.001, inf]
     
