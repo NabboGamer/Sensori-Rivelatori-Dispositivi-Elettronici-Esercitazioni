@@ -134,6 +134,7 @@ classdef PlotView < Component
             grid.RowHeight = "1x";
             grid.ColumnWidth = "1x";
             grid.Padding = 0;
+            grid.Scrollable = 'on';
 
             % Crea il panel con bordo arrotondato
             obj.Panel = uipanel( ...
