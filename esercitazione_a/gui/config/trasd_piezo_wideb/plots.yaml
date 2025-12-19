@@ -1,23 +1,22 @@
 - name: Zin
   drawing:
-    - 'legendTitle = strcat("Backing made of Tungsten Epoxy (7.0 [MRayl])");'
-    - "stampaGrafici(f, Zin_without_backing{1}, Zin_without_backing{2}, 'Comparing Zin without and with Backing', 'blue', 'Zin', 'Zin', ' without backing', legendTitle);"
-    - "stampaGrafici(f, Zin_with_backing{1}, Zin_with_backing{2}, 'Comparing Zin without and with Backing', 'blue', 'Zin', 'Zin', ' with backing', legendTitle);"
-- name: FTT
+    - "legendTitle = strcat('Backing made of Tungsten Epoxy (7.0 [MRayl])'); stampaGrafici(f, Zin_without_backing{1}, Zin_without_backing{2}, 'Comparing Zin without and with Backing', 'blue', 'Zin', 'Zin', ' without backing', legendTitle);"
+    - "stampaGrafici(f, Zin_with_backing{1}, Zin_with_backing{2}, 'Comparing Zin without and with Backing', 'orange', 'Zin', 'Zin', ' with backing', legendTitle);"
+- name: TTF
   drawing:
     - "stampaGrafici(f, FTT_without_backing{1}, FTT_without_backing{2}, 'Comparing TTF without and with Backing', 'blue', 'TTF', 'TTF', ' without backing', legendTitle);"
     - "stampaGrafici(f, FTT_with_backing{1}, FTT_with_backing{2}, 'Comparing TTF without and with Backing', 'orange', 'TTF', 'TTF', ' with backing', legendTitle);"
-- name: Zin (with plate)
+- name: Zin with plate
   drawing:
-    - 'legendTitle = strcat("Matching Plate made of E-Solder 3022 (", string(l_plate_scaled), " [mm])");'
-    - "stampaGrafici(f, Zin_without_backing_with_plate{1}, Zin_without_backing_with_plate{2}, 'Comparing Zin without and with Backing adding the matching plate', 'blue', 'Zin', 'Zin', ' without backing with plate', legendTitle);"
+    - "legendTitle = strcat('Matching Plate made of E-Solder 3022 (', string(l_plate_scaled), ' [mm])'); stampaGrafici(f, Zin_without_backing_with_plate{1}, Zin_without_backing_with_plate{2}, 'Comparing Zin without and with Backing adding the matching plate', 'blue', 'Zin', 'Zin', ' without backing with plate', legendTitle);"
     - "stampaGrafici(f, Zin_with_backing_with_plate{1}, Zin_with_backing_with_plate{2}, 'Comparing Zin without and with Backing adding the matching plate', 'orange', 'Zin', 'Zin', ' with backing with plate', legendTitle);"
+- name: TTF with plate
+  drawing:
     - "stampaGrafici(f, FTT_without_backing_with_plate{1}, FTT_without_backing_with_plate{2}, 'Comparing TTF without and with Backing adding the matching plate', 'blue', 'TTF', 'TTF', ' without backing with plate', legendTitle);"
     - "stampaGrafici(f, FTT_with_backing_with_plate{1}, FTT_with_backing_with_plate{2}, 'Comparing TTF without and with Backing adding the matching plate', 'orange', 'TTF', 'TTF', ' with backing with plate', legendTitle);"
-- name: Zin (with plate and backing, optimized)
+- name: Zin optimized backing
   drawing:
-    - "legendTitle = strcat('Matching Plate made of E-Solder 3022 (', string(l_plate_scaled_new), ' [mm])');"
-    - "stampaGrafici(f, Zin_with_backing_with_plate_new{1}, Zin_with_backing_with_plate_new{2}, 'Zin with Backing and Optimized Matching Plate', 'orange', 'Zin', 'Zin', ' with backing with plate', legendTitle);"
-- name: FTT (with plate and backing, optimized)
+    - "legendTitle = strcat('Matching Plate made of E-Solder 3022 (', string(l_plate_scaled), ' [mm])'); stampaGrafici(f, Zin_with_backing_with_plate{1}, Zin_with_backing_with_plate{2}, 'Zin with Backing and Optimized Matching Plate', 'orange', 'Zin', 'Zin', ' with backing with plate', legendTitle);"
+- name: TTF optimized backing
   drawing:
-    - "stampaGrafici(f, FTT_with_backing_with_plate_new{1}, FTT_with_backing_with_plate_new{2}, 'TTF with Backing and Optimized Matching Plate', 'orange', 'TTF', 'TTF', ' with backing with plate', legendTitle);"
+    - "stampaGrafici(f, FTT_with_backing_with_plate{1}, FTT_with_backing_with_plate{2}, 'TTF with Backing and Optimized Matching Plate', 'orange', 'TTF', 'TTF', ' with backing with plate', legendTitle);"
