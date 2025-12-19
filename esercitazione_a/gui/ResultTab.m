@@ -12,18 +12,29 @@ classdef ResultTab < handle
     end
 
     properties ( Access = private )
-        Listener(:, 1) event.listener {mustBeScalarOrEmpty}
+        DataListener(:, 1) event.listener {mustBeScalarOrEmpty}
+        ExerciseListener event.listener {mustBeScalarOrEmpty}
+        ButtonPushedListener event.listener {mustBeScalarOrEmpty}
     end % properties ( Access = private )
 
 
     methods
         function Subscribe( obj )
             if ~isempty(obj.App) && ~isempty(obj.App.Modello)
-                obj.Listener = listener( obj.App.Modello, ...
+                obj.DataListener = listener( obj.App.Modello, ...
                     "DataChanged", ...
                     @obj.onDataChanged );
 
+                obj.ExerciseListener = listener( obj.App.Controller, ...
+                    "ExerciseChanged", ...
+                    @obj.onExerciseChanged );
+                
+                obj.ButtonPushedListener = listener( obj.App.Controller, ...
+                    "ButtonPushed", ...
+                    @obj.onExerciseChanged );
+
                 onDataChanged( obj, [], [] )
+                onExerciseChanged( obj, [], [] )
             end
         end
 
@@ -56,5 +67,10 @@ classdef ResultTab < handle
         function onDataChanged( obj, ~, ~ )
             obj.update();
         end % onDataChanged
+
+        function onExerciseChanged( obj, ~, ~ )
+            obj.EtichettaRisultato.Text = "Nessun risultato prodotto.";
+        end
+
     end
 end

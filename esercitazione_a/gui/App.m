@@ -33,8 +33,8 @@ classdef App < handle
 
             %% Configurazione controlli
             obj.TabController = TabController();
-            obj.TabController.App = obj;
             obj.Controller = Controller("Parent", obj.Layout);
+            obj.TabController.App = obj;
 
             %% Configurazione vista
 
