@@ -55,7 +55,7 @@
   resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
   plots: model_termi_thick_coupled/plots.yaml
 - exercise: Progettazione trasduttore banda larga
-  # image: singleCeramics.png
+  image: wideband.png
   settings: trasd_piezo_wideb/tabSettings.yaml
   defaults:
     - id: CeramicsTab
@@ -85,7 +85,7 @@
   pipeline: trasd_piezo_ultra_single/pipeline.yaml
   plots: trasd_piezo_ultra_single/plots.yaml
 - exercise: Progettazione trasduttore ultrasonico (accoppiato)
-  image: langevin.png
+  image: langevin_coupled.png
   settings: trasd_piezo_ultra_coupled/tabSettings.yaml
   defaults:
     - id: CeramicsTab
@@ -101,7 +101,7 @@
   pipeline: trasd_piezo_ultra_coupled/pipeline.yaml
   plots: trasd_piezo_ultra_coupled/plots.yaml
 - exercise: Progettazione trasduttore ultrasonico con concentratore
-  image: langevin.png
+  image: concentratore.png
   settings: trasd_piezo_ultra_concentratore/tabSettings.yaml
   defaults:
     - id: CeramicsTab
@@ -119,7 +119,7 @@
   pipeline: trasd_piezo_ultra_concentratore/pipeline.yaml
   plots: trasd_piezo_ultra_concentratore/plots.yaml
 - exercise: Analizzatore Ceramiche Piezoelettriche
-  #image: 
+  image: analizzatore.png
   settings: analiz_ceram_piezo/tabSettings.yaml
   defaults:
     - id: CeramicsTab
