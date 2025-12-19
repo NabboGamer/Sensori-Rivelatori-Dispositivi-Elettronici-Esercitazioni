@@ -43,4 +43,4 @@
 - "fmin = f(1,index_min);"
 - "fmax = f(1,index_max);"
 - "Keff_acqua = ((fmax^2) - (fmin^2))/(fmax^2);"
-- 'if (mezziStandard) Keff = "\n\tAria: " + num2str(Keff_aria) + "\n\tAcqua: " + num2str(Keff_acqua); else Keff = Keff_custom; end'
+- 'if (mezziStandard) Keff = "\tAria: Keff^2 = " + num2str(Keff_aria) + "\n\tAcqua: Keff^2 = " + num2str(Keff_acqua); else Keff = "Keff^2 = " + num2str(Keff_custom); end'
