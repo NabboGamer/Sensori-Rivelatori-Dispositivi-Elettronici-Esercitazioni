@@ -69,6 +69,7 @@
   components:
     - kind: uicheckbox
       id: CheckMezziStandard
+      Text: ''
       labels:
         - text: Usa Mezzi Standard
           position: left
