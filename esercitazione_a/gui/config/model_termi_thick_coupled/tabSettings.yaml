@@ -25,8 +25,8 @@
             - id: MenuForma
               value: Cerchio
               text: Raggio
-            - text: m
-              position: right
+        - text: m
+          position: right
       Step: 0.001
       Limits: [0, 1]
     - kind: uispinner

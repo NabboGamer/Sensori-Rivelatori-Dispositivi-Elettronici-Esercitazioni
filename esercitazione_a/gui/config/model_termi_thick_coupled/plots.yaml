@@ -4,25 +4,25 @@
   drawing:
    - "stampaGrafici(f, Zin_side1{1}, Zin_side1{2}, var_z, 'blue', 'Zin', 'Zin', additionalDescriptions);"
    - "stampaGrafici(f, Zin_couple_side1{1}, Zin_couple_side1{2}, var_z, 'orange', 'Zin', 'Zin', additionalDescriptionsCouple);"
-- name: TTF
+- name: TTF side 1
   rules:
    - "mezziStandard == false"
   drawing:
    - "stampaGrafici(f, FTT_side1{1}, FTT_side1{2}, var_FTT, 'blue', 'TTF', 'TTF', additionalDescriptions);"
    - "stampaGrafici(f, FTT_couple_side1{1}, FTT_couple_side1{2}, var_FTT, 'orange', 'TTF', 'TTF', additionalDescriptionsCouple);"
-- name: RTF
+- name: RTF side 1
   rules:
    - "mezziStandard == false"
   drawing:
    - "stampaGrafici(f, FTR_side1{1}, FTR_side1{2}, var_FTR, 'blue', 'RTF', 'RTF', additionalDescriptions);"
    - "stampaGrafici(f, FTR_couple_side1{1}, FTR_couple_side1{2}, var_FTR, 'orange', 'RTF', 'RTF', additionalDescriptionsCouple);"
-- name: TTF
+- name: TTF side 2
   rules: 
    - "Z1 ~= Z2"
   drawing:
    - "var_FTT = 'TTF side 2 Comparing'; stampaGrafici(f, FTT_side2{1}, FTT_side2{2}, var_FTT, 'blue', 'TTF', 'TTF', additionalDescriptions);"
    - "stampaGrafici(f, FTT_couple_side2{1}, FTT_couple_side2{2}, var_FTT, 'orange', 'TTF', 'TTF', additionalDescriptionsCouple);"
-- name: RTF
+- name: RTF side 2
   rules: 
    - "Z1 ~= Z2"
   drawing:
