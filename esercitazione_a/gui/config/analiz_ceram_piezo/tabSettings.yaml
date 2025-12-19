@@ -28,7 +28,7 @@
         - text: m
           position: right
       Step: 0.001
-      Limits: [0, 1]
+      Limits: [1e-6, 1]
     - kind: uispinner
       id: CampoParametro2
       visible_when:
@@ -40,7 +40,7 @@
         - text: m
           position: right
       Step: 0.001
-      Limits: [0, 1]
+      Limits: [1e-6, 1]
     - kind: uispinner
       id: CampoSpessore
       labels:
@@ -49,7 +49,7 @@
         - text: m
           position: right
       Step: 0.001
-      Limits: [0, 1]
+      Limits: [1e-6, 1]
     - kind: uispinner
       id: CampoMassa
       labels:
@@ -58,7 +58,7 @@
         - text: kg
           position: right
       Step: 0.0001
-      Limits: [0.0001, 1]
+      Limits: [1e-6, 1]
 - name: flow
   id: FlowTab
   components:
@@ -70,7 +70,7 @@
         - text: Hz
           position: right  
       Step: 0.001
-      Limits: [0.001, inf]
+      Limits: [1e-6, inf]
     - kind: uispinner
       id: CampoZiFlow
       labels:
@@ -79,7 +79,7 @@
         - text: Ω
           position: right
       Step: 0.001
-      Limits: [0.001, inf]  
+      Limits: [1e-6, inf]  
 - name: Circuito Equivalente
   id: ParametriTab
   components:
@@ -91,7 +91,7 @@
         - text: pF
           position: right
       Step: 0.001
-      Limits: [0.001, inf]
+      Limits: [1e-6, inf]
     - kind: uispinner
       id: CampoR1
       labels:
@@ -100,7 +100,7 @@
         - text: Ω
           position: right
       Step: 0.001
-      Limits: [0.001, inf]
+      Limits: [1e-6, inf]
     - kind: uispinner
       id: CampoL1
       labels:
@@ -109,7 +109,7 @@
         - text: μH
           position: right
       Step: 0.001
-      Limits: [0.001, inf]
+      Limits: [1e-6, inf]
     - kind: uispinner
       id: CampoC1
       labels:
@@ -118,5 +118,5 @@
         - text: pF
           position: right
       Step: 0.001
-      Limits: [0.001, inf]
+      Limits: [1e-6, inf]
     
