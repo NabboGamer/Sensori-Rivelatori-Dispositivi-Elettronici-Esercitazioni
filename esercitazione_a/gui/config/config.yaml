@@ -141,4 +141,4 @@
         CampoC1: 1
   pipeline: analiz_ceram_piezo/pipeline.yaml
   plots: analiz_ceram_piezo/plots.yaml
-  resultText: "str(T)"
+  resultText: "evalc('feature(''hotlinks'', 0); disp(T)');"
