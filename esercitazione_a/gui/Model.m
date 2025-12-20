@@ -9,6 +9,7 @@ classdef Model < handle
         Config
         CSVFile
         ResultText
+        ResultTextInterpreter
         CurrentExercise string {mustBeScalarOrEmpty}
     end
 
@@ -142,8 +143,12 @@ classdef Model < handle
                 end
                 obj.ResultText = replace(obj.ResultText, '\n', newline);
                 obj.ResultText = replace(obj.ResultText, '\t', '    ');
+                if isfield(currentConfig, 'resultTextInterpreter')
+                    interpreter = currentConfig.resultTextInterpreter;
+                    obj.ResultTextInterpreter = interpreter;
+                end
             else
-                obj.ResultText = 'Nessun risultato prodotto.'
+                obj.ResultText = 'Nessun risultato prodotto.';
             end
 
             %% Esecuzione comandi di drawing per i plots

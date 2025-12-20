@@ -4,10 +4,10 @@ classdef ResultTab < handle
     properties
         App(:, 1) App {mustBeScalarOrEmpty}
     end
-
+    
     properties ( GetAccess = public, SetAccess = private )
-        Griglia(:, 1) matlab.ui.container.GridLayout {mustBeScalarOrEmpty}
         EtichettaRisultato(:, 1) matlab.ui.control.Label {mustBeScalarOrEmpty}
+        Griglia(:, 1) matlab.ui.container.GridLayout {mustBeScalarOrEmpty}
         Parent(:, 1) matlab.ui.container.Tab {mustBeScalarOrEmpty}
     end
 
@@ -61,13 +61,14 @@ classdef ResultTab < handle
         function update( obj )
             if ~isempty(obj.App) && ~isempty(obj.App.Modello) && ~isempty(obj.App.Modello.ResultText)
                 obj.EtichettaRisultato.Text = obj.App.Modello.ResultText;
+                obj.EtichettaRisultato.Interpreter = obj.App.Modello.ResultTextInterpreter;
             end
         end
-
+        
         function onDataChanged( obj, ~, ~ )
             obj.update();
         end % onDataChanged
-
+        
         function onExerciseChanged( obj, ~, ~ )
             obj.EtichettaRisultato.Text = "Nessun risultato prodotto.";
         end
