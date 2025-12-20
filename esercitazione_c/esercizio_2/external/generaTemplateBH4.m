@@ -5,7 +5,7 @@ function templateImg = generaTemplateBH4(percorsoImmagine, percorsoProcessing, n
     
     %% 2) Resize immagine
     im1 = imresize(I, [107 160], 'bicubic'); % imposto la grandezza dell'immagine -> 107x160 pixels
-    im2 = imresize(im1, 1.4, 'bicubic');     % immagine scalta di un fattore 1.4  -> 150×224 pixels
+    im2 = imresize(im1, 1.4, 'bicubic');     % immagine scalata di un fattore 1.4  -> 150×224 pixels
     imwrite(im2, strcat(percorsoProcessing, '01.resize_', numStr, '.jpg'));
     
     %% 3) Applicazione filtro
@@ -57,7 +57,7 @@ function templateImg = generaTemplateBH4(percorsoImmagine, percorsoProcessing, n
     thinning = bwmorph(filling, 'thin', inf);
     imwrite(thinning, strcat(percorsoProcessing, '10.thinning_', numStr, '.jpg'));
     
-    %% 12) Prunning
+    %% 12) Pruning
     pruning = bwmorph(thinning, 'spur', 5);
     imwrite(pruning, strcat(percorsoProcessing, '11.pruning_', numStr, '.jpg'));
     
