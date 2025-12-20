@@ -37,7 +37,6 @@ classdef Model < handle
 
         function simulate( obj )
             %SIMULATE Esegue una simulazione basata sul tipo selezionato.
-
             %% Geometria
             l = obj.App.TabController.getTab('CeramicsTab').getComponent('CampoSpessore').Value;
             ordineDiGrandezzal = calcolaOrdineDiGrandezza(l);
@@ -143,6 +142,8 @@ classdef Model < handle
                 end
                 obj.ResultText = replace(obj.ResultText, '\n', newline);
                 obj.ResultText = replace(obj.ResultText, '\t', '    ');
+            else
+                obj.ResultText = 'Nessun risultato prodotto.'
             end
 
             %% Esecuzione comandi di drawing per i plots
@@ -220,6 +221,7 @@ classdef Model < handle
             end
 
             notify( obj, "DataChanged" )
+            eval("clear;")
 
         end % simulate
 

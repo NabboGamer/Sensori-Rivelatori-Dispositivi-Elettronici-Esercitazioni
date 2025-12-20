@@ -29,7 +29,7 @@
     - id: ImpedenzeTab
       values:
         MenuZ1: 'Aria (20°C)'
-        MenuZ2: 'Aria (20°C)'
+        MenuZ2: 'Acqua (20°C)'
         CheckMezziStandard: false
   pipeline: model_termi_thick/pipeline.yaml
   resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n', Keff]"
