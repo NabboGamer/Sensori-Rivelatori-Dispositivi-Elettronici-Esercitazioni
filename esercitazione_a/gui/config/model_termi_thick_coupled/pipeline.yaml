@@ -12,6 +12,7 @@
 - "B_side2 = calcolaMatriceB(A, Z1);"
 - "numberOfCeramicPairs = obj.App.TabController.getTab('CeramicsTab').getComponent('CampoCoppie').Value;"
 - "new_l = l / (2 ^ numberOfCeramicPairs); new_C0 = (2 ^ numberOfCeramicPairs) * C0;"
+- "if (new_l <= 1e-6); obj.App.showError('Lo spessore della singola ceramica è assimilabile a zero. Per favore, scegliere un numero di coppie di ceramiche inferiore'); return; end"
 - "A_couple = calcolaMatriceA(ZoD, omega, v, new_l, h33, new_C0);"
 - "G = calcolaMatriceG(A_couple, A_couple);"
 - "G_multiple = G;"
