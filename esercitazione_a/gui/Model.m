@@ -119,8 +119,12 @@ classdef Model < handle
             for j = 1:length(pipeline)
                 cmd = pipeline{j};
                 try
+                    cmd = regexprep(cmd, '\<return\>', 'error(''App:PipelineReturn'', ''Return'')');
                     eval(cmd);
                 catch ME
+                    if strcmp(ME.identifier, 'App:PipelineReturn')
+                        return;
+                    end
                     fprintf("Error executing pipeline command: %s\nError: %s\n", cmd, ME.message);
                     obj.App.showError("Pipeline Error: " + ME.message + newline + "Command: " + cmd);
                     rethrow(ME);
