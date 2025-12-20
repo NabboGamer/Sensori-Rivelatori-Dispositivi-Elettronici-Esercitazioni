@@ -124,6 +124,10 @@ classdef DynamicTab < handle
                 comp = [];
             end
         end
+
+        function runCallback(obj, command)
+            eval(command);
+        end
     end
 
     methods (Access = private)
@@ -236,6 +240,11 @@ classdef DynamicTab < handle
                                 targetProp = 'Value';
                             end
 
+                            if strcmp(propName, 'ButtonPushedFcn')
+                                newComp.ButtonPushedFcn = @(src, event) obj.runCallback(val);
+                                continue;
+                            end
+
                             try
                                 newComp.(targetProp) = val;
                             catch ME
@@ -257,10 +266,18 @@ classdef DynamicTab < handle
                             end
                         end
 
-                        if hasRightLabel
-                            newComp.Layout.Column = 2;
+                        if hasLeftLabel
+                            if hasRightLabel
+                                newComp.Layout.Column = 2;
+                            else
+                                newComp.Layout.Column = [2 3];
+                            end
                         else
-                            newComp.Layout.Column = [2 3];
+                            if hasRightLabel
+                                newComp.Layout.Column = [1 2];
+                            else
+                                newComp.Layout.Column = [1 3];
+                            end
                         end
 
                         % 3. Gestisci etichetta destra

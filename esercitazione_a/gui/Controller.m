@@ -19,6 +19,7 @@ classdef Controller < Component
         % Event broadcast when the data is changed.
         ButtonPushed
         ButtonReleased
+        ExerciseChanged
     end
 
     methods
@@ -140,6 +141,7 @@ classdef Controller < Component
         function onSimulationChanged( obj, ~, ~ )
             selected = obj.DropDownMenu.Value;
             obj.applySimulationConfig(selected);
+            notify(obj, "ExerciseChanged")
         end
 
         function applySimulationConfig(obj, exercise)
