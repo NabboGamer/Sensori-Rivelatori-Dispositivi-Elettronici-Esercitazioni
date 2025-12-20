@@ -7,6 +7,7 @@ classdef Model < handle
         App(:, 1)
         Simulazione(:, 1)
         Config
+        CSVFile
         ResultText
         CurrentExercise string {mustBeScalarOrEmpty}
     end

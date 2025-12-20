@@ -124,6 +124,10 @@ classdef DynamicTab < handle
                 comp = [];
             end
         end
+
+        function runCallback(obj, command)
+            eval(command);
+        end
     end
 
     methods (Access = private)
@@ -234,6 +238,11 @@ classdef DynamicTab < handle
                                 targetProp = 'Step';
                             elseif strcmp(propName, 'value')
                                 targetProp = 'Value';
+                            end
+
+                            if strcmp(propName, 'ButtonPushedFcn')
+                                newComp.ButtonPushedFcn = @(src, event) obj.runCallback(val);
+                                continue;
                             end
 
                             try
