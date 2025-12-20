@@ -252,8 +252,8 @@ classdef DynamicTab < handle
                             end
                         end
 
-                        % % Layout
-                        % newComp.Layout.Row = row;
+                        % Layout
+                        newComp.Layout.Row = row;
                         hasRightLabel = false;
 
                         % Controlla etichetta destra per determinare l'estensione della colonna
@@ -368,13 +368,24 @@ classdef DynamicTab < handle
                         end
                     end
 
-                    % Applica visibilità
+                    % Applica visibilità e aggiorna layout griglia
                     if isVisible
                         targetComp.Visible = 'on';
                         lblVis = 'on';
+                        rowHeight = 'fit';
                     else
                         targetComp.Visible = 'off';
                         lblVis = 'off';
+                        rowHeight = 0; % Collassa la riga
+                    end
+
+                    % Aggiorna l'altezza della riga nella griglia
+                    if isprop(targetComp, 'Layout') && isprop(targetComp.Layout, 'Row')
+                        rowIdx = targetComp.Layout.Row;
+                        % Verifica che l'indice di riga sia valido
+                        if ~isempty(rowIdx) && rowIdx > 0 && rowIdx <= length(obj.Grid.RowHeight)
+                            obj.Grid.RowHeight{rowIdx} = rowHeight;
+                        end
                     end
 
                     if isKey(obj.ComponentLabels, targetId)
