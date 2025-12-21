@@ -30,7 +30,7 @@ Il contenuto nelle cartelle `./external` è materiale fornito dal docente e/o sv
 
 ## Contributi
 
-Il lavoro è stato svolto ponendo la massima attenzione sia sulla correttezza teorica che implementativa. Nonostante ciò, è possibile che siano presenti errori teorici o implementativi: in tal caso, segnalazioni e contributi (ad esempio tramite pull request) sono benvenuti.
+Il lavoro è stato svolto ponendo la massima attenzione sia sulla correttezza teorica che implementativa. Nonostante ciò, è possibile che siano presenti errori: in tal caso, segnalazioni e contributi (ad esempio tramite pull request) sono benvenuti.
 
 ## Galleria
 
