@@ -4,7 +4,7 @@ classdef ResultTab < handle
     properties
         App(:, 1) App {mustBeScalarOrEmpty}
     end
-    
+
     properties ( GetAccess = public, SetAccess = private )
         EtichettaRisultato(:, 1) matlab.ui.control.Label {mustBeScalarOrEmpty}
         Griglia(:, 1) matlab.ui.container.GridLayout {mustBeScalarOrEmpty}
@@ -28,7 +28,7 @@ classdef ResultTab < handle
                 obj.ExerciseListener = listener( obj.App.Controller, ...
                     "ExerciseChanged", ...
                     @obj.onExerciseChanged );
-                
+
                 obj.ButtonPushedListener = listener( obj.App.Controller, ...
                     "ButtonPushed", ...
                     @obj.onExerciseChanged );
@@ -57,18 +57,30 @@ classdef ResultTab < handle
         end
     end
 
-    methods ( Access = private )
+    methods ( Access = public )
         function update( obj )
-            if ~isempty(obj.App) && ~isempty(obj.App.Modello) && ~isempty(obj.App.Modello.ResultText)
-                obj.EtichettaRisultato.Text = obj.App.Modello.ResultText;
-                obj.EtichettaRisultato.Interpreter = obj.App.Modello.ResultTextInterpreter;
+            if ~isempty(obj.App) && ~isempty(obj.App.Modello)
+                if isempty(obj.App.Modello.ResultTextInterpreter)
+                    obj.EtichettaRisultato.Interpreter = 'none';
+                else
+                    obj.EtichettaRisultato.Interpreter = obj.App.Modello.ResultTextInterpreter;
+                end
+
+                rawText = obj.App.Modello.ResultText;
+
+                if isempty(rawText) || rawText == ""
+                    obj.EtichettaRisultato.Text = "Nessun risultato prodotto.";
+                else
+                    obj.EtichettaRisultato.Text = rawText;
+                end
+                drawnow;
             end
         end
-        
+
         function onDataChanged( obj, ~, ~ )
             obj.update();
         end % onDataChanged
-        
+
         function onExerciseChanged( obj, ~, ~ )
             obj.EtichettaRisultato.Text = "Nessun risultato prodotto.";
         end

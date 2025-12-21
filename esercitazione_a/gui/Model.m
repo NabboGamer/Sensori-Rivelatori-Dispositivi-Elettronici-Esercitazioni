@@ -34,6 +34,7 @@ classdef Model < handle
             if ~isempty(obj.Config) && iscell(obj.Config) && isfield(obj.Config{1}, 'exercise')
                 obj.CurrentExercise = obj.Config{1}.exercise;
             end
+            obj.ResultTextInterpreter = 'none';
         end
 
         function simulate( obj )
@@ -141,14 +142,24 @@ classdef Model < handle
                     obj.App.showError("Result-text Error: " + ME.message + newline + "Command: " + cmd);
                     return;
                 end
-                obj.ResultText = replace(obj.ResultText, '\n', newline);
-                obj.ResultText = replace(obj.ResultText, '\t', '    ');
                 if isfield(currentConfig, 'resultTextInterpreter')
                     interpreter = currentConfig.resultTextInterpreter;
                     obj.ResultTextInterpreter = interpreter;
+                else
+                    obj.ResultTextInterpreter = 'none';
                 end
+
+                obj.ResultText = replace(obj.ResultText, '\n', newline);
+                obj.ResultText = replace(obj.ResultText, '\t', '    ');
+
             else
                 obj.ResultText = 'Nessun risultato prodotto.';
+                obj.ResultTextInterpreter = 'none';
+            end
+
+            if isempty(strip(obj.ResultText))
+                obj.ResultText = 'Nessun risultato prodotto.';
+                obj.ResultTextInterpreter = 'none';
             end
 
             %% Esecuzione comandi di drawing per i plots
@@ -226,7 +237,6 @@ classdef Model < handle
             end
 
             notify( obj, "DataChanged" )
-            eval("clear;")
 
         end % simulate
 

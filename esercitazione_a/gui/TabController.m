@@ -174,6 +174,8 @@ classdef TabController < Component
         function onDataChanged(obj, ~, ~)
             % obj.TabRisultati.Parent is the uitab
             obj.GruppoTab.SelectedTab = obj.TabRisultati.Parent;
+            drawnow;
+            obj.TabRisultati.update();
         end
     end
 end
