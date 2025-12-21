@@ -157,10 +157,6 @@ classdef Model < handle
                 obj.ResultTextInterpreter = 'none';
             end
 
-            if isempty(strip(obj.ResultText))
-                obj.ResultText = 'Nessun risultato prodotto.';
-                obj.ResultTextInterpreter = 'none';
-            end
 
             %% Esecuzione comandi di drawing per i plots
             if isfield(currentConfig, 'plots')

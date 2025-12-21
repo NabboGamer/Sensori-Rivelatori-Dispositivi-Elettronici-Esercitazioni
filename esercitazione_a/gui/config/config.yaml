@@ -9,12 +9,13 @@
         CampoParametro2: 0.010
         CampoSpessore: 0.001
         MenuPz: 'Pz26'
-  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t Keff^2 = ', num2str(Keff)]"
   pipeline: carat_ceram_thick/pipeline.yaml
   plots:
     - name: Zin
       drawing:
         - 'stampaGrafici(f, moduloZi, faseZi, "Zin: input impedance", "blue", "Zin");'
+  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t $K_{eff}^2=', num2str(Keff), '$']"
+  resultTextInterpreter: 'latex'
 - exercise: Modello Terminale (Thickness)
   image: singleCeramics.png
   settings: model_termi_thick/tabSettings.yaml
@@ -32,8 +33,9 @@
         MenuZ2: 'Acqua (20°C)'
         CheckMezziStandard: false
   pipeline: model_termi_thick/pipeline.yaml
-  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n', Keff]"
   plots: model_termi_thick/plots.yaml
+  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t $', Keff, '$']"
+  resultTextInterpreter: 'latex'
 - exercise: Modello Terminale (Thickness Coupled)
   image: singleCeramics.png
   settings: model_termi_thick_coupled/tabSettings.yaml
@@ -52,8 +54,9 @@
         MenuZ1: 'Aria (20°C)'
         MenuZ2: 'Acqua (20°C)'
   pipeline: model_termi_thick_coupled/pipeline.yaml
-  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n', Keff]"
   plots: model_termi_thick_coupled/plots.yaml
+  resultText: "['Risultato calcolo fattore di accoppiamento efficace:\n\n\t ', Keff]"
+  resultTextInterpreter: 'latex'
 - exercise: Progettazione trasduttore banda larga
   image: wideband.png
   settings: trasd_piezo_wideb/tabSettings.yaml
@@ -66,8 +69,9 @@
         CampoSpessore: 0.001
         MenuPz: 'Pz26'
   pipeline: trasd_piezo_wideb/pipeline.yaml
-  resultText: "['Banda Frazionaria no backing no plate:\n\n\t -3db: FBW= ', num2str(FBW_3dB_without_backing_without_plate), '%\n\t -6db: FBW= ', num2str(FBW_6dB_without_backing_without_plate), '%\n\nBanda Frazionaria con backing no plate:\n\n\t -3db: FBW= ', num2str(FBW_3dB_with_backing_without_plate), '%\n\t -6db: FBW= ', num2str(FBW_6dB_with_backing_without_plate), '%\n\nBanda Frazionaria no backing con plate:\n\n\t -3db: FBW= ', num2str(FBW_3dB_without_backing_with_plate), '%\n\t -6db: FBW= ', num2str(FBW_6dB_without_backing_with_plate), '%\n\nBanda Frazionaria con backing con plate:\n\n\t -3db: FBW= ', num2str(FBW_3dB_with_backing_with_plate_cached), '%\n\t -6db: FBW= ', num2str(FBW_6dB_with_backing_with_plate), '%\n\nLo spessore ottimale è: l_plate=', num2str(l_plate_best_scaled), 'e-3', '\nLa Banda Frazionaria a -3dB ottimale è: FBW= ', num2str(FBW_max), '%\nSpessore convertito: ', num2str(l_plate_best_previous_scaled), 'e-3 → ', num2str(l_plate_best_scaled), 'e-3', '\nBanda Frazionaria a -3dB con backing e plate ottimizzato: FBW= ', num2str(FBW_3dB_with_backing_with_plate_optimized), '%\nBanda Frazionaria a -6dB con backing e plate ottimizzato: FBW= ', num2str(FBW_6dB_with_backing_with_plate_optimized), '%']"
   plots: trasd_piezo_wideb/plots.yaml
+  resultText: "['Banda Frazionaria no backing no plate:\n\n\t -3db: $FBW= ', num2str(FBW_3dB_without_backing_without_plate), '\% %$\t -6db: $FBW= ', num2str(FBW_6dB_without_backing_without_plate), '\%$\n\nBanda Frazionaria con backing no plate:\n\n\t -3db: $FBW= ', num2str(FBW_3dB_with_backing_without_plate), '\%$\n\t -6db: $FBW= ', num2str(FBW_6dB_with_backing_without_plate), '\%$\n\nBanda Frazionaria no backing con plate:\n\n\t -3db: $FBW= ', num2str(FBW_3dB_without_backing_with_plate), '\%$\n\t -6db: $FBW= ', num2str(FBW_6dB_without_backing_with_plate), '\%$\n\nBanda Frazionaria con backing con plate:\n\n\t -3db: $FBW= ', num2str(FBW_3dB_with_backing_with_plate_cached), '\%$\n\t -6db: $FBW= ', num2str(FBW_6dB_with_backing_with_plate), '\%$\n\nLo spessore ottimale è: $l_{plate}=', num2str(l_plate_best_scaled), '\cdot10^{-3}$', '\nLa Banda Frazionaria a -3dB ottimale è: $FBW= ', num2str(FBW_max), '\%$\nSpessore convertito: $', num2str(l_plate_best_previous_scaled), '\cdot10^{-3} \rightarrow ', num2str(l_plate_best_scaled), '\cdot10^{-3}$', '\nBanda Frazionaria a -3dB con backing e plate ottimizzato: $FBW= ', num2str(FBW_3dB_with_backing_with_plate_optimized), '\%$\nBanda Frazionaria a -6dB con backing e plate ottimizzato: $FBW= ', num2str(FBW_6dB_with_backing_with_plate_optimized), '\%$']"
+  resultTextInterpreter: 'latex'
 - exercise: Progettazione trasduttore ultrasonico (singolo)
   image: langevin.png
   settings: trasd_piezo_ultra_single/tabSettings.yaml
@@ -141,4 +145,5 @@
         CampoC1: 1
   pipeline: analiz_ceram_piezo/pipeline.yaml
   plots: analiz_ceram_piezo/plots.yaml
-  resultText: "evalc('feature(''hotlinks'', 0); disp(T)');"
+  resultText: "evalc('disp(T)');"
+  resultTextInterpreter: 'html'
