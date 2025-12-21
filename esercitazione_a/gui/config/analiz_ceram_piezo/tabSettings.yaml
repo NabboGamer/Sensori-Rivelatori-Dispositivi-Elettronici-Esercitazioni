@@ -60,8 +60,9 @@
       Step: 0.0001
       Limits: [1e-6, 1]
     - kind: uibutton
-      Text: Scegli file .csv...
-      ButtonPushedFcn: obj.runCallback('cd ../cli/utility; obj.App.Modello.CSVFile = csvPicker(); cd ../../gui;') 
+      id: ButtonCSV
+      Text: Scegli file CSV...
+      ButtonPushedFcn: cd ../cli/utility; [obj.App.Modello.CSVFile, fname] = csvPicker(); cd ../../gui; csv = obj.App.Modello.CSVFile; if (~((isnumeric(csv) && isscalar(csv) && csv == -1) || isempty(csv))) obj.getComponent('ButtonCSV').Text = fname; else obj.getComponent('ButtonCSV').Text = "Scegli file CSV..."; end 
 - name: flow
   id: FlowTab
   components:
