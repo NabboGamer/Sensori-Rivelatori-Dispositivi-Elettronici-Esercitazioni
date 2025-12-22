@@ -62,7 +62,7 @@
     - kind: uibutton
       id: ButtonCSV
       Text: Scegli file CSV...
-      ButtonPushedFcn: cd ../cli/utility; [obj.App.Modello.CSVFile, fname] = csvPicker(); cd ../../gui; csv = obj.App.Modello.CSVFile; if (~((isnumeric(csv) && isscalar(csv) && csv == -1) || isempty(csv))) obj.getComponent('ButtonCSV').Text = fname; else obj.getComponent('ButtonCSV').Text = "Scegli file CSV..."; end 
+      ButtonPushedFcn: obj.getComponent('ButtonCSV').Enable = 'off'; obj.getComponent('ButtonCSV').Text = 'Caricamento...'; cd ../cli/utility; [obj.App.Modello.CSVFile, fname] = csvPicker(); cd ../../gui; csv = obj.App.Modello.CSVFile; if (~((isnumeric(csv) && isscalar(csv) && csv == -1) || isempty(csv))) obj.getComponent('ButtonCSV').Text = fname; else obj.getComponent('ButtonCSV').Text = "Scegli file CSV..."; end; obj.getComponent('ButtonCSV').Enable = 'on';
 - name: flow
   id: FlowTab
   components:
