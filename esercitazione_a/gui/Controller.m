@@ -145,6 +145,10 @@ classdef Controller < Component
         end
 
         function applySimulationConfig(obj, exercise)
+            if isempty(obj.App)
+                return;
+            end
+
             config = obj.App.Modello.Config;
             imageName = "";
             defaults = [];
