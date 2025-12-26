@@ -227,7 +227,8 @@ classdef DynamicTab < handle
                             propName = fields{k};
                             % Salta meta-proprietà
                             if strcmp(propName, 'kind') || strcmp(propName, 'id') || ...
-                                    strcmp(propName, 'labels') || strcmp(propName, 'visible_when')
+                                    strcmp(propName, 'labels') || strcmp(propName, 'visible_when') || ...
+                                    strcmp(propName, 'disabled_when') || strcmp(propName, 'disable_when')
                                 continue;
                             end
 
