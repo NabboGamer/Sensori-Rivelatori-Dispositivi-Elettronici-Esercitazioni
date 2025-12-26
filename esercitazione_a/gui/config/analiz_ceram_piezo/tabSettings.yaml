@@ -59,31 +59,36 @@
           position: right
       Step: 0.0001
       Limits: [1e-6, 1]
-    - kind: uibutton
-      id: ButtonCSV
-      Text: Scegli file CSV...
-      ButtonPushedFcn: obj.getComponent('ButtonCSV').Enable = 'off'; obj.getComponent('ButtonCSV').Text = 'Caricamento...'; cd ../cli/utility; [obj.App.Modello.CSVFile, fname] = csvPicker(); cd ../../gui; csv = obj.App.Modello.CSVFile; if (~((isnumeric(csv) && isscalar(csv) && csv == -1) || isempty(csv))) obj.getComponent('ButtonCSV').Text = fname; else obj.getComponent('ButtonCSV').Text = "Scegli file CSV..."; end; obj.getComponent('ButtonCSV').Enable = 'on';
-- name: flow
+- name: Zin
   id: FlowTab
   components:
     - kind: uispinner
       id: CampoFlow
       labels:
-        - text: flow
+        - text: $f_{low}$
           position: left
+          interpreter: 'latex'
         - text: Hz
-          position: right  
+          position: right
       Step: 0.001
       Limits: [1e-6, inf]
     - kind: uispinner
       id: CampoZiFlow
       labels:
-        - text: Zi_flow
+        - text: $Z_{iflow}$
           position: left
+          interpreter: 'latex'
         - text: Ω
           position: right
       Step: 0.001
-      Limits: [1e-6, inf]  
+      Limits: [1e-6, inf]
+    - kind: uilabel
+      Text: Selezionare un file CSV contenente i dati relativi all'impedenza d'ingresso nell'intorno della armonica di interesse.
+      WordWrap: 'on'
+    - kind: uibutton
+      id: ButtonCSV
+      Text: Scegli file CSV...
+      ButtonPushedFcn: obj.getComponent('ButtonCSV').Enable = 'off'; obj.getComponent('ButtonCSV').Text = 'Caricamento...'; cd ../cli/utility; [obj.App.Modello.CSVFile, fname] = csvPicker(); cd ../../gui; csv = obj.App.Modello.CSVFile; if (~((isnumeric(csv) && isscalar(csv) && csv == -1) || isempty(csv))) obj.getComponent('ButtonCSV').Text = "✔️ " + fname; else obj.getComponent('ButtonCSV').Text = "Scegli file CSV..."; end; obj.getComponent('ButtonCSV').Enable = 'on';
 - name: Circuito Equivalente
   id: ParametriTab
   components:

@@ -187,6 +187,11 @@ classdef DynamicTab < handle
                         lblDef = compDef.labels{j};
                         if strcmp(lblDef.position, 'left')
                             l = uilabel("Parent", obj.Grid, "Text", lblDef.text);
+                            if isfield(lblDef, 'interpreter')
+                                l.Interpreter = lblDef.interpreter;
+                            else
+                                l.Interpreter = 'none';
+                            end
                             l.UserData = struct('DefaultText', lblDef.text);
                             if isfield(lblDef, 'rules')
                                 l.UserData.Rules = lblDef.rules;
@@ -286,6 +291,11 @@ classdef DynamicTab < handle
                                 lblDef = compDef.labels{j};
                                 if strcmp(lblDef.position, 'right')
                                     l = uilabel("Parent", obj.Grid, "Text", lblDef.text);
+                                    if isfield(lblDef, 'interpreter')
+                                        l.Interpreter = lblDef.interpreter;
+                                    else
+                                        l.Interpreter = 'none';
+                                    end
                                     l.UserData = struct('DefaultText', lblDef.text);
                                     if isfield(lblDef, 'rules')
                                         l.UserData.Rules = lblDef.rules;
