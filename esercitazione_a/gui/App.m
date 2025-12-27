@@ -18,7 +18,7 @@ classdef App < handle
             obj.Modello = modello;
 
             %% Configurazione finestra principale
-            obj.Figure = uifigure();
+            obj.Figure = uifigure("Visible", "off");
             obj.Figure.Name = "Sensori-Rivelatori-Dispositivi-Elettronici-2024-2025";
             obj.Figure.Units = "normalized";
             obj.Figure.Position = [0,0,1,1];
@@ -47,6 +47,7 @@ classdef App < handle
 
             obj.VistaGrafici.Subscribe();
 
+            obj.Figure.Visible = "on";
         end
 
         function showError(obj, message)
