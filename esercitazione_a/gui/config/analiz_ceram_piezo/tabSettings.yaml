@@ -75,7 +75,7 @@
     - kind: uispinner
       id: CampoZiFlow
       labels:
-        - text: $Z_{iflow}$
+        - text: $Z_{in,f_{low}}$
           position: left
           interpreter: 'latex'
         - text: Ω
