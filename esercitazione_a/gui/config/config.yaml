@@ -145,5 +145,5 @@
         CampoC1: 1
   pipeline: analiz_ceram_piezo/pipeline.yaml
   plots: analiz_ceram_piezo/plots.yaml
-  resultText: "evalc('disp(T)');"
+  resultText: "tableToHtml(T)"
   resultTextInterpreter: 'html'
